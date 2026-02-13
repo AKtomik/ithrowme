@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BillboardSpriteEffect : MonoBehaviour
 {
+    [SerializeField] private Transform spriteTransform;
     private Transform cameraTransform;
-    public Transform spriteTransform;
 
     public bool lookX = true;
     public bool lookY = true;
