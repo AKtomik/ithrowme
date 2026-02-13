@@ -70,9 +70,6 @@ public class CapsulePlayerController : MonoBehaviour
         input.y *= -1;
         rotationRaw += input;
         rotationSmooth = Vector2.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        //rotationSmooth.x = Mathf.SmoothDamp(rotationSmooth.x, rotationRaw.x, ref rotationVelocity.x, smoothTime);
-        //rotationSmooth.y = Mathf.SmoothDamp(rotationSmooth.y, rotationRaw.y, ref rotationVelocity.y, smoothTime);
-        Debug.Log("rotationRaw:"+ rotationRaw + "rotationSmooth:"+ rotationSmooth);
         //rotationSmooth = Vector2.MoveTowards(rotationSmooth, rotationRaw, rotationMaxSpeed * Time.deltaTime);
         playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, 0f);
     }
