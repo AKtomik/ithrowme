@@ -29,6 +29,7 @@ public class CapsulePlayerController : MonoBehaviour
     private Vector2 rotationRaw;
     private Vector2 rotationSmooth;
     private Vector2 rotationVelocity = new(0, 0);
+    private float rotationZ = 0;
 
     void Awake()
     {
@@ -44,6 +45,7 @@ public class CapsulePlayerController : MonoBehaviour
     {
         lookAction.Enable();
         throwAction.Enable();
+        takeAction.Enable();
         dashAction.Enable();
 
         throwAction.performed += OnThrow;
@@ -59,6 +61,7 @@ public class CapsulePlayerController : MonoBehaviour
 
         lookAction.Disable();
         throwAction.Disable();
+        takeAction.Disable();
         dashAction.Disable();
     }
 
@@ -71,11 +74,16 @@ public class CapsulePlayerController : MonoBehaviour
     {
         Vector2 input = lookAction.ReadValue<Vector2>() * sensitivity;
         
-        input.y *= -1;
-        rotationRaw += input;
+        if (takeAction.IsPressed())
+        {
+            rotationZ += input.x;
+        } else {
+            input.y *= -1;
+            rotationRaw += input;
+        }
+
         rotationSmooth = Vector2.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        //rotationSmooth = Vector2.MoveTowards(rotationSmooth, rotationRaw, rotationMaxSpeed * Time.deltaTime);
-        playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, 0f);
+        playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, rotationZ);
     }
 
     void OnTake(InputAction.CallbackContext ctx)
