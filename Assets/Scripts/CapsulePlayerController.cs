@@ -6,6 +6,7 @@ public class CapsulePlayerController : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionAsset inputActions;
     private InputAction lookAction;
+    private InputAction takeAction;
     private InputAction throwAction;
     private InputAction dashAction;
 
@@ -34,6 +35,7 @@ public class CapsulePlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         lookAction = inputActions.FindAction("Player/Look");
+        takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
     }
@@ -45,12 +47,14 @@ public class CapsulePlayerController : MonoBehaviour
         dashAction.Enable();
 
         throwAction.performed += OnThrow;
+        takeAction.performed += OnTake;
         dashAction.performed += OnDash;
     }
 
     void OnDisable()
     {
         throwAction.performed -= OnThrow;
+        takeAction.performed -= OnTake;
         dashAction.performed -= OnDash;
 
         lookAction.Disable();
@@ -74,8 +78,14 @@ public class CapsulePlayerController : MonoBehaviour
         playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, 0f);
     }
 
+    void OnTake(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("player take action");
+    }
+
     void OnThrow(InputAction.CallbackContext ctx)
     {
+        Debug.Log("player throw action");
         GameObject newProjectile = Instantiate(throwablePrefab, throwPoint.position, Quaternion.identity);
         newProjectile.transform.rotation = throwPoint.rotation;
         
