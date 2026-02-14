@@ -26,10 +26,9 @@ public class CapsulePlayerController : MonoBehaviour
     [SerializeField] private float dashForce = 20f;
 
     private Rigidbody rb;
-    private Vector2 rotationRaw;
-    private Vector2 rotationSmooth;
-    private Vector2 rotationVelocity = new(0, 0);
-    private float rotationZ = 0;
+    private Vector3 rotationRaw;
+    private Vector3 rotationSmooth;
+    private Vector3 rotationVelocity = new(0, 0);
 
     void Awake()
     {
@@ -76,14 +75,14 @@ public class CapsulePlayerController : MonoBehaviour
         
         if (takeAction.IsPressed())
         {
-            rotationZ += input.x;
+            rotationRaw.z -= input.x;
         } else {
             input.y *= -1;
-            rotationRaw += input;
+            rotationRaw += (Vector3)input;
         }
 
-        rotationSmooth = Vector2.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, rotationZ);
+        rotationSmooth = Vector3.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
+        playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, rotationSmooth.z);
     }
 
     void OnTake(InputAction.CallbackContext ctx)
