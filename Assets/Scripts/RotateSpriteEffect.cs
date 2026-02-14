@@ -7,29 +7,27 @@ public class RotateSpriteEffect : MonoBehaviour
     
     [SerializeField] private GameObject spriteObject;
     private Transform spriteTransform;
-    private SpriteRenderer spriteRender; 
-    private Transform cameraTransform;
+    private SpriteRenderer spriteRender;
+
+    public Vector3 continusRotate = Vector3.zero;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spriteTransform = spriteObject.GetComponent<Transform>();
         spriteRender = spriteObject.GetComponent<SpriteRenderer>();
-        cameraTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 angleSpin = spriteTransform.rotation.eulerAngles;
-        Vector3 angleLook = spriteTransform.rotation.eulerAngles + transform.rotation.eulerAngles;
+        Vector3 angleLook = spriteTransform.rotation.eulerAngles - transform.rotation.eulerAngles + Vector3.one * 360;
+        angleLook = new Vector3(angleLook.x % 360, angleLook.y % 360, angleLook.z % 360) / 360;
 
-        Vector3 angle = angleLook;
-        angle = new Vector3(angle.x % 360, angle.y % 360, angle.z % 360) / 360;
-
-        Sprite angleSprite = spritesImage[(int)((1 - angle.y) * spritesImage.Length)];
+        Sprite angleSprite = spritesImage[(int)(angleLook.y * spritesImage.Length)];
         spriteRender.sprite = angleSprite;
 
-        transform.Rotate(new Vector3(0, 60 * Time.deltaTime, 0));
+        if (!continusRotate.Equals(Vector3.zero))
+            transform.Rotate(continusRotate * Time.deltaTime);
     }
 }
