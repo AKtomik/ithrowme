@@ -78,7 +78,9 @@ public class CapsulePlayerController : MonoBehaviour
             rotationRaw.z -= input.x;
         } else {
             input.y *= -1;
-            rotationRaw += (Vector3)input;
+            Vector3 rotativity = (Vector3)input;
+            //rotativity.Scale((rotationRaw.magnitude > 0.01) ? rotationRaw.normalized : Vector3.one);
+            rotationRaw += rotativity;
         }
 
         rotationSmooth = Vector3.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
