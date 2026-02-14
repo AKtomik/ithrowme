@@ -799,7 +799,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!65 &967271133
 BoxCollider:
@@ -1561,6 +1561,7 @@ GameObject:
   - component: {fileID: 1786515381}
   - component: {fileID: 1786515379}
   - component: {fileID: 1786515382}
+  - component: {fileID: 1786515383}
   m_Layer: 0
   m_Name: ThrowableFlat
   m_TagString: Untagged
@@ -1645,6 +1646,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spriteTransform: {fileID: 1504400954}
+  lookX: 1
+  lookY: 1
+  lookZ: 1
+--- !u!114 &1786515383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786515377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bc212aff962434bbbb75bfe23271d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  spritesImage:
+  - {fileID: 21300000, guid: 81351f76e297cc3478770dfc2a3a3928, type: 3}
+  - {fileID: 21300000, guid: 27edbbfe2aa266846af0d492becf329d, type: 3}
+  - {fileID: 21300000, guid: 9d45e177400324245b64dc2cc5a15b18, type: 3}
+  - {fileID: 21300000, guid: 0fe47653d1517614eb5aa0663f470962, type: 3}
+  - {fileID: 21300000, guid: d0fa51825fea3514c84e3e6048bd903a, type: 3}
+  - {fileID: 21300000, guid: 79d294b2787a7014a89c6aa23858fe6d, type: 3}
+  - {fileID: 21300000, guid: 9e4e0b4ef9cd3ca4f962fe7b1dc14e30, type: 3}
+  - {fileID: 21300000, guid: b2dfc63b413ea174db9af20b780a1054, type: 3}
+  spriteObject: {fileID: 1504400953}
 --- !u!1 &1808800210
 GameObject:
   m_ObjectHideFlags: 0
