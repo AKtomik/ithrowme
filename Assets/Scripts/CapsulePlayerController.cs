@@ -27,7 +27,9 @@ public class CapsulePlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private float rotateEnterCooldown = 1f;
-    private Quaternion rotationRaw;
+    private Quaternion rotation;
+    private Vector3 rotaStackRaw = Vector3.zero;
+    private Vector3 rotaVelocity = Vector3.zero;
 
     void Awake()
     {
@@ -38,7 +40,7 @@ public class CapsulePlayerController : MonoBehaviour
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
         
-        rotationRaw = playerPivot.localRotation;
+        rotation = playerPivot.localRotation;
     }
 
     void OnEnable()
@@ -72,7 +74,8 @@ public class CapsulePlayerController : MonoBehaviour
 
     void HandleLook()
     {
-        Vector2 mouseInput = lookAction.ReadValue<Vector2>() * sensitivity * Time.deltaTime;        
+        Vector2 mouseInput = lookAction.ReadValue<Vector2>();
+        Vector3 rotaInput = Vector3.zero;
         if (mouseInput.magnitude > 0.01)
         {
             if (rotateEnterCooldown > 0)
@@ -81,19 +84,25 @@ public class CapsulePlayerController : MonoBehaviour
             }
             else if (takeAction.IsPressed())
             {
-                Quaternion angleZ = Quaternion.AngleAxis(mouseInput.x, rotationRaw * Vector3.forward);
-                rotationRaw = angleZ * rotationRaw;
-                Debug.Log("b:"+rotationRaw);
+                rotaInput.z += mouseInput.x;
             } else {
-                Quaternion angleX = Quaternion.AngleAxis(mouseInput.x, rotationRaw * Vector3.up);
-                rotationRaw = angleX * rotationRaw;
-                Quaternion angleY = Quaternion.AngleAxis(-mouseInput.y, rotationRaw * Vector3.right);
-                rotationRaw = angleY * rotationRaw;
-                Debug.Log("a:"+rotationRaw);
+                rotaInput.x -= mouseInput.x;
+                rotaInput.y += mouseInput.y;
             }
         }
-        //rotationSmooth = Vector3.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        playerPivot.localRotation = rotationRaw;
+        rotaStackRaw += sensitivity * Time.deltaTime * rotaInput;
+
+        Vector3 rotaDelta = -Vector3.SmoothDamp(Vector3.zero, rotaStackRaw, ref rotaVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
+        rotaStackRaw += rotaDelta;
+        
+        if (rotaDelta.magnitude < 0.001f) return;
+        Quaternion angleX = Quaternion.AngleAxis(rotaDelta.x, rotation * Vector3.up);
+        rotation = angleX * rotation;
+        Quaternion angleY = Quaternion.AngleAxis(rotaDelta.y, rotation * Vector3.right);
+        rotation = angleY * rotation;
+        Quaternion angleZ = Quaternion.AngleAxis(rotaDelta.z, rotation * Vector3.forward);
+        rotation = angleZ * rotation;
+        playerPivot.localRotation = rotation;
     }
 
     void OnTake(InputAction.CallbackContext ctx)
