@@ -28,8 +28,8 @@ public class CapsulePlayerController : MonoBehaviour
     private Rigidbody rb;
     private float rotateEnterCooldown = 1f;
     private Quaternion rotation;
-    private Vector3 rotaStackRaw = Vector3.zero;
     private Vector3 rotaVelocity = Vector3.zero;
+    private Vector3 rotaVelocityVelocity = Vector3.zero;
 
     void Awake()
     {
@@ -90,10 +90,9 @@ public class CapsulePlayerController : MonoBehaviour
                 rotaInput.y += mouseInput.y;
             }
         }
-        rotaStackRaw += sensitivity * Time.deltaTime * rotaInput;
-
-        Vector3 rotaDelta = -Vector3.SmoothDamp(Vector3.zero, rotaStackRaw, ref rotaVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        rotaStackRaw += rotaDelta;
+        rotaVelocity += sensitivity * rotaInput;
+        rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
+        Vector3 rotaDelta = -rotaVelocity * Time.deltaTime;
         
         if (rotaDelta.magnitude < 0.001f) return;
         Quaternion angleX = Quaternion.AngleAxis(rotaDelta.x, rotation * Vector3.up);
