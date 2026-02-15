@@ -72,8 +72,7 @@ public class CapsulePlayerController : MonoBehaviour
 
     void HandleLook()
     {
-        Vector2 mouseInput = lookAction.ReadValue<Vector2>() * sensitivity;
-        
+        Vector2 mouseInput = lookAction.ReadValue<Vector2>() * sensitivity * Time.deltaTime;        
         if (mouseInput.magnitude > 0.01)
         {
             if (rotateEnterCooldown > 0)
