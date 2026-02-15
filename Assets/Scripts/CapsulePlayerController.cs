@@ -26,9 +26,8 @@ public class CapsulePlayerController : MonoBehaviour
     [SerializeField] private float dashForce = 20f;
 
     private Rigidbody rb;
-    private Vector3 rotationRaw;
-    private Vector3 rotationSmooth;
-    private Vector3 rotationVelocity = new(0, 0);
+    private float rotateEnterCooldown = 1f;
+    private Quaternion rotationRaw;
 
     void Awake()
     {
@@ -38,6 +37,8 @@ public class CapsulePlayerController : MonoBehaviour
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
+        
+        rotationRaw = playerPivot.localRotation;
     }
 
     void OnEnable()
@@ -71,20 +72,28 @@ public class CapsulePlayerController : MonoBehaviour
 
     void HandleLook()
     {
-        Vector2 input = lookAction.ReadValue<Vector2>() * sensitivity;
+        Vector2 mouseInput = lookAction.ReadValue<Vector2>() * sensitivity;
         
-        if (takeAction.IsPressed())
+        if (mouseInput.magnitude > 0.01)
         {
-            rotationRaw.z -= input.x;
-        } else {
-            input.y *= -1;
-            Vector3 rotativity = (Vector3)input;
-            //rotativity.Scale((rotationRaw.magnitude > 0.01) ? rotationRaw.normalized : Vector3.one);
-            rotationRaw += rotativity;
+            if (rotateEnterCooldown > 0)
+            {
+                rotateEnterCooldown -= 1;
+            }
+            else if (takeAction.IsPressed())
+            {
+                Quaternion angleZ = Quaternion.AngleAxis(mouseInput.x, playerPivot.forward);
+                rotationRaw = angleZ * rotationRaw;
+                Debug.Log("b:"+rotationRaw);
+            } else {
+                Quaternion angleY = Quaternion.AngleAxis(-mouseInput.y, playerPivot.right);
+                Quaternion angleX = Quaternion.AngleAxis(mouseInput.x, playerPivot.up);
+                rotationRaw = angleY * angleX * rotationRaw;
+                Debug.Log("a:"+rotationRaw);
+            }
         }
-
-        rotationSmooth = Vector3.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
-        playerPivot.localRotation = Quaternion.Euler(rotationSmooth.y, rotationSmooth.x, rotationSmooth.z);
+        //rotationSmooth = Vector3.SmoothDamp(rotationSmooth, rotationRaw, ref rotationVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
+        playerPivot.localRotation = rotationRaw;
     }
 
     void OnTake(InputAction.CallbackContext ctx)
