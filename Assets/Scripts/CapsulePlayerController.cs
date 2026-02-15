@@ -82,13 +82,14 @@ public class CapsulePlayerController : MonoBehaviour
             }
             else if (takeAction.IsPressed())
             {
-                Quaternion angleZ = Quaternion.AngleAxis(mouseInput.x, playerPivot.forward);
+                Quaternion angleZ = Quaternion.AngleAxis(mouseInput.x, rotationRaw * Vector3.forward);
                 rotationRaw = angleZ * rotationRaw;
                 Debug.Log("b:"+rotationRaw);
             } else {
-                Quaternion angleY = Quaternion.AngleAxis(-mouseInput.y, playerPivot.right);
-                Quaternion angleX = Quaternion.AngleAxis(mouseInput.x, playerPivot.up);
-                rotationRaw = angleY * angleX * rotationRaw;
+                Quaternion angleX = Quaternion.AngleAxis(mouseInput.x, rotationRaw * Vector3.up);
+                rotationRaw = angleX * rotationRaw;
+                Quaternion angleY = Quaternion.AngleAxis(-mouseInput.y, rotationRaw * Vector3.right);
+                rotationRaw = angleY * rotationRaw;
                 Debug.Log("a:"+rotationRaw);
             }
         }
