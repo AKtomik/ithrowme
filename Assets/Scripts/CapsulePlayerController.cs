@@ -137,29 +137,39 @@ public class CapsulePlayerController : MonoBehaviour
     void OnThrow(InputAction.CallbackContext ctx)
     {
         Debug.Log("player throw action");
-        GameObject newProjectile = Instantiate(throwablePrefab, throwPoint.position, Quaternion.identity);
-        newProjectile.transform.rotation = throwPoint.rotation;
-        
-        const int size = 1;
-        newProjectile.transform.localScale *= size;
-        
-        newProjectile.GetComponent<MeshRenderer>().material.color =
-            new Color(Random.value, Random.value, Random.value, 1.0f);
-        
-        // throw the projectile
-        Rigidbody newProjectileRigidbody = newProjectile.GetComponent<Rigidbody>();
-        newProjectileRigidbody.mass = Mathf.Pow(size, 3);
-        newProjectileRigidbody.AddForce(throwPoint.forward * throwObjectForce, ForceMode.Impulse);
-
-        // throw the player
-        rb.AddForce(transform.forward * throwPlayerForce, ForceMode.Impulse);
+        if (handyObject == null)
+        {
+            GameObject projectile = Instantiate(throwablePrefab, throwPoint.position, Quaternion.identity);
+            projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
+            ThrowObject(projectile);
+        }
+        ThrowObject(handyObject);
     }
 
     void TookObject(GameObject takeObject, TakableObject takable)
     {
-        takeObject.transform.SetParent(transform);
-        takeObject.transform.position = handPoint.position;
-        takable.InHand();
+        takable.InHand(handPoint);
+        handyTakable = takable;
+        handyObject = takeObject;
+    }
+    
+    void ThrowObject(GameObject throwObject)
+    {
+        // throw the projectile
+        throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
+		Rigidbody newProjectileRigidbody = throwObject.GetComponent<Rigidbody>();
+        newProjectileRigidbody.AddForce(throwPoint.forward * throwObjectForce, ForceMode.Impulse);
+
+        // throw the player
+        rb.AddForce(transform.forward * throwPlayerForce, ForceMode.Impulse);
+
+        // clear hand
+        if (handyTakable != null)
+        {
+            handyTakable.OffHand();
+            handyTakable = null;
+            handyObject = null;
+        } 
     }
 
     void OnDash(InputAction.CallbackContext ctx)
