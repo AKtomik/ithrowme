@@ -21,12 +21,12 @@ public class TakableObject : MonoBehaviour
 
     public void InHand(Transform handTransform)
     {
-        // disable
-        collider.enabled = false;
-        rb.isKinematic = true;
         // stop
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        // disable
+        collider.enabled = false;
+        rb.isKinematic = true;
         // reparent
         transform.SetParent(handTransform);
         transform.position = handTransform.position;

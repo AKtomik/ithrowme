@@ -142,6 +142,7 @@ public class CapsulePlayerController : MonoBehaviour
             GameObject projectile = Instantiate(throwablePrefab, throwPoint.position, Quaternion.identity);
             projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
             ThrowObject(projectile);
+            return;
         }
         ThrowObject(handyObject);
     }
@@ -157,7 +158,7 @@ public class CapsulePlayerController : MonoBehaviour
     {
         // throw the projectile
         throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
-		Rigidbody newProjectileRigidbody = throwObject.GetComponent<Rigidbody>();
+        Rigidbody newProjectileRigidbody = throwObject.GetComponent<Rigidbody>();
         newProjectileRigidbody.AddForce(throwPoint.forward * throwObjectForce, ForceMode.Impulse);
 
         // throw the player

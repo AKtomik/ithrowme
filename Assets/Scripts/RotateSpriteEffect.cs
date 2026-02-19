@@ -8,6 +8,7 @@ public class RotateSpriteEffect : MonoBehaviour
     [SerializeField] private GameObject spriteObject;
     private Transform spriteTransform;
     private SpriteRenderer spriteRender;
+    private Rigidbody rb;
 
     public Vector3 continusRotate = Vector3.zero;
 
@@ -16,6 +17,7 @@ public class RotateSpriteEffect : MonoBehaviour
     {
         spriteTransform = spriteObject.GetComponent<Transform>();
         spriteRender = spriteObject.GetComponent<SpriteRenderer>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class RotateSpriteEffect : MonoBehaviour
         Sprite angleSprite = spritesImage[(int)(angleLook.y * spritesImage.Length)];
         spriteRender.sprite = angleSprite;
 
-        if (!continusRotate.Equals(Vector3.zero))
+        if (!continusRotate.Equals(Vector3.zero) && !rb.isKinematic)
             transform.Rotate(continusRotate * Time.deltaTime);
     }
 }
