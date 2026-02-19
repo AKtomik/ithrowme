@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class CapsulePlayerController : MonoBehaviour
     [Header("Throw Settings")]
     [SerializeField] private GameObject throwablePrefab;
     [SerializeField] private Transform throwPoint;
+    [SerializeField] private Transform takePoint;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
 
@@ -108,6 +110,24 @@ public class CapsulePlayerController : MonoBehaviour
     void OnTake(InputAction.CallbackContext ctx)
     {
         Debug.Log("player take action");
+        Collider[] hitColliders = Physics.OverlapSphere(takePoint.position, 1);
+        Debug.Log("collided "+hitColliders.Count());
+        GameObject takeObject = null;
+        TakableObject takeTake = null;
+        float takeDistance = 100;
+        foreach (var hitCollider in hitColliders)
+        {
+            TakableObject hitTake = null;
+            if (!hitCollider.TryGetComponent(out hitTake)) continue;
+            float hitDistance = Vector3.Distance(transform.position, hitCollider.transform.position);
+            if (!(hitDistance < takeDistance)) continue;
+            takeObject = hitCollider.gameObject;
+            takeDistance = hitDistance;
+            takeTake = hitTake;
+        }
+        if (takeTake == null) return;
+        takeTake.TakenByPlayer(this);
+        TookObject(takeObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
@@ -129,6 +149,11 @@ public class CapsulePlayerController : MonoBehaviour
 
         // throw the player
         rb.AddForce(transform.forward * throwPlayerForce, ForceMode.Impulse);
+    }
+
+    void TookObject(GameObject gameObject)
+    {
+        
     }
 
     void OnDash(InputAction.CallbackContext ctx)
