@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  collider: {fileID: 6246305158878094535}
 --- !u!1 &8798060807105314786
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ GameObject:
   - component: {fileID: 8270793251551437095}
   - component: {fileID: 8404667739707028190}
   m_Layer: 0
-  m_Name: ThrowableFlatSprite
+  m_Name: FlatSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

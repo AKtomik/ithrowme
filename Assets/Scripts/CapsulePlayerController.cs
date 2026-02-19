@@ -22,6 +22,7 @@ public class CapsulePlayerController : MonoBehaviour
     [SerializeField] private GameObject throwablePrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform takePoint;
+    [SerializeField] private Transform handPoint;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
 
@@ -33,6 +34,10 @@ public class CapsulePlayerController : MonoBehaviour
     private Quaternion rotation;
     private Vector3 rotaVelocity = Vector3.zero;
     private Vector3 rotaVelocityVelocity = Vector3.zero;
+
+    // in hand
+    private TakableObject handyTakable = null;
+    private GameObject handyObject = null;
 
     void Awake()
     {
@@ -126,8 +131,7 @@ public class CapsulePlayerController : MonoBehaviour
             takeTake = hitTake;
         }
         if (takeTake == null) return;
-        takeTake.TakenByPlayer(this);
-        TookObject(takeObject);
+        TookObject(takeObject, takeTake);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
@@ -151,9 +155,11 @@ public class CapsulePlayerController : MonoBehaviour
         rb.AddForce(transform.forward * throwPlayerForce, ForceMode.Impulse);
     }
 
-    void TookObject(GameObject gameObject)
+    void TookObject(GameObject takeObject, TakableObject takable)
     {
-        
+        takeObject.transform.SetParent(transform);
+        takeObject.transform.position = handPoint.position;
+        takable.InHand();
     }
 
     void OnDash(InputAction.CallbackContext ctx)
