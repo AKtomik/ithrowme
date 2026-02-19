@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CapsulePlayerController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerPivot: {fileID: 8190383844440651382}
-  sensitivity: 2
+  sensitivity: 0.5
   smoothTime: 0.5
   rotationMaxSpeed: 1000
   throwablePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
