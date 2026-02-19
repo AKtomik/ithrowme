@@ -221,8 +221,8 @@ MonoBehaviour:
   throwPoint: {fileID: 2204427449030681073}
   takePoint: {fileID: 7880076326460170316}
   handPoint: {fileID: 1205629004424289712}
-  throwObjectForce: 15
-  throwPlayerForce: -15
+  throwObjectForce: 30
+  throwPlayerForce: -30
   dashForce: 20
 --- !u!1 &2582806064360270056
 GameObject:
