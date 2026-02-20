@@ -19,7 +19,8 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float rotationMaxSpeed = 1000f;
 
     [Header("Throw Settings")]
-    [SerializeField] private GameObject throwablePrefab;
+    [SerializeField] private bool cheatProjectileTrigger = false;
+    [SerializeField] private GameObject cheatProjectilePrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform takePoint;
     [SerializeField] private Transform handPoint;
@@ -139,9 +140,12 @@ public class CapsulePlayer : MonoBehaviour
         Debug.Log("player throw action");
         if (handyObject == null)
         {
-            GameObject projectile = Instantiate(throwablePrefab, throwPoint.position, Quaternion.identity);
-            projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-            ThrowObject(projectile);
+            if (cheatProjectileTrigger)
+            {
+                GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
+                projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
+                ThrowObject(projectile);
+            }
             return;
         }
         ThrowObject(handyObject);

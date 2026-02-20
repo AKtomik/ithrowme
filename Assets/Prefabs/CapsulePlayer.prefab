@@ -217,7 +217,8 @@ MonoBehaviour:
   sensitivity: 0.5
   smoothTime: 0.5
   rotationMaxSpeed: 1000
-  throwablePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
+  cheatProjectileOn: 1
+  cheatProjectilePrefab: {fileID: 0}
   throwPoint: {fileID: 2204427449030681073}
   takePoint: {fileID: 7880076326460170316}
   handPoint: {fileID: 1205629004424289712}
