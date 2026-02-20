@@ -1068,6 +1068,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThrowableCup
       objectReference: {fileID: 0}
+    - target: {fileID: 2497994386166359637, guid: 69377dfc87a50d04b9c5a84f609ff59c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033553329189478848, guid: 69377dfc87a50d04b9c5a84f609ff59c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9189270478860929671, guid: 69377dfc87a50d04b9c5a84f609ff59c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.3430605
