@@ -163,13 +163,9 @@ public class CapsulePlayer : MonoBehaviour
         Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
         float throwCommonForce = throwBody.mass;
 
-        // throw the projectile
+        // move the projectile
         throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
-        throwBody.AddForce(throwPoint.forward * throwObjectForce * throwCommonForce, ForceMode.Impulse);
-
-        // throw the player
-        rb.AddForce(transform.forward * throwPlayerForce * throwCommonForce, ForceMode.Impulse);
-
+        
         // clear hand
         if (handyTakable != null)
         {
@@ -177,6 +173,13 @@ public class CapsulePlayer : MonoBehaviour
             handyTakable = null;
             handyObject = null;
         } 
+        
+        // throw the projectile
+        throwBody.AddForce(throwCommonForce * throwObjectForce * throwPoint.forward, ForceMode.Impulse);
+
+        // throw the player
+        rb.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
+
     }
 
     void OnDash(InputAction.CallbackContext ctx)
