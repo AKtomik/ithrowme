@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 881688394940782405, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933187616492720547, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 5033553329189478848}
     - target: {fileID: 950592863862442306, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -82,10 +90,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c24607b585e6bba43a2e57b27a997167, type: 3}
     - target: {fileID: 6206509549213433647, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
       propertyPath: m_Name
-      value: ThrowableCup
+      value: RotatableCup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731568203277062352, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+--- !u!65 &5033553329189478848 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 881688394940782405, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+  m_PrefabInstance: {fileID: 5325125003049793157}
+  m_PrefabAsset: {fileID: 0}
