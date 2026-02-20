@@ -1126,6 +1126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1808800211}
     m_Modifications:
+    - target: {fileID: 584795762929484861, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: lookZ
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1525262866475847358, guid: 35660851420692d4b9c422996c527e37, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.46967
@@ -1178,9 +1182,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: spritesImage.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c24607b585e6bba43a2e57b27a997167, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dbb27418c4f7fd48aff3e1faabd0e07, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 66d70340f8a854b4e9c4b2dddebb8e51, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: ac4ad010c63d8984e9f0cabea629c711, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 887da1b81a568184bae4df1c39efd911, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[5]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c70ec4038af1ff2458f992af6c1faf18, type: 3}
+    - target: {fileID: 7089212232609084001, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: 'spritesImage.Array.data[6]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 81351f76e297cc3478770dfc2a3a3928, type: 3}
     - target: {fileID: 7573328679025507637, guid: 35660851420692d4b9c422996c527e37, type: 3}
       propertyPath: m_Name
       value: ThrowableCup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404667739707028190, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404667739707028190, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404667739707028190, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c24607b585e6bba43a2e57b27a997167, type: 3}
+    - target: {fileID: 8404667739707028190, guid: 35660851420692d4b9c422996c527e37, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
