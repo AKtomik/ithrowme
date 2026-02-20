@@ -60,7 +60,7 @@ public class CapsulePlayer : MonoBehaviour
         dashAction.Enable();
 
         throwAction.performed += OnThrow;
-        takeAction.performed += OnTake;
+        takeAction.canceled += OnTake;
         dashAction.performed += OnDash;
     }
 
@@ -116,6 +116,7 @@ public class CapsulePlayer : MonoBehaviour
     void OnTake(InputAction.CallbackContext ctx)
     {
         Debug.Log("player take action");
+        if (handyObject != null) return;
         Collider[] hitColliders = Physics.OverlapSphere(takePoint.position, 1);
         Debug.Log("collided "+hitColliders.Count());
         GameObject takeObject = null;
