@@ -156,13 +156,15 @@ public class CapsulePlayer : MonoBehaviour
     
     void ThrowObject(GameObject throwObject)
     {
+        Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
+        float throwCommonForce = throwBody.mass;
+
         // throw the projectile
         throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
-        Rigidbody newProjectileRigidbody = throwObject.GetComponent<Rigidbody>();
-        newProjectileRigidbody.AddForce(throwPoint.forward * throwObjectForce, ForceMode.Impulse);
+        throwBody.AddForce(throwPoint.forward * throwObjectForce * throwCommonForce, ForceMode.Impulse);
 
         // throw the player
-        rb.AddForce(transform.forward * throwPlayerForce, ForceMode.Impulse);
+        rb.AddForce(transform.forward * throwPlayerForce * throwCommonForce, ForceMode.Impulse);
 
         // clear hand
         if (handyTakable != null)
