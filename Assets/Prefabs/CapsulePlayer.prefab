@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 843031394317638456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.86, y: 4.38, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -217,7 +217,7 @@ MonoBehaviour:
   sensitivity: 0.5
   smoothTime: 0.5
   rotationMaxSpeed: 1000
-  cheatProjectileOn: 1
+  cheatProjectileTrigger: 0
   cheatProjectilePrefab: {fileID: 0}
   throwPoint: {fileID: 2204427449030681073}
   takePoint: {fileID: 7880076326460170316}
