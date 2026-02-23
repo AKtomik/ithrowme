@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 881688394940782405, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 933187616492720547, guid: 2acfbabcdde66b74199bedfd6a7b0567, type: 3}
       propertyPath: collider
       value: 
