@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4849497864135453662}
   - component: {fileID: 950592863862442306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlatSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 7248485189358830728}
   - component: {fileID: 4809215102734125510}
   - component: {fileID: 933187616492720547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotatableBase
-  m_TagString: Untagged
+  m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 6714332582508069805}
   - component: {fileID: 4153139949398268788}
   - component: {fileID: 3968428346120763690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DebugCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

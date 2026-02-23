@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7880076326460170316}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TakePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 5443315480973572358}
   - component: {fileID: 2702942499978624594}
   - component: {fileID: 1786189650715054160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CapsulePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 8353002582863186282}
   - component: {fileID: 6374174721536641050}
   - component: {fileID: 48784543192852590}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205629004424289712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HandPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204427449030681073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ThrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
