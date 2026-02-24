@@ -43,13 +43,15 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
         lookAction = inputActions.FindAction("Player/Look");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
         
         rotation = playerPivot.localRotation;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void OnEnable()
