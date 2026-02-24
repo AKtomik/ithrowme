@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Jobs;
 using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
@@ -15,17 +18,19 @@ public class ButtonScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         if (doorScript)
         {
-            if (other.CompareTag("Items"))
+            if (collision.gameObject.CompareTag("Items"))
             {
                 doorScript.OpeningDoors();
-                
+
                 //// détruire item
             }
         }
-
     }
+
+
+
 }
