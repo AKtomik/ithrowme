@@ -3,7 +3,7 @@ using UnityEngine;
 public class DoorOpeningScript : MonoBehaviour
 {
     public bool isOpened = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     private Animator m_Animator;
     void Start()
     {
@@ -21,7 +21,16 @@ public class DoorOpeningScript : MonoBehaviour
         {
             m_Animator.SetTrigger("Open");
             isOpened = true;
+            Invoke("ClosingDoors", 1f);
         }
         
+    }
+    public void ClosingDoors()
+    {
+        if (isOpened)
+        {
+            m_Animator.SetTrigger("Close");
+            isOpened = false;
+        }
     }
 }
