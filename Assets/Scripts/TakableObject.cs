@@ -36,6 +36,7 @@ public class TakableObject : MonoBehaviour
     {
         // enable
         collider.enabled = true;
+        Debug.Log("hello off hand owo");
         rb.isKinematic = false;
         // reparent
         transform.SetParent(originalParentTransform);
