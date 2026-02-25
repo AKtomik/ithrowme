@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool isOpened = false;
+    
+    private Animator m_Animator;
     void Start()
     {
-        
+     m_Animator = GetComponent<Animator>();   
     }
 
     // Update is called once per frame
@@ -15,6 +17,20 @@ public class DoorOpeningScript : MonoBehaviour
     }
     public void OpeningDoors()
     {
-        Destroy(gameObject);
+        if (!isOpened)
+        {
+            m_Animator.SetTrigger("Open");
+            isOpened = true;
+            Invoke("ClosingDoors", 1f);
+        }
+        
+    }
+    public void ClosingDoors()
+    {
+        if (isOpened)
+        {
+            m_Animator.SetTrigger("Close");
+            isOpened = false;
+        }
     }
 }
