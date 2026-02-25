@@ -120,7 +120,6 @@ public class CapsulePlayer : MonoBehaviour
         Debug.Log("player take action");
         if (handyObject != null) return;
         Collider[] hitColliders = Physics.OverlapSphere(takePoint.position, 1);
-        Debug.Log("collided "+hitColliders.Count());
         GameObject takeObject = null;
         TakableObject takeTake = null;
         float takeDistance = 100;
