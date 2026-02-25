@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5692055168028880326}
   - component: {fileID: 8107333156453070434}
   - component: {fileID: 2130381005222448085}
-  - component: {fileID: 8066150365760258434}
   - component: {fileID: 4911661003782264297}
   - component: {fileID: 7459839687620579976}
   m_Layer: 0
@@ -93,18 +92,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8066150365760258434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451035042875029695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
 --- !u!65 &4911661003782264297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,6 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8383745192233304824}
+  - component: {fileID: 3128872731187240120}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -183,6 +171,19 @@ Transform:
   - {fileID: 1344682092206075416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3128872731187240120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499871058395644445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
+  isOpened: 0
 --- !u!1 &6570944167260388111
 GameObject:
   m_ObjectHideFlags: 0

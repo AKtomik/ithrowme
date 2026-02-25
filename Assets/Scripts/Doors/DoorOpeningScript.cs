@@ -7,7 +7,7 @@ public class DoorOpeningScript : MonoBehaviour
     private Animator m_Animator;
     void Start()
     {
-     m_Animator = GetComponent<Animator>();   
+     m_Animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -15,10 +15,14 @@ public class DoorOpeningScript : MonoBehaviour
     {
         
     }
+
+    /// maybe a single function ?? 
+    /// flip flop type with isOpened
     public void OpeningDoors()
     {
         if (!isOpened)
         {
+            m_Animator.ResetTrigger("Close");
             m_Animator.SetTrigger("Open");
             isOpened = true;
             Invoke("ClosingDoors", 1f);
@@ -29,6 +33,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (isOpened)
         {
+            m_Animator.ResetTrigger("Open");
             m_Animator.SetTrigger("Close");
             isOpened = false;
         }
