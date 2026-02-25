@@ -25,9 +25,14 @@ public class DoorOpeningScript : MonoBehaviour
             m_Animator.ResetTrigger("Close");
             m_Animator.SetTrigger("Open");
             isOpened = true;
-            Invoke("ClosingDoors", 1f);
+            CancelInvoke();
+            Invoke("ClosingDoors", 5f);
         }
-        
+        else
+        {
+            CancelInvoke();
+            Invoke("ClosingDoors", 5f);
+        }
     }
     public void ClosingDoors()
     {
