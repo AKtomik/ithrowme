@@ -24,6 +24,8 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform takePoint;
     [SerializeField] private Transform handPoint;
+    [SerializeField] private float throwMassBase = 1;
+    [SerializeField] private float throwMassInfluence = 1;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
 
@@ -163,7 +165,7 @@ public class CapsulePlayer : MonoBehaviour
     void ThrowObject(GameObject throwObject)
     {
         Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
-        float throwCommonForce = throwBody.mass;
+        float throwCommonForce = throwMassBase + throwBody.mass * throwMassInfluence;
 
         // move the projectile
         throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
