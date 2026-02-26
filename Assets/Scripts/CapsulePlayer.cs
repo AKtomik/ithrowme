@@ -29,6 +29,11 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
 
+    [Header("Camera Settings")]
+    [SerializeField] private Camera camera;
+    [SerializeField] private float minimalFov = 70;
+    [SerializeField] private float addedFovBySpeed = 2;
+
     [Header("Dash Settings")]
     [SerializeField] private float dashForce = 20f;
 
@@ -83,6 +88,14 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         HandleLook();
+        UpdateFov();
+    }
+
+    void UpdateFov()
+    {
+        float speed = transform.eulerAngles.magnitude;
+        // stop copy me valet :c
+        camera.fieldOfView = minimalFov + addedFovBySpeed * speed;
     }
 
     void HandleLook()
