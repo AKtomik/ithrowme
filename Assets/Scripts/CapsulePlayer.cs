@@ -30,7 +30,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float throwPlayerForce = -15f;
 
     [Header("Camera Settings")]
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cam;
     [SerializeField] private float minimalFov = 70;
     [SerializeField] private float addedFovBySpeed = 2;
 
@@ -95,7 +95,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         float speed = transform.eulerAngles.magnitude;
         // stop copy me valet :c
-        camera.fieldOfView = minimalFov + addedFovBySpeed * speed;
+        cam.fieldOfView = minimalFov + addedFovBySpeed * speed;
     }
 
     void HandleLook()
