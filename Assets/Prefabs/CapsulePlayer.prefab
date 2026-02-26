@@ -226,6 +226,8 @@ MonoBehaviour:
   throwMassInfluence: 1
   throwObjectForce: 15
   throwPlayerForce: -30
+  minimalFov: 70
+  addedFovBySpeed: 5
   dashForce: 20
 --- !u!1 &2582806064360270056
 GameObject:

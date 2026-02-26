@@ -30,7 +30,6 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float throwPlayerForce = -15f;
 
     [Header("Camera Settings")]
-    [SerializeField] private Camera cam;
     [SerializeField] private float minimalFov = 70;
     [SerializeField] private float addedFovBySpeed = 2;
 
@@ -38,6 +37,8 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float dashForce = 20f;
 
     private Rigidbody rb;
+    private Camera cam;
+    private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
     private Quaternion rotation;
     private Vector3 rotaVelocity = Vector3.zero;
@@ -50,12 +51,14 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
         
         rotation = playerPivot.localRotation;
+        lastPosition = transform.position;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -93,9 +96,11 @@ public class CapsulePlayer : MonoBehaviour
 
     void UpdateFov()
     {
-        float speed = transform.eulerAngles.magnitude;
         // stop copy me valet :c
+        float speed = Vector3.Magnitude(rb.linearVelocity);
+        lastPosition = transform.position;
         cam.fieldOfView = minimalFov + addedFovBySpeed * speed;
+        Debug.Log(minimalFov + addedFovBySpeed * speed);
     }
 
     void HandleLook()
