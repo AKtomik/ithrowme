@@ -125,9 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CapsulePlayerController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerPivot: {fileID: 8190383844440651382}
-  sensitivity: 0.5
-  smoothTime: 0.5
-  rotationMaxSpeed: 1000
+  sensitivity: 0.3
+  smoothTime: 0.25
+  rotationMaxSpeed: 800
   playerBody: {fileID: 2702942499978624594}
   takePoint: {fileID: 2855366208196404834}
   takeRadius: 1
