@@ -31,8 +31,11 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Camera Settings")]
     [SerializeField] private float minimalFov = 70;
-    [SerializeField] private float maximalFov = 120;
+    [SerializeField] private float maximalFov = 140;
     [SerializeField] private float addedFovBySpeed = 2;
+    [SerializeField] private float smoothyFovTime = .3f;
+    private float smoothyFov = 70;
+    private float fovVelocity = 0f;
 
     [Header("Dash Settings")]
     [SerializeField] private float dashForce = 20f;
@@ -101,7 +104,9 @@ public class CapsulePlayer : MonoBehaviour
         float speed = Vector3.Magnitude(rb.linearVelocity);
         lastPosition = transform.position;
         float claculatedFov = minimalFov + addedFovBySpeed * speed;
-        cam.fieldOfView = (claculatedFov > maximalFov) ? maximalFov : claculatedFov;
+        if (claculatedFov > maximalFov) claculatedFov = maximalFov;
+        smoothyFov = Mathf.SmoothDamp(smoothyFov, claculatedFov, ref fovVelocity, smoothyFovTime);
+        cam.fieldOfView = smoothyFov;
     }
 
     void HandleLook()
