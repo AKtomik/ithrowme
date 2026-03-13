@@ -19,11 +19,12 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float rotationMaxSpeed = 1000f;
 
     [Header("Throw Settings")]
-    [SerializeField] private bool cheatProjectileActivated = false;
-    [SerializeField] private GameObject cheatProjectilePrefab;
+    [SerializeField] private Rigidbody playerBody;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform takePoint;
     [SerializeField] private Transform handPoint;
+    [SerializeField] private bool cheatProjectileActivated = false;
+    [SerializeField] private GameObject cheatProjectilePrefab;
     [SerializeField] private float throwMassBase = 1;
     [SerializeField] private float throwMassInfluence = 1;
     [SerializeField] private float throwObjectForce = 15f;
@@ -40,7 +41,6 @@ public class CapsulePlayer : MonoBehaviour
     [Header("Dash Settings")]
     [SerializeField] private float dashForce = 20f;
 
-    private Rigidbody rb;
     private Camera cam;
     private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
@@ -54,7 +54,6 @@ public class CapsulePlayer : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
         takeAction = inputActions.FindAction("Player/Take");
@@ -101,7 +100,7 @@ public class CapsulePlayer : MonoBehaviour
     void UpdateFov()
     {
         // stop copy me valet :c
-        float speed = Vector3.Magnitude(rb.linearVelocity);
+        float speed = Vector3.Magnitude(playerBody.linearVelocity);
         lastPosition = transform.position;
         float claculatedFov = minimalFov + addedFovBySpeed * speed;
         if (claculatedFov > maximalFov) claculatedFov = maximalFov;
@@ -206,12 +205,12 @@ public class CapsulePlayer : MonoBehaviour
         throwBody.AddForce(throwCommonForce * throwObjectForce * throwPoint.forward, ForceMode.Impulse);
 
         // throw the player
-        rb.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
+        playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
 
     }
 
     void OnDash(InputAction.CallbackContext ctx)
     {
-        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+        playerBody.AddForce(transform.forward * dashForce, ForceMode.Impulse);
     }
 }
