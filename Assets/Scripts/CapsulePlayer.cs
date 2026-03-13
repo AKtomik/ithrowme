@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,6 +55,7 @@ public class CapsulePlayer : MonoBehaviour
     private GameObject reachableObject = null;
 
     // in hand
+    private bool anythingInHand = false;
     private TakableObject handyTakable = null;
     private GameObject handyObject = null;
 
@@ -148,7 +150,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void CheckReachable()
     {
-        if (handyObject != null) return;
+        if (anythingInHand) return;
         Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
         GameObject nearestObject = null;
         float nearestDistance = 100;
@@ -168,14 +170,14 @@ public class CapsulePlayer : MonoBehaviour
     void OnTake(InputAction.CallbackContext ctx)
     {
         Debug.Log("player take action");
-        if (handyObject != null || !anythingReachable) return;
+        if (anythingInHand || !anythingReachable) return;
         TookObject(reachableObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
     {
         Debug.Log("player throw action");
-        if (handyObject == null)
+        if (!anythingInHand)
         {
             if (cheatProjectileActivated)
             {
@@ -194,6 +196,7 @@ public class CapsulePlayer : MonoBehaviour
         takable.InHand(handPoint);
         handyTakable = takable;
         handyObject = takeObject;
+        anythingInHand = true;
     }
     
     void ThrowObject(GameObject throwObject)
@@ -210,6 +213,7 @@ public class CapsulePlayer : MonoBehaviour
             handyTakable.OffHand();
             handyTakable = null;
             handyObject = null;
+            anythingInHand = false;
         } 
         
         // throw the projectile
@@ -224,4 +228,14 @@ public class CapsulePlayer : MonoBehaviour
     {
         playerBody.AddForce(transform.forward * dashForce, ForceMode.Impulse);
     }
+
+	void OnDrawGizmos()
+	{
+        Gizmos.color = Color.azure;
+        if (anythingInHand) Gizmos.color = Color.skyBlue;
+        else if (anythingReachable) Gizmos.color = Color.green;
+        else Gizmos.color = Color.red;
+        Gizmos.color = Gizmos.color.WithAlpha(.3f);
+		Gizmos.DrawSphere(takePoint.position, takeRadius);
+	}
 }
