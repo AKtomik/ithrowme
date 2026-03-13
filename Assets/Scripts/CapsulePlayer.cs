@@ -152,13 +152,14 @@ public class CapsulePlayer : MonoBehaviour
     {
         if (anythingInHand) return;
         Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
         float nearestDistance = 100;
         foreach (var loopCollider in inRangeColliders)
         {
             GameObject loopObject = loopCollider.gameObject;
 			if (!loopObject.TryGetComponent(out TakableObject loopTake)) continue;
-			float loopDistance = Vector3.Distance(transform.position, loopCollider.transform.position);
+			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
             if (!(loopDistance < nearestDistance)) continue;
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
