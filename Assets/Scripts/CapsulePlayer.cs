@@ -100,7 +100,6 @@ public class CapsulePlayer : MonoBehaviour
         float speed = Vector3.Magnitude(rb.linearVelocity);
         lastPosition = transform.position;
         cam.fieldOfView = minimalFov + addedFovBySpeed * speed;
-        Debug.Log(minimalFov + addedFovBySpeed * speed);
     }
 
     void HandleLook()
