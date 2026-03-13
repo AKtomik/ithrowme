@@ -31,6 +31,7 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Camera Settings")]
     [SerializeField] private float minimalFov = 70;
+    [SerializeField] private float maximalFov = 120;
     [SerializeField] private float addedFovBySpeed = 2;
 
     [Header("Dash Settings")]
@@ -99,7 +100,8 @@ public class CapsulePlayer : MonoBehaviour
         // stop copy me valet :c
         float speed = Vector3.Magnitude(rb.linearVelocity);
         lastPosition = transform.position;
-        cam.fieldOfView = minimalFov + addedFovBySpeed * speed;
+        float claculatedFov = minimalFov + addedFovBySpeed * speed;
+        cam.fieldOfView = (claculatedFov > maximalFov) ? maximalFov : claculatedFov;
     }
 
     void HandleLook()
