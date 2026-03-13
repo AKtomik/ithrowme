@@ -24,13 +24,25 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform takePoint;
     [SerializeField] private Transform handPoint;
+    [SerializeField] private float throwMassBase = 1;
+    [SerializeField] private float throwMassInfluence = 1;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
+
+    [Header("Camera Settings")]
+    [SerializeField] private float minimalFov = 70;
+    [SerializeField] private float maximalFov = 140;
+    [SerializeField] private float addedFovBySpeed = 2;
+    [SerializeField] private float smoothyFovTime = .3f;
+    private float smoothyFov = 70;
+    private float fovVelocity = 0f;
 
     [Header("Dash Settings")]
     [SerializeField] private float dashForce = 20f;
 
     private Rigidbody rb;
+    private Camera cam;
+    private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
     private Quaternion rotation;
     private Vector3 rotaVelocity = Vector3.zero;
@@ -43,12 +55,14 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         dashAction = inputActions.FindAction("Player/Dash");
         
         rotation = playerPivot.localRotation;
+        lastPosition = transform.position;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -81,6 +95,18 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         HandleLook();
+        UpdateFov();
+    }
+
+    void UpdateFov()
+    {
+        // stop copy me valet :c
+        float speed = Vector3.Magnitude(rb.linearVelocity);
+        lastPosition = transform.position;
+        float claculatedFov = minimalFov + addedFovBySpeed * speed;
+        if (claculatedFov > maximalFov) claculatedFov = maximalFov;
+        smoothyFov = Mathf.SmoothDamp(smoothyFov, claculatedFov, ref fovVelocity, smoothyFovTime);
+        cam.fieldOfView = smoothyFov;
     }
 
     void HandleLook()
@@ -120,7 +146,6 @@ public class CapsulePlayer : MonoBehaviour
         Debug.Log("player take action");
         if (handyObject != null) return;
         Collider[] hitColliders = Physics.OverlapSphere(takePoint.position, 1);
-        Debug.Log("collided "+hitColliders.Count());
         GameObject takeObject = null;
         TakableObject takeTake = null;
         float takeDistance = 100;
@@ -164,7 +189,7 @@ public class CapsulePlayer : MonoBehaviour
     void ThrowObject(GameObject throwObject)
     {
         Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
-        float throwCommonForce = throwBody.mass;
+        float throwCommonForce = throwMassBase + throwBody.mass * throwMassInfluence;
 
         // move the projectile
         throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);

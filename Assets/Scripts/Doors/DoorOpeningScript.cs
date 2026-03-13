@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool isOpened = false;
+    
+    private Animator m_Animator;
     void Start()
     {
-        
+     m_Animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -13,8 +15,32 @@ public class DoorOpeningScript : MonoBehaviour
     {
         
     }
+
+    /// maybe a single function ?? 
+    /// flip flop type with isOpened
     public void OpeningDoors()
     {
-        Destroy(gameObject);
+        if (!isOpened)
+        {
+            m_Animator.ResetTrigger("Close");
+            m_Animator.SetTrigger("Open");
+            isOpened = true;
+            CancelInvoke();
+            Invoke("ClosingDoors", 5f);
+        }
+        else
+        {
+            CancelInvoke();
+            Invoke("ClosingDoors", 5f);
+        }
+    }
+    public void ClosingDoors()
+    {
+        if (isOpened)
+        {
+            m_Animator.ResetTrigger("Open");
+            m_Animator.SetTrigger("Close");
+            isOpened = false;
+        }
     }
 }
