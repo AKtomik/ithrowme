@@ -20,8 +20,8 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Throw Settings")]
     [SerializeField] private Rigidbody playerBody;
-    [SerializeField] private SphereCollider takeSphere;
-    private SphereAreaTrigger takeSphereArea;
+    [SerializeField] private Transform takePoint;
+    [SerializeField] private float takeRadius;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private Transform handPoint;
     [SerializeField] private bool cheatProjectileActivated = false;
@@ -49,6 +49,10 @@ public class CapsulePlayer : MonoBehaviour
     private Vector3 rotaVelocity = Vector3.zero;
     private Vector3 rotaVelocityVelocity = Vector3.zero;
 
+    // reachable
+    private bool anythingReachable = false;
+    private GameObject reachableObject = null;
+
     // in hand
     private TakableObject handyTakable = null;
     private GameObject handyObject = null;
@@ -63,8 +67,6 @@ public class CapsulePlayer : MonoBehaviour
         
         rotation = playerPivot.localRotation;
         lastPosition = transform.position;
-        
-        takeSphereArea = takeSphere.GetComponent<SphereAreaTrigger>();
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -98,6 +100,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         HandleLook();
         UpdateFov();
+        CheckReachable();
     }
 
     void UpdateFov()
@@ -143,12 +146,30 @@ public class CapsulePlayer : MonoBehaviour
         playerPivot.localRotation = rotation;
     }
 
+    void CheckReachable()
+    {
+        if (handyObject != null) return;
+        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        GameObject nearestObject = null;
+        float nearestDistance = 100;
+        foreach (var loopCollider in inRangeColliders)
+        {
+            GameObject loopObject = loopCollider.gameObject;
+			if (!loopObject.TryGetComponent(out TakableObject loopTake)) continue;
+			float loopDistance = Vector3.Distance(transform.position, loopCollider.transform.position);
+            if (!(loopDistance < nearestDistance)) continue;
+            nearestObject = loopCollider.gameObject;
+            nearestDistance = loopDistance;
+        }
+        reachableObject = nearestObject;
+        anythingReachable = nearestObject != null;
+    }
+
     void OnTake(InputAction.CallbackContext ctx)
     {
         Debug.Log("player take action");
-        if (handyObject != null) return;
-        if (takeSphereArea.HasObjectInRange())
-        TookObject(takeSphereArea.GetNearestObject());
+        if (handyObject != null || !anythingReachable) return;
+        TookObject(reachableObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
