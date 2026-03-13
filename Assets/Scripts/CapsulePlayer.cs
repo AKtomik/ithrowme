@@ -20,8 +20,9 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Throw Settings")]
     [SerializeField] private Rigidbody playerBody;
+    [SerializeField] private SphereCollider takeSphere;
+    private SphereAreaTrigger takeSphereArea;
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private Transform takePoint;
     [SerializeField] private Transform handPoint;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
@@ -62,6 +63,8 @@ public class CapsulePlayer : MonoBehaviour
         
         rotation = playerPivot.localRotation;
         lastPosition = transform.position;
+        
+        takeSphereArea = takeSphere.GetComponent<SphereAreaTrigger>();
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -144,22 +147,8 @@ public class CapsulePlayer : MonoBehaviour
     {
         Debug.Log("player take action");
         if (handyObject != null) return;
-        Collider[] hitColliders = Physics.OverlapSphere(takePoint.position, 1);
-        GameObject takeObject = null;
-        TakableObject takeTake = null;
-        float takeDistance = 100;
-        foreach (var hitCollider in hitColliders)
-        {
-            TakableObject hitTake = null;
-            if (!hitCollider.TryGetComponent(out hitTake)) continue;
-            float hitDistance = Vector3.Distance(transform.position, hitCollider.transform.position);
-            if (!(hitDistance < takeDistance)) continue;
-            takeObject = hitCollider.gameObject;
-            takeDistance = hitDistance;
-            takeTake = hitTake;
-        }
-        if (takeTake == null) return;
-        TookObject(takeObject, takeTake);
+        if (takeSphereArea.HasObjectInRange())
+        TookObject(takeSphereArea.GetNearestObject());
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
@@ -178,8 +167,9 @@ public class CapsulePlayer : MonoBehaviour
         ThrowObject(handyObject);
     }
 
-    void TookObject(GameObject takeObject, TakableObject takable)
+    void TookObject(GameObject takeObject)
     {
+        TakableObject takable = takeObject.GetComponent<TakableObject>();
         takable.InHand(handPoint);
         handyTakable = takable;
         handyObject = takeObject;
