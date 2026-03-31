@@ -3,6 +3,9 @@ using UnityEngine;
 public class DoorOpeningScript : MonoBehaviour
 {
     public bool isOpened = false;
+    public bool automaticOpening = true;
+
+    [SerializeField] private AudioSource doorSlam;
     
     private Animator m_Animator;
     void Start()
@@ -22,25 +25,39 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (!isOpened)
         {
+            doorSlam.Play();
             m_Animator.ResetTrigger("Close");
             m_Animator.SetTrigger("Open");
             isOpened = true;
-            CancelInvoke();
-            Invoke("ClosingDoors", 5f);
+
         }
-        else
-        {
-            CancelInvoke();
-            Invoke("ClosingDoors", 5f);
-        }
+
     }
     public void ClosingDoors()
     {
         if (isOpened)
         {
+            doorSlam.Play();
             m_Animator.ResetTrigger("Open");
             m_Animator.SetTrigger("Close");
             isOpened = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (automaticOpening && other.gameObject.CompareTag("Player"))
+        {
+            OpeningDoors();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (automaticOpening && other.gameObject.CompareTag("Player"))
+        {
+            ClosingDoors();
         }
     }
 }
