@@ -12,13 +12,14 @@ public class ChangeMissionScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MissionText.gameObject.SetActive(false);
+        
     }
 
 
     public void changeMission(string missionName)
     {
-        if (!MissionText.gameObject.activeSelf)
+        
+        if (!(MissionText.gameObject.activeSelf))
         {
             MissionText.gameObject.SetActive(true);
         }
