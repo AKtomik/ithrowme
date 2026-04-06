@@ -1,30 +1,27 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class ChangeMissionScript : MonoBehaviour
 {
-    // This script must be in the main canva //
+    public GameObject MissionPrefab;       // prefab with a TextMeshProUGUI
+    public Transform MissionContainer;    // vertical layout group
 
-    [SerializeField] TextMeshProUGUI MissionText; // put the mission placeholder here
+    private List<GameObject> spawnedMissions = new List<GameObject>(); // every missions displayed
 
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void RefreshMissions(List<string> missionTexts)
     {
-        
-    }
+        // destroy old prefab before create new ones
+        foreach (GameObject obj in spawnedMissions)
+            Destroy(obj);
+        spawnedMissions.Clear();
 
-
-    public void changeMission(string missionName)
-    {
-        
-        if (!(MissionText.gameObject.activeSelf))
+        // Instancier un prefab par mission active
+        foreach (string text in missionTexts)
         {
-            MissionText.gameObject.SetActive(true);
+            GameObject instance = Instantiate(MissionPrefab, MissionContainer); // for every active mission : instantiate
+            instance.GetComponentInChildren<TextMeshProUGUI>().text = text; // write text
+            spawnedMissions.Add(instance); // add to spawnedMissions
         }
-
-        MissionText.text = missionName;
     }
-
 }
