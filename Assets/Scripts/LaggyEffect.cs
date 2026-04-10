@@ -35,6 +35,6 @@ public class LaggyEffect : MonoBehaviour
 
     void RefreshRender()
     {
-        renderTransform.rotation = realTransform.rotation;
+        renderTransform.localRotation  = realTransform.localRotation;
     }
 }
