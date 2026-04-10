@@ -158,7 +158,7 @@ public class CapsulePlayer : MonoBehaviour
         foreach (var loopCollider in inRangeColliders)
         {
             GameObject loopObject = loopCollider.gameObject;
-			if (!loopObject.TryGetComponent(out TakableObject loopTake)) continue;
+			if (!loopObject.TryGetComponent(out TakableReference loopTakeRef)) continue;
 			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
             if (!(loopDistance < nearestDistance)) continue;
             nearestObject = loopCollider.gameObject;
@@ -193,7 +193,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void TookObject(GameObject takeObject)
     {
-        TakableObject takable = takeObject.GetComponent<TakableObject>();
+        TakableObject takable = takeObject.GetComponent<TakableReference>().takableObject;
         takable.InHand(handPoint);
         handyTakable = takable;
         handyObject = takeObject;

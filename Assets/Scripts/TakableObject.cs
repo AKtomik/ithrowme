@@ -10,6 +10,8 @@ public class TakableObject : MonoBehaviour
     void Start()
     {
         originalParentTransform = transform.parent;
+        TakableReference takableReference = collider.gameObject.AddComponent(typeof(TakableReference)) as TakableReference;
+        takableReference.takableObject = this;
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7424950464079167812}
   - component: {fileID: 8688989628292033826}
+  - component: {fileID: 3548057806262439050}
   m_Layer: 0
   m_Name: LaggyCup
   m_TagString: Untagged
@@ -49,6 +50,20 @@ MonoBehaviour:
   renderTransform: {fileID: 8602570093714776806}
   realTransform: {fileID: 350459782391824057}
   renderFps: 3
+--- !u!114 &3548057806262439050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340945248353486059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakableObject
+  collider: {fileID: 4765784497441467891}
+  rigidBody: {fileID: 2257565808704748317}
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -139,9 +154,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4765784497441467891}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3604574369980625156}
   m_SourcePrefab: {fileID: 100100000, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
 --- !u!4 &350459782391824057 stripped
 Transform:
@@ -202,20 +214,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2201791816437618169, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
---- !u!114 &3604574369980625156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123302843990025219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TakableObject
-  collider: {fileID: 4765784497441467891}
-  rigidBody: {fileID: 2257565808704748317}
 --- !u!1001 &8135979872665847053
 PrefabInstance:
   m_ObjectHideFlags: 0
