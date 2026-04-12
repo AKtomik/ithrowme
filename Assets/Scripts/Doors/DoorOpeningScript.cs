@@ -47,7 +47,7 @@ public class DoorOpeningScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (automaticOpening && other.gameObject.CompareTag("Player"))
+        if (automaticOpening && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Items")))
         {
             OpeningDoors();
         }
@@ -55,7 +55,7 @@ public class DoorOpeningScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (automaticOpening && other.gameObject.CompareTag("Player"))
+        if (automaticOpening && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Items")))
         {
             ClosingDoors();
         }
