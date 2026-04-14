@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
+    public bool locked = false;
     public bool isOpened = false;
     public bool automaticOpening = true;
 
@@ -23,7 +24,7 @@ public class DoorOpeningScript : MonoBehaviour
     /// flip flop type with isOpened
     public void OpeningDoors()
     {
-        if (!isOpened)
+        if (!isOpened && !locked)
         {
             doorSlam.Play();
             m_Animator.ResetTrigger("Close");
@@ -47,9 +48,15 @@ public class DoorOpeningScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (automaticOpening && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Items")))
+        if (automaticOpening && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
+        }
+        else if (automaticOpening && other.gameObject.CompareTag("Items"))
+        {
+            OpeningDoors();
+            CancelInvoke("ClosingDoors");
+            Invoke("ClosingDoor", 10);
         }
     }
 
@@ -58,6 +65,7 @@ public class DoorOpeningScript : MonoBehaviour
         if (automaticOpening && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Items")))
         {
             ClosingDoors();
+            CancelInvoke("ClosingDoors");
         }
     }
 }
