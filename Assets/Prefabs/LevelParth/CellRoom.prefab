@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 3, z: 3}
+  m_LocalScale: {x: 0.1, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8344740692369173193}
@@ -155,7 +155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1622796951501513672, guid: 12610b8777751e548bbb77b6ec9320fc, type: 3}
       propertyPath: m_Name
-      value: RoomParth
+      value: RoomWalls
       objectReference: {fileID: 0}
     - target: {fileID: 2799440428195151427, guid: 12610b8777751e548bbb77b6ec9320fc, type: 3}
       propertyPath: m_LocalPosition.x
