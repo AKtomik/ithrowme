@@ -1147,9 +1147,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NorthEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 5864131200647345174, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6846106528400695202, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
       value: SouthEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857336775969017973, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8784644136783455944, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
