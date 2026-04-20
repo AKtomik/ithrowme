@@ -137,8 +137,8 @@ MonoBehaviour:
   cheatProjectilePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
   throwMassBase: 1
   throwMassInfluence: 1
-  throwObjectForce: 15
-  throwPlayerForce: -30
+  throwObjectForce: 5
+  throwPlayerForce: -15
   minimalFov: 70
   maximalFov: 100
   addedFovBySpeed: 3
