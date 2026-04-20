@@ -1135,9 +1135,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2636576899889407012, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: EastEntrance
+      objectReference: {fileID: 0}
     - target: {fileID: 2834801906293097047, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
       value: CenterParth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3088540866985132103, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: NorthEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846106528400695202, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: SouthEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784644136783455944, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: WestEntrance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
