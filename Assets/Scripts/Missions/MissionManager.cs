@@ -4,8 +4,10 @@ using TMPro;
 
 public class MissionManager : MonoBehaviour
 {
-    public GameObject MissionTextPrefab;// prefab with a TextMeshProUGUI
+    public GameObject MissionActiveTextPrefab;// prefab with a TextMeshProUGUI
     public Transform MissionUiContainer;// vertical layout group
+    public List<string> MissionsDefinition = new List<string>() { "mission 0 lore", "mission 1 lore" };
+    public List<int> InitialMissions = new List<int>() { 0 };
     
     private Dictionary<int, string> missionsDictionnary = new Dictionary<int, string>(); // list of all the missions
     private List<int> activeMissions = new List<int>(); // list of the active missions (the ones who are displayed)
@@ -66,7 +68,7 @@ public class MissionManager : MonoBehaviour
         // Instancier un prefab par mission active
         foreach (string text in GetActiveMissionTexts())
         {
-            GameObject instance = Instantiate(MissionTextPrefab, MissionUiContainer); // for every active mission : instantiate
+            GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
             instance.GetComponentInChildren<TextMeshProUGUI>().text = text; // write text
             spawnedTextMissions.Add(instance); // add to spawnedMissions
         }
@@ -74,12 +76,10 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
-        missionsDictionnary.Add(1, "Réparer le générateur");
-        missionsDictionnary.Add(2, "Trouver le fusible");
-        missionsDictionnary.Add(3, "Parler au gardien");
-
-        // Démarrer avec 2 missions simultanées
-        AddMission(1);
-        AddMission(2);
+        for (int i = 0; i < MissionsDefinition.Count; i++)
+            missionsDictionnary.Add(i, MissionsDefinition[i]);
+        
+        foreach (int id in InitialMissions)
+            AddMission(id);
     }
 }
