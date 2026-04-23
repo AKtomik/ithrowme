@@ -55,11 +55,11 @@ public class GameManagerScript : MonoBehaviour
 
     private void Start()
     {
-        missionsList.Add(1, "R�parer le g�n�rateur");
+        missionsList.Add(1, "Réparer le générateur");
         missionsList.Add(2, "Trouver le fusible");
         missionsList.Add(3, "Parler au gardien");
 
-        // D�marrer avec 2 missions simultan�es
+        // Démarrer avec 2 missions simultanées
         AddMission(1);
         AddMission(2);
     }
