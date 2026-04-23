@@ -8,6 +8,7 @@ public class GameManagerScript : MonoBehaviour
 
     
     private List<int> activeMissions = new List<int>(); // list of the active missions (the ones who are displayed)
+    private List<int> finishMissions = new List<int>(); // list of the completed missions
 
     public void AddMission(int id)
     {
@@ -23,14 +24,28 @@ public class GameManagerScript : MonoBehaviour
         if (activeMissions.Contains(id))
         {
             activeMissions.Remove(id);
+            if (!finishMissions.Contains(id))
+            {
+                finishMissions.Add(id);
+            }
             missionScript.RefreshMissions(GetActiveMissionTexts());
         }
     }
 
     private List<string> GetActiveMissionTexts()
     {
+        GetTexts(activeMissions);
+    }
+
+    private List<string> GetFinishMissionTexts()
+    {
+        GetTexts(finishMissions);
+    }
+    
+    private List<string> GetTexts(List<int> missionsId)
+    {
         List<string> texts = new List<string>();
-        foreach (int id in activeMissions)
+        foreach (int id in missionsId)
         {
             if (missionsList.ContainsKey(id))
                 texts.Add(missionsList[id]);
@@ -40,11 +55,11 @@ public class GameManagerScript : MonoBehaviour
 
     private void Start()
     {
-        missionsList.Add(1, "Réparer le générateur");
+        missionsList.Add(1, "Rï¿½parer le gï¿½nï¿½rateur");
         missionsList.Add(2, "Trouver le fusible");
         missionsList.Add(3, "Parler au gardien");
 
-        // Démarrer avec 2 missions simultanées
+        // Dï¿½marrer avec 2 missions simultanï¿½es
         AddMission(1);
         AddMission(2);
     }
