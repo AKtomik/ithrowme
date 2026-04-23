@@ -34,12 +34,12 @@ public class GameManagerScript : MonoBehaviour
 
     private List<string> GetActiveMissionTexts()
     {
-        GetTexts(activeMissions);
+        return GetTexts(activeMissions);
     }
 
     private List<string> GetFinishMissionTexts()
     {
-        GetTexts(finishMissions);
+        return GetTexts(finishMissions);
     }
     
     private List<string> GetTexts(List<int> missionsId)
