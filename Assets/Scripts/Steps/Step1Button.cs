@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TempMissionButton : MonoBehaviour
+public class Step1Button : MonoBehaviour
 {
     public MissionManager missionManager;
 
@@ -17,9 +17,10 @@ public class TempMissionButton : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        Debug.Log("colliding with "+ other.gameObject.layer);
-        if (!other.gameObject.CompareTag("throwable_item")) return;
-        missionManager.CompleteMission(0);
-        missionManager.AddMission(1);
+        //Debug.Log("step 1 colliding with "+ other.gameObject.layer);
+        if (!other.gameObject.CompareTag("Items")) return;
+        Debug.Log("step 1 completed");
+        missionManager.CompleteMission(1);
+        missionManager.AddMission(2);
     }
 }
