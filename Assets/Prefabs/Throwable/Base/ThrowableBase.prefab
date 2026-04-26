@@ -169,3 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186734c4ef260c14487403a3be935a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomInitVelocity
+  randomRotationPos: 1
+  randomRotationVelocity: 1
+  randomRotationVelocityMin: 0
+  randomRotationVelocityMax: 0.2
