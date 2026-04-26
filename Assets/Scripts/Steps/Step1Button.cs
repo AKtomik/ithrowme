@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step1Button : MonoBehaviour
 {
+    public DoorOpeningScript doorScript;
     public MissionManager missionManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,9 +18,10 @@ public class Step1Button : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        Debug.Log("step 1 colliding with "+ other.gameObject.layer);
+        Debug.Log("Step1Button: step 1 colliding with "+ other.gameObject.layer);
         if (!this.enabled && !other.gameObject.CompareTag("Items")) return;
-        Debug.Log("step 1 completed");
+        Debug.Log("Step1Button: step 1 completed");
+        doorScript.OpeningDoors();
         missionManager.CompleteMission(1);
         missionManager.AddMission(2);
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z / 4);
