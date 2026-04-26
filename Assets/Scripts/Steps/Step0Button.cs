@@ -20,5 +20,6 @@ public class Step0Button : MonoBehaviour
         if (!other.gameObject.CompareTag("Items")) return;
         Debug.Log("door 0 opened");
         doorScript.OpeningDoors();
+        this.enabled = false;
     }
 }

@@ -24,5 +24,6 @@ public class Step0Trigger : MonoBehaviour
         closingDoorScript.ClosingDoors();
         missionManager.CompleteMission(1);
         missionManager.AddMission(2);
+        this.enabled = false;
     }
 }

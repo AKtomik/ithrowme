@@ -22,5 +22,6 @@ public class Step1Button : MonoBehaviour
         Debug.Log("step 1 completed");
         missionManager.CompleteMission(1);
         missionManager.AddMission(2);
+        this.enabled = false;
     }
 }
