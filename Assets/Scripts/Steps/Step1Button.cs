@@ -17,8 +17,8 @@ public class Step1Button : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        //Debug.Log("step 1 colliding with "+ other.gameObject.layer);
-        if (!other.gameObject.CompareTag("Items")) return;
+        Debug.Log("step 1 colliding with "+ other.gameObject.layer);
+        if (!this.enabled && !other.gameObject.CompareTag("Items")) return;
         Debug.Log("step 1 completed");
         missionManager.CompleteMission(1);
         missionManager.AddMission(2);

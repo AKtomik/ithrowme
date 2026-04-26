@@ -12,6 +12,8 @@ public class CapsulePlayer : MonoBehaviour
     private InputAction takeAction;
     private InputAction throwAction;
     private InputAction dashAction;
+    public bool takeThrowSomethingDebug = false;
+    public bool takeThrowActionDebug = false;
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
@@ -170,14 +172,15 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnTake(InputAction.CallbackContext ctx)
     {
-        Debug.Log("player take action");
+        if (takeThrowActionDebug) Debug.Log("player take action");
         if (anythingInHand || !anythingReachable) return;
+        if (takeThrowSomethingDebug) Debug.Log("player take something");
         TookObject(reachableObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
     {
-        Debug.Log("player throw action");
+        if (takeThrowActionDebug) Debug.Log("player throw action");
         if (!anythingInHand)
         {
             if (cheatProjectileActivated)
@@ -188,6 +191,7 @@ public class CapsulePlayer : MonoBehaviour
             }
             return;
         }
+        if (takeThrowSomethingDebug) Debug.Log("player throw something");
         ThrowObject(handyObject);
     }
 

@@ -17,7 +17,7 @@ public class Step0Button : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (!other.gameObject.CompareTag("Items")) return;
+        if (!this.enabled && !other.gameObject.CompareTag("Items")) return;
         Debug.Log("door 0 opened");
         doorScript.OpeningDoors();
         this.enabled = false;
