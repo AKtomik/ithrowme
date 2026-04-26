@@ -639,7 +639,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3558279489873853319, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
+  m_Mesh: {fileID: -5447036705194824928, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
 --- !u!1 &228776858
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ PrefabInstance:
       addedObject: {fileID: 1336857924}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1336857923}
+      addedObject: {fileID: 1336857927}
   m_SourcePrefab: {fileID: 100100000, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
 --- !u!4 &350164287 stripped
 Transform:
@@ -2102,6 +2102,7 @@ MonoBehaviour:
   - "d\xE9sactiver le mode isolation"
   - "se rendre \xE0 la capsule d'\xE9jection"
   - "bien jou\xE9 !"
+  - "tu as red\xE9marr\xE9 le moteur"
   - manger un sandwich
   InitialMissions: 00000000
 --- !u!1 &860800113
@@ -3465,26 +3466,12 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3558279489873853319, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
+  m_Mesh: {fileID: -5447036705194824928, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
 --- !u!1 &1336857922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
   m_PrefabInstance: {fileID: 350164286}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1336857923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336857922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  doorScript: {fileID: 818310319}
-  missionManager: {fileID: 850945353}
 --- !u!64 &1336857924
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3506,7 +3493,21 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3558279489873853319, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
+  m_Mesh: {fileID: -5447036705194824928, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
+--- !u!114 &1336857927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336857922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  doorScript: {fileID: 818310319}
+  missionManager: {fileID: 850945353}
 --- !u!4 &1343547262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
