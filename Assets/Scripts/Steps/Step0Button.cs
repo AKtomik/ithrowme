@@ -17,7 +17,7 @@ public class Step0Button : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (!this.enabled && !other.gameObject.CompareTag("Items")) return;
+        if (!this.enabled || !other.gameObject.CompareTag("Items")) return;
         Debug.Log("Step0Button: door 0 opened");
         doorScript.OpeningDoors();
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z / 4);

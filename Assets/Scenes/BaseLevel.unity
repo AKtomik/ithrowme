@@ -1853,6 +1853,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8383745192233304824, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
   m_PrefabInstance: {fileID: 818310317}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &818310319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+  m_PrefabInstance: {fileID: 818310317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
 --- !u!1001 &827456252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3426,7 +3437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  doorScript: {fileID: 0}
+  doorScript: {fileID: 818310319}
   missionManager: {fileID: 850945353}
 --- !u!64 &1336857924
 MeshCollider:
