@@ -3,6 +3,7 @@ using UnityEngine;
 public class Step0Trigger : MonoBehaviour
 {
     public MissionManager missionManager;
+    public DoorOpeningScript closingDoorScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,10 +17,12 @@ public class Step0Trigger : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if (!other.gameObject.CompareTag("Items")) return;
-        Debug.Log("step 0 completed");
-        missionManager.CompleteMission(0);
-        missionManager.AddMission(1);
+    private void OnTriggerEnter(Collider other) {
+        //Debug.Log("step 1 colliding with "+ other.gameObject.layer);
+        if (!other.gameObject.CompareTag("Player")) return;
+        Debug.Log("Step0Trigger: step 0 completed");
+        closingDoorScript.ClosingDoors();
+        missionManager.CompleteMission(1);
+        missionManager.AddMission(2);
     }
 }
