@@ -1941,8 +1941,10 @@ MonoBehaviour:
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsDefinition:
+  - sortir de la chambre cellulaire
   - "d\xE9sactiver le mode isolation"
   - "se rendre \xE0 la capsule d'\xE9jection"
+  - "bien jou\xE9 !"
   - manger un sandwich
   InitialMissions: 00000000
 --- !u!1 &860800113
@@ -4740,7 +4742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.142
+      value: 0.726
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4748,7 +4750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9768
+      value: 1.915
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalRotation.w
