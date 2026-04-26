@@ -22,10 +22,9 @@ public class ButtonScript : MonoBehaviour
     {
         if (doorScript)
         {
-            if (collision.gameObject.CompareTag("Items"))  ///// the button is pressed ////
+            if (collision.gameObject.CompareTag("throwable_item"))  ///// the button is pressed ////
             {
                 doorScript.OpeningDoors();
-
                 //// destroy item ////
             }
         }

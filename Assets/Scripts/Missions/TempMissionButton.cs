@@ -18,7 +18,7 @@ public class TempMissionButton : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         Debug.Log("colliding with "+ other.gameObject.layer);
-        if (other.gameObject.layer != 10) return;
+        if (!other.gameObject.CompareTag("throwable_item")) return;
         missionManager.CompleteMission(0);
         missionManager.AddMission(1);
     }
