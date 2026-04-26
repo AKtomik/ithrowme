@@ -2,6 +2,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class CapsulePlayer : MonoBehaviour
@@ -11,7 +12,7 @@ public class CapsulePlayer : MonoBehaviour
     private InputAction lookAction;
     private InputAction takeAction;
     private InputAction throwAction;
-    private InputAction dashAction;
+    private InputAction resetAction;
     public bool takeThrowSomethingDebug = false;
     public bool takeThrowActionDebug = false;
 
@@ -20,6 +21,14 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float sensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 1000f;
+    
+    [Header("Fov Settings")]
+    [SerializeField] private float minimalFov = 70;
+    [SerializeField] private float maximalFov = 140;
+    [SerializeField] private float addedFovBySpeed = 2;
+    [SerializeField] private float smoothyFovTime = .3f;
+    private float smoothyFov = 70;
+    private float fovVelocity = 0f;
 
     [Header("Throw Settings")]
     [SerializeField] private Rigidbody playerBody;
@@ -33,17 +42,6 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float throwMassInfluence = 1;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
-
-    [Header("Camera Settings")]
-    [SerializeField] private float minimalFov = 70;
-    [SerializeField] private float maximalFov = 140;
-    [SerializeField] private float addedFovBySpeed = 2;
-    [SerializeField] private float smoothyFovTime = .3f;
-    private float smoothyFov = 70;
-    private float fovVelocity = 0f;
-
-    [Header("Dash Settings")]
-    [SerializeField] private float dashForce = 20f;
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -67,7 +65,7 @@ public class CapsulePlayer : MonoBehaviour
         lookAction = inputActions.FindAction("Player/Look");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
-        dashAction = inputActions.FindAction("Player/Dash");
+        resetAction = inputActions.FindAction("Player/Reset");
         
         rotation = playerPivot.localRotation;
         lastPosition = transform.position;
@@ -81,23 +79,23 @@ public class CapsulePlayer : MonoBehaviour
         lookAction.Enable();
         throwAction.Enable();
         takeAction.Enable();
-        dashAction.Enable();
+        resetAction.Enable();
 
         throwAction.performed += OnThrow;
         takeAction.canceled += OnTake;
-        dashAction.performed += OnDash;
+        resetAction.performed += OnReset;
     }
 
     void OnDisable()
     {
         throwAction.performed -= OnThrow;
-        takeAction.performed -= OnTake;
-        dashAction.performed -= OnDash;
+        takeAction.canceled -= OnTake;
+        resetAction.performed -= OnReset;
 
         lookAction.Disable();
         throwAction.Disable();
         takeAction.Disable();
-        dashAction.Disable();
+        resetAction.Disable();
     }
 
     void Update()
@@ -173,6 +171,7 @@ public class CapsulePlayer : MonoBehaviour
     void OnTake(InputAction.CallbackContext ctx)
     {
         if (takeThrowActionDebug) Debug.Log("player take action");
+        CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
         if (takeThrowSomethingDebug) Debug.Log("player take something");
         TookObject(reachableObject);
@@ -229,9 +228,10 @@ public class CapsulePlayer : MonoBehaviour
 
     }
 
-    void OnDash(InputAction.CallbackContext ctx)
+    void OnReset(InputAction.CallbackContext ctx)
     {
-        playerBody.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
 	void OnDrawGizmos()

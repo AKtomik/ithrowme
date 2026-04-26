@@ -124,10 +124,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CapsulePlayerController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  takeThrowSomethingDebug: 0
+  takeThrowActionDebug: 0
   playerPivot: {fileID: 8190383844440651382}
   sensitivity: 0.5
   smoothTime: 0.1
   rotationMaxSpeed: 2500
+  minimalFov: 70
+  maximalFov: 100
+  addedFovBySpeed: 3
+  smoothyFovTime: 0.3
   playerBody: {fileID: 2702942499978624594}
   takePoint: {fileID: 2855366208196404834}
   takeRadius: 1
@@ -137,13 +143,8 @@ MonoBehaviour:
   cheatProjectilePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
   throwMassBase: 1
   throwMassInfluence: 1
-  throwObjectForce: 5
-  throwPlayerForce: -15
-  minimalFov: 70
-  maximalFov: 100
-  addedFovBySpeed: 3
-  smoothyFovTime: 0.3
-  dashForce: 20
+  throwObjectForce: 3
+  throwPlayerForce: -5
 --- !u!1 &2582806064360270056
 GameObject:
   m_ObjectHideFlags: 0

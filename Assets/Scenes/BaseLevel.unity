@@ -2330,14 +2330,6 @@ PrefabInstance:
       value: CapsulePlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
-      propertyPath: throwObjectForce
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
-      propertyPath: throwPlayerForce
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: cheatProjectileActivated
       value: 0
       objectReference: {fileID: 0}
