@@ -22,6 +22,7 @@ public class Step1Button : MonoBehaviour
         Debug.Log("step 1 completed");
         missionManager.CompleteMission(1);
         missionManager.AddMission(2);
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z / 4);
         this.enabled = false;
     }
 }
