@@ -849,6 +849,17 @@ Transform:
   - {fileID: 860800114}
   m_Father: {fileID: 1836851436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292826183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 261011990169780533, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+  m_PrefabInstance: {fileID: 914217600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &343880617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2378,6 +2389,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CapsulePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 292826183}
+    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: handImageUI
+      value: 
+      objectReference: {fileID: 292826183}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.885

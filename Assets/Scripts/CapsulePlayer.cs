@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class CapsulePlayer : MonoBehaviour
@@ -42,6 +43,13 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float throwMassInfluence = 1;
     [SerializeField] private float throwObjectForce = 15f;
     [SerializeField] private float throwPlayerForce = -15f;
+
+    [Header("Hand Settings")]
+    [SerializeField] private Image handImageUI;
+    [SerializeField] private Sprite handSpriteReachable;
+    [SerializeField] private Sprite handSpriteIdle;
+    [SerializeField] private Sprite handSpriteGrab;
+
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -103,6 +111,15 @@ public class CapsulePlayer : MonoBehaviour
         HandleLook();
         UpdateFov();
         CheckReachable();
+
+        Sprite handSprite;
+        if (anythingInHand)
+            handSprite = handSpriteGrab;
+        else if (reachableObject)
+            handSprite = handSpriteReachable;
+        else
+            handSprite = handSpriteIdle;
+        handImageUI.sprite = handSprite;
     }
 
     void UpdateFov()
