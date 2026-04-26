@@ -1,12 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
-    public bool locked = false;
+    public bool locked = false; // if true, the door cannot be open at all
     public bool isOpened = false;
-    public bool automaticOpening = true;
+    public bool automaticOpening = true; // if false, we can only open we a button
 
-    [SerializeField] private AudioSource doorSlam;
+    [SerializeField] private AudioSource doorSlam; // audio both for opening and closing
+
+    public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
     
     private Animator m_Animator;
     void Start()
@@ -51,18 +54,27 @@ public class DoorOpeningScript : MonoBehaviour
         if (automaticOpening && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
+            CancelInvoke("ClosingDoors");
+            objectsInDoorRanch.Add(other.gameObject);
         }
         else if (automaticOpening && other.gameObject.CompareTag("Items"))
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
             Invoke("ClosingDoor", 10);
+            objectsInDoorRanch.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (automaticOpening && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Items")))
+        if (objectsInDoorRanch.Contains(other.gameObject))
+        {
+            objectsInDoorRanch.Remove(other.gameObject);
+        }
+
+
+        if (automaticOpening && (other.gameObject.CompareTag("Player") || objectsInDoorRanch.Count == 0))
         {
             ClosingDoors();
             CancelInvoke("ClosingDoors");
