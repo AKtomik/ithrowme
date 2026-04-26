@@ -22,8 +22,8 @@ public class Step0Trigger : MonoBehaviour
         if (!other.gameObject.CompareTag("Player")) return;
         Debug.Log("Step0Trigger: step 0 completed");
         closingDoorScript.ClosingDoors();
-        missionManager.CompleteMission(1);
-        missionManager.AddMission(2);
+        missionManager.CompleteMission(0);
+        missionManager.AddMission(1);
         this.enabled = false;
     }
 }
