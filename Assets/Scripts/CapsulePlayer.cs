@@ -257,7 +257,7 @@ public class CapsulePlayer : MonoBehaviour
         if (anythingInHand) Gizmos.color = Color.skyBlue;
         else if (anythingReachable) Gizmos.color = Color.green;
         else Gizmos.color = Color.red;
-        Gizmos.color = Gizmos.color.WithAlpha(.3f);
+        Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.3f);
 		Gizmos.DrawSphere(takePoint.position, takeRadius);
 	}
 }
