@@ -2392,7 +2392,7 @@ MonoBehaviour:
   - "d\xE9v\xE9rouiller la porte principale au module de s\xE9curit\xE9"
   - "d\xE9marer les moteurs dans la salle de contr\xF4le"
   - "bien jou\xE9 !"
-  - "tu as trouv\xE9 le moyen de t'\xE9chapper"
+  - '- fin du prototype -'
   - manger un sandwich
   InitialMissions: 00000000
 --- !u!1 &860800113
@@ -2633,6 +2633,10 @@ PrefabInstance:
       propertyPath: handImageUI
       value: 
       objectReference: {fileID: 292826183}
+    - target: {fileID: 2411043341698111949, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: speedMin
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.885
