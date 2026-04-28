@@ -11,6 +11,7 @@ public class CapsulePlayer : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionAsset inputActions;
     private InputAction lookAction;
+    private InputAction rollAction;
     private InputAction takeAction;
     private InputAction throwAction;
     private InputAction resetAction;
@@ -71,6 +72,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
+        rollAction = inputActions.FindAction("Player/Roll");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         resetAction = inputActions.FindAction("Player/Reset");
@@ -85,22 +87,24 @@ public class CapsulePlayer : MonoBehaviour
     void OnEnable()
     {
         lookAction.Enable();
+        rollAction.Enable();
         throwAction.Enable();
         takeAction.Enable();
         resetAction.Enable();
 
         throwAction.performed += OnThrow;
-        takeAction.canceled += OnTake;
+        takeAction.performed += OnTake;
         resetAction.performed += OnReset;
     }
 
     void OnDisable()
     {
         throwAction.performed -= OnThrow;
-        takeAction.canceled -= OnTake;
+        takeAction.performed -= OnTake;
         resetAction.performed -= OnReset;
 
         lookAction.Disable();
+        rollAction.Disable();
         throwAction.Disable();
         takeAction.Disable();
         resetAction.Disable();
@@ -136,21 +140,22 @@ public class CapsulePlayer : MonoBehaviour
     void HandleLook()
     {
         Vector2 mouseInput = lookAction.ReadValue<Vector2>();
+        float rollInput = rollAction.ReadValue<float>();
         Vector3 rotaInput = Vector3.zero;
         if (mouseInput.magnitude > 0.01)
         {
             if (rotateEnterCooldown > 0)
             {
                 rotateEnterCooldown -= 1;
-            }
-            else if (takeAction.IsPressed())
-            {
-                rotaInput.z += mouseInput.x;
             } else {
                 rotaInput.x -= mouseInput.x;
                 rotaInput.y += mouseInput.y;
             }
         }
+        
+        //if (mouseInput.magnitude > 0.01)
+        rotaInput.z += rollInput * -600;
+
         rotaVelocity += sensitivity * rotaInput;
         rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
         Vector3 rotaDelta = -rotaVelocity * Time.deltaTime;
