@@ -69,6 +69,7 @@ public class CapsulePlayer : MonoBehaviour
     private bool anythingInHand = false;
     private TakableObject handyTakable = null;
     private GameObject handyObject = null;
+    private int throwCount = 0;
 
     void Awake()
     {
@@ -256,7 +257,10 @@ public class CapsulePlayer : MonoBehaviour
 
         // throw the player
         playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
-
+        
+        // start the timer
+        if (throwCount == 0) TimerScript.instance.running = true;
+        throwCount++;
     }
 
     void OnReset(InputAction.CallbackContext ctx)

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
+    public static TimerScript instance;
+
     public bool running = false;
     private double timedSec = 0;
     private TextMeshProUGUI textPro;
@@ -13,6 +15,7 @@ public class TimerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        instance = this;
         textPro = GetComponent<TextMeshProUGUI>();
     }
 
