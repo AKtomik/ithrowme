@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -62,6 +63,7 @@ public class CapsulePlayer : MonoBehaviour
     // reachable
     private bool anythingReachable = false;
     private GameObject reachableObject = null;
+    private List<TakableReference> thrownNoRepeatList = new List<TakableReference>();
 
     // in hand
     private bool anythingInHand = false;
@@ -174,6 +176,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         if (anythingInHand) return;
         Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
         float nearestDistance = 100;
@@ -182,10 +185,16 @@ public class CapsulePlayer : MonoBehaviour
             GameObject loopObject = loopCollider.gameObject;
 			if (!loopObject.TryGetComponent(out TakableReference loopTakeRef)) continue;
 			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
+            if (thrownNoRepeatList.Contains(loopTakeRef))
+            {
+                newNoRepeatList.Add(loopTakeRef);
+                continue;
+            }
             if (!(loopDistance < nearestDistance)) continue;
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
         }
+        thrownNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
         anythingReachable = nearestObject != null;
     }
