@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LaggyParentEffect : MonoBehaviour
+public class LaggyEffect : MonoBehaviour
 {
     
     [SerializeField] private Transform renderTransform;
