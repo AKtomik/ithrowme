@@ -21,7 +21,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Transform playerPivot;
     [SerializeField] private float sensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
-    [SerializeField] private float rotationMaxSpeed = 1000f;
+    [SerializeField] private float rotationMaxSpeed = 10000000000f;
     
     [Header("Fov Settings")]
     [SerializeField] private float minimalFov = 70;
