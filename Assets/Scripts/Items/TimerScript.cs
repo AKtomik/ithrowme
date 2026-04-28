@@ -27,6 +27,7 @@ public class TimerScript : MonoBehaviour
 
         double displayMs = Math.Floor(timedSec*1000)%1000;
         string textMs = displayMs.ToString();
+        textMs = new string('0', 3 - textMs.Length) + textMs;
 
         double displaySec = Math.Floor(timedSec);
         string textSec = displaySec.ToString();
