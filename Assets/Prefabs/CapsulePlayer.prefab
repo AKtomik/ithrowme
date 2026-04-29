@@ -166,6 +166,8 @@ MonoBehaviour:
   speedMin: 0.4
   clampMax: 0
   speedMax: 10
+  stopBellowNoConsideration: 1
+  noConsiderationSpeed: 0
 --- !u!1 &2582806064360270056
 GameObject:
   m_ObjectHideFlags: 0
