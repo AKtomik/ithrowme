@@ -128,9 +128,10 @@ MonoBehaviour:
   takeThrowSomethingDebug: 0
   takeThrowActionDebug: 0
   playerPivot: {fileID: 8190383844440651382}
-  sensitivity: 0.5
+  lookSensitivity: 0.5
   smoothTime: 0.1
   rotationMaxSpeed: 2500000
+  rollSensitivity: 1.3
   minimalFov: 70
   maximalFov: 100
   addedFovBySpeed: 3
@@ -167,7 +168,7 @@ MonoBehaviour:
   clampMax: 0
   speedMax: 10
   stopBellowNoConsideration: 1
-  noConsiderationSpeed: 0
+  noConsiderationSpeed: 0.0001
 --- !u!1 &2582806064360270056
 GameObject:
   m_ObjectHideFlags: 0

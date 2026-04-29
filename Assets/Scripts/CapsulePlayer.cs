@@ -21,9 +21,10 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private float sensitivity = .5f;
+    [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
+    [SerializeField] private float rollSensitivity = 2f;
     
     [Header("Fov Settings")]
     [SerializeField] private float minimalFov = 70;
@@ -157,9 +158,9 @@ public class CapsulePlayer : MonoBehaviour
         }
         
         //if (mouseInput.magnitude > 0.01)
-        rotaInput.z += rollInput * -600;
+        rotaInput.z += rollInput * -100 * rollSensitivity;
 
-        rotaVelocity += sensitivity * rotaInput;
+        rotaVelocity += lookSensitivity * rotaInput;
         rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
         Vector3 rotaDelta = -rotaVelocity * Time.deltaTime;
         
