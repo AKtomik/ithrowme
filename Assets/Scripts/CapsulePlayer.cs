@@ -229,9 +229,11 @@ public class CapsulePlayer : MonoBehaviour
 
     void TookObject(GameObject takeObject)
     {
-        TakableObject takable = takeObject.GetComponent<TakableReference>().takableObject;
-        takable.InHand(handPoint);
-        handyTakable = takable;
+        TakableReference takableRef = takeObject.GetComponent<TakableReference>();
+        TakableObject takableObj = takableRef.takableObject;
+        thrownNoRepeatList.Add(takableRef);
+        takableObj.InHand(handPoint);
+        handyTakable = takableObj;
         handyObject = takeObject;
         anythingInHand = true;
     }
