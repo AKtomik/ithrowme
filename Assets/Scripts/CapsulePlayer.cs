@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class CapsulePlayer : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionAsset inputActions;
     private InputAction lookAction;
+    private InputAction rollAction;
+    private InputAction middleAction;
     private InputAction takeAction;
     private InputAction throwAction;
     private InputAction resetAction;
@@ -19,9 +22,10 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private float sensitivity = .5f;
+    [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
-    [SerializeField] private float rotationMaxSpeed = 1000f;
+    [SerializeField] private float rotationMaxSpeed = 10000000000f;
+    [SerializeField] private float rollSensitivity = 2f;
     
     [Header("Fov Settings")]
     [SerializeField] private float minimalFov = 70;
@@ -61,16 +65,20 @@ public class CapsulePlayer : MonoBehaviour
     // reachable
     private bool anythingReachable = false;
     private GameObject reachableObject = null;
+    private List<TakableReference> thrownNoRepeatList = new List<TakableReference>();
 
     // in hand
     private bool anythingInHand = false;
     private TakableObject handyTakable = null;
     private GameObject handyObject = null;
+    private int throwCount = 0;
 
     void Awake()
     {
         cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
+        rollAction = inputActions.FindAction("Player/Roll");
+        middleAction = inputActions.FindAction("Player/Middle");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         resetAction = inputActions.FindAction("Player/Reset");
@@ -85,22 +93,26 @@ public class CapsulePlayer : MonoBehaviour
     void OnEnable()
     {
         lookAction.Enable();
+        rollAction.Enable();
+        middleAction.Enable();
         throwAction.Enable();
         takeAction.Enable();
         resetAction.Enable();
 
         throwAction.performed += OnThrow;
-        takeAction.canceled += OnTake;
+        takeAction.performed += OnTake;
         resetAction.performed += OnReset;
     }
 
     void OnDisable()
     {
         throwAction.performed -= OnThrow;
-        takeAction.canceled -= OnTake;
+        takeAction.performed -= OnTake;
         resetAction.performed -= OnReset;
 
         lookAction.Disable();
+        rollAction.Disable();
+        middleAction.Disable();
         throwAction.Disable();
         takeAction.Disable();
         resetAction.Disable();
@@ -136,22 +148,25 @@ public class CapsulePlayer : MonoBehaviour
     void HandleLook()
     {
         Vector2 mouseInput = lookAction.ReadValue<Vector2>();
+        float rollInput = rollAction.ReadValue<float>();
         Vector3 rotaInput = Vector3.zero;
         if (mouseInput.magnitude > 0.01)
         {
             if (rotateEnterCooldown > 0)
             {
                 rotateEnterCooldown -= 1;
-            }
-            else if (takeAction.IsPressed())
-            {
+            } else if (middleAction.IsPressed()) {
                 rotaInput.z += mouseInput.x;
             } else {
                 rotaInput.x -= mouseInput.x;
                 rotaInput.y += mouseInput.y;
             }
         }
-        rotaVelocity += sensitivity * rotaInput;
+        
+        //if (mouseInput.magnitude > 0.01)
+        rotaInput.z += rollInput * -100 * rollSensitivity;
+
+        rotaVelocity += lookSensitivity * rotaInput;
         rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
         Vector3 rotaDelta = -rotaVelocity * Time.deltaTime;
         
@@ -169,6 +184,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         if (anythingInHand) return;
         Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
         float nearestDistance = 100;
@@ -177,10 +193,16 @@ public class CapsulePlayer : MonoBehaviour
             GameObject loopObject = loopCollider.gameObject;
 			if (!loopObject.TryGetComponent(out TakableReference loopTakeRef)) continue;
 			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
+            if (thrownNoRepeatList.Contains(loopTakeRef))
+            {
+                newNoRepeatList.Add(loopTakeRef);
+                continue;
+            }
             if (!(loopDistance < nearestDistance)) continue;
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
         }
+        thrownNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
         anythingReachable = nearestObject != null;
     }
@@ -213,9 +235,11 @@ public class CapsulePlayer : MonoBehaviour
 
     void TookObject(GameObject takeObject)
     {
-        TakableObject takable = takeObject.GetComponent<TakableReference>().takableObject;
-        takable.InHand(handPoint);
-        handyTakable = takable;
+        TakableReference takableRef = takeObject.GetComponent<TakableReference>();
+        TakableObject takableObj = takableRef.takableObject;
+        thrownNoRepeatList.Add(takableRef);
+        takableObj.InHand(handPoint);
+        handyTakable = takableObj;
         handyObject = takeObject;
         anythingInHand = true;
     }
@@ -242,7 +266,10 @@ public class CapsulePlayer : MonoBehaviour
 
         // throw the player
         playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
-
+        
+        // start the timer
+        if (throwCount == 0) TimerScript.instance.running = true;
+        throwCount++;
     }
 
     void OnReset(InputAction.CallbackContext ctx)
@@ -257,7 +284,7 @@ public class CapsulePlayer : MonoBehaviour
         if (anythingInHand) Gizmos.color = Color.skyBlue;
         else if (anythingReachable) Gizmos.color = Color.green;
         else Gizmos.color = Color.red;
-        Gizmos.color = Gizmos.color.WithAlpha(.3f);
+        Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.3f);
 		Gizmos.DrawSphere(takePoint.position, takeRadius);
 	}
 }

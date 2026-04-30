@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5443315480973572358}
   - component: {fileID: 2702942499978624594}
   - component: {fileID: 1786189650715054160}
+  - component: {fileID: 2411043341698111949}
   m_Layer: 3
   m_Name: CapsulePlayer
   m_TagString: Player
@@ -62,7 +63,7 @@ CapsuleCollider:
   m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!135 &5443315480973572358
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.75
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!54 &2702942499978624594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 10
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -127,9 +128,10 @@ MonoBehaviour:
   takeThrowSomethingDebug: 0
   takeThrowActionDebug: 0
   playerPivot: {fileID: 8190383844440651382}
-  sensitivity: 0.5
+  lookSensitivity: 0.5
   smoothTime: 0.1
-  rotationMaxSpeed: 2500
+  rotationMaxSpeed: 2500000
+  rollSensitivity: 1.3
   minimalFov: 70
   maximalFov: 100
   addedFovBySpeed: 3
@@ -149,6 +151,24 @@ MonoBehaviour:
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
   handSpriteGrab: {fileID: 21300000, guid: b65e309751354c84790a381bd70858e7, type: 3}
+--- !u!114 &2411043341698111949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843031394317638456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c33614948ea334fb7df5ca0867f8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClampedVelocity
+  clampMin: 1
+  speedMin: 0.4
+  clampMax: 0
+  speedMax: 10
+  stopBellowNoConsideration: 1
+  noConsiderationSpeed: 0.0001
 --- !u!1 &2582806064360270056
 GameObject:
   m_ObjectHideFlags: 0

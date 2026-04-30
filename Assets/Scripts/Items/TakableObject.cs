@@ -31,6 +31,9 @@ public class TakableObject : MonoBehaviour
         // reparent
         transform.SetParent(handTransform);
         transform.position = handTransform.position;
+        // reset pos
+        if (collider.gameObject != gameObject)
+            collider.gameObject.transform.position = handTransform.position;
     }
     
     public void OffHand()
