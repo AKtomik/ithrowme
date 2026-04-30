@@ -13,6 +13,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private InputActionAsset inputActions;
     private InputAction lookAction;
     private InputAction rollAction;
+    private InputAction middleAction;
     private InputAction takeAction;
     private InputAction throwAction;
     private InputAction resetAction;
@@ -77,6 +78,7 @@ public class CapsulePlayer : MonoBehaviour
         cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
+        middleAction = inputActions.FindAction("Player/Middle");
         takeAction = inputActions.FindAction("Player/Take");
         throwAction = inputActions.FindAction("Player/Throw");
         resetAction = inputActions.FindAction("Player/Reset");
@@ -92,6 +94,7 @@ public class CapsulePlayer : MonoBehaviour
     {
         lookAction.Enable();
         rollAction.Enable();
+        middleAction.Enable();
         throwAction.Enable();
         takeAction.Enable();
         resetAction.Enable();
@@ -109,6 +112,7 @@ public class CapsulePlayer : MonoBehaviour
 
         lookAction.Disable();
         rollAction.Disable();
+        middleAction.Disable();
         throwAction.Disable();
         takeAction.Disable();
         resetAction.Disable();
@@ -151,6 +155,8 @@ public class CapsulePlayer : MonoBehaviour
             if (rotateEnterCooldown > 0)
             {
                 rotateEnterCooldown -= 1;
+            } else if (middleAction.IsPressed()) {
+                rotaInput.z += mouseInput.x;
             } else {
                 rotaInput.x -= mouseInput.x;
                 rotaInput.y += mouseInput.y;
