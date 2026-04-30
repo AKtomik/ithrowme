@@ -16,9 +16,21 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: detectItems
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: detectPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: automaticOpening
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4499871058395644445, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
       propertyPath: m_Name
-      value: AutomaticDoor Variant
+      value: AutomaticDoor
       objectReference: {fileID: 0}
     - target: {fileID: 8383745192233304824, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
       propertyPath: m_LocalPosition.x

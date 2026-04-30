@@ -185,6 +185,8 @@ MonoBehaviour:
   locked: 0
   isOpened: 0
   automaticOpening: 1
+  detectPlayer: 1
+  detectItems: 0
   doorSlam: {fileID: 6132878711129045287}
   objectsInDoorRanch: []
 --- !u!135 &2725564819157198692
