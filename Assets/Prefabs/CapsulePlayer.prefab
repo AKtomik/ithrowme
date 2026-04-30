@@ -124,10 +124,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CapsulePlayerController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  takeThrowSomethingDebug: 0
+  takeThrowActionDebug: 0
   playerPivot: {fileID: 8190383844440651382}
   sensitivity: 0.5
   smoothTime: 0.1
   rotationMaxSpeed: 2500
+  minimalFov: 70
+  maximalFov: 100
+  addedFovBySpeed: 3
+  smoothyFovTime: 0.3
   playerBody: {fileID: 2702942499978624594}
   takePoint: {fileID: 2855366208196404834}
   takeRadius: 1
@@ -137,13 +143,12 @@ MonoBehaviour:
   cheatProjectilePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
   throwMassBase: 1
   throwMassInfluence: 1
-  throwObjectForce: 5
-  throwPlayerForce: -15
-  minimalFov: 70
-  maximalFov: 100
-  addedFovBySpeed: 3
-  smoothyFovTime: 0.3
-  dashForce: 20
+  throwObjectForce: 3
+  throwPlayerForce: -5
+  handImageUI: {fileID: 0}
+  handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
+  handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
+  handSpriteGrab: {fileID: 21300000, guid: b65e309751354c84790a381bd70858e7, type: 3}
 --- !u!1 &2582806064360270056
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 6895688833171091776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.593, y: -0.05, z: 0.688}
+  m_LocalPosition: {x: 0.421, y: -0.05, z: 0.688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

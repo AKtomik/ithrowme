@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7079207247431414270}
   - component: {fileID: 6001504066199641756}
   - component: {fileID: 4992202231788359172}
+  - component: {fileID: 1581512893622062593}
   m_Layer: 10
-  m_Name: CheatProjectile
+  m_Name: ThrowableBase
   m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.23102, y: 0.23102, z: 0.23102}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0f29e3c1c576f6641b9e474f6b194480, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,3 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TakableObject
   collider: {fileID: 7079207247431414270}
   rigidBody: {fileID: 6001504066199641756}
+--- !u!114 &1581512893622062593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103920078271962544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186734c4ef260c14487403a3be935a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomInitVelocity
+  randomRotationPos: 1
+  randomRotationVelocity: 1
+  randomRotationVelocityMin: 0
+  randomRotationVelocityMax: 0.02

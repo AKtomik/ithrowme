@@ -25,7 +25,6 @@ public class ButtonScript : MonoBehaviour
             if (collision.gameObject.CompareTag("Items"))  ///// the button is pressed ////
             {
                 doorScript.OpeningDoors();
-
                 //// destroy item ////
             }
         }
