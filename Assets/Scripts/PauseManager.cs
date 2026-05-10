@@ -9,7 +9,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;
-    [SerializeField] private GameObject gameParent;
+    [SerializeField] private GameObject[] gameParents;
     private InputAction pauseAction;
 
     private bool pauseState;
@@ -57,7 +57,8 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
 
-        gameParent.SetActive(false);
+        foreach (var loopGameObject in gameParents)
+            loopGameObject.SetActive(false);
         pauseCanvas.gameObject.SetActive(true);
         pauseState = true;
         Debug.Log("paused!");
@@ -70,7 +71,8 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
 
-        gameParent.SetActive(true);
+        foreach (var loopGameObject in gameParents)
+            loopGameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(false);
         pauseState = false;
     }

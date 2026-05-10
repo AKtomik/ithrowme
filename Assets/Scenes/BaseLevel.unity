@@ -810,7 +810,12 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pauseCanvas: {fileID: 1021047621}
   screenImage: {fileID: 500760175}
-  gameParent: {fileID: 260315540}
+  gameParents:
+  - {fileID: 260315540}
+  - {fileID: 1265792370}
+  - {fileID: 1067009057}
+  - {fileID: 217087082}
+  - {fileID: 555362618}
 --- !u!4 &254801719
 Transform:
   m_ObjectHideFlags: 0
