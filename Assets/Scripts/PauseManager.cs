@@ -17,7 +17,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseAction = inputActions.FindAction("State/Pause");
 
-        StartCoroutine(SetPaused(false));
+        Unpause();
     }
 
 	void OnEnable()
@@ -38,36 +38,52 @@ public class PauseManager : MonoBehaviour
     {
         return pauseState;
     }
-    
-    public IEnumerator SetPaused(bool paused)
+
+    public void AskPause()
     {
-        Debug.Log("pausing..."+paused);
+        Debug.Log("pausing...");
+        StartCoroutine(PauseRoutine());
+    }
+    
+    private IEnumerator PauseRoutine()
+    {
         yield return new WaitForEndOfFrame();
 
-        if (paused)
-        {
-            Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-            screenImage.texture = screenshotTexture;
-            
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Time.timeScale = 1;
-        }
-        
-        //gameParent.SetActive(!paused);
-        pauseCanvas.gameObject.SetActive(paused);
-        pauseState = paused;
+        Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+        screenImage.texture = screenshotTexture;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+
+        gameParent.SetActive(true);
+        pauseCanvas.gameObject.SetActive(false);
+        pauseState = true;
         Debug.Log("paused!");
     }
 
+    public void Unpause()
+    {
+        Debug.Log("unpause");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+
+        gameParent.SetActive(false);
+        pauseCanvas.gameObject.SetActive(true);
+        pauseState = false;
+    }
+
+    public void SetPaused(bool paused)
+    {
+        if (paused) AskPause();
+        else Unpause();
+    }
+
+
     void TogglePause(InputAction.CallbackContext ctx)
     {
-		StartCoroutine(SetPaused(!IsPaused()));
+		SetPaused(!IsPaused());
 	}
 }
