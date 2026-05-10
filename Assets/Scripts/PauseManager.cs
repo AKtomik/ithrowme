@@ -1,10 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
+    [SerializeField] private RawImage screenImage;
+    [SerializeField] private GameObject gameParent;
     private InputAction pauseAction;
 
     private bool pauseState;
@@ -13,7 +17,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseAction = inputActions.FindAction("State/Pause");
 
-        SetPaused(false);
+        StartCoroutine(SetPaused(false));
     }
 
 	void OnEnable()
@@ -35,12 +39,16 @@ public class PauseManager : MonoBehaviour
         return pauseState;
     }
     
-    public void SetPaused(bool paused)
+    public IEnumerator SetPaused(bool paused)
     {
-        pauseCanvas.gameObject.SetActive(paused);
-        
+        Debug.Log("pausing..."+paused);
+        yield return new WaitForEndOfFrame();
+
         if (paused)
         {
+            Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+            screenImage.texture = screenshotTexture;
+            
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Time.timeScale = 0;
@@ -51,11 +59,15 @@ public class PauseManager : MonoBehaviour
             Cursor.visible = false;
             Time.timeScale = 1;
         }
+        
+        //gameParent.SetActive(!paused);
+        pauseCanvas.gameObject.SetActive(paused);
         pauseState = paused;
+        Debug.Log("paused!");
     }
 
     void TogglePause(InputAction.CallbackContext ctx)
     {
-        SetPaused(!IsPaused());
-    }
+		StartCoroutine(SetPaused(!IsPaused()));
+	}
 }
