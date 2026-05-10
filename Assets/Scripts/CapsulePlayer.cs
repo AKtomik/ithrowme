@@ -85,9 +85,6 @@ public class CapsulePlayer : MonoBehaviour
         
         rotation = playerPivot.localRotation;
         lastPosition = transform.position;
-        
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void OnEnable()
