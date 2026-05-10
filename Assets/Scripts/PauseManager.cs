@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -56,8 +57,8 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
 
-        gameParent.SetActive(true);
-        pauseCanvas.gameObject.SetActive(false);
+        gameParent.SetActive(false);
+        pauseCanvas.gameObject.SetActive(true);
         pauseState = true;
         Debug.Log("paused!");
     }
@@ -65,13 +66,12 @@ public class PauseManager : MonoBehaviour
     public void Unpause()
     {
         Debug.Log("unpause");
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
 
-        gameParent.SetActive(false);
-        pauseCanvas.gameObject.SetActive(true);
+        gameParent.SetActive(true);
+        pauseCanvas.gameObject.SetActive(false);
         pauseState = false;
     }
 
