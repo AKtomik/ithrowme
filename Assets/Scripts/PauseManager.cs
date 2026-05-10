@@ -1,18 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PauseState : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private Canvas pauseCanvas;
     private InputAction pauseAction;
 
-    private bool paused;
+    private bool pauseState;
 
     void Awake()
     {
         pauseAction = inputActions.FindAction("State/Pause");
 
-        //SetPaused(false);
+        SetPaused(false);
     }
 
 	void OnEnable()
@@ -31,30 +32,30 @@ public class PauseState : MonoBehaviour
 
     public bool IsPaused()
     {
-        return paused;
+        return pauseState;
     }
     
-    public void SetPaused(bool newPaused)
+    public void SetPaused(bool paused)
     {
-        Debug.Log("setpaused:"+newPaused.ToString());
-        gameObject.SetActive(newPaused);
+        pauseCanvas.gameObject.SetActive(paused);
         
-        if (newPaused)
+        if (paused)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            Time.timeScale = 0;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Time.timeScale = 1;
         }
-        paused = newPaused;
+        pauseState = paused;
     }
 
     void TogglePause(InputAction.CallbackContext ctx)
     {
-        Debug.Log("TogglePause.");
         SetPaused(!IsPaused());
     }
 
