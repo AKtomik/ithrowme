@@ -58,10 +58,4 @@ public class PauseManager : MonoBehaviour
     {
         SetPaused(!IsPaused());
     }
-
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
 }

@@ -117,6 +117,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
         HandleLook();
         UpdateFov();
         CheckReachable();
@@ -206,6 +207,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnTake(InputAction.CallbackContext ctx)
     {
+        if (Time.timeScale == 0) return;
         if (takeThrowActionDebug) Debug.Log("player take action");
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
@@ -215,6 +217,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnThrow(InputAction.CallbackContext ctx)
     {
+        if (Time.timeScale == 0) return;
         if (takeThrowActionDebug) Debug.Log("player throw action");
         if (!anythingInHand)
         {
@@ -271,6 +274,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnReset(InputAction.CallbackContext ctx)
     {
+        if (Time.timeScale == 0) return;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
