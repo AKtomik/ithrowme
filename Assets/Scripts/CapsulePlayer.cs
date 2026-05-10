@@ -164,7 +164,7 @@ public class CapsulePlayer : MonoBehaviour
         }
         
         //if (mouseInput.magnitude > 0.01)
-        rotaInput.z += rollInput * -100 * rollSensitivity * SettingsStore.rollSensivity;
+        rotaInput.z += rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
 
         rotaVelocity += lookSensitivity * SettingsStore.lookSensivity * rotaInput;
         rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
