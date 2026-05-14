@@ -33,6 +33,14 @@ public class TakableItem : Takable
     
     override public void OffHand(CapsulePlayer player)
     {
+        // enable
+        collider.enabled = true;
+        rigidBody.isKinematic = false;
+        // reparent
+        transform.SetParent(originalParentTransform);
+        // move the projectile
+        transform.SetPositionAndRotation(player.throwPoint.position, player.throwPoint.rotation);
+        
         // throw
         float throwCommonForce = player.throwMassBase + rigidBody.mass * player.throwMassInfluence;
         // throw the projectile
@@ -40,13 +48,6 @@ public class TakableItem : Takable
         // throw the player
         player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
 
-        // enable
-        collider.enabled = true;
-        rigidBody.isKinematic = false;
-        // move the projectile
-        transform.SetPositionAndRotation(player.throwPoint.position, player.throwPoint.rotation);
-        // reparent
-        transform.SetParent(originalParentTransform);
         // remove from hand
         player.ClearHand();
     }
