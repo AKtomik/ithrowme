@@ -11,6 +11,6 @@ public abstract class Takable : MonoBehaviour
         takableReference.takable = this;
     }
 
-    abstract public void InHand(CapsulePlayer player);
-    abstract public void OffHand(CapsulePlayer player);
+    abstract public void Take(CapsulePlayer player);
+    abstract public void Throw(CapsulePlayer player);
 }

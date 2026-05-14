@@ -229,12 +229,12 @@ public class CapsulePlayer : MonoBehaviour
                 GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
                 projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
                 TakableItem takable = projectile.AddComponent<TakableItem>();
-                takable.OffHand(this);
+                takable.Throw(this);
             }
             return;
         }
         if (takeThrowSomethingDebug) Debug.Log("player throw something");
-        handyTakable.OffHand(this);
+        handyTakable.Throw(this);
     }
 
     void TookSomething(GameObject takeObject)
@@ -242,7 +242,7 @@ public class CapsulePlayer : MonoBehaviour
         TakableReference takableRef = takeObject.GetComponent<TakableReference>();
         Takable takable = takableRef.takable;
         takeNoRepeatList.Add(takableRef);
-        takable.InHand(this);
+        takable.Take(this);
     }
 
     public void PutInHand(Takable takable)

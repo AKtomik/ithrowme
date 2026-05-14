@@ -12,7 +12,7 @@ public class TakableItem : Takable
         base.Start();
     }
 
-    override public void InHand(CapsulePlayer player)
+    override public void Take(CapsulePlayer player)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -31,7 +31,7 @@ public class TakableItem : Takable
         player.PutInHand(this);
     }
     
-    override public void OffHand(CapsulePlayer player)
+    override public void Throw(CapsulePlayer player)
     {
         // enable
         collider.enabled = true;
@@ -40,7 +40,7 @@ public class TakableItem : Takable
         transform.SetParent(originalParentTransform);
         // move the projectile
         transform.SetPositionAndRotation(player.throwPoint.position, player.throwPoint.rotation);
-        
+
         // throw
         float throwCommonForce = player.throwMassBase + rigidBody.mass * player.throwMassInfluence;
         // throw the projectile
