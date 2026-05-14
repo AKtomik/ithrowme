@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class Takable : MonoBehaviour
 {
     [SerializeField] protected new Collider collider;
-    [SerializeField] protected Rigidbody rigidBody;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     virtual public void Start()
@@ -12,6 +11,6 @@ public abstract class Takable : MonoBehaviour
         takableReference.takable = this;
     }
 
-    abstract public void InHand(Transform handTransform);
+    abstract public void InHand(CapsulePlayer player);
     abstract public void OffHand();
 }

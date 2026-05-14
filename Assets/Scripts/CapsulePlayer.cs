@@ -238,7 +238,7 @@ public class CapsulePlayer : MonoBehaviour
         TakableReference takableRef = takeObject.GetComponent<TakableReference>();
         Takable takable = takableRef.takable;
         takeNoRepeatList.Add(takableRef);
-        takable.InHand(handPoint);
+        takable.InHand(this);
         if (takable is TakableItem)
         {
             TookItem(takable as TakableItem);

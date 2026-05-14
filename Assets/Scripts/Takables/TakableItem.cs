@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TakableItem : Takable
 {
+    [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -11,7 +12,7 @@ public class TakableItem : Takable
         base.Start();
     }
 
-    override public void InHand(Transform handTransform)
+    override public void InHand(CapsulePlayer player)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -20,6 +21,7 @@ public class TakableItem : Takable
         collider.enabled = false;
         rigidBody.isKinematic = true;
         // reparent
+        Transform handTransform = player.handPoint;
         transform.SetParent(handTransform);
         transform.position = handTransform.position;
         // reset pos
