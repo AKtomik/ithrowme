@@ -12,5 +12,5 @@ public abstract class Takable : MonoBehaviour
     }
 
     abstract public void InHand(CapsulePlayer player);
-    abstract public void OffHand();
+    abstract public void OffHand(CapsulePlayer player);
 }

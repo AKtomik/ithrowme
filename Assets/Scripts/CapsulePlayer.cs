@@ -43,10 +43,10 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] public Transform handPoint;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
-    [SerializeField] private float throwMassBase = 1;
-    [SerializeField] private float throwMassInfluence = 1;
-    [SerializeField] private float throwObjectForce = 15f;
-    [SerializeField] private float throwPlayerForce = -15f;
+    [SerializeField] public float throwMassBase = 1;
+    [SerializeField] public float throwMassInfluence = 1;
+    [SerializeField] public float throwObjectForce = 15f;
+    [SerializeField] public float throwPlayerForce = -15f;
 
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
@@ -228,12 +228,13 @@ public class CapsulePlayer : MonoBehaviour
             {
                 GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
                 projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-                ThrowItem(projectile);
+                TakableItem takable = projectile.AddComponent<TakableItem>();
+                takable.OffHand(this);
             }
             return;
         }
         if (takeThrowSomethingDebug) Debug.Log("player throw something");
-        ThrowItem(handyObject);
+        handyTakable.OffHand(this);
     }
 
     void TookSomething(GameObject takeObject)
@@ -259,28 +260,6 @@ public class CapsulePlayer : MonoBehaviour
         // start the timer
         if (throwCount == 0) TimerScript.instance.running = true;
         throwCount++;
-    }
-    
-    void ThrowItem(GameObject throwObject)
-    {
-        Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
-        float throwCommonForce = throwMassBase + throwBody.mass * throwMassInfluence;
-
-        // move the projectile
-        throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
-        
-        // clear hand
-        if (handyTakable != null)
-        {
-            handyTakable.OffHand();
-        } 
-        
-        // throw the projectile
-        throwBody.AddForce(throwCommonForce * throwObjectForce * throwPoint.forward, ForceMode.Impulse);
-
-        // throw the player
-        playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
-        
     }
 
     void OnReset(InputAction.CallbackContext ctx)

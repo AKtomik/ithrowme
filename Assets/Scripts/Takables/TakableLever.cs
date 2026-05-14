@@ -9,7 +9,7 @@ public class TakableLever : Takable
         player.playerBody.angularVelocity = Vector3.zero;
     }
     
-    override public void OffHand()
+    override public void OffHand(CapsulePlayer player)
     {
     }
 }

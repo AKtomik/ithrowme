@@ -31,12 +31,23 @@ public class TakableItem : Takable
         player.PutInHand(this);
     }
     
-    override public void OffHand()
+    override public void OffHand(CapsulePlayer player)
     {
+        // throw
+        float throwCommonForce = player.throwMassBase + rigidBody.mass * player.throwMassInfluence;
+        // throw the projectile
+        rigidBody.AddForce(throwCommonForce * player.throwObjectForce * player.throwPoint.forward, ForceMode.Impulse);
+        // throw the player
+        player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
+
         // enable
         collider.enabled = true;
         rigidBody.isKinematic = false;
+        // move the projectile
+        transform.SetPositionAndRotation(player.throwPoint.position, player.throwPoint.rotation);
         // reparent
         transform.SetParent(originalParentTransform);
+        // remove from hand
+        player.ClearHand();
     }
 }
