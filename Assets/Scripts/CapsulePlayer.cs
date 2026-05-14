@@ -54,6 +54,9 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
 
+    [Header("Lock Utils")]
+    public bool lockHand = false;
+    public bool lockLook = false;
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -69,7 +72,7 @@ public class CapsulePlayer : MonoBehaviour
 
     // in hand
     private bool anythingInHand = false;
-    private TakableItem handyTakable = null;
+    private Takable handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
 
@@ -118,7 +121,7 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        HandleLook();
+        if (!lockLook) HandleLook();
         UpdateFov();
         CheckReachable();
 
@@ -207,7 +210,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnTake(InputAction.CallbackContext ctx)
     {
-        if (Time.timeScale == 0) return;
+        if (Time.timeScale == 0 || lockHand) return;
         if (takeThrowActionDebug) Debug.Log("player take action");
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
@@ -239,17 +242,23 @@ public class CapsulePlayer : MonoBehaviour
         Takable takable = takableRef.takable;
         takeNoRepeatList.Add(takableRef);
         takable.InHand(this);
-        if (takable is TakableItem)
-        {
-            TookItem(takable as TakableItem);
-        }
     }
 
-    void TookItem(TakableItem takableItem)
+    public void PutInHand(Takable takable)
     {
-        handyTakable = takableItem;
-        handyObject = takableItem.gameObject;
+        handyTakable = takable;
+        handyObject = takable.gameObject;
         anythingInHand = true;
+    }
+    
+    public void ClearHand()
+    {
+        handyTakable = null;
+        handyObject = null;
+        anythingInHand = false;
+        // start the timer
+        if (throwCount == 0) TimerScript.instance.running = true;
+        throwCount++;
     }
     
     void ThrowItem(GameObject throwObject)
@@ -264,9 +273,6 @@ public class CapsulePlayer : MonoBehaviour
         if (handyTakable != null)
         {
             handyTakable.OffHand();
-            handyTakable = null;
-            handyObject = null;
-            anythingInHand = false;
         } 
         
         // throw the projectile
@@ -275,9 +281,6 @@ public class CapsulePlayer : MonoBehaviour
         // throw the player
         playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
         
-        // start the timer
-        if (throwCount == 0) TimerScript.instance.running = true;
-        throwCount++;
     }
 
     void OnReset(InputAction.CallbackContext ctx)

@@ -27,6 +27,8 @@ public class TakableItem : Takable
         // reset pos
         if (collider.gameObject != gameObject)
             collider.gameObject.transform.position = handTransform.position;
+        // put in hand
+        player.PutInHand(this);
     }
     
     override public void OffHand()
