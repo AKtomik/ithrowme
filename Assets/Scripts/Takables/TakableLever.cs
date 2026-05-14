@@ -1,26 +1,17 @@
 using UnityEngine;
 
-public class TakableObject : MonoBehaviour
+public class TakableLever : Takable
 {
-    [SerializeField] private new Collider collider;
-    [SerializeField] private Rigidbody rigidBody;
     private Transform originalParentTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Start()
     {
+        base.Start();
         originalParentTransform = transform.parent;
-        TakableReference takableReference = collider.gameObject.AddComponent(typeof(TakableReference)) as TakableReference;
-        takableReference.takableObject = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void InHand(Transform handTransform)
+    override public void InHand(Transform handTransform)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -36,7 +27,7 @@ public class TakableObject : MonoBehaviour
             collider.gameObject.transform.position = handTransform.position;
     }
     
-    public void OffHand()
+    override public void OffHand()
     {
         // enable
         collider.enabled = true;

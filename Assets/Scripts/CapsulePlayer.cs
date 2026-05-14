@@ -36,11 +36,11 @@ public class CapsulePlayer : MonoBehaviour
     private float fovVelocity = 0f;
 
     [Header("Throw Settings")]
-    [SerializeField] private Rigidbody playerBody;
-    [SerializeField] private Transform takePoint;
-    [SerializeField] private float takeRadius;
-    [SerializeField] private Transform throwPoint;
-    [SerializeField] private Transform handPoint;
+    [SerializeField] public Rigidbody playerBody;
+    [SerializeField] public Transform takePoint;
+    [SerializeField] public float takeRadius;
+    [SerializeField] public Transform throwPoint;
+    [SerializeField] public Transform handPoint;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
     [SerializeField] private float throwMassBase = 1;
@@ -65,11 +65,11 @@ public class CapsulePlayer : MonoBehaviour
     // reachable
     private bool anythingReachable = false;
     private GameObject reachableObject = null;
-    private List<TakableReference> thrownNoRepeatList = new List<TakableReference>();
+    private List<TakableReference> takeNoRepeatList = new List<TakableReference>();
 
     // in hand
     private bool anythingInHand = false;
-    private TakableObject handyTakable = null;
+    private TakableItem handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
 
@@ -191,7 +191,7 @@ public class CapsulePlayer : MonoBehaviour
             GameObject loopObject = loopCollider.gameObject;
 			if (!loopObject.TryGetComponent(out TakableReference loopTakeRef)) continue;
 			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
-            if (thrownNoRepeatList.Contains(loopTakeRef))
+            if (takeNoRepeatList.Contains(loopTakeRef))
             {
                 newNoRepeatList.Add(loopTakeRef);
                 continue;
@@ -200,7 +200,7 @@ public class CapsulePlayer : MonoBehaviour
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
         }
-        thrownNoRepeatList = newNoRepeatList;
+        takeNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
         anythingReachable = nearestObject != null;
     }
@@ -212,7 +212,7 @@ public class CapsulePlayer : MonoBehaviour
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
         if (takeThrowSomethingDebug) Debug.Log("player take something");
-        TookObject(reachableObject);
+        TookSomething(reachableObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
@@ -225,26 +225,34 @@ public class CapsulePlayer : MonoBehaviour
             {
                 GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
                 projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-                ThrowObject(projectile);
+                ThrowItem(projectile);
             }
             return;
         }
         if (takeThrowSomethingDebug) Debug.Log("player throw something");
-        ThrowObject(handyObject);
+        ThrowItem(handyObject);
     }
 
-    void TookObject(GameObject takeObject)
+    void TookSomething(GameObject takeObject)
     {
         TakableReference takableRef = takeObject.GetComponent<TakableReference>();
-        TakableObject takableObj = takableRef.takableObject;
-        thrownNoRepeatList.Add(takableRef);
-        takableObj.InHand(handPoint);
-        handyTakable = takableObj;
-        handyObject = takeObject;
+        Takable takable = takableRef.takable;
+        takeNoRepeatList.Add(takableRef);
+        takable.InHand(handPoint);
+        if (takable is TakableItem)
+        {
+            TookItem(takable as TakableItem);
+        }
+    }
+
+    void TookItem(TakableItem takableItem)
+    {
+        handyTakable = takableItem;
+        handyObject = takableItem.gameObject;
         anythingInHand = true;
     }
     
-    void ThrowObject(GameObject throwObject)
+    void ThrowItem(GameObject throwObject)
     {
         Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
         float throwCommonForce = throwMassBase + throwBody.mass * throwMassInfluence;
