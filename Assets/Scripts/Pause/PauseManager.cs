@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    // /!\ PauseManager's GameObject MUST have the tag "PauseManager" so that PauseMenuScript works /!\
+
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;
