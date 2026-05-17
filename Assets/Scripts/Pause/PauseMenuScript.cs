@@ -9,8 +9,8 @@ public class PauseMenuScript : MonoBehaviour
     [Header("Canvas")]
     
     [SerializeField] private GameObject mainCanva;
-    [SerializeField] private GameObject SettingsCanva;
-    [SerializeField] private GameObject QuitCanva;
+    [SerializeField] private GameObject settingsCanva;
+    [SerializeField] private GameObject quitCanva;
 
 
 
@@ -35,14 +35,14 @@ public class PauseMenuScript : MonoBehaviour
     public void GoToMainCanva()
     {
         mainCanva.SetActive(true);
-        SettingsCanva.SetActive(false);
-        QuitCanva.SetActive(false);
+        settingsCanva.SetActive(false);
+        quitCanva.SetActive(false);
     }
 
     public void ClickOnQuitButton()
     {
         mainCanva.SetActive(false);
-        QuitCanva.SetActive(true);
+        quitCanva.SetActive(true);
     }
 
     public void QuitGame()
@@ -53,7 +53,13 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Resume()
     {
-        pauseManager.Unpause();
+        pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
 
+    }
+
+    public void GoToSettings()
+    {
+        mainCanva.SetActive(false);
+        settingsCanva.SetActive(true);
     }
 }
