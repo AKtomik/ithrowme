@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -6,12 +9,15 @@ public class PauseMenuScript : MonoBehaviour
     private PauseManager pauseManager;
     private GameObject pauseManagerGO;
 
+
+    [SerializeField] private InputActionAsset inputActions;
+    
     [Header("Canvas")]
     
     [SerializeField] private GameObject mainCanva;
     [SerializeField] private GameObject settingsCanva;
     [SerializeField] private GameObject quitCanva;
-
+    private InputAction navigateActions;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,10 +26,15 @@ public class PauseMenuScript : MonoBehaviour
         GoToMainCanva();
         pauseManagerGO = GameObject.FindGameObjectWithTag("PauseManager");
         pauseManager = pauseManagerGO.GetComponent<PauseManager>();
+
+        navigateActions = inputActions.FindAction("UI/Navigate");
+        navigateActions.Enable();
+        navigateActions.performed += Navigate;
     }
     private void OnEnable()
     {
         GoToMainCanva();
+
     }
 
     // Update is called once per frame
@@ -37,12 +48,14 @@ public class PauseMenuScript : MonoBehaviour
         mainCanva.SetActive(true);
         settingsCanva.SetActive(false);
         quitCanva.SetActive(false);
+        SelectFirstButton();
     }
 
     public void ClickOnQuitButton()
     {
         mainCanva.SetActive(false);
         quitCanva.SetActive(true);
+        SelectFirstButton();
     }
 
     public void QuitGame()
@@ -61,5 +74,23 @@ public class PauseMenuScript : MonoBehaviour
     {
         mainCanva.SetActive(false);
         settingsCanva.SetActive(true);
+        SelectFirstButton();
     }
+
+    public void SelectFirstButton()
+    {
+        GameObject currentCanva = GameObject.FindGameObjectWithTag("PauseCanva"); // works because it finds only ACTIVE ones
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(currentCanva.transform.GetChild(1).gameObject);
+    }
+
+    void Navigate(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("navigating...");
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            SelectFirstButton();
+        }
+    }
+
 }
