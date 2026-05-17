@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class PauseMenuScript : MonoBehaviour
@@ -17,6 +18,11 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject mainCanva;
     [SerializeField] private GameObject settingsCanva;
     [SerializeField] private GameObject quitCanva;
+
+    [Header("Settings parameters")]
+    [SerializeField] private Slider sliderLookSensitivity;
+    [SerializeField] private Slider sliderRollSensitivity;
+
     private InputAction navigateActions;
 
 
@@ -40,7 +46,7 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(SettingsStore.lookSensivity);
     }
 
     public void GoToMainCanva()
@@ -74,6 +80,10 @@ public class PauseMenuScript : MonoBehaviour
     {
         mainCanva.SetActive(false);
         settingsCanva.SetActive(true);
+        sliderLookSensitivity.value = SettingsStore.lookSensivity;
+        sliderRollSensitivity.value = SettingsStore.rollSensivity;
+
+
         SelectFirstButton();
     }
 
@@ -83,6 +93,24 @@ public class PauseMenuScript : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(currentCanva.transform.GetChild(1).gameObject);
     }
+
+    ///////////////////////////////////////////////////////////////
+    /////////////////////* SETTINGS FUNCTIONS*/////////////////////
+    ///////////////////////////////////////////////////////////////
+
+    public void ChangeLookSensitivity()
+    {
+        SettingsStore.lookSensivity = sliderLookSensitivity.value;
+    }
+    
+
+    public void ChangeRollSensitivity()
+    {
+        SettingsStore.rollSensivity = sliderRollSensitivity.value;
+    }
+
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
 
     void Navigate(InputAction.CallbackContext ctx)
     {
