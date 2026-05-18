@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class PauseMenuScript : MonoBehaviour
@@ -22,8 +25,15 @@ public class PauseMenuScript : MonoBehaviour
     [Header("Settings parameters")]
     [SerializeField] private Slider sliderLookSensitivity;
     [SerializeField] private Slider sliderRollSensitivity;
+    [SerializeField] private Slider sliderSfxVolume;
+
+
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioSource changeButtonAudio;
+    [SerializeField] private AudioSource sliderAudio;
 
     private InputAction navigateActions;
+    private GameObject previousSelectedGameobject;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,13 +50,18 @@ public class PauseMenuScript : MonoBehaviour
     private void OnEnable()
     {
         GoToMainCanva();
-
+        previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(SettingsStore.lookSensivity);
+        
+        if (previousSelectedGameobject != EventSystem.current.currentSelectedGameObject)
+        {
+            ButtonsSound();
+            previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
+        }
     }
 
     public void GoToMainCanva()
@@ -80,9 +95,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         mainCanva.SetActive(false);
         settingsCanva.SetActive(true);
+
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
-
+        
+        audioMixer.GetFloat("SFX", out float sfxVolume);
+        sliderSfxVolume.value = sfxVolume;
 
         SelectFirstButton();
     }
@@ -100,13 +118,22 @@ public class PauseMenuScript : MonoBehaviour
 
     public void ChangeLookSensitivity()
     {
+        sliderAudio.Play();
         SettingsStore.lookSensivity = sliderLookSensitivity.value;
+        
     }
     
 
     public void ChangeRollSensitivity()
     {
+        sliderAudio.Play();
         SettingsStore.rollSensivity = sliderRollSensitivity.value;
+    }
+
+    public void ChangeSFXVolume()
+    {
+        sliderAudio.Play();
+        audioMixer.SetFloat("SFX", sliderSfxVolume.value);
     }
 
     ///////////////////////////////////////////////////////////////
@@ -114,11 +141,16 @@ public class PauseMenuScript : MonoBehaviour
 
     void Navigate(InputAction.CallbackContext ctx)
     {
-        Debug.Log("navigating...");
+        
         if (EventSystem.current.currentSelectedGameObject == null)
         {
             SelectFirstButton();
         }
+    }
+    
+    void ButtonsSound()
+    {
+        changeButtonAudio.Play();
     }
 
 }
