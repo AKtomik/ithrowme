@@ -26,11 +26,14 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderLookSensitivity;
     [SerializeField] private Slider sliderRollSensitivity;
     [SerializeField] private Slider sliderSfxVolume;
+    [SerializeField] private Slider sliderMainVolume;
 
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource changeButtonAudio;
-    [SerializeField] private AudioSource sliderAudio;
+    
+    [SerializeField] private AudioSource sfxSlidersAudio;
+    
 
     private InputAction navigateActions;
     private GameObject previousSelectedGameobject;
@@ -118,22 +121,26 @@ public class PauseMenuScript : MonoBehaviour
 
     public void ChangeLookSensitivity()
     {
-        sliderAudio.Play();
+        sfxSlidersAudio.Play();
         SettingsStore.lookSensivity = sliderLookSensitivity.value;
-        
     }
     
 
     public void ChangeRollSensitivity()
     {
-        sliderAudio.Play();
+        sfxSlidersAudio.Play();
         SettingsStore.rollSensivity = sliderRollSensitivity.value;
     }
 
     public void ChangeSFXVolume()
     {
-        sliderAudio.Play();
+        sfxSlidersAudio.Play();
         audioMixer.SetFloat("SFX", sliderSfxVolume.value);
+    }
+    public void ChangeMainVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("Main", sliderMainVolume.value);
     }
 
     ///////////////////////////////////////////////////////////////
