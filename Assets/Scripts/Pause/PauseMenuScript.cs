@@ -21,6 +21,8 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject mainCanva;
     [SerializeField] private GameObject settingsCanva;
     [SerializeField] private GameObject quitCanva;
+    [SerializeField] private GameObject gamepadCanva;
+    [SerializeField] private GameObject keyboardCanva;
 
     [Header("Settings parameters")]
     [SerializeField] private Slider sliderLookSensitivity;
@@ -67,11 +69,17 @@ public class PauseMenuScript : MonoBehaviour
         }
     }
 
+    ///////////////////////////////////////////////////////////////
+    /////////////////////* Change Canva FUNCTIONS*/////////////////
+    ///////////////////////////////////////////////////////////////
+
     public void GoToMainCanva()
     {
         mainCanva.SetActive(true);
         settingsCanva.SetActive(false);
         quitCanva.SetActive(false);
+        gamepadCanva.SetActive(false);
+        keyboardCanva.SetActive(false);
         SelectFirstButton();
     }
 
@@ -82,21 +90,13 @@ public class PauseMenuScript : MonoBehaviour
         SelectFirstButton();
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("Game is quitting...");
-        Application.Quit();
-    }
-
-    public void Resume()
-    {
-        pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
-
-    }
 
     public void GoToSettings()
     {
         mainCanva.SetActive(false);
+        gamepadCanva.SetActive(false);
+        keyboardCanva.SetActive(false);
+
         settingsCanva.SetActive(true);
 
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
@@ -108,11 +108,38 @@ public class PauseMenuScript : MonoBehaviour
         SelectFirstButton();
     }
 
+    public void GoToGamepad()
+    {
+        settingsCanva.SetActive(false);
+        gamepadCanva.SetActive(true);
+    }
+
+    public void GoToKeyboard()
+    {
+        settingsCanva.SetActive(false);
+        keyboardCanva.SetActive(true);
+    }
+
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+
     public void SelectFirstButton()
     {
         GameObject currentCanva = GameObject.FindGameObjectWithTag("PauseCanva"); // works because it finds only ACTIVE ones
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(currentCanva.transform.GetChild(1).gameObject);
+    }
+
+    public void Resume()
+    {
+        pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
+
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Game is quitting...");
+        Application.Quit();
     }
 
     ///////////////////////////////////////////////////////////////
