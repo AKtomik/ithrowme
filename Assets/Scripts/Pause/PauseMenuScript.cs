@@ -112,12 +112,16 @@ public class PauseMenuScript : MonoBehaviour
     {
         settingsCanva.SetActive(false);
         gamepadCanva.SetActive(true);
+
+        SelectFirstButton();
     }
 
     public void GoToKeyboard()
     {
         settingsCanva.SetActive(false);
         keyboardCanva.SetActive(true);
+
+        SelectFirstButton();
     }
 
     ///////////////////////////////////////////////////////////////

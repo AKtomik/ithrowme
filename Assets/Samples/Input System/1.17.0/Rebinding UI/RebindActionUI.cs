@@ -508,6 +508,14 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         [SerializeField]
         private TMPro.TextMeshProUGUI m_RebindInfo;
 
+        [Tooltip("Optional bool field which allows you to OVERRIDE the action label with your own text.")]
+        [SerializeField]
+        public bool m_OverRideActionLabel;
+
+        [Tooltip("What text should be displayed for the action label?")]
+        [SerializeField]
+        private string m_ActionLabelString;
+
         [Tooltip("Optional cancellation UI button for rebinding overlay.")]
         [SerializeField]
         private Button m_RebindCancelButton;
@@ -554,7 +562,17 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             if (m_ActionLabel != null)
             {
                 var action = m_Action?.action;
-                m_ActionLabel.text = action != null ? action.name : string.Empty;
+
+                if (m_OverRideActionLabel)
+                {
+                    m_ActionLabel.text = m_ActionLabelString;
+                }
+                else
+                {
+                    m_ActionLabel.text = action != null ? action.name : string.Empty;
+                    m_ActionLabelString = string.Empty;
+                }
+                
             }
         }
 
