@@ -77,11 +77,11 @@ public class CapsulePlayer : MonoBehaviour
     {
         cam = Camera.main;
         lookAction = inputActions.FindAction("Player/Look");
-        rollAction = inputActions.FindAction("Player/Roll");
+        rollAction = inputActions.FindAction("Player/Rouler");
         middleAction = inputActions.FindAction("Player/Middle");
-        takeAction = inputActions.FindAction("Player/Take");
-        throwAction = inputActions.FindAction("Player/Throw");
-        resetAction = inputActions.FindAction("Player/Reset");
+        takeAction = inputActions.FindAction("Player/Prendre");
+        throwAction = inputActions.FindAction("Player/Jeter");
+        resetAction = inputActions.FindAction("Player/Réinitialiser");
         
         rotation = playerPivot.localRotation;
         lastPosition = transform.position;
