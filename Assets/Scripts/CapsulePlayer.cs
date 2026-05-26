@@ -26,6 +26,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
     [SerializeField] private float rollSensitivity = 2f;
+    public bool invertRoll = false;
     
     [Header("Fov Settings")]
     [SerializeField] private float minimalFov = 70;
@@ -162,7 +163,15 @@ public class CapsulePlayer : MonoBehaviour
         }
         
         //if (mouseInput.magnitude > 0.01)
-        rotaInput.z += rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
+        if (invertRoll)
+        {
+            rotaInput.z += rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
+        }
+        else
+        {
+            rotaInput.z -= rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
+        }
+        
 
         rotaVelocity += lookSensitivity * SettingsStore.lookSensivity * rotaInput;
         rotaVelocity = Vector3.SmoothDamp(rotaVelocity, Vector3.zero, ref rotaVelocityVelocity, smoothTime, rotationMaxSpeed, Time.deltaTime);
