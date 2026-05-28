@@ -75,12 +75,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 975974345448581679}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6864512971177307050}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -1007983334735871957}
   m_SourcePrefab: {fileID: 100100000, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
 --- !u!1 &41028281971995004 stripped
 GameObject:
@@ -109,28 +103,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5447036705194824928, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
---- !u!114 &6864512971177307050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41028281971995004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e0b48a812fbb64584bcf5733be4be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Step2Button
-  missionManager: {fileID: 0}
---- !u!114 &-1007983334735871957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41028281971995004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a31b32268ecb74886da341aada5c42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
