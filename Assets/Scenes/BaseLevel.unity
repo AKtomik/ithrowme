@@ -867,6 +867,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 843031394317638456, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
   m_PrefabInstance: {fileID: 942557606}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &260315542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+  m_PrefabInstance: {fileID: 942557606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260315540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78bce4faf2c4094589009f5631cf090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CapsulePlayerController
 --- !u!1 &286947727
 GameObject:
   m_ObjectHideFlags: 0
@@ -6198,6 +6209,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6140107257834039518, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 260315542}
     - target: {fileID: 6185808685705826161, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
       propertyPath: m_text
       value: Scroll Down/Scroll Up
