@@ -5,18 +5,6 @@ public class Step0Trigger : MonoBehaviour
     public MissionManager missionManager;
     public DoorOpeningScript closingDoorScript;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other) {
         //Debug.Log("step 1 colliding with "+ other.gameObject.layer);
         if (!this.enabled || !other.gameObject.CompareTag("Player")) return;
