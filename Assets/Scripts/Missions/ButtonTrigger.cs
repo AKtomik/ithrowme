@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class ButtonTrigger : MonoBehaviour
 {
     public bool ONE_TIME_TRIGGER = true;
-    public Vector3 TRIGGER_SCALE = new Vector3(1, 1, 1/4);
+    public Vector3 TRIGGER_SCALE = new Vector3(1, 1, .25f);
 
     private void OnCollisionEnter(Collision other)
     {
