@@ -37,17 +37,17 @@ public class CapsulePlayer : MonoBehaviour
     private float fovVelocity = 0f;
 
     [Header("Throw Settings")]
-    [SerializeField] private Rigidbody playerBody;
-    [SerializeField] private Transform takePoint;
-    [SerializeField] private float takeRadius;
-    [SerializeField] private Transform throwPoint;
-    [SerializeField] private Transform handPoint;
+    [SerializeField] public Rigidbody playerBody;
+    [SerializeField] public Transform takePoint;
+    [SerializeField] public float takeRadius;
+    [SerializeField] public Transform throwPoint;
+    [SerializeField] public Transform handPoint;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
-    [SerializeField] private float throwMassBase = 1;
-    [SerializeField] private float throwMassInfluence = 1;
-    [SerializeField] private float throwObjectForce = 15f;
-    [SerializeField] private float throwPlayerForce = -15f;
+    [SerializeField] public float throwMassBase = 1;
+    [SerializeField] public float throwMassInfluence = 1;
+    [SerializeField] public float throwObjectForce = 15f;
+    [SerializeField] public float throwPlayerForce = -15f;
 
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
@@ -55,6 +55,9 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
 
+    [Header("Lock Utils")]
+    public bool lockHand = false;
+    public bool lockLook = false;
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -66,11 +69,11 @@ public class CapsulePlayer : MonoBehaviour
     // reachable
     private bool anythingReachable = false;
     private GameObject reachableObject = null;
-    private List<TakableReference> thrownNoRepeatList = new List<TakableReference>();
+    private List<TakableReference> takeNoRepeatList = new List<TakableReference>();
 
     // in hand
     private bool anythingInHand = false;
-    private TakableObject handyTakable = null;
+    private Takable handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
 
@@ -122,7 +125,7 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        HandleLook();
+        if (!lockLook) HandleLook();
         UpdateFov();
         CheckReachable();
 
@@ -203,7 +206,7 @@ public class CapsulePlayer : MonoBehaviour
             GameObject loopObject = loopCollider.gameObject;
 			if (!loopObject.TryGetComponent(out TakableReference loopTakeRef)) continue;
 			float loopDistance = Vector3.Distance(centerPoint, loopCollider.transform.position);
-            if (thrownNoRepeatList.Contains(loopTakeRef))
+            if (takeNoRepeatList.Contains(loopTakeRef))
             {
                 newNoRepeatList.Add(loopTakeRef);
                 continue;
@@ -212,19 +215,19 @@ public class CapsulePlayer : MonoBehaviour
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
         }
-        thrownNoRepeatList = newNoRepeatList;
+        takeNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
         anythingReachable = nearestObject != null;
     }
 
     void OnTake(InputAction.CallbackContext ctx)
     {
-        if (Time.timeScale == 0) return;
+        if (Time.timeScale == 0 || lockHand) return;
         if (takeThrowActionDebug) Debug.Log("player take action");
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
         if (takeThrowSomethingDebug) Debug.Log("player take something");
-        TookObject(reachableObject);
+        TookSomething(reachableObject);
     }
 
     void OnThrow(InputAction.CallbackContext ctx)
@@ -237,48 +240,35 @@ public class CapsulePlayer : MonoBehaviour
             {
                 GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
                 projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-                ThrowObject(projectile);
+                TakableItem takable = projectile.AddComponent<TakableItem>();
+                takable.Throw(this);
             }
             return;
         }
         if (takeThrowSomethingDebug) Debug.Log("player throw something");
-        ThrowObject(handyObject);
+        handyTakable.Throw(this);
     }
 
-    void TookObject(GameObject takeObject)
+    void TookSomething(GameObject takeObject)
     {
         TakableReference takableRef = takeObject.GetComponent<TakableReference>();
-        TakableObject takableObj = takableRef.takableObject;
-        thrownNoRepeatList.Add(takableRef);
-        takableObj.InHand(handPoint);
-        handyTakable = takableObj;
-        handyObject = takeObject;
+        Takable takable = takableRef.takable;
+        takeNoRepeatList.Add(takableRef);
+        takable.Take(this);
+    }
+
+    public void PutInHand(Takable takable)
+    {
+        handyTakable = takable;
+        handyObject = takable.gameObject;
         anythingInHand = true;
     }
     
-    void ThrowObject(GameObject throwObject)
+    public void ClearHand()
     {
-        Rigidbody throwBody = throwObject.GetComponent<Rigidbody>();
-        float throwCommonForce = throwMassBase + throwBody.mass * throwMassInfluence;
-
-        // move the projectile
-        throwObject.transform.SetPositionAndRotation(throwPoint.position, throwPoint.rotation);
-        
-        // clear hand
-        if (handyTakable != null)
-        {
-            handyTakable.OffHand();
-            handyTakable = null;
-            handyObject = null;
-            anythingInHand = false;
-        } 
-        
-        // throw the projectile
-        throwBody.AddForce(throwCommonForce * throwObjectForce * throwPoint.forward, ForceMode.Impulse);
-
-        // throw the player
-        playerBody.AddForce(throwCommonForce * throwPlayerForce * transform.forward, ForceMode.Impulse);
-        
+        handyTakable = null;
+        handyObject = null;
+        anythingInHand = false;
         // start the timer
         if (throwCount == 0) TimerScript.instance.running = true;
         throwCount++;
