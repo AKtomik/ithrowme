@@ -890,7 +890,6 @@ RectTransform:
   - {fileID: 6283115447549829389}
   - {fileID: 293478693346629268}
   - {fileID: 430105753817706233}
-  - {fileID: 2421659035091905519}
   m_Father: {fileID: 2664490598967132185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1162,15 +1161,15 @@ RectTransform:
   m_GameObject: {fileID: 1324413976689366339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.57142854, y: 0.57142854, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4495355959278893560}
-  m_Father: {fileID: 5023404490780808241}
+  m_Father: {fileID: 7633556716062062035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -275}
+  m_AnchoredPosition: {x: 29.5, y: -194.75}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2986396249858284593
@@ -1254,7 +1253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3068575479585616104}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1110528251220987481}
+        m_TargetAssemblyTypeName: ResetDeviceBinding, Assembly-CSharp
+        m_MethodName: ResetControlSchemeBindings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1381469009619663175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,15 +1369,15 @@ RectTransform:
   m_GameObject: {fileID: 1384763583384450309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.57142854, y: 0.57142854, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 655676604795475395}
-  m_Father: {fileID: 2074160885300016084}
+  m_Father: {fileID: 2664490598967132185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -225}
+  m_AnchoredPosition: {x: 29.16986, y: -107.24994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8576073565067061312
@@ -1450,7 +1461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6278449918483286583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6163175633474049298}
+        m_TargetAssemblyTypeName: ResetDeviceBinding, Assembly-CSharp
+        m_MethodName: ResetControlSchemeBindings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1476691541878968766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,7 +2545,6 @@ RectTransform:
   - {fileID: 1018606356608046635}
   - {fileID: 4742095199706359128}
   - {fileID: 6903778748380785456}
-  - {fileID: 5966957565762015358}
   m_Father: {fileID: 7633556716062062035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4395,6 +4417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2664490598967132185}
   - component: {fileID: 6459228486150125303}
+  - component: {fileID: 6163175633474049298}
   m_Layer: 0
   m_Name: RebindGamepadCanva
   m_TagString: PauseCanva
@@ -4417,6 +4440,7 @@ Transform:
   m_Children:
   - {fileID: 3093774722377620475}
   - {fileID: 8098623451611698676}
+  - {fileID: 2421659035091905519}
   - {fileID: 2074160885300016084}
   - {fileID: 7826597236938112824}
   m_Father: {fileID: 6041856658645884310}
@@ -4473,6 +4497,20 @@ MonoBehaviour:
     rightStick: {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
     leftStickPress: {fileID: 21300000, guid: 7e177675a5fc16248b6e164ef7a7f2a6, type: 3}
     rightStickPress: {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
+--- !u!114 &6163175633474049298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5743595616632296206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad1183afc8b48f4db373fdee0ad6280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetDeviceBinding
+  _inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _targetControlScheme: Gamepad
 --- !u!1 &5752125394035691206
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,6 +4657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7633556716062062035}
+  - component: {fileID: 1110528251220987481}
   m_Layer: 0
   m_Name: RebindKeyboardCanva
   m_TagString: PauseCanva
@@ -4641,10 +4680,25 @@ Transform:
   m_Children:
   - {fileID: 955514218268398792}
   - {fileID: 1698712488258457857}
+  - {fileID: 5966957565762015358}
   - {fileID: 5023404490780808241}
   - {fileID: 2586332651139620419}
   m_Father: {fileID: 6041856658645884310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1110528251220987481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858155781040700997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad1183afc8b48f4db373fdee0ad6280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetDeviceBinding
+  _inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _targetControlScheme: Keyboard&Mouse
 --- !u!1 &5875491802852810741
 GameObject:
   m_ObjectHideFlags: 0
