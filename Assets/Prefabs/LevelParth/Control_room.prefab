@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9037552242180067902}
   - component: {fileID: 5387446949314207131}
   - component: {fileID: 7863558990686480721}
+  - component: {fileID: 7040291365882779836}
   m_Layer: 0
   m_Name: Control_room
   m_TagString: Untagged
@@ -95,3 +96,25 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7040291365882779836
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511809124011198596}
+  m_Material: {fileID: 13400000, guid: 66c95607f941670429eb084b905d50ec, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3705901788039459251, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
