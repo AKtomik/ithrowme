@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
+    [Header("State")]
     public bool locked = false; // if true, the door cannot be open at all
     public bool isOpened = false;
-    public bool automaticOpening = true; // if false, we can only open we a button
+    
+    [Header("Auto Open")]
+    [SerializeField] public bool automaticOpening = true; // if false, we can only open we a button
+    [SerializeField] public bool detectPlayer = true;
+    [SerializeField] public bool detectItems = true;
 
+    [Header("Sounds")]
     [SerializeField] private AudioSource doorSlam; // audio both for opening and closing
 
     public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
@@ -51,13 +57,13 @@ public class DoorOpeningScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (automaticOpening && other.gameObject.CompareTag("Player"))
+        if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
             objectsInDoorRanch.Add(other.gameObject);
         }
-        else if (automaticOpening && other.gameObject.CompareTag("Items"))
+        else if (automaticOpening && detectItems && other.gameObject.CompareTag("Items"))
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");

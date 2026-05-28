@@ -1,0 +1,5 @@
+enum TakableType
+{
+    OBJECT,
+    INTERACTABLE,
+}
