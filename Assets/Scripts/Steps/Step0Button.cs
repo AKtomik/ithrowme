@@ -1,26 +1,11 @@
 using UnityEngine;
 
-public class Step0Button : MonoBehaviour
+public class Step0Button : ButtonTrigger
 {
     public DoorOpeningScript doorScript;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision other) {
-        if (!this.enabled || !other.gameObject.CompareTag("Items")) return;
+    public override void OnTrigger() {
         Debug.Log("Step0Button: door 0 opened");
         doorScript.OpeningDoors();
-        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z / 4);
-        this.enabled = false;
     }
 }
