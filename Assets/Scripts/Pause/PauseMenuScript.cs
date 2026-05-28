@@ -13,7 +13,6 @@ public class PauseMenuScript : MonoBehaviour
     private PauseManager pauseManager;
     private GameObject pauseManagerGO;
 
-
     [SerializeField] private InputActionAsset inputActions;
     
     [Header("Canvas")]
@@ -29,6 +28,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderRollSensitivity;
     [SerializeField] private Slider sliderSfxVolume;
     [SerializeField] private Slider sliderMainVolume;
+    [SerializeField] private Toggle toggleRollAxis;
 
 
     [SerializeField] private AudioMixer audioMixer;
@@ -101,7 +101,8 @@ public class PauseMenuScript : MonoBehaviour
 
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
-        
+        toggleRollAxis.isOn = SettingsStore.invertRoll;
+
         audioMixer.GetFloat("SFX", out float sfxVolume);
         sliderSfxVolume.value = sfxVolume;
 
@@ -172,6 +173,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Main", sliderMainVolume.value);
+    }
+
+    public void InvertRollAxis()
+    {
+        sfxSlidersAudio.Play();
+        SettingsStore.invertRoll = toggleRollAxis.isOn;
     }
 
     ///////////////////////////////////////////////////////////////
