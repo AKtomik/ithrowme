@@ -1705,6 +1705,7 @@ MonoBehaviour:
   TAKE_STOP_VELOCITY: 1
   doorScript: {fileID: 818310319}
   missionManager: {fileID: 850945353}
+  enableItem: {fileID: 1797880214}
 --- !u!65 &822353744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2663,7 +2664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.10865
+      value: 31.678
       objectReference: {fileID: 0}
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2671,7 +2672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.6940107
+      value: -7.146
       objectReference: {fileID: 0}
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2704,6 +2705,10 @@ PrefabInstance:
     - target: {fileID: 8376380579509345302, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_Name
       value: ThrowableAveragePlaceholder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376380579509345302, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4101,6 +4106,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
   m_PrefabInstance: {fileID: 1078427705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797880214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3461032228767960994, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
+  m_PrefabInstance: {fileID: 1078427705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakableObject
 --- !u!1 &1836851435
 GameObject:
   m_ObjectHideFlags: 0
