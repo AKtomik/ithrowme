@@ -240,7 +240,8 @@ public class CapsulePlayer : MonoBehaviour
             {
                 GameObject projectile = Instantiate(cheatProjectilePrefab, throwPoint.position, Quaternion.identity);
                 projectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-                TakableItem takable = projectile.AddComponent<TakableItem>();
+                TakableItem takable = projectile.GetComponent<TakableItem>();
+                //takable.Start();
                 takable.Throw(this);
             }
             return;
