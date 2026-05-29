@@ -22,7 +22,6 @@ public class PauseManager : MonoBehaviour
         pauseAction = inputActions.FindAction("State/Pause");
         gameObject.tag = "PauseManager";
         Unpause();
-
     }
 
     void OnEnable()
