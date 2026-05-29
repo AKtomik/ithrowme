@@ -3238,6 +3238,10 @@ PrefabInstance:
       propertyPath: handImageUI
       value: 
       objectReference: {fileID: 292826183}
+    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: cheatProjectileActivated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.112
@@ -7214,7 +7218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54860088908536710, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: locked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1449478683272685895, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7262,7 +7266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2749997486889313004, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: locked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2834801906293097047, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
