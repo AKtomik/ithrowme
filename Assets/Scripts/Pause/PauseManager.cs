@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    // /!\ PauseManager's GameObject MUST have the tag "PauseManager" so that PauseMenuScript works /!\
+
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;
@@ -17,11 +20,12 @@ public class PauseManager : MonoBehaviour
     void Awake()
     {
         pauseAction = inputActions.FindAction("State/Pause");
-
+        gameObject.tag = "PauseManager";
         Unpause();
+
     }
 
-	void OnEnable()
+    void OnEnable()
 	{
         pauseAction.Enable();
 
@@ -61,6 +65,8 @@ public class PauseManager : MonoBehaviour
             loopGameObject.SetActive(false);
         pauseCanvas.gameObject.SetActive(true);
         pauseState = true;
+        inputActions.FindActionMap("Player").Disable();
+        inputActions.FindActionMap("UI").Enable();
         Debug.Log("paused!");
     }
 
@@ -70,7 +76,8 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
-
+        inputActions.FindActionMap("Player").Enable();
+        inputActions.FindActionMap("UI").Disable();
         foreach (var loopGameObject in gameParents)
             loopGameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(false);
