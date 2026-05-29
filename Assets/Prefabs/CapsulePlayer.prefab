@@ -151,6 +151,8 @@ MonoBehaviour:
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
   handSpriteGrab: {fileID: 21300000, guid: b65e309751354c84790a381bd70858e7, type: 3}
+  lockHand: 0
+  lockLook: 0
 --- !u!114 &2411043341698111949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,8 +236,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 500
   field of view: 90
   orthographic: 0
   orthographic size: 5
