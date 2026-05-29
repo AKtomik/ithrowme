@@ -59,6 +59,9 @@ public class CapsulePlayer : MonoBehaviour
     public bool lockHand = false;
     public bool lockLook = false;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource[] audioSources;
+
     private Camera cam;
     private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
@@ -137,6 +140,15 @@ public class CapsulePlayer : MonoBehaviour
         else
             handSprite = handSpriteIdle;
         handImageUI.sprite = handSprite;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("player collide with " + collision.gameObject.name);
+        if (playerBody.angularVelocity.magnitude > 0.1f)
+        {
+            //lightKickAudio.Play();
+        }
     }
 
     void UpdateFov()

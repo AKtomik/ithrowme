@@ -82,4 +82,5 @@ public class MissionManager : MonoBehaviour
         foreach (int id in InitialMissions)
             AddMission(id);
     }
+    
 }
