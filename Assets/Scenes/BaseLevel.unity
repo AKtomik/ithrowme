@@ -2142,7 +2142,7 @@ PrefabInstance:
       objectReference: {fileID: 292826183}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.885
+      value: 13.112
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2150,7 +2150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.463
+      value: 4.46
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3003,6 +3003,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
   m_PrefabInstance: {fileID: 955664986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1364051164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8376380579509345302, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
+  m_PrefabInstance: {fileID: 1078427705}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403310014
 GameObject:
@@ -4008,7 +4013,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3461032228767960994, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
   m_PrefabInstance: {fileID: 1078427705}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1364051164}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
@@ -5226,6 +5231,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1797880214}
     - target: {fileID: 4928956796004474292, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      propertyPath: activatedItem
+      value: 
+      objectReference: {fileID: 1364051164}
+    - target: {fileID: 4928956796004474292, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 850945353}
@@ -5248,7 +5257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.11
+      value: 12.28
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5256,7 +5265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.932
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
       propertyPath: m_LocalRotation.w
