@@ -60,7 +60,8 @@ public class CapsulePlayer : MonoBehaviour
     public bool lockLook = false;
 
     [Header("Sound")]
-    [SerializeField] private AudioSource[] audioSources;
+    [SerializeField] private AudioClip[] soundList;
+    private AudioSource audioSource;
 
     private Camera cam;
     private Vector3 lastPosition;
