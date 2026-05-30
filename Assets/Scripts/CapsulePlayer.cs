@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -61,7 +62,15 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] private AudioClip[] soundList;
-    private AudioSource audioSource;
+    /*
+    0 = lightHit
+    1 = strongHit
+    2 = breathing
+    3 = playerTakingDamage
+     */
+    [SerializeField] private AudioSource feedbackAudioSource;
+    [SerializeField] private AudioSource breathAudioSource;
+
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -84,6 +93,8 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
+        
+        
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
         middleAction = inputActions.FindAction("Player/Middle");
@@ -133,6 +144,8 @@ public class CapsulePlayer : MonoBehaviour
         UpdateFov();
         CheckReachable();
 
+        Debug.Log(playerBody.linearVelocity.magnitude);
+
         Sprite handSprite;
         if (anythingInHand)
             handSprite = handSpriteGrab;
@@ -145,12 +158,35 @@ public class CapsulePlayer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("player collide with " + collision.gameObject.name);
-        if (playerBody.angularVelocity.magnitude > 0.1f)
+        
+
+        if (!(collision.gameObject.CompareTag("Items")) 
+            && collision.GetContact(0).thisCollider is SphereCollider
+            && rotaVelocity.z < 0.3)
         {
-            //lightKickAudio.Play();
+            
+            if (playerBody.linearVelocity.magnitude > 3.5f)
+            {
+                feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
+                feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
+                feedbackAudioSource.PlayOneShot(soundList[1]);
+                breathAudioSource.PlayOneShot(soundList[3]);
+
+                Debug.Log("play sound : " + collision.gameObject.name);
+            }
+            else if (playerBody.linearVelocity.magnitude > 0.8f)
+            {
+                feedbackAudioSource.pitch = Random.Range(0.8f, 1.2f);
+                feedbackAudioSource.volume = Random.Range(0.7f, 1f);
+                feedbackAudioSource.PlayOneShot(soundList[0]);
+                
+
+                Debug.Log("play sound : " + collision.gameObject.name);
+            }
         }
+
     }
+
 
     void UpdateFov()
     {
@@ -303,4 +339,5 @@ public class CapsulePlayer : MonoBehaviour
         Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.3f);
 		Gizmos.DrawSphere(takePoint.position, takeRadius);
 	}
+    
 }
