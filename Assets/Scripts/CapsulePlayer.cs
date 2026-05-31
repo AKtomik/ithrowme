@@ -56,8 +56,11 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Sprite handSpriteGrab;
 
     [Header("Lock Utils")]
-    public bool lockHand = false;
-    public bool lockLook = false;
+    public bool disableHand = false;
+    public bool disableLook = false;
+    private bool lockLookAt = false;
+    private Vector3 lockLookAtPos = Vector3.zero;
+    private float lockLookAtSpeed = 1;
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -65,6 +68,7 @@ public class CapsulePlayer : MonoBehaviour
     private Quaternion rotation;
     private Vector3 rotaVelocity = Vector3.zero;
     private Vector3 rotaVelocityVelocity = Vector3.zero;
+
 
     // reachable
     private bool anythingReachable = false;
@@ -125,7 +129,7 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        if (!lockLook) HandleLook();
+        if (!disableLook) HandleLook();
         UpdateFov();
         CheckReachable();
 
@@ -152,6 +156,14 @@ public class CapsulePlayer : MonoBehaviour
 
     void HandleLook()
     {
+        if (lockLookAt)
+        {
+            Vector3 towardLook = lockLookAtPos - playerPivot.position;
+            towardLook = towardLook.normalized;
+            playerPivot.rotation = Quaternion.LookRotation(towardLook);
+            return;// stop player look control
+        }
+
         Vector2 mouseInput = lookAction.ReadValue<Vector2>();
         float rollInput = rollAction.ReadValue<float>();
         Vector3 rotaInput = Vector3.zero;
@@ -193,6 +205,18 @@ public class CapsulePlayer : MonoBehaviour
         playerPivot.localRotation = rotation;
     }
 
+    public void LockingLookAt(Vector3 pos, float speed = 1)
+    {
+        lockLookAt = true;
+        lockLookAtPos = pos;
+        lockLookAtSpeed = speed;
+    }
+    
+    public void UnlockingLook()
+    {
+        lockLookAt = false;
+    }
+
     void CheckReachable()
     {
         if (anythingInHand) return;
@@ -222,7 +246,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnTake(InputAction.CallbackContext ctx)
     {
-        if (Time.timeScale == 0 || lockHand) return;
+        if (Time.timeScale == 0 || disableHand) return;
         if (takeThrowActionDebug) Debug.Log("player take action");
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
