@@ -90,7 +90,7 @@ public class CapsulePlayer : MonoBehaviour
         throwAction = inputActions.FindAction("Player/Throw");
         resetAction = inputActions.FindAction("Player/Reset");
         
-        rotation = playerPivot.localRotation;
+        rotation = playerPivot.rotation;
         lastPosition = transform.position;
     }
 
@@ -161,7 +161,8 @@ public class CapsulePlayer : MonoBehaviour
             {
                 Vector3 towardLook = lockLookAtPos - playerPivot.position;
                 towardLook = towardLook.normalized;
-                playerPivot.rotation = Quaternion.LookRotation(towardLook);
+                rotation = Quaternion.LookRotation(towardLook);
+                playerPivot.rotation = rotation;
             }
             return;// stop player look control
         }
@@ -204,7 +205,7 @@ public class CapsulePlayer : MonoBehaviour
         rotation = angleY * rotation;
         Quaternion angleZ = Quaternion.AngleAxis(rotaDelta.z, rotation * Vector3.forward);
         rotation = angleZ * rotation;
-        playerPivot.localRotation = rotation;
+        playerPivot.rotation = rotation;
     }
 
     public void LockingLookAt()
