@@ -60,6 +60,7 @@ public class CapsulePlayer : MonoBehaviour
     private bool lockLookAt = false;
     private Vector3 lockLookAtPos = Vector3.zero;
     private float lockLookAtSpeed = 1;
+    private float lockLookAtProgress = 0;
 
     private Camera cam;
     private Vector3 lastPosition;
@@ -159,9 +160,22 @@ public class CapsulePlayer : MonoBehaviour
         {
             if (lockLookAtPos != Vector3.zero)
             {
+                // toward from here to point
                 Vector3 towardLook = lockLookAtPos - playerPivot.position;
                 towardLook = towardLook.normalized;
-                rotation = Quaternion.LookRotation(towardLook);
+
+                // t compute
+                lockLookAtProgress += lockLookAtSpeed * Time.deltaTime;
+                if (lockLookAtProgress > 1) lockLookAtProgress = 1;
+                
+                // look toward
+                Quaternion noRollToward = Quaternion.LookRotation(towardLook);
+                Quaternion noRollCurrent = Quaternion.LookRotation(rotation * Vector3.forward);
+                Quaternion deltaRoll = Quaternion.Inverse(noRollCurrent) * rotation;
+                Quaternion toward = noRollToward * deltaRoll;// preserve z roll
+
+                // progressive move
+                rotation = Quaternion.Slerp(rotation, toward, lockLookAtProgress);
                 playerPivot.rotation = rotation;
             }
             return;// stop player look control
@@ -214,6 +228,7 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAt = true;
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
+        lockLookAtProgress = 0;
     }
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
@@ -222,6 +237,7 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAt = true;
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
+        lockLookAtProgress = 0;
     }
     
     public void UnlockingLook()
