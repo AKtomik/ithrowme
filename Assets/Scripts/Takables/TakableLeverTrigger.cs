@@ -2,9 +2,9 @@ using UnityEngine;
 
 abstract public class TakableLever : Takable
 {
-    public bool TAKE_STOP_VELOCITY = true;
+    public bool takeStopVelocity = true;
     
-    public bool ONE_TIME_TRIGGER = true;
+    public bool oneTimeTrigger = true;
 
     [SerializeField] private Animation pulledAnimatorReference;
     public float pulledFinishPushForce = 10f;
@@ -20,7 +20,7 @@ abstract public class TakableLever : Takable
         isPulling = true;
         playerPulling = player;
 
-        if (TAKE_STOP_VELOCITY)
+        if (takeStopVelocity)
         {
             player.playerBody.linearVelocity = Vector3.zero;
             player.playerBody.angularVelocity = Vector3.zero;
@@ -39,7 +39,7 @@ abstract public class TakableLever : Takable
         playerPulling.playerBody.AddForce(transform.forward * pulledFinishPushForce);
         playerPulling = null;
         
-        if (ONE_TIME_TRIGGER)
+        if (oneTimeTrigger)
         {
             this.enabled = false;
         } else {
@@ -51,7 +51,7 @@ abstract public class TakableLever : Takable
 	{
 		if (isPulling)
         {
-            if (TAKE_STOP_VELOCITY)
+            if (takeStopVelocity)
             {
                 playerPulling.playerBody.linearVelocity = Vector3.zero;
                 playerPulling.playerBody.angularVelocity = Vector3.zero;
