@@ -5,11 +5,20 @@ abstract public class TakableLever : Takable
     public bool TAKE_STOP_VELOCITY = true;
     
     public bool ONE_TIME_TRIGGER = true;
-    public Vector3 TRIGGER_SCALE = new Vector3(1, -1, .25f);
+
+    [SerializeField] private Animation pulledAnimatorReference;
+    public float pulledFinishPushForce = 10f;
+
+    private bool isPulling;
+    private CapsulePlayer playerPulling;
 
     override public void Take(CapsulePlayer player)
     {
         if (!this.enabled) return;
+
+        collider.enabled = false;// disable collision during the animation
+        isPulling = true;
+        playerPulling = player;
 
         if (TAKE_STOP_VELOCITY)
         {
@@ -17,16 +26,36 @@ abstract public class TakableLever : Takable
             player.playerBody.angularVelocity = Vector3.zero;
         }
         
-        OnTrigger(player);
-        
-        transform.localScale = new Vector3(transform.localScale.x * TRIGGER_SCALE.x, transform.localScale.y * TRIGGER_SCALE.y, transform.localScale.z * TRIGGER_SCALE.z);
-        if (ONE_TIME_TRIGGER)
-        {
-            this.enabled = false;
-        }
+        pulledAnimatorReference.Play();
+        PullStart(player);
     }
     
     override public void Throw(CapsulePlayer player) {}
 
-    abstract public void OnTrigger(CapsulePlayer player);
+    abstract public void PullStart(CapsulePlayer player);
+
+    virtual public void PullFinish()
+    {
+        playerPulling.playerBody.AddForce(transform.forward * pulledFinishPushForce);
+        playerPulling = null;
+        
+        if (ONE_TIME_TRIGGER)
+        {
+            this.enabled = false;
+        } else {
+            collider.enabled = true;
+        }
+    }
+
+	void Update()
+	{
+		if (isPulling)
+        {
+            if (TAKE_STOP_VELOCITY)
+            {
+                playerPulling.playerBody.linearVelocity = Vector3.zero;
+                playerPulling.playerBody.angularVelocity = Vector3.zero;
+            }
+        }
+	}
 }
