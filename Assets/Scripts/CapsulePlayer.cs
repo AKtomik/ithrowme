@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,6 +20,7 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
+    [SerializeField] private CanvasBoss canvasMana;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
@@ -158,9 +157,12 @@ public class CapsulePlayer : MonoBehaviour
     {
         if (lockLookAt)
         {
-            Vector3 towardLook = lockLookAtPos - playerPivot.position;
-            towardLook = towardLook.normalized;
-            playerPivot.rotation = Quaternion.LookRotation(towardLook);
+            if (lockLookAtPos != Vector3.zero)
+            {
+                Vector3 towardLook = lockLookAtPos - playerPivot.position;
+                towardLook = towardLook.normalized;
+                playerPivot.rotation = Quaternion.LookRotation(towardLook);
+            }
             return;// stop player look control
         }
 
@@ -205,8 +207,17 @@ public class CapsulePlayer : MonoBehaviour
         playerPivot.localRotation = rotation;
     }
 
+    public void LockingLookAt()
+    {
+        canvasMana.EnableCinematic();
+        lockLookAt = true;
+        lockLookAtPos = Vector2.zero;
+        lockLookAtSpeed = 0;
+    }
+
     public void LockingLookAt(Vector3 pos, float speed = 1)
     {
+        canvasMana.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
@@ -214,6 +225,7 @@ public class CapsulePlayer : MonoBehaviour
     
     public void UnlockingLook()
     {
+        canvasMana.DisableCinematic();
         lockLookAt = false;
     }
 
