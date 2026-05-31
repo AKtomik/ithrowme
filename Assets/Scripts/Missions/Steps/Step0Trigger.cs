@@ -6,7 +6,6 @@ public class Step0Trigger : MonoBehaviour
     public DoorOpeningScript closingDoorScript;
 
     private void OnTriggerEnter(Collider other) {
-        //Debug.Log("step 1 colliding with "+ other.gameObject.layer);
         if (!this.enabled || !other.gameObject.CompareTag("Player")) return;
         Debug.Log("Step0Trigger: step 0 completed");
         closingDoorScript.ClosingDoors();
