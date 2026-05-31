@@ -13,6 +13,7 @@ public class CapsuleCheat : MonoBehaviour
     private InputAction behindAction;//-z
     private InputAction upAction;//+y
     private InputAction downAction;//-y
+    private InputAction stopAction;//-y
     
     private Rigidbody body;
     
@@ -25,6 +26,7 @@ public class CapsuleCheat : MonoBehaviour
         behindAction = inputActions.FindAction("Cheat/Behind");
         upAction = inputActions.FindAction("Cheat/Up");
         downAction = inputActions.FindAction("Cheat/Down");
+        stopAction = inputActions.FindAction("Cheat/Stop");
 
         body = GetComponent<Rigidbody>();
     }
@@ -47,6 +49,12 @@ public class CapsuleCheat : MonoBehaviour
             move.y += speed;
         if (downAction.IsPressed())
             move.y -= speed;
+        
+        if (stopAction.IsPressed())
+        {
+            body.linearVelocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
+        }
 
         transform.position += transform.rotation * move;
     }
