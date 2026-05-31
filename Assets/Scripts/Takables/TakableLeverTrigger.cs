@@ -5,7 +5,9 @@ abstract public class TakableLever : Takable
     public bool takeStopVelocity = true;
     
     public bool oneTimeTrigger = true;
+    public bool lockLooking = true;
 
+    [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
     public float pulledFinishPushForce = 10f;
 
@@ -19,6 +21,7 @@ abstract public class TakableLever : Takable
         collider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
 
         if (takeStopVelocity)
         {
@@ -37,8 +40,10 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        PullFinish(playerPulling);
+        playerPulling.UnlockingLook();
         playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
+        
+        if (lockLooking) PullFinish(playerPulling);
         playerPulling = null;
         
         if (oneTimeTrigger)
