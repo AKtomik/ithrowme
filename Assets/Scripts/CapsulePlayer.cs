@@ -170,7 +170,7 @@ public class CapsulePlayer : MonoBehaviour
                 feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
                 feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
                 feedbackAudioSource.PlayOneShot(soundList[1]);
-                breathAudioSource.PlayOneShot(soundList[3]);
+                //breathAudioSource.PlayOneShot(soundList[3]);
 
                 Debug.Log("play sound : " + collision.gameObject.name);
             }
