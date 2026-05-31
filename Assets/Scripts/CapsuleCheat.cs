@@ -4,7 +4,8 @@ using UnityEngine.UIElements;
 
 public class CapsuleCheat : MonoBehaviour
 {
-    public float speedBySecond = 1f;
+    public float speedPosBySecond = 10f;
+    public float velocityBodyBySecond = 3f;
 
     [SerializeField] private InputActionAsset inputActions;
     private InputAction leftAction;//-x
@@ -34,21 +35,21 @@ public class CapsuleCheat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = speedBySecond * Time.deltaTime;
+        float delta = Time.deltaTime;
         Vector3 move = new Vector3();
 
         if (leftAction.IsPressed())
-            move.x -= speed;
+            move.x -= delta;
         if (rightAction.IsPressed())
-            move.x += speed;
+            move.x += delta;
         if (frontAction.IsPressed())
-            move.z += speed;
+            move.z += delta;
         if (behindAction.IsPressed())
-            move.z -= speed;
+            move.z -= delta;
         if (upAction.IsPressed())
-            move.y += speed;
+            move.y += delta;
         if (downAction.IsPressed())
-            move.y -= speed;
+            move.y -= delta;
         
         if (stopAction.IsPressed())
         {
@@ -56,6 +57,7 @@ public class CapsuleCheat : MonoBehaviour
             body.angularVelocity = Vector3.zero;
         }
 
-        transform.position += transform.rotation * move;
+        transform.position += transform.rotation * move * speedPosBySecond;
+        body.AddForce(transform.rotation * move * velocityBodyBySecond * 100, ForceMode.Acceleration);
     }
 }
