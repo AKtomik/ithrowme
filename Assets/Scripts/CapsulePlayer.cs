@@ -59,7 +59,7 @@ public class CapsulePlayer : MonoBehaviour
     [Header("Lock Utils")]
     public bool lockHand = false;
     public bool lockLook = false;
-
+    
     [Header("Sound")]
     [SerializeField] private AudioClip[] soundList;
     /*
