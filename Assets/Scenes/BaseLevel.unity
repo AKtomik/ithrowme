@@ -2910,12 +2910,13 @@ MonoBehaviour:
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsDefinition:
+  - zero
   - sortir de la chambre cellulaire
-  - "d\xE9v\xE9rouiller la porte principale au module de s\xE9curit\xE9"
-  - "d\xE9marer les moteurs dans la salle de contr\xF4le"
-  - "bien jou\xE9 !"
-  - '- fin du prototype -'
-  - (appuye sur espace pour recommencer)
+  - "d\xE9sactiver le code rouge au module de s\xE9curit\xE9"
+  - "se rendre \xE0 la capsule d'\xE9jection"
+  - "trouver un cube d'\xE9nergie"
+  - "ramener le cube au module d'\xE9jection"
+  - "proc\xE9der \xE0 l'\xE9jection d'urgence"
   - manger un sandwich
   InitialMissions: 00000000
 --- !u!1 &860800113
