@@ -2924,7 +2924,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: PullFinish
+    functionName: AnimationEnded
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

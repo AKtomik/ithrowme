@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed1bf2b968039447afaec11e3f11359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step0Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: 1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   doorScript: {fileID: 1131063357}
 --- !u!64 &220591024
 MeshCollider:
@@ -1085,6 +1085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 41028281971995004, guid: 768edca082a934c43a42149271550365, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 854016716682767302, guid: 768edca082a934c43a42149271550365, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.9
@@ -1155,8 +1159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413b630291ba26344b2b3799da1a8f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step1Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: -1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   doorScript: {fileID: 818310319}
   missionManager: {fileID: 850945353}
 --- !u!1001 &281700027
@@ -4498,8 +4502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0b48a812fbb64584bcf5733be4be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: 1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   missionManager: {fileID: 850945353}
 --- !u!4 &1343547262 stripped
 Transform:
@@ -7717,7 +7721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757558442741315802, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_LocalPosition.x

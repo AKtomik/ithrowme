@@ -33,10 +33,12 @@ abstract public class TakableLever : Takable
     override public void Throw(CapsulePlayer player) {}
 
     abstract public void PullStart(CapsulePlayer player);
+    abstract public void PullFinish(CapsulePlayer player);
 
-    virtual public void PullFinish()
+    public void AnimationEnded()
     {
-        playerPulling.playerBody.AddForce(transform.forward * pulledFinishPushForce);
+        PullFinish(playerPulling);
+        playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         playerPulling = null;
         
         if (oneTimeTrigger)
