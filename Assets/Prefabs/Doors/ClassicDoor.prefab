@@ -188,6 +188,9 @@ MonoBehaviour:
   detectPlayer: 1
   detectItems: 0
   doorSlam: {fileID: 6132878711129045287}
+  audioClips:
+  - {fileID: 8300000, guid: e5e96282867b0fc4dae419cf1bfcb6cf, type: 3}
+  - {fileID: 8300000, guid: 6604ded7feacbc74f846410bebb99c4f, type: 3}
   objectsInDoorRanch: []
 --- !u!135 &2725564819157198692
 SphereCollider:

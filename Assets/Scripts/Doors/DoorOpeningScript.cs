@@ -14,6 +14,8 @@ public class DoorOpeningScript : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] private AudioSource doorSlam; // audio both for opening and closing
+    [SerializeField] private AudioClip[] audioClips; // 0 = open , 1 = close
+
 
     public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
     
@@ -35,7 +37,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (!isOpened && !locked)
         {
-            doorSlam.Play();
+            doorSlam.PlayOneShot(audioClips[0]);
             m_Animator.ResetTrigger("Close");
             m_Animator.SetTrigger("Open");
             isOpened = true;
@@ -47,7 +49,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (isOpened)
         {
-            doorSlam.Play();
+            doorSlam.PlayOneShot(audioClips[1]);
             m_Animator.ResetTrigger("Open");
             m_Animator.SetTrigger("Close");
             isOpened = false;
