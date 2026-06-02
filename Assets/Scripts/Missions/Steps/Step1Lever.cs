@@ -11,8 +11,7 @@ public class Step1Lever : TakableLever
         missionManager.CompleteMission(1);
     }
     
-    public override void PullFinish() {
-        base.PullFinish();
+    public override void PullFinish(CapsulePlayer player) {
         Debug.Log("Step1Lever: step 1 completed");
         doorScript.OpeningDoors();
         missionManager.AddMission(2);

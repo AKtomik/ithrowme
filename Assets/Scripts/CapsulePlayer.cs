@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,6 +21,7 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
+    [SerializeField] private CanvasBoss canvasMana;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
@@ -57,8 +56,12 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private Sprite handSpriteGrab;
 
     [Header("Lock Utils")]
-    public bool lockHand = false;
-    public bool lockLook = false;
+    public bool disableHand = false;
+    public bool disableLook = false;
+    private bool lockLookAt = false;
+    private Vector3 lockLookAtPos = Vector3.zero;
+    private float lockLookAtSpeed = 1;
+    private float lockLookAtProgress = 0;
     
     [Header("Sound")]
     [SerializeField] private AudioClip[] soundList;
@@ -79,6 +82,7 @@ public class CapsulePlayer : MonoBehaviour
     private Quaternion rotation;
     private Vector3 rotaVelocity = Vector3.zero;
     private Vector3 rotaVelocityVelocity = Vector3.zero;
+
 
     // reachable
     private bool anythingReachable = false;
@@ -103,7 +107,7 @@ public class CapsulePlayer : MonoBehaviour
         throwAction = inputActions.FindAction("Player/Throw");
         resetAction = inputActions.FindAction("Player/Reset");
         
-        rotation = playerPivot.localRotation;
+        rotation = playerPivot.rotation;
         lastPosition = transform.position;
     }
 
@@ -141,7 +145,7 @@ public class CapsulePlayer : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        if (!lockLook) HandleLook();
+        if (!disableLook) HandleLook();
         UpdateFov();
         CheckReachable();
 
@@ -205,6 +209,31 @@ public class CapsulePlayer : MonoBehaviour
 
     void HandleLook()
     {
+        if (lockLookAt)
+        {
+            if (lockLookAtPos != Vector3.zero)
+            {
+                // toward from here to point
+                Vector3 towardLook = lockLookAtPos - playerPivot.position;
+                towardLook = towardLook.normalized;
+
+                // t compute
+                lockLookAtProgress += lockLookAtSpeed * Time.deltaTime;
+                if (lockLookAtProgress > 1) lockLookAtProgress = 1;
+                
+                // look toward
+                Quaternion noRollToward = Quaternion.LookRotation(towardLook);
+                Quaternion noRollCurrent = Quaternion.LookRotation(rotation * Vector3.forward);
+                Quaternion deltaRoll = Quaternion.Inverse(noRollCurrent) * rotation;
+                Quaternion toward = noRollToward * deltaRoll;// preserve z roll
+
+                // progressive move
+                rotation = Quaternion.Slerp(rotation, toward, lockLookAtProgress);
+                playerPivot.rotation = rotation;
+            }
+            return;// stop player look control
+        }
+
         Vector2 mouseInput = lookAction.ReadValue<Vector2>();
         float rollInput = rollAction.ReadValue<float>();
         Vector3 rotaInput = Vector3.zero;
@@ -243,7 +272,31 @@ public class CapsulePlayer : MonoBehaviour
         rotation = angleY * rotation;
         Quaternion angleZ = Quaternion.AngleAxis(rotaDelta.z, rotation * Vector3.forward);
         rotation = angleZ * rotation;
-        playerPivot.localRotation = rotation;
+        playerPivot.rotation = rotation;
+    }
+
+    public void LockingLookAt()
+    {
+        canvasMana.EnableCinematic();
+        lockLookAt = true;
+        lockLookAtPos = Vector2.zero;
+        lockLookAtSpeed = 0;
+        lockLookAtProgress = 0;
+    }
+
+    public void LockingLookAt(Vector3 pos, float speed = 1)
+    {
+        canvasMana.EnableCinematic();
+        lockLookAt = true;
+        lockLookAtPos = pos;
+        lockLookAtSpeed = speed;
+        lockLookAtProgress = 0;
+    }
+    
+    public void UnlockingLook()
+    {
+        canvasMana.DisableCinematic();
+        lockLookAt = false;
     }
 
     void CheckReachable()
@@ -275,7 +328,7 @@ public class CapsulePlayer : MonoBehaviour
 
     void OnTake(InputAction.CallbackContext ctx)
     {
-        if (Time.timeScale == 0 || lockHand) return;
+        if (Time.timeScale == 0 || disableHand) return;
         if (takeThrowActionDebug) Debug.Log("player take action");
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;

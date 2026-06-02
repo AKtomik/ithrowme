@@ -3,10 +3,12 @@ using UnityEngine.Audio;
 
 abstract public class TakableLever : Takable
 {
-    public bool TAKE_STOP_VELOCITY = true;
+    public bool takeStopVelocity = true;
     
-    public bool ONE_TIME_TRIGGER = true;
+    public bool oneTimeTrigger = true;
+    public bool lockLooking = true;
 
+    [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
     public float pulledFinishPushForce = 10f;
 
@@ -27,8 +29,9 @@ abstract public class TakableLever : Takable
         collider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
 
-        if (TAKE_STOP_VELOCITY)
+        if (takeStopVelocity)
         {
             player.playerBody.linearVelocity = Vector3.zero;
             player.playerBody.angularVelocity = Vector3.zero;
@@ -42,13 +45,17 @@ abstract public class TakableLever : Takable
     override public void Throw(CapsulePlayer player) {}
 
     abstract public void PullStart(CapsulePlayer player);
+    abstract public void PullFinish(CapsulePlayer player);
 
-    virtual public void PullFinish()
+    public void AnimationEnded()
     {
-        playerPulling.playerBody.AddForce(transform.forward * pulledFinishPushForce);
+        playerPulling.UnlockingLook();
+        playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
+        
+        if (lockLooking) PullFinish(playerPulling);
         playerPulling = null;
         
-        if (ONE_TIME_TRIGGER)
+        if (oneTimeTrigger)
         {
             this.enabled = false;
         } else {
@@ -60,7 +67,7 @@ abstract public class TakableLever : Takable
 	{
 		if (isPulling)
         {
-            if (TAKE_STOP_VELOCITY)
+            if (takeStopVelocity)
             {
                 playerPulling.playerBody.linearVelocity = Vector3.zero;
                 playerPulling.playerBody.angularVelocity = Vector3.zero;

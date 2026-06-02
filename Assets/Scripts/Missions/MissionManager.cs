@@ -36,6 +36,16 @@ public class MissionManager : MonoBehaviour
             RefreshMissions();
         }
     }
+    
+    public bool IsCompleted(int id)
+    {
+        return finishMissions.Contains(id);
+    }
+    
+    public bool IsActive(int id)
+    {
+        return activeMissions.Contains(id);
+    }
 
     private List<string> GetActiveMissionTexts()
     {
