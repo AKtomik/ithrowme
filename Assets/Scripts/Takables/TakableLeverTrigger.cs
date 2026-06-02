@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 abstract public class TakableLever : Takable
 {
@@ -12,8 +13,15 @@ abstract public class TakableLever : Takable
     private bool isPulling;
     private CapsulePlayer playerPulling;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip leverAction;
+
+
+
+
     override public void Take(CapsulePlayer player)
     {
+        
         if (!this.enabled) return;
 
         collider.enabled = false;// disable collision during the animation
@@ -28,6 +36,7 @@ abstract public class TakableLever : Takable
         
         pulledAnimatorReference.Play();
         PullStart(player);
+        audioSource.PlayOneShot(leverAction);
     }
     
     override public void Throw(CapsulePlayer player) {}
