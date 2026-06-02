@@ -7,7 +7,8 @@ public abstract class Takable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     virtual public void Start()
     {
-        TakableReference takableReference = collider.gameObject.AddComponent(typeof(TakableReference)) as TakableReference;
+        GameObject takeObject = collider.gameObject;
+        TakableReference takableReference = takeObject.AddComponent(typeof(TakableReference)) as TakableReference;
         takableReference.takable = this;
     }
 
