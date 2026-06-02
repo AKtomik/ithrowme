@@ -670,36 +670,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 991553149410567970, guid: 3282436c4e134164e927e49435bd3901, type: 3}
   m_PrefabInstance: {fileID: 914217600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &217087088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217087082}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &217087089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -708,6 +678,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217087082}
   m_CullTransparentMesh: 1
+--- !u!114 &217087094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4638439261256931814, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+  m_PrefabInstance: {fileID: 914217600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217087082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e4df103b8200c4cbad270b32ee5775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &220591021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d43476ab104590f4e8614f35cf6722f6, type: 3}
@@ -730,8 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed1bf2b968039447afaec11e3f11359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step0Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: 1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   doorScript: {fileID: 1131063357}
 --- !u!64 &220591024
 MeshCollider:
@@ -1085,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 41028281971995004, guid: 768edca082a934c43a42149271550365, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 854016716682767302, guid: 768edca082a934c43a42149271550365, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.9
@@ -1155,8 +1140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413b630291ba26344b2b3799da1a8f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step1Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: -1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   doorScript: {fileID: 818310319}
   missionManager: {fileID: 850945353}
 --- !u!1001 &281700027
@@ -2925,12 +2910,13 @@ MonoBehaviour:
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsDefinition:
+  - zero
   - sortir de la chambre cellulaire
-  - "d\xE9v\xE9rouiller la porte principale au module de s\xE9curit\xE9"
-  - "d\xE9marer les moteurs dans la salle de contr\xF4le"
-  - "bien jou\xE9 !"
-  - '- fin du prototype -'
-  - (appuye sur espace pour recommencer)
+  - "d\xE9sactiver le code rouge au module de s\xE9curit\xE9"
+  - "se rendre \xE0 la capsule d'\xE9jection"
+  - "trouver un cube d'\xE9nergie"
+  - "ramener le cube au module d'\xE9jection"
+  - "proc\xE9der \xE0 l'\xE9jection d'urgence"
   - manger un sandwich
   InitialMissions: 00000000
 --- !u!1 &860800113
@@ -3214,9 +3200,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 991553149410567970, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       insertIndex: -1
       addedObject: {fileID: 217087089}
-    - targetCorrespondingSourceObject: {fileID: 991553149410567970, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 217087088}
   m_SourcePrefab: {fileID: 100100000, guid: 3282436c4e134164e927e49435bd3901, type: 3}
 --- !u!1001 &942557606
 PrefabInstance:
@@ -3234,6 +3217,10 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 292826183}
+    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: canvasMana
+      value: 
+      objectReference: {fileID: 217087094}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: handImageUI
       value: 
@@ -4498,8 +4485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0b48a812fbb64584bcf5733be4be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Button
-  ONE_TIME_TRIGGER: 1
-  TRIGGER_SCALE: {x: 1, y: 1, z: 0.25}
+  oneTimeTrigger: 1
+  triggerScale: {x: 1, y: 1, z: 0.25}
   missionManager: {fileID: 850945353}
 --- !u!4 &1343547262 stripped
 Transform:
@@ -7717,7 +7704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757558442741315802, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_LocalPosition.x
