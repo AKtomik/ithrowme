@@ -1318,6 +1318,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8620929697680516773, guid: d0fe2deebad3d0d4492f7a5aa8130d93, type: 3}
   m_PrefabInstance: {fileID: 323615990}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &350682369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 54860088908536710, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+  m_PrefabInstance: {fileID: 44398024013375084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
 --- !u!1001 &360839791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2916,12 +2927,12 @@ MonoBehaviour:
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsDefinition:
-  - zero
   - sortir de la chambre cellulaire
   - "d\xE9sactiver le code rouge au module de s\xE9curit\xE9"
   - "se rendre \xE0 la capsule d'\xE9jection"
   - "trouver un cube d'\xE9nergie"
   - "ramener le cube au module d'\xE9jection"
+  - contacter Central au module radio
   - "proc\xE9der \xE0 l'\xE9jection d'urgence"
   - manger un sandwich
   InitialMissions: 00000000
@@ -4504,7 +4515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_Name
-      value: CapsuleLever
+      value: EjectionLever
       objectReference: {fileID: 0}
     - target: {fileID: 1757558442741315802, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6406,7 +6417,9 @@ MonoBehaviour:
   pulledAnimatorReference: {fileID: 1841144617}
   pulledFinishPushForce: 10
   missionManager: {fileID: 850945353}
-  unlockedDoors: []
+  unlockedDoors:
+  - {fileID: 350682369}
+  - {fileID: 1923641943}
 --- !u!111 &1841144617 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
@@ -6592,6 +6605,17 @@ Transform:
   - {fileID: 1782977487}
   m_Father: {fileID: 1067009058}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1923641943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2749997486889313004, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+  m_PrefabInstance: {fileID: 44398024013375084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
 --- !u!1 &1927365077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7400,6 +7424,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1575093548742919459, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: ResearchCenterDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 2636576899889407012, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
       value: EastEntrance
@@ -7416,6 +7444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NorthEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 3688670118321634377, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: TechnicalCenterDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 5864131200647345174, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7427,6 +7459,14 @@ PrefabInstance:
     - target: {fileID: 6857336775969017973, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918981685471582918, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: LifeCenterDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948459828411776677, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: m_Name
+      value: ControlCenterDoor
       objectReference: {fileID: 0}
     - target: {fileID: 8784644136783455944, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
