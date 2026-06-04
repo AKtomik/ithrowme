@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Step1Lever : TakableLever
 {
-    public DoorOpeningScript doorScript;
     public MissionManager missionManager;
+    public DoorOpeningScript doorScript;
     public GameObject activatedItem;
 
     public override void PullStart(CapsulePlayer player) {
