@@ -4,8 +4,9 @@ using UnityEngine;
 public class DoorOpeningScript : MonoBehaviour
 {
     [Header("State")]
-    public bool locked = false; // if true, the door cannot be open at all
-    public bool isOpened = false;
+    // if true, the door cannot be open at all
+    [SerializeField] private bool locked = false;
+    [SerializeField] private bool opened = false;
     
     [Header("Auto Open")]
     [SerializeField] public bool automaticOpening = true; // if false, we can only open we a button
@@ -33,25 +34,44 @@ public class DoorOpeningScript : MonoBehaviour
     /// flip flop type with isOpened
     public void OpeningDoors()
     {
-        if (!isOpened && !locked)
+        if (!opened && !locked)
         {
             doorSlam.Play();
             m_Animator.ResetTrigger("Close");
             m_Animator.SetTrigger("Open");
-            isOpened = true;
+            opened = true;
 
         }
 
     }
     public void ClosingDoors()
     {
-        if (isOpened)
+        if (opened)
         {
             doorSlam.Play();
             m_Animator.ResetTrigger("Open");
             m_Animator.SetTrigger("Close");
-            isOpened = false;
+            opened = false;
         }
+    }
+    public bool isOpened()
+    {
+        return opened;
+    }
+    
+    public void LockingDoors()
+    {
+        locked = true;
+        // show up locked state on the model
+    }
+    public void UnlockingDoors()
+    {
+        locked = false;
+        // show up unlocked state on the model
+    }
+    public bool isLocked()
+    {
+        return locked;
     }
 
     private void OnTriggerEnter(Collider other)

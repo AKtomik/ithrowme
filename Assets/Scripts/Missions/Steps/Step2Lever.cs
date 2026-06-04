@@ -14,7 +14,7 @@ public class Step2Lever : TakableLever
         Debug.Log("Step2Lever: step 2 completed");
         foreach(var door in unlockedDoors)
         {
-            door.locked = false;
+            door.UnlockingDoors();
         }
         missionManager.AddMission(3);
         missionManager.AddMission(5);
