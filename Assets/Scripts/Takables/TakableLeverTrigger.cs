@@ -2,14 +2,17 @@ using UnityEngine;
 
 abstract public class TakableLever : Takable
 {
-    public bool takeStopVelocity = true;
-    
+    [Header("Pull")]
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
+    
+    [Header("Move")]
+    public bool takeStopVelocity = true;
+    public float pulledFinishPushForce = 10f;
 
+    [Header("Pointers")]
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
-    public float pulledFinishPushForce = 10f;
 
     private bool isPulling;
     private CapsulePlayer playerPulling;
@@ -40,10 +43,10 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        playerPulling.UnlockingLook();
-        playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
+        if (lockLooking) playerPulling.UnlockingLook();
+        if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
-        if (lockLooking) PullFinish(playerPulling);
+        PullFinish(playerPulling);
         playerPulling = null;
         
         if (oneTimeTrigger)
