@@ -13,6 +13,7 @@ abstract public class TakableLever : Takable
     [Header("Trigger Pointers")]
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
+    [SerializeField] private string pulledAnimationName;
 
     private bool isPulling;
     private CapsulePlayer playerPulling;
@@ -32,7 +33,10 @@ abstract public class TakableLever : Takable
             player.playerBody.angularVelocity = Vector3.zero;
         }
         
-        pulledAnimatorReference.Play();
+        if (pulledAnimationName.Length > 0)
+            pulledAnimatorReference.Play(pulledAnimationName);
+        else
+            pulledAnimatorReference.Play();
         PullStart(player);
     }
     

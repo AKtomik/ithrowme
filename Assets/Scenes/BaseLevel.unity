@@ -7301,6 +7301,18 @@ PrefabInstance:
       propertyPath: 'step2UnlockedDoors.Array.data[1]'
       value: 
       objectReference: {fileID: 1923641943}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1923641943}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 350682369}
     - target: {fileID: 2371459371622699592, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: m_Name
       value: EjectionConsole
@@ -7317,6 +7329,10 @@ PrefabInstance:
       propertyPath: 'unlockedDoors.Array.data[1]'
       value: 
       objectReference: {fileID: 1923641943}
+    - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
     - target: {fileID: 7989475426809435377, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: missionManager
       value: 
