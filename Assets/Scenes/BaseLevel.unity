@@ -375,6 +375,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6934025377311899657, guid: 30943036a9252ba42ac9d1532c7da76b, type: 3}
   m_PrefabInstance: {fileID: 63022529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &77725485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 261011990169780533, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
+  m_PrefabInstance: {fileID: 867310344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!4 &93929939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9037552242180067902, guid: 2387c0645595e304fba306ca80c18961, type: 3}
@@ -2689,7 +2700,7 @@ MonoBehaviour:
   mainEventCamera: {fileID: 0}
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 4096
   gazeUseTimedClick: 0
   gazeClickTimer: 2
   gazeClickTimerDelay: 1
@@ -3072,7 +3083,7 @@ PrefabInstance:
     - target: {fileID: 8212467702433062239, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
       propertyPath: handImageUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 77725485}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3292,6 +3303,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3600134737010597748, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -91.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600134737010597748, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -123.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5864099210325693125, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3318,7 +3337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6433948306013991629, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 124.58
+      value: 124.58002
       objectReference: {fileID: 0}
     - target: {fileID: 6433948306013991629, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3329,8 +3348,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 618177163}
     - target: {fileID: 6846949005063156578, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846949005063156578, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       propertyPath: m_PlaneDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846949005063156578, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: m_UpdateRectTransformForStandalone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953426322163364346, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: quality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953426322163364346, guid: 3282436c4e134164e927e49435bd3901, type: 3}
+      propertyPath: interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

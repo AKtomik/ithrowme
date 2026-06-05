@@ -147,6 +147,9 @@ namespace CurvedUI
 
         void Update()
         {
+            savedRectSize = RectTransform.rect.size;
+            SetUIAngle(angle);
+            
 
             //recreate the geometry if entire canvas has been resized
             if (RectTransform.rect.size != savedRectSize)
@@ -169,6 +172,8 @@ namespace CurvedUI
         /// </summary>
         /// <param name="newAngle"></param>
         void SetUIAngle(int newAngle)  {
+
+            
 
             if (myCanvas == null)
                 myCanvas = GetComponent<Canvas>();
@@ -313,6 +318,7 @@ namespace CurvedUI
         /// </returns>
         public Vector3 VertexPositionToCurvedCanvas(Vector3 pos)
         {
+            
             switch (Shape)
             {
                 case CurvedUIShape.CYLINDER:
@@ -348,6 +354,7 @@ namespace CurvedUI
         /// </returns>
         public Vector3 CanvasToCurvedCanvas(Vector3 pos)
         {
+            
             pos = VertexPositionToCurvedCanvas(pos);
             if (float.IsNaN(pos.x) || float.IsInfinity(pos.x)) return Vector3.zero;
             else return transform.localToWorldMatrix.MultiplyPoint3x4(pos);
@@ -676,6 +683,7 @@ namespace CurvedUI
         /// <param name="calculateCurvedOnly"> Forces children to recalculate only the curvature. Will not make them retesselate vertices. Much faster.</param>
         public void SetAllChildrenDirty(bool recalculateCurveOnly = false)
         {
+            
             foreach (CurvedUIVertexEffect eff in this.GetComponentsInChildren<CurvedUIVertexEffect>())
             {
                 if (recalculateCurveOnly)
