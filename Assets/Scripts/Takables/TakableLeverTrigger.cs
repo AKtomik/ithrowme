@@ -39,7 +39,7 @@ abstract public class TakableLever : Takable
         
         pulledAnimatorReference.Play();
         PullStart(player);
-        audioSource.PlayOneShot(leverAction);
+        
     }
     
     override public void Throw(CapsulePlayer player) {}
@@ -61,6 +61,12 @@ abstract public class TakableLever : Takable
         } else {
             collider.enabled = true;
         }
+    }
+
+
+    public void PlayAudio()
+    {
+        audioSource.PlayOneShot(leverAction);
     }
 
 	void Update()
