@@ -154,5 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakableItem
-  collider: {fileID: 7079207247431414270}
+  takeCollider: {fileID: 7079207247431414270}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   rigidBody: {fileID: 6001504066199641756}
+  disableAudio: 1
+  soundList: []

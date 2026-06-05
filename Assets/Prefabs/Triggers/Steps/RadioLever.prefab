@@ -117,9 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac4805d1c756774b9184215d90dea88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step3Lever
-  collider: {fileID: 6899872273125407255}
-  audioSource: {fileID: 0}
-  audioMixer: {fileID: 0}
+  takeCollider: {fileID: 6899872273125407255}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   oneTimeTrigger: 1
   lockLooking: 1
   takeStopVelocity: 1

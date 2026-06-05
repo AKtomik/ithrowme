@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440dce00f80273347b2272815ad5c427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Click
-  collider: {fileID: 2602991617959517118}
+  takeCollider: {fileID: 2602991617959517118}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   missionManager: {fileID: 0}
   step2Script: {fileID: 2106841951488794758}
   step6Script: {fileID: 4051182125557143187}
@@ -84,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ab23cd0c7dc734a92c74ffdde789f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Lever
-  collider: {fileID: 0}
+  takeCollider: {fileID: 0}
+  audioMixer: {fileID: 0}
   oneTimeTrigger: 1
   lockLooking: 1
   takeStopVelocity: 1
@@ -92,6 +94,7 @@ MonoBehaviour:
   lookingPoint: {fileID: 8714498866884629532}
   pulledAnimatorReference: {fileID: 6942279629992520211}
   pulledAnimationName: PullConsole2
+  leverAction: {fileID: 0}
   missionManager: {fileID: 0}
   unlockedDoors:
   - {fileID: 0}
@@ -108,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd4aafa92b8d8142b2d83d1bbad5b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step6Lever
-  collider: {fileID: 0}
+  takeCollider: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   oneTimeTrigger: 1
   lockLooking: 1
   takeStopVelocity: 1
@@ -116,6 +120,7 @@ MonoBehaviour:
   lookingPoint: {fileID: 8714498866884629532}
   pulledAnimatorReference: {fileID: 6942279629992520211}
   pulledAnimationName: PullConsole6
+  leverAction: {fileID: 0}
   missionManager: {fileID: 0}
 --- !u!1 &4137391564220871239
 GameObject:

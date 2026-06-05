@@ -62,8 +62,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakableObject
-  collider: {fileID: 4765784497441467891}
+  takeCollider: {fileID: 4765784497441467891}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   rigidBody: {fileID: 2257565808704748317}
+  disableAudio: 0
+  soundList: []
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
