@@ -97,9 +97,9 @@ Animation:
   m_GameObject: {fileID: 5356263249081730508}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: fc555d2256cb74e41ad4262d0292646b, type: 2}
+  m_Animation: {fileID: 7400000, guid: 215fe7063e55f5b4eabc567272f58c03, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: fc555d2256cb74e41ad4262d0292646b, type: 2}
+  - {fileID: 7400000, guid: 215fe7063e55f5b4eabc567272f58c03, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -118,12 +118,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step3Lever
   collider: {fileID: 6899872273125407255}
-  takeStopVelocity: 1
+  audioSource: {fileID: 0}
+  audioMixer: {fileID: 0}
   oneTimeTrigger: 1
   lockLooking: 1
+  takeStopVelocity: 1
+  pulledFinishPushForce: 10
   lookingPoint: {fileID: 9192641778385926515}
   pulledAnimatorReference: {fileID: 3148165372292051230}
-  pulledFinishPushForce: 10
+  pulledAnimationName: 
+  leverAction: {fileID: 0}
   missionManager: {fileID: 0}
 --- !u!1001 &6990207861632271752
 PrefabInstance:
