@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6433948306013991629}
   - component: {fileID: 6682302779960230617}
+  - component: {fileID: 6504614292195806293}
+  - component: {fileID: 5135013267334601223}
   m_Layer: 12
   m_Name: MissionsContainer
   m_TagString: Untagged
@@ -24,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286903526482089139}
-  m_LocalRotation: {x: -0, y: -0, z: 0.01335162, w: 0.9999109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,11 +34,11 @@ RectTransform:
   - {fileID: 113438647253350543}
   - {fileID: 6225234116786556246}
   m_Father: {fileID: 460954533720054625}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.53}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 124.58, y: -109.5}
-  m_SizeDelta: {x: 1060, y: 515}
+  m_AnchoredPosition: {x: 3, y: -109.5}
+  m_SizeDelta: {x: 1920, y: 515}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6682302779960230617
 MonoBehaviour:
@@ -55,7 +57,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
@@ -64,6 +66,38 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6504614292195806293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286903526482089139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e62188adca544cf1b96ccf1630f15f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUIVertexEffect
+  DoNotTesselate: 0
+  savedPos: {x: 0, y: 0, z: 0}
+  savedUp: {x: 0, y: 0, z: 0}
+  savedRectSize: {x: 0, y: 0}
+  savedColor: {r: 0, g: 0, b: 0, a: 0}
+  savedTextUV0: {x: 0, y: 0, z: 0, w: 0}
+  savedFill: 0
+--- !u!114 &5135013267334601223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286903526482089139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b8ec0c25535c409b1f6115963d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUITMP
+  Dirty: 0
 --- !u!1 &991553149410567970
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +237,7 @@ MonoBehaviour:
   interactable: 1
   blocksRaycasts: 1
   forceUseBoxCollider: 0
-  angle: 30
+  angle: 32
   preserveAspect: 1
   vertAngle: 90
   ringFill: 0.5
