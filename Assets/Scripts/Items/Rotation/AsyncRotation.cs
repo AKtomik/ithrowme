@@ -9,14 +9,14 @@ public class AsyncRotation : MonoBehaviour
 
     [Header("Stair Effect")]
     [SerializeField] private bool stairRotation = false;
-    [SerializeField] private bool lookingCamera = true;
-    [SerializeField] private Vector3Int rotaSteps = new(4, 4, 4);
+    [SerializeField, DrawIf("stairRotation")] private bool lookingCamera = true;
+    [SerializeField, DrawIf("stairRotation")] private Vector3Int rotaSteps = new(4, 4, 4);
     private Transform cameraTransform;
     private Vector3 rotaInterval;
 
     [Header("Laggy Effect")]
     [SerializeField] private bool laggyRotation = false;
-    [SerializeField] private float renderFps = 10;
+    [SerializeField, DrawIf("laggyRotation")] private float renderFps = 10;
     private float renderInterval;
     private Rigidbody realBody;
     private float renderTime = 0;
