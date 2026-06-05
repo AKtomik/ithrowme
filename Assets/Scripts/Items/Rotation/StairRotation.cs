@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 
-public class StairRotationEffect : MonoBehaviour
+[Obsolete("use AsyncRotation class instead")]
+public class StairRotation : MonoBehaviour
 {
     
     [SerializeField] private Transform renderTransform;

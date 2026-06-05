@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7424950464079167812}
   - component: {fileID: 3548057806262439050}
-  - component: {fileID: 4779455816997415863}
+  - component: {fileID: 4814448237975681790}
   m_Layer: 10
   m_Name: StairyCup
   m_TagString: Items
@@ -52,7 +52,7 @@ MonoBehaviour:
   rigidBody: {fileID: 2257565808704748317}
   disableAudio: 1
   soundList: []
---- !u!114 &4779455816997415863
+--- !u!114 &4814448237975681790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,13 +61,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 340945248353486059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee94525cb266ea4d96e11b3634a2ec8, type: 3}
+  m_Script: {fileID: 11500000, guid: f28c8f971f363f9439a445efbacfad50, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StairEffect
+  m_EditorClassIdentifier: Assembly-CSharp::AsyncRotation
   renderTransform: {fileID: 8602570093714776806}
   realTransform: {fileID: 350459782391824057}
-  lookingCamera: 0
-  rotaSteps: {x: 8, y: 8, z: 8}
+  stairRotation: 1
+  lookingCamera: 1
+  rotaSteps: {x: 4, y: 4, z: 4}
+  laggyRotation: 1
+  renderFps: 3
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
