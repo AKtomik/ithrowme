@@ -49,11 +49,6 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] public float throwObjectForce = 15f;
     [SerializeField] public float throwPlayerForce = -15f;
 
-    [Header("Hand Settings")]
-    [SerializeField] private Image handImageUI;
-    [SerializeField] private Sprite handSpriteReachable;
-    [SerializeField] private Sprite handSpriteIdle;
-    [SerializeField] private Sprite handSpriteGrab;
 
     [Header("Lock Utils")]
     public bool disableHand = false;
@@ -90,7 +85,7 @@ public class CapsulePlayer : MonoBehaviour
     private List<TakableReference> takeNoRepeatList = new List<TakableReference>();
 
     // in hand
-    private bool anythingInHand = false;
+    public bool anythingInHand = false;
     private Takable handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
@@ -148,17 +143,6 @@ public class CapsulePlayer : MonoBehaviour
         if (!disableLook) HandleLook();
         UpdateFov();
         CheckReachable();
-
-        Debug.Log(playerBody.linearVelocity.magnitude);
-
-        Sprite handSprite;
-        if (anythingInHand)
-            handSprite = handSpriteGrab;
-        else if (reachableObject)
-            handSprite = handSpriteReachable;
-        else
-            handSprite = handSpriteIdle;
-        handImageUI.sprite = handSprite;
     }
 
     private void OnCollisionEnter(Collision collision)

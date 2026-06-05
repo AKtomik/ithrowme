@@ -10,7 +10,7 @@ public class HandScript : MonoBehaviour
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
 
-    private bool anythingInHand = false;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,7 @@ public class HandScript : MonoBehaviour
     void Update()
     {
         Sprite handSprite;
-        if (anythingInHand)
+        if (player.anythingInHand)
             handSprite = handSpriteGrab;
         else if (player.reachableObject)
             handSprite = handSpriteReachable;

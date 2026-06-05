@@ -87,6 +87,8 @@ namespace CurvedUI
 
         void Start()
         {
+            blocksRaycasts = false;
+
             if (Application.isPlaying)
             {    
                 // lets get rid of any raycasters and add our custom one

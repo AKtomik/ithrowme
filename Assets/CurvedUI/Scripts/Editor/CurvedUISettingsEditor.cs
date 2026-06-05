@@ -73,12 +73,7 @@ namespace CurvedUI {
             {
                 CurvedUISettings myTarget = (CurvedUISettings)target;
                 
-                //Canvas' layer not included in RaycastLayerMask warning
-                if (!IsInLayerMask(myTarget.gameObject.layer, CurvedUIInputModule.Instance.RaycastLayerMask) &&
-                    myTarget.Interactable)
-                {
-                    Debug.LogError("CURVEDUI: " + WarningLayerNotIncluded, myTarget.gameObject);
-                }
+
                 
                 //check if the currently selected control method is enabled in editor.
                 //Otherwise, show error.
