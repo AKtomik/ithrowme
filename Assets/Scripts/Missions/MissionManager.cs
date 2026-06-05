@@ -46,6 +46,11 @@ public class MissionManager : MonoBehaviour
     {
         return activeMissions.Contains(id);
     }
+    
+    public bool IsWaiting(int id)
+    {
+        return !(IsActive(id) || IsCompleted(id));
+    }
 
     private List<string> GetActiveMissionTexts()
     {

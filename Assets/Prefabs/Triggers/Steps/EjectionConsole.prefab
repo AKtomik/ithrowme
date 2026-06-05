@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76303391308894441}
-  - component: {fileID: 9165974674669312752}
   - component: {fileID: 1463946306049042043}
   - component: {fileID: 8208921925044355401}
+  - component: {fileID: 7989475426809435377}
   m_Layer: 0
-  m_Name: EjectionClick
+  m_Name: EjectionConsole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,25 +35,10 @@ Transform:
   - {fileID: 8714498866884629532}
   - {fileID: 9190471308124369784}
   - {fileID: 7969555480109362580}
+  - {fileID: 4714474649879639576}
+  - {fileID: 3637386870007153292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 88.566, z: 0}
---- !u!111 &9165974674669312752
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371459371622699592}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: fc555d2256cb74e41ad4262d0292646b, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: fc555d2256cb74e41ad4262d0292646b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!114 &1463946306049042043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,16 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Click
   collider: {fileID: 2602991617959517118}
-  oneTimeTrigger: 0
-  lockLooking: 1
-  clickedFinishPushForce: 10
-  takeStopVelocity: 1
-  lookingPoint: {fileID: 8714498866884629532}
   missionManager: {fileID: 0}
-  consoleScreen: {fileID: 4137391564220871239}
-  step2Animation: {fileID: 0}
-  step2UnlockedDoors: []
-  step6Animation: {fileID: 0}
+  step2Script: {fileID: 8208921925044355401}
+  step6Script: {fileID: 7989475426809435377}
 --- !u!114 &8208921925044355401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +62,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2371459371622699592}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1ab23cd0c7dc734a92c74ffdde789f9, type: 3}
   m_Name: 
@@ -94,12 +72,32 @@ MonoBehaviour:
   lockLooking: 1
   takeStopVelocity: 1
   pulledFinishPushForce: 10
-  lookingPoint: {fileID: 8714498866884629532}
-  pulledAnimatorReference: {fileID: 9165974674669312752}
+  lookingPoint: {fileID: 3637386870007153292}
+  pulledAnimatorReference: {fileID: 8088564879011371192}
   missionManager: {fileID: 0}
   unlockedDoors:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &7989475426809435377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371459371622699592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd4aafa92b8d8142b2d83d1bbad5b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Step6Lever
+  collider: {fileID: 0}
+  oneTimeTrigger: 1
+  lockLooking: 1
+  takeStopVelocity: 1
+  pulledFinishPushForce: 10
+  lookingPoint: {fileID: 8714498866884629532}
+  pulledAnimatorReference: {fileID: 2401925524885673309}
+  missionManager: {fileID: 0}
 --- !u!1 &4137391564220871239
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +241,104 @@ Transform:
   m_Children: []
   m_Father: {fileID: 76303391308894441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4741751408206488463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4714474649879639576}
+  - component: {fileID: 8088564879011371192}
+  m_Layer: 0
+  m_Name: ProblemAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4714474649879639576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4741751408206488463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 76303391308894441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &8088564879011371192
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4741751408206488463}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: e2df5112131784f43bfb54e7b8a4d0d9, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e2df5112131784f43bfb54e7b8a4d0d9, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!1 &5453259192320547258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3637386870007153292}
+  - component: {fileID: 2401925524885673309}
+  m_Layer: 0
+  m_Name: EndAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3637386870007153292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453259192320547258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 76303391308894441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &2401925524885673309
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453259192320547258}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 4693f4aa1278cfe4aa94a2c56bc4babb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4693f4aa1278cfe4aa94a2c56bc4babb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &7001322079962777490
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,15 +2,15 @@ using UnityEngine;
 
 abstract public class TakableLever : Takable
 {
-    [Header("Pull")]
+    [Header("Trigger Pull")]
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
     
-    [Header("Move")]
+    [Header("Trigger Move")]
     public bool takeStopVelocity = true;
     public float pulledFinishPushForce = 10f;
 
-    [Header("Pointers")]
+    [Header("Trigger Pointers")]
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
 
@@ -21,7 +21,7 @@ abstract public class TakableLever : Takable
     {
         if (!this.enabled) return;
 
-        collider.enabled = false;// disable collision during the animation
+        if (collider) collider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
         if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
@@ -53,7 +53,7 @@ abstract public class TakableLever : Takable
         {
             this.enabled = false;
         } else {
-            collider.enabled = true;
+            if (collider) collider.enabled = true;
         }
     }
 

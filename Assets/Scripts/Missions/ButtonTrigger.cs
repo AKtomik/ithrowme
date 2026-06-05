@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class ButtonTrigger : MonoBehaviour
 {
+    [Header("Trigger Settings")]
     public bool oneTimeTrigger = true;
     public Vector3 triggerScale = new Vector3(1, 1, .25f);
 

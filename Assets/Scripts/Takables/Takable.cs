@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Takable : MonoBehaviour
 {
+    [Header("Takable")]
     [SerializeField] protected new Collider collider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

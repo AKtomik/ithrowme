@@ -2,21 +2,6 @@ using UnityEngine;
 
 abstract public class TakableClick : Takable
 {
-    [Header("Pull")]
-    public bool oneTimeTrigger = false;
-    public bool lockLooking = true;
-
-    [Header("Move")]
-    public float clickedFinishPushForce = 10f;
-    public bool takeStopVelocity = true;
-    
-    [Header("Pointers")]
-    [SerializeField] private Transform lookingPoint;
-    
-
-    private bool isClicking;
-    private CapsulePlayer playerClicking;
-
     override public void Take(CapsulePlayer player)
     {
         if (!this.enabled) return;
@@ -27,43 +12,43 @@ abstract public class TakableClick : Takable
 
     abstract public void Click(CapsulePlayer player);
 
-    public void ActiveLook(CapsulePlayer player)
-    {
-        collider.enabled = false;// disable collision during the animation
-        isClicking = true;
-        playerClicking = player;
-        if (lockLooking) playerClicking.LockingLookAt(lookingPoint.position);
+    //public void ActiveLook(CapsulePlayer player)
+    //{
+    //    collider.enabled = false;// disable collision during the animation
+    //    isClicking = true;
+    //    playerClicking = player;
+    //    if (lockLooking) playerClicking.LockingLookAt(lookingPoint.position);
 
-        if (takeStopVelocity)
-        {
-            player.playerBody.linearVelocity = Vector3.zero;
-            player.playerBody.angularVelocity = Vector3.zero;
-        }
-    }
+    //    if (takeStopVelocity)
+    //    {
+    //        player.playerBody.linearVelocity = Vector3.zero;
+    //        player.playerBody.angularVelocity = Vector3.zero;
+    //    }
+    //}
 
-    public void FreeLook()
-    {
-        playerClicking.UnlockingLook();
-        playerClicking.playerBody.AddForce(-transform.forward * clickedFinishPushForce);
-        playerClicking = null;
+    //public void FreeLook()
+    //{
+    //    playerClicking.UnlockingLook();
+    //    playerClicking.playerBody.AddForce(-transform.forward * clickedFinishPushForce);
+    //    playerClicking = null;
         
-        if (oneTimeTrigger)
-        {
-            this.enabled = false;
-        } else {
-            collider.enabled = true;
-        }
-    }
+    //    if (oneTimeTrigger)
+    //    {
+    //        this.enabled = false;
+    //    } else {
+    //        collider.enabled = true;
+    //    }
+    //}
 
-	void Update()
-	{
-		if (isClicking)
-        {
-            if (takeStopVelocity)
-            {
-                playerClicking.playerBody.linearVelocity = Vector3.zero;
-                playerClicking.playerBody.angularVelocity = Vector3.zero;
-            }
-        }
-	}
+	//void Update()
+	//{
+	//	if (isClicking)
+    //    {
+    //        if (takeStopVelocity)
+    //        {
+    //            playerClicking.playerBody.linearVelocity = Vector3.zero;
+    //            playerClicking.playerBody.angularVelocity = Vector3.zero;
+    //        }
+    //    }
+	//}
 }
