@@ -20,4 +20,9 @@ public class Step2Lever : TakableLever
         missionManager.AddMission(3);
         missionManager.AddMission(5);
     }
+
+    public void AnimationEndedAlias2()
+    {
+        AnimationEnded();
+    }
 }
