@@ -20,6 +20,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6b813d2d70bb72a4da405e2e1a9a21a8, type: 2}
+    - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
+    - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: soundList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'soundList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: abd184704e8956c4f95bb9772c25d7f8, type: 3}
+    - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'soundList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f8b4badc5acd51446951f7c470b02bc8, type: 3}
+    - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'soundList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: abd184704e8956c4f95bb9772c25d7f8, type: 3}
     - target: {fileID: 6001504066199641756, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mass
       value: 10

@@ -157,6 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TakableObject
   collider: {fileID: 7079207247431414270}
   rigidBody: {fileID: 6001504066199641756}
+  soundList: []
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
 --- !u!114 &1581512893622062593
 MonoBehaviour:
   m_ObjectHideFlags: 0

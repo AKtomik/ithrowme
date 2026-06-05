@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class TakableItem : Takable
 {
     [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
 
+    public AudioClip[] soundList; // 0 = hitAudio, 1 = takeAudio, 2 = throwAudio
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
         originalParentTransform = transform.parent;
+
         base.Start();
     }
 
@@ -26,6 +31,8 @@ public class TakableItem : Takable
         // reset pos
         if (collider.gameObject != gameObject)
             collider.gameObject.transform.position = parent.position;
+        // play take sound
+        audioSource.PlayOneShot(soundList[1]);
     }
     
     public void Unput(Transform point)
@@ -56,7 +63,17 @@ public class TakableItem : Takable
         // throw the player
         player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
 
+        // play throw sound
+        audioSource.PlayOneShot(soundList[2]);
+
         // remove from hand
         player.ClearHand();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        audioSource.pitch = Random.Range(0.7f, 1.5f);
+        audioSource.volume = 0.3f;
+        audioSource.PlayOneShot(soundList[0]);
     }
 }

@@ -12,9 +12,21 @@ PrefabInstance:
       propertyPath: automaticOpening
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: 'audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e5e96282867b0fc4dae419cf1bfcb6cf, type: 3}
+    - target: {fileID: 3128872731187240120, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
+      propertyPath: 'audioClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6604ded7feacbc74f846410bebb99c4f, type: 3}
     - target: {fileID: 4499871058395644445, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
       propertyPath: m_Name
-      value: RoomSmartDoor Variant
+      value: RoomDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5692055168028880326, guid: bd61618cd663dc84186b2a47584584b9, type: 3}
       propertyPath: m_LocalScale.x
