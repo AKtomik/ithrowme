@@ -76,7 +76,7 @@ public class CapsulePlayer : MonoBehaviour
 
 
     private Camera cam;
-    private CameraShake camShake;
+    
     private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
     private Quaternion rotation;
@@ -86,7 +86,7 @@ public class CapsulePlayer : MonoBehaviour
 
     // reachable
     private bool anythingReachable = false;
-    private GameObject reachableObject = null;
+    public GameObject reachableObject = null;
     private List<TakableReference> takeNoRepeatList = new List<TakableReference>();
 
     // in hand
@@ -98,7 +98,7 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        camShake = cam.GetComponent<CameraShake>();
+       
 
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
@@ -186,8 +186,7 @@ public class CapsulePlayer : MonoBehaviour
                 feedbackAudioSource.pitch = Random.Range(0.8f, 1.2f);
                 feedbackAudioSource.volume = Random.Range(0.7f, 1f);
                 feedbackAudioSource.PlayOneShot(soundList[0]);
-                camShake.shakeAmount = 0.03f;
-                camShake.toShake = true;
+
 
                 Debug.Log("play sound : " + collision.gameObject.name);
             }
