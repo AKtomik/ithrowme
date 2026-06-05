@@ -7281,10 +7281,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 724835581828437596, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 1463946306049042043, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 1463946306049042043, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: step2UnlockedDoors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463946306049042043, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'step2UnlockedDoors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 350682369}
+    - target: {fileID: 1463946306049042043, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'step2UnlockedDoors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1923641943}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1923641943}
+    - target: {fileID: 2106841951488794758, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 350682369}
     - target: {fileID: 2371459371622699592, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: m_Name
-      value: EjectionLever
+      value: EjectionConsole
       objectReference: {fileID: 0}
+    - target: {fileID: 2779148907800615326, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 2779148907800615326, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 350682369}
+    - target: {fileID: 2779148907800615326, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: 'unlockedDoors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1923641943}
+    - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 7989475426809435377, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
     - target: {fileID: 8208921925044355401, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: missionManager
       value: 

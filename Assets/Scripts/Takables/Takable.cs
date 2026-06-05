@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 
 public abstract class Takable : MonoBehaviour
 {
+    [Header("Takable")]
     [SerializeField] protected new Collider collider;
 
     public AudioSource audioSource;

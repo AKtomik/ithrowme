@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step2Lever : TakableLever
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
     public DoorOpeningScript[] unlockedDoors;
 
@@ -18,5 +19,10 @@ public class Step2Lever : TakableLever
         }
         missionManager.AddMission(3);
         missionManager.AddMission(5);
+    }
+
+    public void AnimationEndedAlias2()
+    {
+        AnimationEnded();
     }
 }

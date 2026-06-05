@@ -3,14 +3,18 @@ using UnityEngine.Audio;
 
 abstract public class TakableLever : Takable
 {
-    public bool takeStopVelocity = true;
-    
+    [Header("Trigger Pull")]
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
+    
+    [Header("Trigger Move")]
+    public bool takeStopVelocity = true;
+    public float pulledFinishPushForce = 10f;
 
+    [Header("Trigger Pointers")]
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
-    public float pulledFinishPushForce = 10f;
+    [SerializeField] private string pulledAnimationName;
 
     private bool isPulling;
     private CapsulePlayer playerPulling;
@@ -26,7 +30,7 @@ abstract public class TakableLever : Takable
         
         if (!this.enabled) return;
 
-        collider.enabled = false;// disable collision during the animation
+        if (collider) collider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
         if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
@@ -37,7 +41,10 @@ abstract public class TakableLever : Takable
             player.playerBody.angularVelocity = Vector3.zero;
         }
         
-        pulledAnimatorReference.Play();
+        if (pulledAnimationName.Length > 0)
+            pulledAnimatorReference.Play(pulledAnimationName);
+        else
+            pulledAnimatorReference.Play();
         PullStart(player);
         
     }
@@ -49,17 +56,17 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        playerPulling.UnlockingLook();
-        playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
+        if (lockLooking) playerPulling.UnlockingLook();
+        if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
-        if (lockLooking) PullFinish(playerPulling);
+        PullFinish(playerPulling);
         playerPulling = null;
         
         if (oneTimeTrigger)
         {
             this.enabled = false;
         } else {
-            collider.enabled = true;
+            if (collider) collider.enabled = true;
         }
     }
 
