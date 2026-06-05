@@ -41,8 +41,8 @@ public class StairRotationEffect : MonoBehaviour
         if (lookingCamera)
             renderTransform.LookAt(cameraTransform);
         else
-            renderTransform.rotation = Quaternion.Euler(Vector3.zero);
-        Vector3 diffRotation = realTransform.rotation.eulerAngles - renderTransform.rotation.eulerAngles;
+            renderTransform.localRotation = Quaternion.Euler(Vector3.zero);
+        Vector3 diffRotation = realTransform.localRotation.eulerAngles - renderTransform.localRotation.eulerAngles;
         //Debug.Log("raw diffRotation:"+diffRotation.x+";"+diffRotation.y+";"+diffRotation.z);
         diffRotation = new Vector3(
             (float)Math.Round(diffRotation.x / rotaInterval.x) * rotaInterval.x,
@@ -51,6 +51,6 @@ public class StairRotationEffect : MonoBehaviour
             );
         //Debug.Log("round diffRotation:"+diffRotation.x+";"+diffRotation.y+";"+diffRotation.z);
         
-        renderTransform.rotation = Quaternion.Euler(renderTransform.rotation.eulerAngles + diffRotation);
+        renderTransform.localRotation = Quaternion.Euler(renderTransform.localRotation.eulerAngles + diffRotation);
     }
 }
