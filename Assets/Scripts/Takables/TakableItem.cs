@@ -16,6 +16,7 @@ public class TakableItem : Takable
     public override void Start()
     {
         originalParentTransform = transform.parent;
+        if (disableAudio) Debug.Log("item with disabled audio: "+this);
 
         base.Start();
     }
@@ -26,14 +27,14 @@ public class TakableItem : Takable
         rigidBody.linearVelocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
         // disable
-        collider.enabled = false;
+        takeCollider.enabled = false;
         rigidBody.isKinematic = true;
         // reparent
         transform.SetParent(parent);
         transform.position = parent.position;
         // reset pos
-        if (collider.gameObject != gameObject)
-            collider.gameObject.transform.position = parent.position;
+        if (takeCollider.gameObject != gameObject)
+            takeCollider.gameObject.transform.position = parent.position;
         // play take sound
         if (disableAudio) return;
         audioSource.PlayOneShot(soundList[1]);
@@ -42,7 +43,7 @@ public class TakableItem : Takable
     public void Unput(Transform point)
     {
         // enable
-        collider.enabled = true;
+        takeCollider.enabled = true;
         rigidBody.isKinematic = false;
         // reparent
         transform.SetParent(originalParentTransform);
