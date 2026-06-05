@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7424950464079167812}
-  - component: {fileID: 8688989628292033826}
   - component: {fileID: 3548057806262439050}
+  - component: {fileID: 4779455816997415863}
   m_Layer: 10
   m_Name: StairyCup
   m_TagString: Items
@@ -35,21 +35,6 @@ Transform:
   - {fileID: 350459782391824057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8688989628292033826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340945248353486059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f737c38dfa35a47a4902d91700bcc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LaggyEffect
-  renderTransform: {fileID: 8602570093714776806}
-  realTransform: {fileID: 350459782391824057}
-  renderFps: 3
 --- !u!114 &3548057806262439050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +52,21 @@ MonoBehaviour:
   rigidBody: {fileID: 2257565808704748317}
   disableAudio: 1
   soundList: []
+--- !u!114 &4779455816997415863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340945248353486059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee94525cb266ea4d96e11b3634a2ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StairEffect
+  renderTransform: {fileID: 0}
+  realTransform: {fileID: 0}
+  lookingCamera: 1
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
