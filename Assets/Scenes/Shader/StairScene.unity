@@ -993,6 +993,10 @@ PrefabInstance:
       propertyPath: handImageUI
       value: 
       objectReference: {fileID: 1089306561}
+    - target: {fileID: 8087410682420035642, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.54

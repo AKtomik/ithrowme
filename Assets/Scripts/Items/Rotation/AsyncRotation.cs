@@ -18,12 +18,25 @@ public class AsyncRotation : MonoBehaviour
     [SerializeField] private bool laggyRotation = false;
     [SerializeField] private float renderFps = 10;
     private float renderInterval;
+    private Rigidbody realBody;
     private float renderTime = 0;
+
+    bool IsBlocked()
+    {
+        return realBody && realBody.isKinematic;
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (realTransform.gameObject.TryGetComponent<Rigidbody>(out var rb))
+        {
+            realBody = rb;
+        } else {
+            Debug.LogWarning("can't get Rigidbody of realTransform");
+        }
+
         if (stairRotation)
         {
             cameraTransform = Camera.main.transform;
@@ -44,7 +57,7 @@ public class AsyncRotation : MonoBehaviour
     void Update()
     {
         UpdatePosition();
-        if (laggyRotation)
+        if (laggyRotation && !IsBlocked())
         {
             renderTime += Time.deltaTime;
             if (renderTime > renderInterval)
@@ -64,7 +77,7 @@ public class AsyncRotation : MonoBehaviour
 
     void UpdateRotation()
     {
-        if (stairRotation)
+        if (stairRotation && !IsBlocked())
         {
             if (lookingCamera)
                 renderTransform.LookAt(cameraTransform);

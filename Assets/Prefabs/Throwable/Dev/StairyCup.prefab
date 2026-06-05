@@ -68,8 +68,8 @@ MonoBehaviour:
   realTransform: {fileID: 350459782391824057}
   stairRotation: 1
   lookingCamera: 1
-  rotaSteps: {x: 4, y: 4, z: 4}
-  laggyRotation: 1
+  rotaSteps: {x: 8, y: 8, z: 8}
+  laggyRotation: 0
   renderFps: 3
 --- !u!1001 &240850417770764626
 PrefabInstance:
