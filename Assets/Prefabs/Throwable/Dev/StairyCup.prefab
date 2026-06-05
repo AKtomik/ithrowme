@@ -64,9 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee94525cb266ea4d96e11b3634a2ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StairEffect
-  renderTransform: {fileID: 0}
-  realTransform: {fileID: 0}
+  renderTransform: {fileID: 8602570093714776806}
+  realTransform: {fileID: 350459782391824057}
   lookingCamera: 1
+  rotaSteps: {x: 8, y: 8, z: 8}
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,12 +130,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a4b62a69d54e80347bd546999c6d4b9e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4d8e35013765f1b4e92f480df5de224c, type: 2}
     - target: {fileID: 919132149155446097, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: m_Name
       value: cofeecupReal
