@@ -7,14 +7,14 @@ public class AsyncRotation : MonoBehaviour
     [SerializeField] private Transform renderTransform;
     [SerializeField] private Transform realTransform;
 
-    [Header("Stair Effect")]
+    [ToggleGroup("Stair Effect")]
     [SerializeField] private bool stairRotation = false;
     [SerializeField, DrawIf("stairRotation")] private bool lookingCamera = true;
     [SerializeField, DrawIf("stairRotation")] private Vector3Int rotaSteps = new(4, 4, 4);
     private Transform cameraTransform;
     private Vector3 rotaInterval;
 
-    [Header("Laggy Effect")]
+    [ToggleGroup("Laggy Effect")]
     [SerializeField] private bool laggyRotation = false;
     [SerializeField, DrawIf("laggyRotation")] private float renderFps = 10;
     private float renderInterval;
