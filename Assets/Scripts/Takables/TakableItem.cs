@@ -3,9 +3,12 @@ using UnityEngine.Audio;
 
 public class TakableItem : Takable
 {
+    [Header("Item Pointers")]
     [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
 
+    [Header("Item Sounds")]
+    public bool disableAudio = false;
     public AudioClip[] soundList; // 0 = hitAudio, 1 = takeAudio, 2 = throwAudio
     
 
@@ -32,6 +35,7 @@ public class TakableItem : Takable
         if (collider.gameObject != gameObject)
             collider.gameObject.transform.position = parent.position;
         // play take sound
+        if (disableAudio) return;
         audioSource.PlayOneShot(soundList[1]);
     }
     
@@ -64,7 +68,9 @@ public class TakableItem : Takable
         player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
 
         // play throw sound
-        audioSource.PlayOneShot(soundList[2]);
+        if (!disableAudio) {
+            audioSource.PlayOneShot(soundList[2]);
+        }
 
         // remove from hand
         player.ClearHand();
@@ -72,6 +78,7 @@ public class TakableItem : Takable
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (disableAudio) return;
         audioSource.pitch = Random.Range(0.7f, 1.5f);
         audioSource.volume = 0.3f;
         audioSource.PlayOneShot(soundList[0]);
