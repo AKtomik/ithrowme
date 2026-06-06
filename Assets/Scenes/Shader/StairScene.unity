@@ -788,17 +788,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788555183}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1089306561 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 261011990169780533, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-  m_PrefabInstance: {fileID: 221760017}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1384105056
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: handImageUI
       value: 
-      objectReference: {fileID: 1089306561}
+      objectReference: {fileID: 0}
     - target: {fileID: 8087410682420035642, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_Enabled
       value: 1
