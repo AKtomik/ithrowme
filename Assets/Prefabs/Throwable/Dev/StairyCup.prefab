@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7424950464079167812}
-  - component: {fileID: 8688989628292033826}
   - component: {fileID: 3548057806262439050}
+  - component: {fileID: 4814448237975681790}
   m_Layer: 10
-  m_Name: LaggyCup
+  m_Name: StairyCup
   m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,21 +35,6 @@ Transform:
   - {fileID: 350459782391824057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8688989628292033826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340945248353486059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f737c38dfa35a47a4902d91700bcc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LaggyEffect
-  renderTransform: {fileID: 8602570093714776806}
-  realTransform: {fileID: 350459782391824057}
-  renderFps: 3
 --- !u!114 &3548057806262439050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +47,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb27e5c1545324090d9705c1ec80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakableObject
-  collider: {fileID: 4765784497441467891}
+  takeCollider: {fileID: 4765784497441467891}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   rigidBody: {fileID: 2257565808704748317}
+  disableAudio: 1
+  soundList: []
+--- !u!114 &4814448237975681790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340945248353486059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28c8f971f363f9439a445efbacfad50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AsyncRotation
+  renderTransform: {fileID: 8602570093714776806}
+  realTransform: {fileID: 350459782391824057}
+  stairRotation: 1
+  lookingCamera: 1
+  rotaSteps: {x: 8, y: 8, z: 8}
+  laggyRotation: 0
+  renderFps: 3
 --- !u!1001 &240850417770764626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +138,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a4b62a69d54e80347bd546999c6d4b9e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4d8e35013765f1b4e92f480df5de224c, type: 2}
     - target: {fileID: 919132149155446097, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
       propertyPath: m_Name
       value: cofeecupReal

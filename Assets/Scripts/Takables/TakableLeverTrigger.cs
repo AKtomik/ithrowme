@@ -30,7 +30,7 @@ abstract public class TakableLever : Takable
         
         if (!this.enabled) return;
 
-        if (collider) collider.enabled = false;// disable collision during the animation
+        if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
         if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
@@ -66,7 +66,7 @@ abstract public class TakableLever : Takable
         {
             this.enabled = false;
         } else {
-            if (collider) collider.enabled = true;
+            if (takeCollider) takeCollider.enabled = true;
         }
     }
 

@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 
-public class LaggyEffect : MonoBehaviour
+[Obsolete("use AsyncRotation class instead")]
+public class LaggyRotation : MonoBehaviour
 {
     
     [SerializeField] private Transform renderTransform;

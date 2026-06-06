@@ -3,9 +3,12 @@ using UnityEngine.Audio;
 
 public class TakableItem : Takable
 {
+    [Header("Item Pointers")]
     [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
 
+    [Header("Item Sounds")]
+    public bool disableAudio = false;
     public AudioClip[] soundList; // 0 = hitAudio, 1 = takeAudio, 2 = throwAudio
     
 
@@ -13,6 +16,7 @@ public class TakableItem : Takable
     public override void Start()
     {
         originalParentTransform = transform.parent;
+        if (disableAudio) Debug.Log("item with disabled audio: "+this);
 
         base.Start();
     }
@@ -23,22 +27,23 @@ public class TakableItem : Takable
         rigidBody.linearVelocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
         // disable
-        collider.enabled = false;
+        takeCollider.enabled = false;
         rigidBody.isKinematic = true;
         // reparent
         transform.SetParent(parent);
         transform.position = parent.position;
         // reset pos
-        if (collider.gameObject != gameObject)
-            collider.gameObject.transform.position = parent.position;
+        if (takeCollider.gameObject != gameObject)
+            takeCollider.gameObject.transform.position = parent.position;
         // play take sound
+        if (disableAudio) return;
         audioSource.PlayOneShot(soundList[1]);
     }
     
     public void Unput(Transform point)
     {
         // enable
-        collider.enabled = true;
+        takeCollider.enabled = true;
         rigidBody.isKinematic = false;
         // reparent
         transform.SetParent(originalParentTransform);
@@ -64,7 +69,9 @@ public class TakableItem : Takable
         player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
 
         // play throw sound
-        audioSource.PlayOneShot(soundList[2]);
+        if (!disableAudio) {
+            audioSource.PlayOneShot(soundList[2]);
+        }
 
         // remove from hand
         player.ClearHand();
@@ -72,6 +79,7 @@ public class TakableItem : Takable
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (disableAudio) return;
         audioSource.pitch = Random.Range(0.7f, 1.5f);
         audioSource.volume = 0.3f;
         audioSource.PlayOneShot(soundList[0]);

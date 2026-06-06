@@ -56,6 +56,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 86085fef655e3a84dbc6aebf9c9b3b7c, type: 2}
+    - target: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 86085fef655e3a84dbc6aebf9c9b3b7c, type: 2}
+    - target: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      propertyPath: 'm_Animations.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 86085fef655e3a84dbc6aebf9c9b3b7c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86,8 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step1Lever
-  collider: {fileID: 2463386115453743956}
-  audioSource: {fileID: 0}
+  takeCollider: {fileID: 2463386115453743956}
   audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   oneTimeTrigger: 1
   lockLooking: 1
