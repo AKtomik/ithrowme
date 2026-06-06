@@ -3074,7 +3074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 991553149410567970, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
       propertyPath: m_Name
-      value: HandCanva
+      value: 2DCanva
       objectReference: {fileID: 0}
     - target: {fileID: 8212467702433062239, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
       propertyPath: player
@@ -3400,12 +3400,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6999144184912006808, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1169635521}
-    - targetCorrespondingSourceObject: {fileID: 3062939028622288668, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1763511241}
-    - targetCorrespondingSourceObject: {fileID: 3062939028622288668, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1763511244}
     - targetCorrespondingSourceObject: {fileID: 5864099210325693125, guid: 3282436c4e134164e927e49435bd3901, type: 3}
       insertIndex: -1
       addedObject: {fileID: 349107983}
@@ -4250,11 +4244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a1b23f1942b044db3186d273a292dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CullingCamLag
-  canvas: {fileID: 0}
-  smoothTime: 0.08
-  _laggedPos: {x: 0, y: 0, z: 0}
-  _posVelocity: {x: 0, y: 0, z: 0}
-  _laggedRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1204817099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: fd47297d222480a4a9641eedf4af4cb1, type: 3}
@@ -6169,43 +6158,6 @@ MonoBehaviour:
   savedColor: {r: 0, g: 0, b: 0, a: 0}
   savedTextUV0: {x: 0, y: 0, z: 0, w: 0}
   savedFill: 0
---- !u!1 &1763511239 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3062939028622288668, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-  m_PrefabInstance: {fileID: 914217600}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1763511241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763511239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e62188adca544cf1b96ccf1630f15f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUIVertexEffect
-  DoNotTesselate: 0
-  savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 0, z: 0}
-  savedRectSize: {x: 0, y: 0}
-  savedColor: {r: 0, g: 0, b: 0, a: 0}
-  savedTextUV0: {x: 0, y: 0, z: 0, w: 0}
-  savedFill: 0
---- !u!114 &1763511244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763511239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004b8ec0c25535c409b1f6115963d476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUITMP
-  Dirty: 0
 --- !u!1001 &1782977486
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class HandScript : MonoBehaviour
+public class UIScript : MonoBehaviour
 {
     public CapsulePlayer player;
 

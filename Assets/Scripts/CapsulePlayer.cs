@@ -159,11 +159,8 @@ public class CapsulePlayer : MonoBehaviour
                 feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
                 feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
                 feedbackAudioSource.PlayOneShot(soundList[1]);
-
-
-                //breathAudioSource.PlayOneShot(soundList[3]);
-
-                Debug.Log("play sound : " + collision.gameObject.name);
+                //breathAudioSource.PlayOneShot(soundList[3]); // hurt sound
+                
             }
             else if (playerBody.linearVelocity.magnitude > 0.8f)
             {
@@ -171,8 +168,6 @@ public class CapsulePlayer : MonoBehaviour
                 feedbackAudioSource.volume = Random.Range(0.7f, 1f);
                 feedbackAudioSource.PlayOneShot(soundList[0]);
 
-
-                Debug.Log("play sound : " + collision.gameObject.name);
             }
         }
 

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_Name
-      value: AlarmLever Variant
+      value: AlarmLever
       objectReference: {fileID: 0}
     - target: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       propertyPath: m_IsActive
@@ -87,12 +87,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step1Lever
   collider: {fileID: 2463386115453743956}
-  takeStopVelocity: 1
+  audioSource: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   oneTimeTrigger: 1
   lockLooking: 1
+  takeStopVelocity: 1
+  pulledFinishPushForce: 10
   lookingPoint: {fileID: 7477986311932573256}
   pulledAnimatorReference: {fileID: 7294786223794809604}
-  pulledFinishPushForce: 10
+  pulledAnimationName: 
+  leverAction: {fileID: 0}
   missionManager: {fileID: 0}
   doorScript: {fileID: 0}
   activatedItem: {fileID: 0}
