@@ -9,18 +9,24 @@ public class UIScript : MonoBehaviour
     [SerializeField] private Sprite handSpriteReachable;
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
+    [Header("Cinematic Settings")]
     [SerializeField] private GameObject cinematicBars;
-    
+    public float cinematicBarSpeed = 0.7f;
+
+    private bool startCinematic;
+    private bool stopCinematic;
 
     public void EnableCinematic()
     {// TODO: bar progressive enter with time parameter
+        cinematicBars.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
         cinematicBars.SetActive(true);
-        
+        startCinematic = true;
     }
 
     public void DisableCinematic()
     {
-        cinematicBars.SetActive(false);
+        stopCinematic = true;
+        
         
     }
 
@@ -43,5 +49,31 @@ public class UIScript : MonoBehaviour
         else
             handSprite = handSpriteIdle;
         handImageUI.sprite = handSprite;
+
+        if (startCinematic)
+        {
+            if (cinematicBars.transform.localScale.x > 1)
+            {
+                cinematicBars.transform.localScale -= new Vector3(cinematicBarSpeed, cinematicBarSpeed, cinematicBarSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                startCinematic = false;
+            }
+        }
+
+        if (stopCinematic)
+        {
+            if (cinematicBars.transform.localScale.x < 1.25f)
+            {
+                cinematicBars.transform.localScale += new Vector3(cinematicBarSpeed, cinematicBarSpeed, cinematicBarSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                cinematicBars.SetActive(false);
+                stopCinematic = false;
+            }
+        }
+
     }
 }
