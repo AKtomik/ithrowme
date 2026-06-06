@@ -16,7 +16,7 @@ public class TakableItem : Takable
     public override void Start()
     {
         originalParentTransform = transform.parent;
-        if (disableAudio) Debug.Log("item with disabled audio: "+this);
+        if (disableAudio) Debug.LogWarning("item with disabled audio: "+this);
 
         base.Start();
     }
