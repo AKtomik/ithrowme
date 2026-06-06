@@ -49,11 +49,6 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] public float throwObjectForce = 15f;
     [SerializeField] public float throwPlayerForce = -15f;
 
-    [Header("Hand Settings")]
-    [SerializeField] private Image handImageUI;
-    [SerializeField] private Sprite handSpriteReachable;
-    [SerializeField] private Sprite handSpriteIdle;
-    [SerializeField] private Sprite handSpriteGrab;
 
     [Header("Lock Utils")]
     public bool disableHand = false;
@@ -76,7 +71,7 @@ public class CapsulePlayer : MonoBehaviour
 
 
     private Camera cam;
-    private CameraShake camShake;
+    
     private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
     private Quaternion rotation;
@@ -86,11 +81,11 @@ public class CapsulePlayer : MonoBehaviour
 
     // reachable
     private bool anythingReachable = false;
-    private GameObject reachableObject = null;
+    public GameObject reachableObject = null;
     private List<TakableReference> takeNoRepeatList = new List<TakableReference>();
 
     // in hand
-    private bool anythingInHand = false;
+    public bool anythingInHand = false;
     private Takable handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
@@ -98,7 +93,7 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        camShake = cam.GetComponent<CameraShake>();
+       
 
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
@@ -148,17 +143,6 @@ public class CapsulePlayer : MonoBehaviour
         if (!disableLook) HandleLook();
         UpdateFov();
         CheckReachable();
-
-        Debug.Log(playerBody.linearVelocity.magnitude);
-
-        Sprite handSprite;
-        if (anythingInHand)
-            handSprite = handSpriteGrab;
-        else if (reachableObject)
-            handSprite = handSpriteReachable;
-        else
-            handSprite = handSpriteIdle;
-        handImageUI.sprite = handSprite;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -175,21 +159,15 @@ public class CapsulePlayer : MonoBehaviour
                 feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
                 feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
                 feedbackAudioSource.PlayOneShot(soundList[1]);
-
-
-                //breathAudioSource.PlayOneShot(soundList[3]);
-
-                Debug.Log("play sound : " + collision.gameObject.name);
+                //breathAudioSource.PlayOneShot(soundList[3]); // hurt sound
+                
             }
             else if (playerBody.linearVelocity.magnitude > 0.8f)
             {
                 feedbackAudioSource.pitch = Random.Range(0.8f, 1.2f);
                 feedbackAudioSource.volume = Random.Range(0.7f, 1f);
                 feedbackAudioSource.PlayOneShot(soundList[0]);
-                camShake.shakeAmount = 0.03f;
-                camShake.toShake = true;
 
-                Debug.Log("play sound : " + collision.gameObject.name);
             }
         }
 

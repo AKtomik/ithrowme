@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using CurvedUI;
 
 public class MissionManager : MonoBehaviour
 {
@@ -84,6 +85,8 @@ public class MissionManager : MonoBehaviour
         foreach (string text in GetActiveMissionTexts())
         {
             GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
+            instance.AddComponent<CurvedUIVertexEffect>(); // add curved ui effect
+            instance.AddComponent<CurvedUITMP>();
             instance.GetComponentInChildren<TextMeshProUGUI>().text = text; // write text
             spawnedTextMissions.Add(instance); // add to spawnedMissions
         }

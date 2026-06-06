@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using System.Collections;
 public class CanvasBoss : MonoBehaviour
 {
     [SerializeField] private GameObject cinematicBars;
