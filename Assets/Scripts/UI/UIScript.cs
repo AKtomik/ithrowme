@@ -9,8 +9,21 @@ public class UIScript : MonoBehaviour
     [SerializeField] private Sprite handSpriteReachable;
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
+    [SerializeField] private GameObject cinematicBars;
+    
 
-   
+    public void EnableCinematic()
+    {// TODO: bar progressive enter with time parameter
+        cinematicBars.SetActive(true);
+        
+    }
+
+    public void DisableCinematic()
+    {
+        cinematicBars.SetActive(false);
+        
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

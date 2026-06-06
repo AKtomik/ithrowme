@@ -21,7 +21,7 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private CanvasBoss canvasMana;
+    [SerializeField] private UIScript canvasMana;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;

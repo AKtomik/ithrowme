@@ -29,7 +29,7 @@ abstract public class TakableLever : Takable
     {
         
         if (!this.enabled) return;
-
+        
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
@@ -45,6 +45,7 @@ abstract public class TakableLever : Takable
             pulledAnimatorReference.Play(pulledAnimationName);
         else
             pulledAnimatorReference.Play();
+        
         PullStart(player);
         
     }
