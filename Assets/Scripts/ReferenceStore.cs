@@ -4,7 +4,8 @@ public class ReferenceStore : MonoBehaviour
 {
     public static ReferenceStore instance;
 
-    [Header("Managers")]
+    [Header("Main")]
+		public CapsulePlayer player;
 		public MissionManager missionManager;
     [Header("Center Doors")]
 		public DoorOpeningScript centerLifeDoor;

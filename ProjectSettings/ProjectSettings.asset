@@ -841,6 +841,7 @@ PlayerSettings:
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
     Standalone: UNITY_CCU;CURVEDUI_UNITY_XR;CURVEDUI_TMP
+    Windows Store Apps: UNITY_CCU;CURVEDUI_UNITY_XR;CURVEDUI_TMP
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

@@ -3790,7 +3790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8285531ed99700047a26f2cc49771e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceStore
-  missionManager: {fileID: 0}
+  player: {fileID: 260315545}
+  missionManager: {fileID: 850945353}
   centerLifeDoor: {fileID: 1779502559}
   centerTechnicalDoor: {fileID: 1923641943}
   centerResearchDoor: {fileID: 350682369}
