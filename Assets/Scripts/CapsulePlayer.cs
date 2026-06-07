@@ -266,6 +266,8 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
+
+        TimerScript.instance.PauseTime();
     }
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
@@ -275,12 +277,16 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
+        
+        TimerScript.instance.PauseTime();
     }
     
     public void UnlockingLook()
     {
         canvasMana.DisableCinematic();
         lockLookAt = false;
+        
+        TimerScript.instance.PlayTime();
     }
 
     void CheckReachable()
