@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ee0e9cbfa60b39641afc2cfd9e0d7275, type: 2}
+    - target: {fileID: 7293049335391933100, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'hitAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d6638e4d1969599469d52fd6ea3fa751, type: 3}
+    - target: {fileID: 7293049335391933100, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'takeAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 93f411a79aa9ce449ba32333d7fffa08, type: 3}
+    - target: {fileID: 7293049335391933100, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'throwAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d6638e4d1969599469d52fd6ea3fa751, type: 3}
     - target: {fileID: 7343397204920430591, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
       value: 
