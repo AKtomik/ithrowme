@@ -172,6 +172,7 @@ namespace CurvedUI {
            if (!autoSwitchHands || CurvedUIInputModule.ControlMethod != CurvedUIInputModule.CUIControlMethod.UNITY_XR) return;
 
            bool pressed = false;
+            /*
            if (CurvedUIInputModule.Instance.RightXRController != null && CurvedUIInputModule.Instance.UsedHand != CurvedUIInputModule.Hand.Right)
            {
                CurvedUIInputModule.Instance.GetXrControllerButtonState(ref pressed, CurvedUIInputModule.Hand.Right);
@@ -185,6 +186,7 @@ namespace CurvedUI {
 
                if(pressed) SwitchHandTo(CurvedUIInputModule.Hand.Left);
            }
+            */
         }
 #endif
 

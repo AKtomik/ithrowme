@@ -513,10 +513,12 @@ namespace CurvedUI {
                     //hand property
                     CurvedUIInputModule.Instance.UsedHand = (CurvedUIInputModule.Hand)EditorGUILayout.EnumPopup("Hand", CurvedUIInputModule.Instance.UsedHand);
                     //assign controllers
+                    /*
                     CurvedUIInputModule.Instance.RightXRController = (UnityEngine.XR.Interaction.Toolkit.XRBaseController)EditorGUILayout.ObjectField("Right Controller",
                         CurvedUIInputModule.Instance.RightXRController, typeof(UnityEngine.XR.Interaction.Toolkit.XRBaseController), true);
                     CurvedUIInputModule.Instance.LeftXRController = (UnityEngine.XR.Interaction.Toolkit.XRBaseController)EditorGUILayout.ObjectField("Left Controller",
                         CurvedUIInputModule.Instance.LeftXRController, typeof(UnityEngine.XR.Interaction.Toolkit.XRBaseController), true);
+                    */
 #else
                     GUILayout.Label("Make sure you imported Unity XR Toolkit 1.0.0pre3 or later AND New Input System packages before enabling.", EditorStyles.helpBox);
                     DrawCustomDefineSwitcher(ControlMethodDefineDict[CurvedUIInputModule.CUIControlMethod.UNITY_XR]);

@@ -17,7 +17,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
+//using UnityEngine.XR.Interaction.Toolkit;
 #elif CURVEDUI_STEAMVR_LEGACY || CURVEDUI_STEAMVR_2
 using Valve.VR;
 #endif 
@@ -152,8 +152,8 @@ public class CurvedUIInputModule : StandaloneInputModule {
     
     #if CURVEDUI_UNITY_XR
     //Settings & References - UNITY XR
-    [SerializeField] private XRBaseController rightXRController; 
-    [SerializeField] private XRBaseController leftXRController; 
+    //[SerializeField] private XRBaseController rightXRController; 
+    //[SerializeField] private XRBaseController leftXRController; 
     #endif
 
     
@@ -189,7 +189,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
         #elif CURVEDUI_STEAMVR_2
         if (ControlMethod == CUIControlMethod.STEAMVR_2) SetupSteamVR2Controllers();
         #elif CURVEDUI_UNITY_XR
-        if (ControlMethod == CUIControlMethod.UNITY_XR) SetupUnityXrControllers();
+        //if (ControlMethod == CUIControlMethod.UNITY_XR) SetupUnityXrControllers();
         #endif
     }
 
@@ -234,6 +234,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
 
 #if CURVEDUI_UNITY_XR
 #region EVENT PROCESSING - NEW UNITY INPUT SYSTEM w/ UNITY_XR -----------------------------------//
+    /*
     private void SetupUnityXrControllers()
     {
         if (rightXRController != null && leftXRController != null) return; 
@@ -245,6 +246,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
                 leftXRController = controller;
         }
     }
+    */
 
     #region UNITY_XR - INPUT MODULE PROCESS
     public override void Process()
@@ -485,7 +487,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
     private void ProcessUnityXrController()
     {
         var isPressed = false;
-        GetXrControllerButtonState(ref isPressed, usedHand);
+        //GetXrControllerButtonState(ref isPressed, usedHand);
         CustomControllerButtonState = isPressed;
         CustomControllerRay = new Ray(ControllerTransform.transform.position,
             ControllerTransform.transform.forward);
@@ -519,7 +521,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
     
     
     
-    
+    /*
     #region UNITY_XR - PUBLIC
     public void GetXrControllerButtonState(ref bool pressed, Hand checkHand) {
         switch ( checkHand ) {
@@ -546,6 +548,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
         }
     }
     #endregion // end of UNITY_XR - PUBLIC
+    */
     #endregion // end of UNITY_XR ------------------------------------------------------------//
     
 #else // end of CURVEDUI_UNITY_XR if
@@ -1240,19 +1243,19 @@ public class CurvedUIInputModule : StandaloneInputModule {
             //use override, if available.
             if (PointerTransformOverride != null) return PointerTransformOverride;
 
-            #if CURVEDUI_OCULUSVR
-            #if CURVEDUI_OVR_HANDS
+#if CURVEDUI_OCULUSVR
+#if CURVEDUI_OVR_HANDS
             if (_isUsingOVRHandTracking && _ovrHandPointerPose != null) 
                 return _ovrHandPointerPose.transform;
             else 
-            #endif
+#endif
                 return UsedHand == Hand.Left ? oculusCameraRig.leftHandAnchor : oculusCameraRig.rightHandAnchor;
-            #elif CURVEDUI_STEAMVR_LEGACY
+#elif CURVEDUI_STEAMVR_LEGACY
             return UsedHand == Hand.Left ? leftCont.transform : rightCont.transform; 
-            #elif CURVEDUI_STEAMVR_2
+#elif CURVEDUI_STEAMVR_2
             return UsedHand == Hand.Left ? m_leftController.transform : m_rightController.transform;
-            #elif CURVEDUI_UNITY_XR
-            return UsedHand == Hand.Left ? leftXRController.transform : rightXRController.transform; 
+#elif CURVEDUI_UNITY_XR
+            return null;
             #else
             Debug.LogWarning("CURVEDUI: CurvedUIInputModule.ActiveController will only return proper gameobject in  STEAMVR, STEAMVR_LEGACY, OCULUSVR, UNITY_XR or GOOGLEVR control methods.");
             return null;
@@ -1621,6 +1624,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
 
     #region SETTERS AND GETTERS - UNITY_XR
 #if CURVEDUI_UNITY_XR
+    /*
     public XRBaseController RightXRController {
         get => rightXRController;
         set => rightXRController = value;
@@ -1630,6 +1634,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
         get => leftXRController;
         set => leftXRController = value;
     }
+    */
 #endif // end of CURVEDUI_UNITY_XR
     #endregion // SETTERS AND GETTERS - UNITY_XR
     
