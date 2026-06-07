@@ -11,7 +11,7 @@ public class DrawIfDrawer : PropertyDrawer
         SerializedProperty condProp = property.serializedObject.FindProperty(drawIf.conditionField);
 
         bool enabled = condProp != null && condProp.boolValue;
-        if (drawIf.inverse) enabled = !enabled;
+        if (!drawIf.match) enabled = !enabled;
 
         EditorGUI.BeginDisabledGroup(!enabled);
         EditorGUI.PropertyField(position, property, label);

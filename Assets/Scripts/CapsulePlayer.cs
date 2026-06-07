@@ -29,8 +29,10 @@ public class CapsulePlayer : MonoBehaviour
     public bool invertRoll = SettingsStore.invertRoll;
     
     [Header("Fov Settings")]
-    [SerializeField] private float minimalFov = 70;
-    [SerializeField] private float maximalFov = 140;
+    [SerializeField] private bool usingSettingsFov = true;
+    [SerializeField, DrawIf("usingSettingsFov", false)] private float manualMinimalFov = 60;
+    [SerializeField, DrawIf("usingSettingsFov", false)] private float manualMaximalFov = 100;
+    [SerializeField, DrawIf("usingSettingsFov", true)] private float baseRangeToMaxFov = 40;
     [SerializeField] private float addedFovBySpeed = 2;
     [SerializeField] private float smoothyFovTime = .3f;
     private float smoothyFov = 70;
@@ -186,8 +188,17 @@ public class CapsulePlayer : MonoBehaviour
     {
         // stop copy me valet :c
         float speed = Vector3.Magnitude(playerBody.linearVelocity);
-        float claculatedFov = minimalFov + addedFovBySpeed * speed;
-        if (claculatedFov > maximalFov) claculatedFov = maximalFov;
+        float minFov;
+        float maxFov;
+        if (usingSettingsFov) {
+            minFov = SettingsStore.baseFov;
+            maxFov = SettingsStore.baseFov + baseRangeToMaxFov;
+        } else {
+            minFov = manualMinimalFov;
+            maxFov = manualMaximalFov;
+        }
+        float claculatedFov = minFov + addedFovBySpeed * speed;
+        if (claculatedFov > maxFov) claculatedFov = maxFov;
         smoothyFov = Mathf.SmoothDamp(smoothyFov, claculatedFov, ref fovVelocity, smoothyFovTime);
         cam.fieldOfView = smoothyFov;
     }
