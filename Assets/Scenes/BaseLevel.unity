@@ -689,17 +689,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217087082}
   m_CullTransparentMesh: 1
---- !u!114 &217087094 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4638439261256931814, guid: 3282436c4e134164e927e49435bd3901, type: 3}
-  m_PrefabInstance: {fileID: 914217600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217087082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e4df103b8200c4cbad270b32ee5775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!224 &217087095 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 460954533720054625, guid: 3282436c4e134164e927e49435bd3901, type: 3}
@@ -3108,6 +3097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DCanva
       objectReference: {fileID: 0}
+    - target: {fileID: 1759216296158260187, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8212467702433062239, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
       propertyPath: player
       value: 
@@ -3476,7 +3469,7 @@ PrefabInstance:
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: canvasMana
       value: 
-      objectReference: {fileID: 217087094}
+      objectReference: {fileID: 2132179854}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: handImageUI
       value: 
@@ -3728,6 +3721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8285531ed99700047a26f2cc49771e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceStore
+  missionManager: {fileID: 0}
   centerLifeDoor: {fileID: 1779502559}
   centerTechnicalDoor: {fileID: 1923641943}
   centerResearchDoor: {fileID: 350682369}
@@ -7683,6 +7677,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8344740692369173193, guid: d6e4f8712c876264bad425db59f1c2e5, type: 3}
   m_PrefabInstance: {fileID: 2124884701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2132179854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8212467702433062239, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
+  m_PrefabInstance: {fileID: 867310344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f95d16620a6f7f4db5991bfb36c3464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandScript
 --- !u!1001 &44398024013375084
 PrefabInstance:
   m_ObjectHideFlags: 0
