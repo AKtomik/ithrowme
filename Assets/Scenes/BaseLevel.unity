@@ -3553,7 +3553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8087410682420035642, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8740,6 +8740,10 @@ PrefabInstance:
     - target: {fileID: 1085787546557053715, guid: f9c3febf2040602469e2e81e0f7463b1, type: 3}
       propertyPath: m_Name
       value: RoomButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085787546557053715, guid: f9c3febf2040602469e2e81e0f7463b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2919388476615516038, guid: f9c3febf2040602469e2e81e0f7463b1, type: 3}
       propertyPath: doorScript
