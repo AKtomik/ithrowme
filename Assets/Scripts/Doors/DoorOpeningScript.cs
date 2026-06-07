@@ -61,17 +61,35 @@ public class DoorOpeningScript : MonoBehaviour
         return opened;
     }
     
-    public void LockingDoors()
+    public void LockingDoors(bool lockOpenState = false)
     {
+        // lock
         locked = true;
-        // show up locked state on the model
+        // opening
+        if (opened != lockOpenState)
+        {
+            if (lockOpenState)
+                OpeningDoors();
+            else
+                ClosingDoors();
+        }
+        // model modif
     }
-    public void UnlockingDoors()
+    public void UnlockingDoors(bool lockOpenState = false)
     {
+        // lock
         locked = false;
-        // show up unlocked state on the model
+        // opening
+        if (opened != lockOpenState)
+        {
+            if (lockOpenState)
+                OpeningDoors();
+            else
+                ClosingDoors();
+        }
+        // model modif
     }
-    public bool isLocked()
+    public bool IsLocked()
     {
         return locked;
     }

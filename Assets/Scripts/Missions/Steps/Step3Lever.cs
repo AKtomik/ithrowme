@@ -12,6 +12,14 @@ public class Step3Lever : TakableLever
     {
         Debug.Log("Step3Lever: step 3 completed");
         if (missionManager.IsCompleted(5))
+        {
             missionManager.AddMission(6);
+        }
+
+        // ! will lock the player in
+        //if (SettingsStore.lockFinishedDoor)
+        //{
+        //    ReferenceStore.instance.centerTechnicalDoor.LockingDoors();
+        //}
     }
 }

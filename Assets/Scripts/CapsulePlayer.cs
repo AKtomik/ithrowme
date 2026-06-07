@@ -93,7 +93,6 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-       
 
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
@@ -142,7 +141,15 @@ public class CapsulePlayer : MonoBehaviour
         if (Time.timeScale == 0) return;
         if (!disableLook) HandleLook();
         UpdateFov();
+        CheckTimer();
         CheckReachable();
+        lastPosition = transform.position;
+    }
+
+    void CheckTimer()
+    {
+        // will spam play when moving, until the end
+        if (transform.position != lastPosition) TimerScript.instance.PlayTime();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -178,7 +185,6 @@ public class CapsulePlayer : MonoBehaviour
     {
         // stop copy me valet :c
         float speed = Vector3.Magnitude(playerBody.linearVelocity);
-        lastPosition = transform.position;
         float claculatedFov = minimalFov + addedFovBySpeed * speed;
         if (claculatedFov > maximalFov) claculatedFov = maximalFov;
         smoothyFov = Mathf.SmoothDamp(smoothyFov, claculatedFov, ref fovVelocity, smoothyFovTime);
@@ -260,6 +266,8 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
+
+        TimerScript.instance.PauseTime();
     }
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
@@ -269,18 +277,23 @@ public class CapsulePlayer : MonoBehaviour
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
+        
+        TimerScript.instance.PauseTime();
     }
     
     public void UnlockingLook()
     {
         canvasMana.DisableCinematic();
         lockLookAt = false;
+        
+        TimerScript.instance.PlayTime();
     }
 
     void CheckReachable()
     {
         if (anythingInHand) return;
-        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        LayerMask takablesMask = LayerMask.GetMask("TakableEnviro") + LayerMask.GetMask("ThrowableItem") + LayerMask.GetMask("ThrowableCube");
+        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, takablesMask);
         List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
@@ -354,8 +367,7 @@ public class CapsulePlayer : MonoBehaviour
         handyTakable = null;
         handyObject = null;
         anythingInHand = false;
-        // start the timer
-        if (throwCount == 0) TimerScript.instance.running = true;
+        // cool to count
         throwCount++;
     }
 
