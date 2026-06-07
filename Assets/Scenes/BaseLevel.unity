@@ -3450,6 +3450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 140635179524183891, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2287208232526951791, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
     - target: {fileID: 843031394317638456, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_Name
       value: CapsulePlayer
@@ -3470,6 +3474,10 @@ PrefabInstance:
       propertyPath: cheatProjectileActivated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2044547279027172196, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2287208232526951791, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
     - target: {fileID: 2907000567390215359, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_CameraType
       value: 1
