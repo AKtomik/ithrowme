@@ -146,6 +146,9 @@ MonoBehaviour:
   takeRadius: 1
   throwPoint: {fileID: 2204427449030681073}
   handPoint: {fileID: 1205629004424289712}
+  reachableMask:
+    serializedVersion: 2
+    m_Bits: 3200
   cheatProjectileActivated: 0
   cheatProjectilePrefab: {fileID: 103920078271962544, guid: 4b03c7af36aab314699907845789a1c2, type: 3}
   throwMassBase: 1

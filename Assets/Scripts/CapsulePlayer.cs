@@ -42,6 +42,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] public float takeRadius;
     [SerializeField] public Transform throwPoint;
     [SerializeField] public Transform handPoint;
+    [SerializeField] public LayerMask reachableMask;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
     [SerializeField] public float throwMassBase = 1;
@@ -292,8 +293,7 @@ public class CapsulePlayer : MonoBehaviour
     void CheckReachable()
     {
         if (anythingInHand) return;
-        LayerMask takablesMask = LayerMask.GetMask("TakableEnviro") + LayerMask.GetMask("ThrowableItem") + LayerMask.GetMask("ThrowableCube");
-        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, takablesMask);
+        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, reachableMask);
         List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
