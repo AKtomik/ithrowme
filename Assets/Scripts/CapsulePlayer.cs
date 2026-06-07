@@ -61,13 +61,11 @@ public class CapsulePlayer : MonoBehaviour
     private float lockLookAtProgress = 0;
     
     [Header("Sound")]
-    [SerializeField] private AudioClip[] soundList;
-    /*
-    0 = lightHit
-    1 = strongHit
-    2 = breathing
-    3 = playerTakingDamage
-     */
+    [SerializeField] public bool disableAudio = false;
+    [SerializeField] private AudioClip[] lightHitAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] strongHitAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] breathingAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] takingDamageAudio = new AudioClip[]{ null };
     [SerializeField] private AudioSource feedbackAudioSource;
     [SerializeField] private AudioSource breathAudioSource;
 
@@ -162,18 +160,13 @@ public class CapsulePlayer : MonoBehaviour
             
             if (playerBody.linearVelocity.magnitude > 3.5f)
             {
-                feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
-                feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
-                feedbackAudioSource.PlayOneShot(soundList[1]);
-                //breathAudioSource.PlayOneShot(soundList[3]); // hurt sound
+                PlaySound(strongHitAudio, Random.Range(.7f, .9f), Random.Range(1f, 1.5f));
+                //PlaySound(takingDamageAudio, Random.Range(0.7f, 0.9f), Random.Range(1f, 1.5f)); // hurt sound
                 
             }
             else if (playerBody.linearVelocity.magnitude > 0.8f)
             {
-                feedbackAudioSource.pitch = Random.Range(0.8f, 1.2f);
-                feedbackAudioSource.volume = Random.Range(0.7f, 1f);
-                feedbackAudioSource.PlayOneShot(soundList[0]);
-
+                PlaySound(lightHitAudio, Random.Range(.7f, 1f), Random.Range(.8f, 1.2f));
             }
         }
 
@@ -377,7 +370,8 @@ public class CapsulePlayer : MonoBehaviour
         // cool to count
         throwCount++;
     }
-
+    
+    // reset input
     void OnReset(InputAction.CallbackContext ctx)
     {
         if (Time.timeScale == 0) return;
@@ -385,6 +379,22 @@ public class CapsulePlayer : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
+    // audio
+    private void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    {
+        PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, pitch, breath);
+    }
+
+    private void PlaySound(AudioClip audioClip, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    {
+        if (disableAudio) return;
+        AudioSource audioSource = (breath) ? breathAudioSource : feedbackAudioSource;
+        audioSource.pitch = pitch;
+        audioSource.volume = audioVolume;
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    // gizmos
 	void OnDrawGizmos()
 	{
         Gizmos.color = Color.azure;
@@ -393,6 +403,5 @@ public class CapsulePlayer : MonoBehaviour
         else Gizmos.color = Color.red;
         Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.3f);
 		Gizmos.DrawSphere(takePoint.position, takeRadius);
-	}
-    
+	}    
 }
