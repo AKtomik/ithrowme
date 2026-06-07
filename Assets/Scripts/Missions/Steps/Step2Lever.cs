@@ -4,7 +4,6 @@ public class Step2Lever : TakableLever
 {
     [Header("Step Pointers")]
     public MissionManager missionManager;
-    public DoorOpeningScript[] unlockedDoors;
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step2Lever: pulling...");
@@ -13,12 +12,18 @@ public class Step2Lever : TakableLever
     public override void PullFinish(CapsulePlayer player)
     {
         Debug.Log("Step2Lever: step 2 completed");
-        foreach(var door in unlockedDoors)
-        {
-            door.UnlockingDoors();
-        }
+        
+        // missions
         missionManager.AddMission(3);
-        missionManager.AddMission(5);
+        missionManager.AddMission(4);
+        
+        // doors
+        ReferenceStore.instance.centerResearchDoor.UnlockingDoors();
+        ReferenceStore.instance.centerTechnicalDoor.UnlockingDoors();
+        if (SettingsStore.smartLockFinishedDoor)
+        {
+            ReferenceStore.instance.centerLifeDoor.LockingDoors();
+        }
     }
 
     public void AnimationEndedAlias2()
