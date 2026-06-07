@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9192641778385926515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LookingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6899872273125407255}
   - component: {fileID: 3148165372292051230}
   - component: {fileID: 2313075156402111439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RadioLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +195,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 55d462271ee8e74408511b28f47d289a, type: 3}
       propertyPath: m_Name
       value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55d462271ee8e74408511b28f47d289a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549141275914554500, guid: 55d462271ee8e74408511b28f47d289a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4665084806814335529, guid: 55d462271ee8e74408511b28f47d289a, type: 3}
       propertyPath: m_LocalRotation.w

@@ -286,7 +286,8 @@ public class CapsulePlayer : MonoBehaviour
     void CheckReachable()
     {
         if (anythingInHand) return;
-        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius);
+        LayerMask takablesMask = LayerMask.GetMask("TakableEnviro") + LayerMask.GetMask("ThrowableItem") + LayerMask.GetMask("ThrowableCube");
+        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, takablesMask);
         List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
