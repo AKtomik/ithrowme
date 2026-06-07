@@ -1443,6 +1443,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8620929697680516773, guid: d0fe2deebad3d0d4492f7a5aa8130d93, type: 3}
   m_PrefabInstance: {fileID: 360839791}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &378202566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1954064737}
+    m_Modifications:
+    - target: {fileID: 1490531807656487331, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_Name
+      value: ThrowableLightCuddlyToy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.214
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+--- !u!4 &378202567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
+  m_PrefabInstance: {fileID: 378202566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &399981037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3728,11 +3790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8285531ed99700047a26f2cc49771e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceStore
+  missionManager: {fileID: 0}
   centerLifeDoor: {fileID: 1779502559}
   centerTechnicalDoor: {fileID: 1923641943}
   centerResearchDoor: {fileID: 350682369}
   centerControlDoor: {fileID: 1856468297}
   emergencyLifeDoor: {fileID: 818310319}
+  emergencyGravityDoor: {fileID: 2112009453}
 --- !u!1001 &980768239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5324,6 +5388,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8760765000101509026, guid: 7783713d69a529c4daf286dd7443a9e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 25003315}
+    - targetCorrespondingSourceObject: {fileID: 833044344447251514, guid: 7783713d69a529c4daf286dd7443a9e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112009452}
     - targetCorrespondingSourceObject: {fileID: 833044344447251514, guid: 7783713d69a529c4daf286dd7443a9e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458870789}
@@ -7090,6 +7157,7 @@ Transform:
   - {fileID: 1434603186}
   - {fileID: 2084574494}
   - {fileID: 1343547262}
+  - {fileID: 378202567}
   - {fileID: 1789535628}
   - {fileID: 1797880212}
   - {fileID: 727180571}
@@ -7612,6 +7680,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
   m_PrefabInstance: {fileID: 2111818390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2112009451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1447050215}
+    m_Modifications:
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048641519435632686, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048641519435632686, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: detectPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983416382251224715, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_Name
+      value: GravityEmergencyDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+--- !u!4 &2112009452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+  m_PrefabInstance: {fileID: 2112009451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2112009453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5048641519435632686, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+  m_PrefabInstance: {fileID: 2112009451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
 --- !u!224 &2119675117 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 460954533720054625, guid: 1ad2465f63c36be419690f677b0dc55f, type: 3}
@@ -8073,7 +8222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5983416382251224715, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_Name
-      value: HallwayEmergencyDoor
+      value: LifeEmergencyDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
