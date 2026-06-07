@@ -380,12 +380,12 @@ public class CapsulePlayer : MonoBehaviour
     }
 
     // audio
-    private void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    public void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, float pitch = 1f, bool breath = false)
     {
         PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, pitch, breath);
     }
 
-    private void PlaySound(AudioClip audioClip, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    public void PlaySound(AudioClip audioClip, float audioVolume = 1f, float pitch = 1f, bool breath = false)
     {
         if (disableAudio) return;
         AudioSource audioSource = (breath) ? breathAudioSource : feedbackAudioSource;
