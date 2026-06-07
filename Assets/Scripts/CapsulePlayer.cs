@@ -39,18 +39,18 @@ public class CapsulePlayer : MonoBehaviour
     private float fovVelocity = 0f;
 
     [Header("Throw Settings")]
-    [SerializeField] public Rigidbody playerBody;
-    [SerializeField] public Transform takePoint;
-    [SerializeField] public float takeRadius;
-    [SerializeField] public Transform throwPoint;
-    [SerializeField] public Transform handPoint;
-    [SerializeField] public LayerMask reachableMask;
+    [SerializeField] private Rigidbody playerBody;
+    [SerializeField] private Transform takePoint;
+    [SerializeField] private float takeRadius;
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private Transform handPoint;
+    [SerializeField] private LayerMask reachableMask;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
-    [SerializeField] public float throwMassBase = 1;
-    [SerializeField] public float throwMassInfluence = 1;
-    [SerializeField] public float throwObjectForce = 15f;
-    [SerializeField] public float throwPlayerForce = -15f;
+    [SerializeField] private float throwMassBase = 1;
+    [SerializeField] private float throwMassInfluence = 1;
+    [SerializeField] private float throwObjectForce = 15f;
+    [SerializeField] private float throwPlayerForce = -15f;
 
 
     [Header("Lock Utils")]
