@@ -26,7 +26,6 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
     [SerializeField] private float rollSensitivity = 2f;
-    public bool invertRoll = SettingsStore.invertRoll;
     
     [Header("Fov Settings")]
     [SerializeField] private bool usingSettingsFov = true;
@@ -120,9 +119,6 @@ public class CapsulePlayer : MonoBehaviour
         throwAction.performed += OnThrow;
         takeAction.performed += OnTake;
         resetAction.performed += OnReset;
-
-        invertRoll = SettingsStore.invertRoll;
-        Debug.Log("invertRoll: " + SettingsStore.invertRoll);
     }
 
     void OnDisable()
@@ -247,7 +243,7 @@ public class CapsulePlayer : MonoBehaviour
         }
         
         //if (mouseInput.magnitude > 0.01)
-        if (invertRoll)
+        if (SettingsStore.invertRoll)
         {
             rotaInput.z += rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
         }
