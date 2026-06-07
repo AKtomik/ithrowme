@@ -137,8 +137,10 @@ MonoBehaviour:
   rotationMaxSpeed: 2500000
   rollSensitivity: 1.3
   invertRoll: 0
-  minimalFov: 55
-  maximalFov: 100
+  usingSettingsFov: 1
+  manualMinimalFov: 60
+  manualMaximalFov: 100
+  baseRangeToMaxFov: 40
   addedFovBySpeed: 3
   smoothyFovTime: 0.3
   playerBody: {fileID: 2702942499978624594}
