@@ -3598,10 +3598,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3045911652619400641, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1200242602}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
 --- !u!4 &946503091
 Transform:
@@ -4373,23 +4370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUITMP
   Dirty: 0
---- !u!1 &1200242598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3045911652619400641, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
-  m_PrefabInstance: {fileID: 942557606}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1200242602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200242598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a1b23f1942b044db3186d273a292dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CullingCamLag
 --- !u!4 &1204817099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: fd47297d222480a4a9641eedf4af4cb1, type: 3}
