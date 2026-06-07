@@ -13,6 +13,7 @@ public class ReferenceStore : MonoBehaviour
 		public DoorOpeningScript centerControlDoor;
     [Header("Special Doors")]
 		public DoorOpeningScript emergencyLifeDoor;
+		public DoorOpeningScript emergencyGravityDoor;
 		
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
