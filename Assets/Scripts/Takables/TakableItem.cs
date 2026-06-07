@@ -9,7 +9,9 @@ public class TakableItem : Takable
 
     [Header("Item Sounds")]
     public bool disableAudio = false;
-    public AudioClip[] soundList; // 0 = hitAudio, 1 = takeAudio, 2 = throwAudio
+    public AudioClip[] hitAudio = new AudioClip[] { null };
+    public AudioClip[] takeAudio = new AudioClip[] { null };
+    public AudioClip[] throwAudio = new AudioClip[] { null };
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,8 +38,7 @@ public class TakableItem : Takable
         if (takeCollider.gameObject != gameObject)
             takeCollider.gameObject.transform.position = parent.position;
         // play take sound
-        if (disableAudio) return;
-        audioSource.PlayOneShot(soundList[1]);
+        PlaySound(takeAudio);
     }
     
     public void Unput(Transform point)
@@ -49,6 +50,8 @@ public class TakableItem : Takable
         transform.SetParent(originalParentTransform);
         // move the projectile
         transform.SetPositionAndRotation(point.position, point.rotation);
+        // play throw sound
+        PlaySound(throwAudio);
     }
 
     override public void Take(CapsulePlayer player)
@@ -67,21 +70,27 @@ public class TakableItem : Takable
         rigidBody.AddForce(throwCommonForce * player.throwObjectForce * player.throwPoint.forward, ForceMode.Impulse);
         // throw the player
         player.playerBody.AddForce(throwCommonForce * player.throwPlayerForce * transform.forward, ForceMode.Impulse);
-
-        // play throw sound
-        if (!disableAudio) {
-            audioSource.PlayOneShot(soundList[2]);
-        }
-
         // remove from hand
         player.ClearHand();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // audio
+    private void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, bool randomPitch = true)
     {
         if (disableAudio) return;
-        audioSource.pitch = Random.Range(0.7f, 1.5f);
-        audioSource.volume = 0.3f;
-        audioSource.PlayOneShot(soundList[0]);
+        PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, randomPitch);
+    }
+
+    private void PlaySound(AudioClip audioClip, float audioVolume = 1f, bool randomPitch = true)
+    {
+        if (disableAudio) return;
+        audioSource.pitch = randomPitch ? Random.Range(0.7f, 1.5f) : 1f;
+        audioSource.volume = audioVolume;// should it be parametable?
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        PlaySound(hitAudio, .3f, true);
     }
 }

@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d213d2296e38548489b1ce18ee5cb5ec, type: 2}
+    - target: {fileID: 7293049335391933100, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: disableAudio
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.047

@@ -51,9 +51,11 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   rigidBody: {fileID: 5534270252997462852}
   disableAudio: 0
-  soundList:
+  hitAudio:
   - {fileID: 0}
+  takeAudio:
   - {fileID: 0}
+  throwAudio:
   - {fileID: 0}
 --- !u!114 &428409723049198713
 MonoBehaviour:
