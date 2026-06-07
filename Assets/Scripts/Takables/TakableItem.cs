@@ -19,7 +19,6 @@ public class TakableItem : Takable
     {
         originalParentTransform = transform.parent;
         if (disableAudio) Debug.LogWarning("item with disabled audio: "+this);
-
         base.Start();
     }
 

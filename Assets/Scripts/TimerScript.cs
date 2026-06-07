@@ -1,14 +1,13 @@
 using System;
-using System.Timers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
     public static TimerScript instance;
 
-    public bool running = false;
+    private bool ended = false;
+    private bool running = false;
     private double timedSec = 0;
     private TextMeshProUGUI textPro;
 
@@ -33,5 +32,27 @@ public class TimerScript : MonoBehaviour
         string textSec = displaySec.ToString();
         
         textPro.text = textSec + "." + textMs;
+    }
+    
+    // Utils methods
+    public void PlayTime()
+    {
+        if (ended || running) return;
+        Debug.Log("Timer PlayTime");
+        running = true;
+    }
+    
+    public void PauseTime()
+    {
+        if (!running) return;
+        Debug.Log("Timer PauseTime");
+        running = false;
+    }
+    
+    public void EndTime()
+    {
+        Debug.Log("Timer EndTime");
+        ended = true;
+        running = false;
     }
 }
