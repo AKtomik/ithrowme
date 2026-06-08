@@ -50,16 +50,16 @@ public class ConsoleScreenManager : MonoBehaviour
         actualPrintColor = color;
     }
 
-    public void AddText(string text)
+    public void AddText(string text, float typingTime = 0)
     {
-        AddText(text, actualPrintColor);
+        AddText(text, actualPrintColor, typingTime);
     }
 
-    public void AddText(string text, Color color)
+    public void AddText(string text, Color color, float typingTime = 0)
     {
         GameObject textObject = Instantiate(textPrefab, textContainer.transform);
         TypeWriter typewriter = textObject.GetComponent<TypeWriter>();
-        typewriter.Typing(text, 1);
+        typewriter.Typing(text, typingTime);
         typewriter.SetColor(color);
         activeTexts.Add(textObject);
         LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());

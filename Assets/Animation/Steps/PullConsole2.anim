@@ -52,77 +52,42 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SetPrintColor
-    data: 000000
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
-    functionName: ClearTexts
+    functionName: AnimationAlias2Start
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.46666667
-    functionName: ChangeScreenColor
-    data: FF7700
+  - time: 0.51666665
+    functionName: AnimationAlias2Waiting
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5
-    functionName: AddText
-    data: asking for ejection...
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.6833333
-    functionName: SetPrintColor
-    data: 000000
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.8
-    functionName: AddText
-    data: 'error: not authorized'
+  - time: 1.5
+    functionName: AnimationAlias2Exe1
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.5
-    functionName: AddText
-    data: 'error: no energy'
+    functionName: AnimationAlias2Exe2
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.85
-    functionName: SetPrintColor
-    data: FFFFFF
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 3.95
-    functionName: ChangeScreenColor
-    data: FF0000
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 4.016667
-    functionName: AddText
-    data: ejection process failed
+  - time: 4
+    functionName: AnimationAlias2Failure
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 5
-    functionName: AnimationEndedAlias2
+    functionName: AnimationAlias2Ended
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
