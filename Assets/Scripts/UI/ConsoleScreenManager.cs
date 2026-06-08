@@ -27,7 +27,7 @@ public class ConsoleScreenManager : MonoBehaviour
             AddText(initText); 
         if (doInitScreenColor)
             SetScreenColor(initScreenColor);
-        AddText("godot is better", new Color(1f, 1f, 1f, .042f));//shhhhhhh
+        AddText("godot is better", new Color(1f, 1f, 1f, .0042f));//shhhhhhh
     }
 
     // Update is called once per frame

@@ -13,7 +13,7 @@ public class Step5Catalyzer : CatalyzerTrigger
         {
             missionManager.AddMission(6);
             ReferenceStore.instance.consoleScreen.SetScreenColor(new Color(.8f, .8f, .8f));
-            ReferenceStore.instance.consoleScreen.AddText(" ", Color.black);
+            ReferenceStore.instance.consoleScreen.AddText(".", new Color(0f, 0f, 0f, 0f));
             ReferenceStore.instance.consoleScreen.AddText("waiting for input...", Color.white);
         }
         
