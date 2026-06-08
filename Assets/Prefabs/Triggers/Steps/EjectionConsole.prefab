@@ -100,6 +100,8 @@ MonoBehaviour:
   leverAction: {fileID: 0}
   missionManager: {fileID: 0}
   consoleScreen: {fileID: 6658876902091014060}
+  animClearConsole: 1
+  animShowExe: 1
 --- !u!114 &4051182125557143187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +126,8 @@ MonoBehaviour:
   leverAction: {fileID: 0}
   missionManager: {fileID: 0}
   consoleScreen: {fileID: 6658876902091014060}
+  animClearConsole: 0
+  animShowExe: 0
 --- !u!114 &6658876902091014060
 MonoBehaviour:
   m_ObjectHideFlags: 0

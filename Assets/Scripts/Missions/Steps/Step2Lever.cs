@@ -5,6 +5,8 @@ public class Step2Lever : TakableLever
     [Header("Step Pointers")]
     public MissionManager missionManager;
     public ConsoleScreenManager consoleScreen;
+    
+    [Header("Step Settings")]
     public bool animClearConsole = true;
     public bool animShowExe = true;
 
