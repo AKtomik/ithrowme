@@ -2213,7 +2213,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.7}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469600119
 MonoBehaviour:
@@ -6926,7 +6926,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_text
-      value: "< module de s\xE9curit\xE9"
+      value: security module
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
+      propertyPath: m_margin.x
+      value: 30.82743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
+      propertyPath: m_margin.z
+      value: 11.767923
       objectReference: {fileID: 0}
     - target: {fileID: 5951437253551436152, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_Pivot.x
@@ -8060,8 +8068,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1403310015}
   - {fileID: 1676430869}
+  - {fileID: 1403310015}
   m_Father: {fileID: 469600118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8084,7 +8092,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 20
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 1
@@ -10185,7 +10193,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_text
-      value: "salle de contr\xF4le >"
+      value: control room
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
+      propertyPath: m_margin.x
+      value: 10.175667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345121850909378670, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
+      propertyPath: m_margin.z
+      value: 41.29857
       objectReference: {fileID: 0}
     - target: {fileID: 5951437253551436152, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_Pivot.x
@@ -10229,7 +10245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5951437253551436152, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5951437253551436152, guid: a1522aa6f362d424ab693d4d122e7f45, type: 3}
       propertyPath: m_LocalRotation.w
