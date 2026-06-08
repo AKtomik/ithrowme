@@ -4,9 +4,13 @@ using UnityEngine.UI;
 
 public class ConsoleScreenManager : MonoBehaviour
 {
-    [SerializeField] private LayoutGroup screenContainer;
-    [SerializeField] private MeshRenderer screenMesh;
+    [Header("Conole texts")]
+    [SerializeField] private LayoutGroup textContainer;
     [SerializeField] private GameObject textPrefab;
+    
+    [Header("Conole screen")]
+    [SerializeField] private MeshRenderer screenMesh;
+    [SerializeField] private Material screenMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +18,7 @@ public class ConsoleScreenManager : MonoBehaviour
         AddText("hello world"); 
         AddText("fake long unity error with multiples lines", Color.red);
         AddText("godot is better!", Color.gold);
+        ChangeScreenColor(Color.aliceBlue);
     }
 
     // Update is called once per frame
@@ -27,14 +32,18 @@ public class ConsoleScreenManager : MonoBehaviour
     }
     public void AddText(string text, Color color)
     {
-        GameObject textObject = Instantiate(textPrefab, screenContainer.transform);
+        GameObject textObject = Instantiate(textPrefab, textContainer.transform);
         TextMeshProUGUI textMesh = textObject.GetComponent<TextMeshProUGUI>();
         textMesh.text = text;
         textMesh.color = color;
     }
 
-    public void ChangeBackgroundColor(Color color)
+    public void ChangeScreenColor(Color color)
     {
-        screenMesh.material.color = color;
+		Material mat = new Material(screenMaterial)
+		{
+			color = color
+		};
+		screenMesh.material = mat;
     }
 }

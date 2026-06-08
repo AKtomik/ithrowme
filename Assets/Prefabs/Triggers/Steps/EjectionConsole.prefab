@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3a0a6e13abb4644a109ca781dd7ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  screenContainer: {fileID: 2444493415310840271}
-  screenMesh: {fileID: 3578635803382588996}
+  textContainer: {fileID: 2444493415310840271}
   textPrefab: {fileID: 3463538992675887974, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
+  screenMesh: {fileID: 3578635803382588996}
+  screenMaterial: {fileID: 2100000, guid: c3f3243e44c584d4cb1353163918b825, type: 2}
 --- !u!1 &3532572091947178097
 GameObject:
   m_ObjectHideFlags: 0
