@@ -5,6 +5,8 @@ public class Step6Lever : TakableLever
     [Header("Step Pointers")]
     public MissionManager missionManager;
     public ConsoleScreenManager consoleScreen;
+    public bool animClearConsole = true;
+    public bool animShowExe = true;
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step6Lever: pulling...");
@@ -20,29 +22,31 @@ public class Step6Lever : TakableLever
     // animation wrappers
     public void AnimationAlias6Start()
     {
-        //consoleScreen.ClearTexts();
+        if (animClearConsole) consoleScreen.ClearTexts();
     }
 
     public void AnimationAlias6Waiting()
     {
-        consoleScreen.SetPrintColor(Color.gold);
+        consoleScreen.SetScreenColor(Color.yellow);
         consoleScreen.SetPrintColor(Color.black);
-        consoleScreen.AddText("executing ejection process...", 1f);
+        consoleScreen.AddText("re-preparing ejection...", 1f);
     }
     
     public void AnimationAlias6Exe1()
     {
-        consoleScreen.AddText("error: not authorized", .5f);
+        if (animShowExe) consoleScreen.AddText("you are authorized", Color.darkGreen, .5f);
     }
     
     public void AnimationAlias6Exe2()
     {
-        consoleScreen.AddText("error: no energy", .5f);
+        if (animShowExe) consoleScreen.AddText("enough energy", Color.darkGreen, .5f);
     }
     
-    public void AnimationAlias6Failure()
+    public void AnimationAlias6Success()
     {
-        consoleScreen.AddText("ejection failed", Color.white, 1f);
+        consoleScreen.SetScreenColor(Color.green);
+        consoleScreen.AddText("ejection READY", Color.white, 1f);
+        //consoleScreen.AddText("get in the godot capsule to proceed ejection", Color.black, 2f);
     }
 
     public void AnimationAlias6Ended()
