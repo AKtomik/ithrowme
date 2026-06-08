@@ -14,6 +14,9 @@ public class Step3Lever : TakableLever
         if (missionManager.IsCompleted(5))
         {
             missionManager.AddMission(6);
+            ReferenceStore.instance.consoleScreen.SetScreenColor(new Color(.8f, .8f, .8f));
+            ReferenceStore.instance.consoleScreen.AddText(".", new Color(0f, 0f, 0f, 0f));
+            ReferenceStore.instance.consoleScreen.AddText("waiting for input...", Color.white);
         }
 
         // ! will lock the player in

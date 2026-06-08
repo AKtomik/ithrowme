@@ -74,22 +74,21 @@ public class TakableItem : Takable
     }
 
     // audio
-    private void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, bool randomPitch = true)
+    public void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, float pitch = 1f)
     {
-        if (disableAudio) return;
-        PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, randomPitch);
+        PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, pitch);
     }
 
-    private void PlaySound(AudioClip audioClip, float audioVolume = 1f, bool randomPitch = true)
+    public void PlaySound(AudioClip audioClip, float audioVolume = 1f, float pitch = 1f)
     {
         if (disableAudio) return;
-        audioSource.pitch = randomPitch ? Random.Range(0.7f, 1.5f) : 1f;
-        audioSource.volume = audioVolume;// should it be parametable?
+        audioSource.pitch = pitch;
+        audioSource.volume = audioVolume;
         audioSource.PlayOneShot(audioClip);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        PlaySound(hitAudio, .3f, true);
+        PlaySound(hitAudio, .3f, Random.Range(0.7f, 1.5f));
     }
 }

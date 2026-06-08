@@ -3,11 +3,11 @@ using UnityEngine;
 public class DrawIfAttribute : PropertyAttribute
 {
     public string conditionField;
-    public bool inverse;
+    public bool match;
 
-    public DrawIfAttribute(string conditionField, bool inverse = false)
+    public DrawIfAttribute(string conditionField, bool match = true)
     {
         this.conditionField = conditionField;
-        this.inverse = inverse;
+        this.match = match;
     }
 }

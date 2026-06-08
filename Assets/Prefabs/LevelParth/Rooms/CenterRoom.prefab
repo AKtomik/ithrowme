@@ -270,6 +270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1449478683272685895}
     m_Modifications:
+    - target: {fileID: 154758117799852426, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
+      propertyPath: m_text
+      value: control room
+      objectReference: {fileID: 0}
     - target: {fileID: 1292510480977328939, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
       propertyPath: m_Name
       value: EastWall
@@ -332,6 +336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1449478683272685895}
     m_Modifications:
+    - target: {fileID: 154758117799852426, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
+      propertyPath: m_text
+      value: life area
+      objectReference: {fileID: 0}
     - target: {fileID: 1292510480977328939, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
       propertyPath: m_Name
       value: NorthWall
@@ -394,6 +402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1449478683272685895}
     m_Modifications:
+    - target: {fileID: 154758117799852426, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
+      propertyPath: m_text
+      value: research area
+      objectReference: {fileID: 0}
     - target: {fileID: 1292510480977328939, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
       propertyPath: m_Name
       value: SouthWall
@@ -536,6 +548,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1449478683272685895}
     m_Modifications:
+    - target: {fileID: 154758117799852426, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
+      propertyPath: m_text
+      value: technical area
+      objectReference: {fileID: 0}
     - target: {fileID: 1292510480977328939, guid: 956305d2eb39a8a49ae2812e9a4f1c19, type: 3}
       propertyPath: m_Name
       value: WestWall

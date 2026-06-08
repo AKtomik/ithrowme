@@ -26,11 +26,12 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
     [SerializeField] private float rollSensitivity = 2f;
-    public bool invertRoll = SettingsStore.invertRoll;
     
     [Header("Fov Settings")]
-    [SerializeField] private float minimalFov = 70;
-    [SerializeField] private float maximalFov = 140;
+    [SerializeField] private bool usingSettingsFov = true;
+    [SerializeField, DrawIf("usingSettingsFov", false)] private float manualMinimalFov = 60;
+    [SerializeField, DrawIf("usingSettingsFov", false)] private float manualMaximalFov = 100;
+    [SerializeField, DrawIf("usingSettingsFov", true)] private float baseRangeToMaxFov = 40;
     [SerializeField] private float addedFovBySpeed = 2;
     [SerializeField] private float smoothyFovTime = .3f;
     private float smoothyFov = 70;
@@ -42,6 +43,7 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] public float takeRadius;
     [SerializeField] public Transform throwPoint;
     [SerializeField] public Transform handPoint;
+    [SerializeField] private LayerMask reachableMask;
     [SerializeField] private bool cheatProjectileActivated = false;
     [SerializeField] private GameObject cheatProjectilePrefab;
     [SerializeField] public float throwMassBase = 1;
@@ -59,13 +61,11 @@ public class CapsulePlayer : MonoBehaviour
     private float lockLookAtProgress = 0;
     
     [Header("Sound")]
-    [SerializeField] private AudioClip[] soundList;
-    /*
-    0 = lightHit
-    1 = strongHit
-    2 = breathing
-    3 = playerTakingDamage
-     */
+    [SerializeField] public bool disableAudio = false;
+    [SerializeField] private AudioClip[] lightHitAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] strongHitAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] breathingAudio = new AudioClip[]{ null };
+    [SerializeField] private AudioClip[] takingDamageAudio = new AudioClip[]{ null };
     [SerializeField] private AudioSource feedbackAudioSource;
     [SerializeField] private AudioSource breathAudioSource;
 
@@ -117,9 +117,6 @@ public class CapsulePlayer : MonoBehaviour
         throwAction.performed += OnThrow;
         takeAction.performed += OnTake;
         resetAction.performed += OnReset;
-
-        invertRoll = SettingsStore.invertRoll;
-        Debug.Log("invertRoll: " + SettingsStore.invertRoll);
     }
 
     void OnDisable()
@@ -163,18 +160,13 @@ public class CapsulePlayer : MonoBehaviour
             
             if (playerBody.linearVelocity.magnitude > 3.5f)
             {
-                feedbackAudioSource.pitch = Random.Range(1f, 1.5f);
-                feedbackAudioSource.volume = Random.Range(0.7f, 0.9f);
-                feedbackAudioSource.PlayOneShot(soundList[1]);
-                //breathAudioSource.PlayOneShot(soundList[3]); // hurt sound
+                PlaySound(strongHitAudio, Random.Range(.7f, .9f), Random.Range(1f, 1.5f));
+                //PlaySound(takingDamageAudio, Random.Range(0.7f, 0.9f), Random.Range(1f, 1.5f)); // hurt sound
                 
             }
             else if (playerBody.linearVelocity.magnitude > 0.8f)
             {
-                feedbackAudioSource.pitch = Random.Range(0.8f, 1.2f);
-                feedbackAudioSource.volume = Random.Range(0.7f, 1f);
-                feedbackAudioSource.PlayOneShot(soundList[0]);
-
+                PlaySound(lightHitAudio, Random.Range(.7f, 1f), Random.Range(.8f, 1.2f));
             }
         }
 
@@ -185,8 +177,17 @@ public class CapsulePlayer : MonoBehaviour
     {
         // stop copy me valet :c
         float speed = Vector3.Magnitude(playerBody.linearVelocity);
-        float claculatedFov = minimalFov + addedFovBySpeed * speed;
-        if (claculatedFov > maximalFov) claculatedFov = maximalFov;
+        float minFov;
+        float maxFov;
+        if (usingSettingsFov) {
+            minFov = SettingsStore.baseFov;
+            maxFov = SettingsStore.baseFov + baseRangeToMaxFov;
+        } else {
+            minFov = manualMinimalFov;
+            maxFov = manualMaximalFov;
+        }
+        float claculatedFov = minFov + addedFovBySpeed * speed;
+        if (claculatedFov > maxFov) claculatedFov = maxFov;
         smoothyFov = Mathf.SmoothDamp(smoothyFov, claculatedFov, ref fovVelocity, smoothyFovTime);
         cam.fieldOfView = smoothyFov;
     }
@@ -235,7 +236,7 @@ public class CapsulePlayer : MonoBehaviour
         }
         
         //if (mouseInput.magnitude > 0.01)
-        if (invertRoll)
+        if (SettingsStore.invertRoll)
         {
             rotaInput.z += rollInput * -1 * rollSensitivity * SettingsStore.rollSensivity;
         }
@@ -292,8 +293,7 @@ public class CapsulePlayer : MonoBehaviour
     void CheckReachable()
     {
         if (anythingInHand) return;
-        LayerMask takablesMask = LayerMask.GetMask("TakableEnviro") + LayerMask.GetMask("ThrowableItem") + LayerMask.GetMask("ThrowableCube");
-        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, takablesMask);
+        Collider[] inRangeColliders = Physics.OverlapSphere(takePoint.position, takeRadius, reachableMask);
         List<TakableReference> newNoRepeatList = new List<TakableReference>();
         Vector3 centerPoint = takePoint.position;// could be transform.position
         GameObject nearestObject = null;
@@ -370,7 +370,8 @@ public class CapsulePlayer : MonoBehaviour
         // cool to count
         throwCount++;
     }
-
+    
+    // reset input
     void OnReset(InputAction.CallbackContext ctx)
     {
         if (Time.timeScale == 0) return;
@@ -378,6 +379,22 @@ public class CapsulePlayer : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
+    // audio
+    public void PlaySound(AudioClip[] audioClips, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    {
+        PlaySound(audioClips[Random.Range(0, audioClips.Length)], audioVolume, pitch, breath);
+    }
+
+    public void PlaySound(AudioClip audioClip, float audioVolume = 1f, float pitch = 1f, bool breath = false)
+    {
+        if (disableAudio) return;
+        AudioSource audioSource = (breath) ? breathAudioSource : feedbackAudioSource;
+        audioSource.pitch = pitch;
+        audioSource.volume = audioVolume;
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    // gizmos
 	void OnDrawGizmos()
 	{
         Gizmos.color = Color.azure;
@@ -386,6 +403,5 @@ public class CapsulePlayer : MonoBehaviour
         else Gizmos.color = Color.red;
         Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.3f);
 		Gizmos.DrawSphere(takePoint.position, takeRadius);
-	}
-    
+	}    
 }

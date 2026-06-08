@@ -4,7 +4,8 @@ public class ReferenceStore : MonoBehaviour
 {
     public static ReferenceStore instance;
 
-    [Header("Managers")]
+    [Header("Main")]
+		public CapsulePlayer player;
 		public MissionManager missionManager;
     [Header("Center Doors")]
 		public DoorOpeningScript centerLifeDoor;
@@ -13,6 +14,9 @@ public class ReferenceStore : MonoBehaviour
 		public DoorOpeningScript centerControlDoor;
     [Header("Special Doors")]
 		public DoorOpeningScript emergencyLifeDoor;
+		public DoorOpeningScript emergencyGravityDoor;
+    [Header("Visuals")]
+		public ConsoleScreenManager consoleScreen;
 		
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
