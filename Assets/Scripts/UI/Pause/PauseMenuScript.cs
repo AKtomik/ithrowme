@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Timeline.DirectorControlPlayable;
@@ -140,6 +141,11 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
 
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("BaseLevel");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1)
     }
 
     public void QuitGame()
