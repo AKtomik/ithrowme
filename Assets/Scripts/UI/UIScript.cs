@@ -36,6 +36,7 @@ public class UIScript : MonoBehaviour
     {
         GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
         player = playerGO.GetComponent<CapsulePlayer>();
+        cinematicBars.SetActive(false);
     }
 
     // Update is called once per frame
