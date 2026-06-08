@@ -12,6 +12,8 @@ public class Step5Catalyzer : CatalyzerTrigger
         if (missionManager.IsCompleted(3))
         {
             missionManager.AddMission(6);
+            ReferenceStore.instance.consoleScreen.SetScreenColor(new Color(.2f, .2f, .2f));
+            ReferenceStore.instance.consoleScreen.AddText("waiting for input...", Color.white);
         }
         
         // doors
