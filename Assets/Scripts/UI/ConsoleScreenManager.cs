@@ -26,7 +26,7 @@ public class ConsoleScreenManager : MonoBehaviour
         if (doInitText)
             AddText(initText); 
         if (doInitScreenColor)
-            ChangeScreenColor(initScreenColor);
+            SetScreenColor(initScreenColor);
         AddText("godot is better", new Color(.042f, .042f, .042f));//shhhhhhh
     }
 
@@ -78,13 +78,13 @@ public class ConsoleScreenManager : MonoBehaviour
     public void ChangeScreenColor(string hex)
     {
         if (ColorUtility.TryParseHtmlString("#" + hex, out Color color)) {
-            ChangeScreenColor(color);
+            SetScreenColor(color);
         } else {
             throw new System.Exception("can't parse hex ["+hex+"] to color");
         }
     }
 
-    public void ChangeScreenColor(Color color)
+    public void SetScreenColor(Color color)
     {
         screenMesh.material.color = color;
     }
