@@ -10,7 +10,6 @@ public class ConsoleScreenManager : MonoBehaviour
     
     [Header("Conole screen")]
     [SerializeField] private MeshRenderer screenMesh;
-    [SerializeField] private Material screenMaterial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +17,7 @@ public class ConsoleScreenManager : MonoBehaviour
         AddText("hello world"); 
         AddText("fake long unity error with multiples lines", Color.red);
         AddText("godot is better!", Color.gold);
-        ChangeScreenColor(Color.aliceBlue);
+        ChangeScreenColor(Color.gold);
     }
 
     // Update is called once per frame
@@ -40,10 +39,6 @@ public class ConsoleScreenManager : MonoBehaviour
 
     public void ChangeScreenColor(Color color)
     {
-		Material mat = new Material(screenMaterial)
-		{
-			color = color
-		};
-		screenMesh.material = mat;
+        screenMesh.material.color = color;
     }
 }
