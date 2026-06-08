@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8027508377003337583}
   - component: {fileID: 1553955484133713273}
   - component: {fileID: 1774240242339547062}
+  - component: {fileID: -4527732441633880667}
   m_Layer: 5
   m_Name: ConsoleText
   m_TagString: Untagged
@@ -152,3 +153,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &-4527732441633880667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463538992675887974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0308e5293e04c4da9780d0cec87d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

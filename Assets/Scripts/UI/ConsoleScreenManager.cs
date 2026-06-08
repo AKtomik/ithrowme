@@ -58,9 +58,9 @@ public class ConsoleScreenManager : MonoBehaviour
     public void AddText(string text, Color color)
     {
         GameObject textObject = Instantiate(textPrefab, textContainer.transform);
-        TextMeshProUGUI textMesh = textObject.GetComponent<TextMeshProUGUI>();
-        textMesh.text = text;
-        textMesh.color = color;
+        TypeWriter typewriter = textObject.GetComponent<TypeWriter>();
+        typewriter.Typing(text, 1);
+        typewriter.SetColor(color);
         activeTexts.Add(textObject);
         LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());
     }
