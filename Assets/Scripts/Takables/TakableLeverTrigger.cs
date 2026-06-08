@@ -60,6 +60,7 @@ abstract public class TakableLever : Takable
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
         PullFinish(playerPulling);
+        isPulling = false;
         playerPulling = null;
         
         if (oneTimeTrigger)

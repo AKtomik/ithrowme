@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   textContainer: {fileID: 2444493415310840271}
   textPrefab: {fileID: 3463538992675887974, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
+  actualPrintColor: {r: 1, g: 1, b: 1, a: 1}
   doInitText: 1
   initText: waiting for action...
   screenMesh: {fileID: 3578635803382588996}
@@ -165,14 +166,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3532572091947178097}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.080046766, y: 0.7025614, z: 0.080046766, w: 0.7025614}
-  m_LocalPosition: {x: -0.019, y: 0.461, z: 0.283}
+  m_LocalRotation: {x: 0.07905579, y: 0.6938637, z: 0.08102563, w: 0.7111528}
+  m_LocalPosition: {x: 0.009, y: 0.385, z: 0.262}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3376988919284808689}
   m_Father: {fileID: 76303391308894441}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 13}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.59, z: 13}
 --- !u!1 &3744058222661257106
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class ConsoleScreenManager : MonoBehaviour
     [Header("Conole texts")]
     [SerializeField] private LayoutGroup textContainer;
     [SerializeField] private GameObject textPrefab;
+    [SerializeField] private Color actualPrintColor = Color.white;
     [SerializeField] private bool doInitText;
     [SerializeField, DrawIf("doInitText")] private string initText;
     
@@ -16,7 +18,7 @@ public class ConsoleScreenManager : MonoBehaviour
     [SerializeField] private bool doInitScreenColor;
     [SerializeField, DrawIf("doInitScreenColor")] private Color initScreenColor;
 
-    private GameObject[] activeTexts = new GameObject[] {};
+    private List<GameObject> activeTexts = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +27,7 @@ public class ConsoleScreenManager : MonoBehaviour
             AddText(initText); 
         if (doInitScreenColor)
             ChangeScreenColor(initScreenColor);
+        AddText("godot", Color.gold);
     }
 
     // Update is called once per frame
@@ -33,9 +36,23 @@ public class ConsoleScreenManager : MonoBehaviour
     }
     
     // Texts
+    public void SetPrintColor(string hex)
+    {
+        if (ColorUtility.TryParseHtmlString("#" + hex, out Color color)) {
+            SetPrintColor(color);
+        } else {
+            throw new System.Exception("can't parse hex ["+hex+"] to color");
+        }
+    }
+
+    public void SetPrintColor(Color color)
+    {
+        actualPrintColor = color;
+    }
+
     public void AddText(string text)
     {
-        AddText(text, Color.white);
+        AddText(text, actualPrintColor);
     }
 
     public void AddText(string text, Color color)
@@ -44,7 +61,7 @@ public class ConsoleScreenManager : MonoBehaviour
         TextMeshProUGUI textMesh = textObject.GetComponent<TextMeshProUGUI>();
         textMesh.text = text;
         textMesh.color = color;
-        activeTexts.Append(textObject);
+        activeTexts.Add(textObject);
     }
     
     public void ClearTexts()
@@ -53,9 +70,19 @@ public class ConsoleScreenManager : MonoBehaviour
         {
             Destroy(textObject);
         }
+        activeTexts.Clear();
     }
 
     // background
+    public void ChangeScreenColor(string hex)
+    {
+        if (ColorUtility.TryParseHtmlString("#" + hex, out Color color)) {
+            ChangeScreenColor(color);
+        } else {
+            throw new System.Exception("can't parse hex ["+hex+"] to color");
+        }
+    }
+
     public void ChangeScreenColor(Color color)
     {
         screenMesh.material.color = color;
