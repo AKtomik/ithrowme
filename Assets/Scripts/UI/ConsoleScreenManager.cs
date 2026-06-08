@@ -27,7 +27,7 @@ public class ConsoleScreenManager : MonoBehaviour
             AddText(initText); 
         if (doInitScreenColor)
             ChangeScreenColor(initScreenColor);
-        AddText("godot", Color.gold);
+        AddText("godot is better", new Color(.042f, .042f, .042f));//shhhhhhh
     }
 
     // Update is called once per frame
@@ -62,6 +62,7 @@ public class ConsoleScreenManager : MonoBehaviour
         textMesh.text = text;
         textMesh.color = color;
         activeTexts.Add(textObject);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());
     }
     
     public void ClearTexts()

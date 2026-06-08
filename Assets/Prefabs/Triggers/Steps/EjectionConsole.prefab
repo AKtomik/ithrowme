@@ -497,15 +497,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_text
-      value: even in color!
+      value: godot is better
       objectReference: {fileID: 0}
     - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.9463
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.5568628
       objectReference: {fileID: 0}
     - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_fontColor.r
@@ -621,6 +621,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8401003736176371103}
     m_Modifications:
+    - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
+      propertyPath: m_text
+      value: hello world
+      objectReference: {fileID: 0}
     - target: {fileID: 3463538992675887974, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_Name
       value: ConsoleTestText1
@@ -729,7 +733,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_text
-      value: you can writte things here
+      value: fake super long unity error with multiples lines
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553955484133713273, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3463538992675887974, guid: 983b07d9566c7ec448cc3b9d4c3785be, type: 3}
       propertyPath: m_Name
