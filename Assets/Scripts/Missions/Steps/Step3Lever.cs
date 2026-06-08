@@ -15,6 +15,7 @@ public class Step3Lever : TakableLever
         {
             missionManager.AddMission(6);
             ReferenceStore.instance.consoleScreen.SetScreenColor(new Color(.2f, .2f, .2f));
+            ReferenceStore.instance.consoleScreen.AddText("", Color.black);
             ReferenceStore.instance.consoleScreen.AddText("waiting for input...", Color.black);
         }
 
