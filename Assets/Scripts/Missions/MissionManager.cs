@@ -56,9 +56,8 @@ public class MissionManager : MonoBehaviour
     private void SpawnMissionText(int id)
     {
         GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
-        instance.AddComponent<CurvedUIVertexEffect>(); // add curved ui effect
-        instance.AddComponent<CurvedUITMP>();
-        instance.GetComponentInChildren<TextMeshProUGUI>().text = missionsDictionnary[id]; // write text
+        TypeWriter typeWriter = instance.GetComponent<TypeWriter>();
+        typeWriter.Typing(missionsDictionnary[id], 2.5f);
         spawnedTextMissions[id] = instance; // add to spawnedMissions
     }
     
