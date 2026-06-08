@@ -18,6 +18,8 @@ public class ConsoleScreenManager : MonoBehaviour
     [SerializeField] private bool doInitScreenColor;
     [SerializeField, DrawIf("doInitScreenColor")] private Color initScreenColor;
 
+
+
     private List<GameObject> activeTexts = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,6 +60,12 @@ public class ConsoleScreenManager : MonoBehaviour
     public void AddText(string text, Color color, float typingTime = 0)
     {
         GameObject textObject = Instantiate(textPrefab, textContainer.transform);
+        Debug.Log(text);
+        if (text == initText || text == "godot is better")
+        {
+            Destroy(textObject.GetComponent<AudioSource>());
+        }
+        
         TypeWriter typewriter = textObject.GetComponent<TypeWriter>();
         typewriter.Typing(text, typingTime);
         typewriter.SetColor(color);

@@ -49,7 +49,7 @@ public class Step2Lever : TakableLever
         if (animShowExe)
         {
             consoleScreen.SetScreenColor(Color.gold);
-            consoleScreen.AddText("error: not authorized", .5f);
+            consoleScreen.AddText("error: not authorized", .6f);
         }
     }
     

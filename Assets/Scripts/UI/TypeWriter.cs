@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TypeWriter : MonoBehaviour
 {
+    [SerializeField] AudioSource bipSound;
+
     private TextMeshProUGUI textMesh;
     
     private bool isTyping = false;
@@ -29,6 +31,11 @@ public class TypeWriter : MonoBehaviour
         float stairStep = typingCharacterTime;
         if (typingCharacterProgress >= stairStep)
         {
+            if (bipSound)
+            {
+                bipSound.PlayOneShot(bipSound.clip);
+            }
+            
             typingCharacterProgress -= stairStep;
             textMesh.text += typingText[typingIndex];
             typingIndex++;
