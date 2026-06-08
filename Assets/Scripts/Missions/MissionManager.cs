@@ -11,17 +11,17 @@ public class MissionManager : MonoBehaviour
     public List<int> InitialMissions = new List<int>() { 0 };
     
     private Dictionary<int, string> missionsDictionnary = new Dictionary<int, string>(); // list of all the missions
-    private List<int> activeMissions = new List<int>(); // list of the active missions (the ones who are displayed)
-    private List<int> finishMissions = new List<int>(); // list of the completed missions
+    private List<int> activeMissions = new(); // list of the active missions (the ones who are displayed)
+    private List<int> finishMissions = new(); // list of the completed missions
 
-    private List<GameObject> spawnedTextMissions = new List<GameObject>(); // every missions displayed
+    private Dictionary<int, GameObject> spawnedTextMissions = new(); // every missions displayed
 
     public void AddMission(int id)
     {
         if (!activeMissions.Contains(id)) // verify if the mission is already displayed
         {
             activeMissions.Add(id);
-            RefreshMissions(); // add the id to the list and refresh the canva
+            SpawnMissionText(id); // add the id to the list and refresh the canva
         }
     }
 
@@ -34,7 +34,7 @@ public class MissionManager : MonoBehaviour
             {
                 finishMissions.Add(id);
             }
-            RefreshMissions();
+            DespawnMissionText(id);
         }
     }
     
@@ -53,43 +53,19 @@ public class MissionManager : MonoBehaviour
         return !(IsActive(id) || IsCompleted(id));
     }
 
-    private List<string> GetActiveMissionTexts()
+    private void SpawnMissionText(int id)
     {
-        return GetTexts(activeMissions);
-    }
-
-    private List<string> GetFinishMissionTexts()
-    {
-        return GetTexts(finishMissions);
+        GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
+        instance.AddComponent<CurvedUIVertexEffect>(); // add curved ui effect
+        instance.AddComponent<CurvedUITMP>();
+        instance.GetComponentInChildren<TextMeshProUGUI>().text = missionsDictionnary[id]; // write text
+        spawnedTextMissions[id] = instance; // add to spawnedMissions
     }
     
-    private List<string> GetTexts(List<int> missionsId)
+    private void DespawnMissionText(int id)
     {
-        List<string> texts = new List<string>();
-        foreach (int id in missionsId)
-        {
-            if (missionsDictionnary.ContainsKey(id))
-                texts.Add(missionsDictionnary[id]);
-        }
-        return texts; // for each id, return their equivalent mission texts 
-    }
-
-    public void RefreshMissions()
-    {
-        // destroy old prefab before create new ones
-        foreach (GameObject obj in spawnedTextMissions)
-            Destroy(obj);
-        spawnedTextMissions.Clear();
-
-        // Instancier un prefab par mission active
-        foreach (string text in GetActiveMissionTexts())
-        {
-            GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
-            instance.AddComponent<CurvedUIVertexEffect>(); // add curved ui effect
-            instance.AddComponent<CurvedUITMP>();
-            instance.GetComponentInChildren<TextMeshProUGUI>().text = text; // write text
-            spawnedTextMissions.Add(instance); // add to spawnedMissions
-        }
+        GameObject instance = spawnedTextMissions[id];
+        Destroy(instance);
     }
 
     private void Start()
