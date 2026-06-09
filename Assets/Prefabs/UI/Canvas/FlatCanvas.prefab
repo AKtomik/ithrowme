@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1897591416799093405}
   - component: {fileID: 8212467702433062239}
   m_Layer: 5
-  m_Name: 2DCanva
+  m_Name: FlatCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandScript
   player: {fileID: 0}
-  handImageUI: {fileID: 0}
+  handImageUI: {fileID: 261011990169780533}
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
   handSpriteGrab: {fileID: 21300000, guid: b65e309751354c84790a381bd70858e7, type: 3}

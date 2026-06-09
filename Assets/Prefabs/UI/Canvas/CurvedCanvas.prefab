@@ -110,10 +110,9 @@ GameObject:
   - component: {fileID: 6846949005063156578}
   - component: {fileID: 4743299301560084637}
   - component: {fileID: 1897591416799093405}
-  - component: {fileID: 4638439261256931814}
   - component: {fileID: 6953426322163364346}
   m_Layer: 12
-  m_Name: GameCanvas
+  m_Name: CurvedCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,20 +205,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4638439261256931814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991553149410567970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e4df103b8200c4cbad270b32ee5775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  cinematicBars: {fileID: 1759216296158260187}
-  missionsContainer: {fileID: 286903526482089139}
 --- !u!114 &6953426322163364346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,7 +702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89c62b47e7d70c4997ec037febe2b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  running: 0
 --- !u!114 &2601035532734288230
 MonoBehaviour:
   m_ObjectHideFlags: 0
