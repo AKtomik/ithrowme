@@ -103,6 +103,9 @@ public class CapsulePlayer : MonoBehaviour
         
         rotation = playerPivot.rotation;
         lastPosition = transform.position;
+
+        breathAudioSource.PlayOneShot(takingDamageAudio[0]);
+        Invoke("StartBreathing", 2f);
     }
 
     void OnEnable()
@@ -170,6 +173,16 @@ public class CapsulePlayer : MonoBehaviour
             }
         }
 
+    }
+
+    public void StartBreathing()
+    {
+        breathAudioSource.Play();
+    }
+
+    public void StopBreathing()
+    {
+        breathAudioSource.Stop();
     }
 
 
