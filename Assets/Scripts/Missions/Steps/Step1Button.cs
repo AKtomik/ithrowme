@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step1Button : ButtonTrigger
 {
+    [Header("Step Pointers")]
     public DoorOpeningScript doorScript;
     public MissionManager missionManager;
 

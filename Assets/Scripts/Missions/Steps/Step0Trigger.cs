@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step0Trigger : MonoBehaviour
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
     public DoorOpeningScript closingDoorScript;
 

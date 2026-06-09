@@ -21,9 +21,11 @@ public class DoorOpeningScript : MonoBehaviour
     public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
     
     private Animator m_Animator;
+    private Collider m_Collider;
     void Start()
     {
      m_Animator = GetComponentInChildren<Animator>();
+     m_Collider = GetComponentInChildren<Collider>();
     }
 
     // Update is called once per frame
@@ -36,25 +38,20 @@ public class DoorOpeningScript : MonoBehaviour
     /// flip flop type with isOpened
     public void OpeningDoors()
     {
-        if (!opened && !locked)
-        {
-            doorSlam.PlayOneShot(audioClips[0]);
-            m_Animator.ResetTrigger("Close");
-            m_Animator.SetTrigger("Open");
-            opened = true;
-
-        }
-
+        if (opened || locked) return;
+        doorSlam.PlayOneShot(audioClips[0]);
+        m_Animator.ResetTrigger("Close");
+        m_Animator.SetTrigger("Open");
+        opened = true;
     }
+
     public void ClosingDoors()
     {
-        if (opened)
-        {
-            doorSlam.PlayOneShot(audioClips[1]);
-            m_Animator.ResetTrigger("Open");
-            m_Animator.SetTrigger("Close");
-            opened = false;
-        }
+        if (!opened) return;
+        doorSlam.PlayOneShot(audioClips[1]);
+        m_Animator.ResetTrigger("Open");
+        m_Animator.SetTrigger("Close");
+        opened = false;
     }
     public bool isOpened()
     {
@@ -65,6 +62,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = true;
+        m_Collider.enabled = false;
         // opening
         if (opened != lockOpenState)
         {
@@ -79,6 +77,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = false;
+        m_Collider.enabled = true;
         // opening
         if (opened != lockOpenState)
         {
@@ -101,24 +100,34 @@ public class DoorOpeningScript : MonoBehaviour
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
-            objectsInDoorRanch.Add(other.gameObject);
+            if (!objectsInDoorRanch.Contains(other.gameObject))
+                objectsInDoorRanch.Add(other.gameObject);
         }
         else if (automaticOpening && detectItems && other.gameObject.CompareTag("Items"))
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
             Invoke("ClosingDoor", 10);
-            objectsInDoorRanch.Add(other.gameObject);
+            if (!objectsInDoorRanch.Contains(other.gameObject))
+                objectsInDoorRanch.Add(other.gameObject);
+        }
+    }
+    
+    private void OnTriggerStay(Collider other)
+    {// necessary for an edge case
+        if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
+        {
+            OpeningDoors();
+            CancelInvoke("ClosingDoors");
+            if (!objectsInDoorRanch.Contains(other.gameObject))
+                objectsInDoorRanch.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (objectsInDoorRanch.Contains(other.gameObject))
-        {
             objectsInDoorRanch.Remove(other.gameObject);
-        }
-
 
         if (automaticOpening && (other.gameObject.CompareTag("Player") || objectsInDoorRanch.Count == 0))
         {
