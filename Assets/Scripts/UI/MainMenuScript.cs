@@ -21,12 +21,14 @@ public class MainMenuScript : MonoBehaviour
         inputActions.FindActionMap("UI").Enable();
         topAnimator.SetTrigger("One");
         Invoke("StartMenu", 14f);
+        
     }
 
 
     private void StartMenu()
     {
         topAnimator.SetTrigger("FadeOut");
+        Invoke("DeleteAll", 1f);
     }
     private void DeleteAll()
     {
