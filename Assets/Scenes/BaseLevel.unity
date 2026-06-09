@@ -3958,6 +3958,7 @@ MonoBehaviour:
   emergencyLifeDoor: {fileID: 818310319}
   emergencyGravityDoor: {fileID: 2112009453}
   consoleScreen: {fileID: 1175085956738456254}
+  bothCanvas: {fileID: 1758109596}
 --- !u!1001 &980768239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10257,6 +10258,10 @@ PrefabInstance:
     - target: {fileID: 4117901592580976815, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
       propertyPath: m_Name
       value: AlarmLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713610612018158428, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 9149018713188605266, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
       propertyPath: doorScript

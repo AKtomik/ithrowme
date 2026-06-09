@@ -70,11 +70,6 @@ public class BothCanvas : MonoBehaviour
     {
         cinematicHandState = state;
     }
-    
-    public void ChangeCinematicHandState(int state)
-    {
-        ChangeCinematicHandState((HandState)state);
-    }
 
     // execution
     void Start()
