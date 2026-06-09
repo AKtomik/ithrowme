@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private Animator topAnimator;
     [SerializeField] private PauseMenuScript menuScript;
     [SerializeField] private RawImage cinematicBlack;
-
+    [SerializeField] private TextMeshProUGUI m_Text;
+    [SerializeField] private GameObject mainCanva;
     private InputAction click;
     private bool isStarted = false;
+    private Scene scene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +36,7 @@ public class MainMenuScript : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
         inputActions.FindActionMap("UI").Enable();
         topAnimator.SetTrigger("One");
-        Invoke("StartMenu", 13.5f);
+        Invoke("StartMenu", 14f);
         
     }
 
@@ -51,23 +54,53 @@ public class MainMenuScript : MonoBehaviour
     }
 
 
-    public void StartGame()
+    public void StartGameButton()
     {
         mainMenuTheme.Stop();
         cinematicBlack.gameObject.SetActive(true);
-        cinematicTheme.Play();
-        StartCoroutine(WaitForCinematicEnd());
+        mainCanva.SetActive(false);
+        StartCoroutine(StartGame());
     }
 
-    private IEnumerator WaitForCinematicEnd()
+    IEnumerator StartGame()
+    {
+        yield return null;
+
+        //Begin to load the Scene you specify
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("BaseLevel");
+        //Don't let the Scene activate until you allow it to
+        asyncOperation.allowSceneActivation = false;
+        Debug.Log("Pro :" + asyncOperation.progress);
+        //When the load is still in progress, output the Text and progress bar
+        while (!asyncOperation.isDone)
+        {
+            //Output the current progress
+            m_Text.text = "Chargement: " + (asyncOperation.progress * 100) + "%";
+
+            // Check if the load has finished
+            if (asyncOperation.progress >= 0.9f)
+            {
+                m_Text.text = "";
+                cinematicTheme.Play();
+                Debug.Log("WOAH");
+                StartCoroutine(WaitForCinematicEnd(asyncOperation));
+                break;
+            }
+            yield return null;
+
+        }
+
+    }
+
+    private IEnumerator WaitForCinematicEnd(AsyncOperation asyncOperation)
     {
         yield return new WaitWhile(() => cinematicTheme.isPlaying);
-        OnCinematicThemeFinished();
+        OnCinematicThemeFinished(asyncOperation);
     }
 
-    private void OnCinematicThemeFinished()
+    private void OnCinematicThemeFinished(AsyncOperation asyncOperation)
     {
-        SceneManager.LoadScene("BaseLevel");
+        asyncOperation.allowSceneActivation = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1)
     }
 
@@ -77,8 +110,8 @@ public class MainMenuScript : MonoBehaviour
     {
         if (click.WasPressedThisFrame() && !isStarted)
         {
-            StartMenu();
             CancelInvoke();
+            StartMenu();
         }
     }
 }

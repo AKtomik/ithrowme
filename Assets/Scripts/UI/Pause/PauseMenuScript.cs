@@ -52,7 +52,11 @@ public class PauseMenuScript : MonoBehaviour
     {
        
         pauseManagerGO = GameObject.FindGameObjectWithTag("PauseManager");
-        pauseManager = pauseManagerGO.GetComponent<PauseManager>();
+        if (pauseManagerGO != null )
+        {
+            pauseManager = pauseManagerGO.GetComponent<PauseManager>();
+        }
+        
 
     }
     private void OnEnable()
