@@ -13,5 +13,5 @@ public static class SettingsStore
 	public static bool smartLockFinishedDoor = true;
 	public static bool smartLockUnreleatedDoor = true;
 	//public static bool lockBackDoor = false;
-	public static bool doAnimationStopTimer = false;
+	public static bool doCinematicStopTimer = true;
 }
