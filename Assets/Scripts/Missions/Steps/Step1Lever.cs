@@ -13,7 +13,7 @@ public class Step1Lever : TakableLever
     
     public override void PullFinish(CapsulePlayer player) {
         Debug.Log("Step1Lever: step 1 completed");
-        ReferenceStore.instance.emergencyLifeDoor.OpeningDoors();
+        ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
         activatedItem.SetActive(true);
     }

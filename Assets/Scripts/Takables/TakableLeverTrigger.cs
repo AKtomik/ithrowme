@@ -38,7 +38,7 @@ abstract public class TakableLever : Takable
             player.playerBody.angularVelocity = Vector3.zero;
         }
         
-        if (cinematicMode) ReferenceStore.instance.cinematicManager.EnableCinematic();
+        if (cinematicMode) ReferenceSingleton.instance.cinematicManager.EnableCinematic();
         if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
         
         if (pulledAnimationName.Length > 0)
@@ -57,7 +57,7 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        if (cinematicMode) ReferenceStore.instance.cinematicManager.DisableCinematic();
+        if (cinematicMode) ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         if (lockLooking) playerPulling.UnlockingLook();
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         

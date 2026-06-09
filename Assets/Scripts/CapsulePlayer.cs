@@ -148,7 +148,7 @@ public class CapsulePlayer : MonoBehaviour
     void CheckTimer()
     {
         // will spam play when moving, until the end
-        if (transform.position != lastPosition) TimerScript.instance.PlayTime();
+        if (transform.position != lastPosition) TimerSingleton.instance.PlayTime();
     }
 
     private void OnCollisionEnter(Collision collision)

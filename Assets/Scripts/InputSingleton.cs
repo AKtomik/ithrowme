@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class InputSingleton : MonoBehaviour
 {
-    public static InputManager instance;
+    public static InputSingleton instance;
 
     private InputAction playerInput;
 

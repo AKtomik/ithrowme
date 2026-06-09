@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ReferenceStore : MonoBehaviour
+public class ReferenceSingleton : MonoBehaviour
 {// could be renamed to ReferenceSingleton
-    public static ReferenceStore instance;
+    public static ReferenceSingleton instance;
 
     [Header("Main")]
 		public CapsulePlayer player;

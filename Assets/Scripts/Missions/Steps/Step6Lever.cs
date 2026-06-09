@@ -18,7 +18,7 @@ public class Step6Lever : TakableLever
     {
         Debug.Log("Step6Lever: step 6 completed");
         missionManager.AddMission(7);
-        TimerScript.instance.EndTime();// !
+        TimerSingleton.instance.EndTime();// !
         //missionManager.AddMission(3);
     }
     

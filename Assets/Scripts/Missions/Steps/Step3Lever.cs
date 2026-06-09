@@ -12,7 +12,7 @@ public class Step3Lever : TakableLever
     public override void PullFinish(CapsulePlayer player)
     {
         Debug.Log("Step3Lever: step 3 completed");
-        ReferenceStore.instance.consoleClick.CheckFinalMission();
+        ReferenceSingleton.instance.consoleClick.CheckFinalMission();
 
         // ! will lock the player in
         //if (SettingsStore.lockFinishedDoor)
