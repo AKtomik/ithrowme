@@ -23,11 +23,11 @@ public class Step2Lever : TakableLever
         missionManager.AddMission(4);
         
         // doors
-        ReferenceStore.instance.centerResearchDoor.UnlockingDoors();
-        ReferenceStore.instance.centerTechnicalDoor.UnlockingDoors();
+        ReferenceSingleton.instance.centerResearchDoor.UnlockingDoors();
+        ReferenceSingleton.instance.centerTechnicalDoor.UnlockingDoors();
         if (SettingsStore.smartLockFinishedDoor)
         {
-            ReferenceStore.instance.centerLifeDoor.LockingDoors();
+            ReferenceSingleton.instance.centerLifeDoor.LockingDoors();
         }
     }
     

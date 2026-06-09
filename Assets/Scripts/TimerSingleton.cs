@@ -2,9 +2,9 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class TimerScript : MonoBehaviour
+public class TimerSingleton : MonoBehaviour
 {
-    public static TimerScript instance;
+    public static TimerSingleton instance;
 
     private bool ended = false;
     private bool running = false;

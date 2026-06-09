@@ -11,16 +11,16 @@ public class Step5Catalyzer : CatalyzerTrigger
         // missions
         missionManager.CompleteMission(5);
         
-        if (!ReferenceStore.instance.consoleClick.CheckFinalMission()) {
+        if (!ReferenceSingleton.instance.consoleClick.CheckFinalMission()) {
         
         // doors
             // in case of lockUnreleatedDoor (don't need to check)
-            ReferenceStore.instance.centerResearchDoor.UnlockingDoors();
+            ReferenceSingleton.instance.centerResearchDoor.UnlockingDoors();
         }
 
         if (SettingsStore.smartLockFinishedDoor)
         {
-            ReferenceStore.instance.centerTechnicalDoor.LockingDoors();
+            ReferenceSingleton.instance.centerTechnicalDoor.LockingDoors();
         }
     }
 }

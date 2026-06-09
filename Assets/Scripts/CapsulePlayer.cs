@@ -21,7 +21,6 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private UIScript canvasMana;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
@@ -149,7 +148,7 @@ public class CapsulePlayer : MonoBehaviour
     void CheckTimer()
     {
         // will spam play when moving, until the end
-        if (transform.position != lastPosition) TimerScript.instance.PlayTime();
+        if (transform.position != lastPosition) TimerSingleton.instance.PlayTime();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -275,29 +274,23 @@ public class CapsulePlayer : MonoBehaviour
 
     public void LockingLookAt()
     {
-        canvasMana.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
-        if (SettingsStore.doAnimationStopTimer) TimerScript.instance.PauseTime();
     }
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
     {
-        canvasMana.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
-        if (SettingsStore.doAnimationStopTimer) TimerScript.instance.PauseTime();
     }
     
     public void UnlockingLook()
     {
-        canvasMana.DisableCinematic();
         lockLookAt = false;
-        TimerScript.instance.PlayTime();
     }
 
     void CheckReachable()

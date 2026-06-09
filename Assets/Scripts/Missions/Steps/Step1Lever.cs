@@ -40,7 +40,7 @@ public class Step1Lever : TakableLever
                 alarm.Stop();
         }
 
-        ReferenceStore.instance.emergencyLifeDoor.OpeningDoors();
+        ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
         activatedItem.SetActive(true);
     }

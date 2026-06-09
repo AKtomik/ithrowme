@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class ReferenceStore : MonoBehaviour
-{
-    public static ReferenceStore instance;
+public class ReferenceSingleton : MonoBehaviour
+{// could be renamed to ReferenceSingleton
+    public static ReferenceSingleton instance;
 
     [Header("Main")]
 		public CapsulePlayer player;
 		public MissionManager missionManager;
+		public CinematicManager cinematicManager;
 		public Step2Step6Click consoleClick;
     [Header("Center Doors")]
 		public DoorOpeningScript centerLifeDoor;

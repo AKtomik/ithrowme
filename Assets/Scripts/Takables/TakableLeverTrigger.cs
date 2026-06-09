@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.Audio;
 
 abstract public class TakableLever : Takable
 {
     [Header("Trigger Pull")]
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
-    
+    public bool cinematicMode = true;
+        
     [Header("Trigger Move")]
     public bool takeStopVelocity = true;
     public float pulledFinishPushForce = 10f;
@@ -22,9 +22,6 @@ abstract public class TakableLever : Takable
     [Header("Audio")]
     [SerializeField] private AudioClip leverAction;
 
-
-
-
     override public void Take(CapsulePlayer player)
     {
         
@@ -33,13 +30,15 @@ abstract public class TakableLever : Takable
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
-        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
 
         if (takeStopVelocity)
-        {
+        {// need to do before player is kinematic in cinematic
             player.playerBody.linearVelocity = Vector3.zero;
             player.playerBody.angularVelocity = Vector3.zero;
         }
+        
+        if (cinematicMode) ReferenceSingleton.instance.cinematicManager.EnableCinematic();
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
         
         if (pulledAnimationName.Length > 0)
             pulledAnimatorReference.Play(pulledAnimationName);
@@ -49,7 +48,7 @@ abstract public class TakableLever : Takable
         PullStart(player);
         
     }
-    
+        
     override public void Throw(CapsulePlayer player) {}
 
     abstract public void PullStart(CapsulePlayer player);
@@ -57,6 +56,7 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
+        if (cinematicMode) ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         if (lockLooking) playerPulling.UnlockingLook();
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
@@ -77,16 +77,4 @@ abstract public class TakableLever : Takable
     {
         audioSource.PlayOneShot(leverAction);
     }
-
-	void Update()
-	{
-		if (isPulling)
-        {
-            if (takeStopVelocity)
-            {
-                playerPulling.playerBody.linearVelocity = Vector3.zero;
-                playerPulling.playerBody.angularVelocity = Vector3.zero;
-            }
-        }
-	}
 }

@@ -10,8 +10,10 @@ public static class SettingsStore
 	public static float baseFov = 60;
 	
 	// hidden settings
-	public static bool smartLockFinishedDoor = true;
-	public static bool smartLockUnreleatedDoor = true;
+	// all const can't be edited during play
+	public const bool smartLockFinishedDoor = true;
+	public const bool smartLockUnreleatedDoor = true;
 	//public static bool lockBackDoor = false;
-	public static bool doAnimationStopTimer = false;
+	public const bool doCinematicStopTimer = true;
+	public const bool doCinematicFreezeBodies = true;
 }

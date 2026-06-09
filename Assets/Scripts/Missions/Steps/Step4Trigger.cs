@@ -12,7 +12,7 @@ public class Step4Trigger : MonoBehaviour
         missionManager.AddMission(5);
         if (SettingsStore.smartLockUnreleatedDoor)
         {
-            ReferenceStore.instance.centerResearchDoor.LockingDoors();
+            ReferenceSingleton.instance.centerResearchDoor.LockingDoors();
         }
         this.enabled = false;
     }
