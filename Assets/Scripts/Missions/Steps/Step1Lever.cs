@@ -34,7 +34,7 @@ public class Step1Lever : TakableLever
     
     public override void PullFinish(CapsulePlayer player) {
         Debug.Log("Step1Lever: step 1 completed");
-        if (alarmsAudio.Length > 0)
+        if (alarmsAudio != null && alarmsAudio.Length > 0)
         {
             foreach (AudioSource alarm in alarmsAudio)
                 alarm.Stop();

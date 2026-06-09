@@ -95,7 +95,9 @@ public class DoorOpeningScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
+        Debug.Log(other.name + " " + other.gameObject.GetComponent<ObjectCanOpenDoor>());
+
         if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
@@ -104,6 +106,14 @@ public class DoorOpeningScript : MonoBehaviour
                 objectsInDoorRanch.Add(other.gameObject);
         }
         else if (automaticOpening && detectItems && other.gameObject.CompareTag("Items"))
+        {
+            OpeningDoors();
+            CancelInvoke("ClosingDoors");
+            Invoke("ClosingDoor", 10);
+            if (!objectsInDoorRanch.Contains(other.gameObject))
+                objectsInDoorRanch.Add(other.gameObject);
+        }
+        else if ((automaticOpening && other.gameObject.GetComponentInParent<ObjectCanOpenDoor>() != null))
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
