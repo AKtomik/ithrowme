@@ -57,7 +57,7 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        if (lockLooking) playerPulling.UnlockingLook();
+        if (lockLooking) playerPulling.UnlockingLook();// need to do first bcs player is kinematic before that
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
         PullFinish(playerPulling);

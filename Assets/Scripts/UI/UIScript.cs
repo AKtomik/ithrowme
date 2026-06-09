@@ -16,14 +16,14 @@ public class UIScript : MonoBehaviour
     private bool startCinematic;
     private bool stopCinematic;
 
-    public void EnableCinematic()
+    public void EnableCinematicBars()
     {// TODO: bar progressive enter with time parameter
         cinematicBars.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
         cinematicBars.SetActive(true);
         startCinematic = true;
     }
 
-    public void DisableCinematic()
+    public void DisableCinematicBars()
     {
         stopCinematic = true;
         

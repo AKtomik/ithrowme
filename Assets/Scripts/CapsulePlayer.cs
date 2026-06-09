@@ -21,7 +21,7 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private UIScript canvasMana;
+    [SerializeField] private CinematicManager cinematicManager;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
@@ -275,29 +275,26 @@ public class CapsulePlayer : MonoBehaviour
 
     public void LockingLookAt()
     {
-        canvasMana.EnableCinematic();
+        cinematicManager.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
-        if (SettingsStore.doCinematicStopTimer) TimerScript.instance.PauseTime();
     }
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
     {
-        canvasMana.EnableCinematic();
+        cinematicManager.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
-        if (SettingsStore.doCinematicStopTimer) TimerScript.instance.PauseTime();
     }
     
     public void UnlockingLook()
     {
-        canvasMana.DisableCinematic();
+        cinematicManager.DisableCinematic();
         lockLookAt = false;
-        TimerScript.instance.PlayTime();
     }
 
     void CheckReachable()
