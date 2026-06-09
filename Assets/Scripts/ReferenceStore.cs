@@ -7,6 +7,7 @@ public class ReferenceStore : MonoBehaviour
     [Header("Main")]
 		public CapsulePlayer player;
 		public MissionManager missionManager;
+		public Step2Step6Click consoleClick;
     [Header("Center Doors")]
 		public DoorOpeningScript centerLifeDoor;
 		public DoorOpeningScript centerTechnicalDoor;

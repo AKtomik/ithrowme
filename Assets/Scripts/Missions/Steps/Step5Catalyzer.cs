@@ -9,16 +9,10 @@ public class Step5Catalyzer : CatalyzerTrigger
         
         // missions
         missionManager.CompleteMission(5);
-        if (missionManager.IsCompleted(3))
-        {
-            missionManager.AddMission(6);
-            ReferenceStore.instance.consoleScreen.SetScreenColor(new Color(.8f, .8f, .8f));
-            ReferenceStore.instance.consoleScreen.AddText(".", new Color(0f, 0f, 0f, 0f));
-            ReferenceStore.instance.consoleScreen.AddText("waiting for input...", Color.white);
-        }
+        
+        if (!ReferenceStore.instance.consoleClick.CheckFinalMission()) {
         
         // doors
-        else {
             // in case of lockUnreleatedDoor (don't need to check)
             ReferenceStore.instance.centerResearchDoor.UnlockingDoors();
         }
