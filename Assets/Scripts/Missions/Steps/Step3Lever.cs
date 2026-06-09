@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step3Lever : TakableLever
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
 
     public override void PullStart(CapsulePlayer player) {

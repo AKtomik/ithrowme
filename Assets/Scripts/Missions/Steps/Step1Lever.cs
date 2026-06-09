@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step1Lever : TakableLever
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
     public GameObject activatedItem;
 

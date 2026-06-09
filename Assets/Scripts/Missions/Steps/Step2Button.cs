@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step2Button : ButtonTrigger
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
 
     public override void OnTrigger() {

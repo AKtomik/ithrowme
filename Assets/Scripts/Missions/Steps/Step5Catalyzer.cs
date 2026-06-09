@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step5Catalyzer : CatalyzerTrigger
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
 
     public override void OnTrigger() {

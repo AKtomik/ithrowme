@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Step4Trigger : MonoBehaviour
 {
+    [Header("Step Pointers")]
     public MissionManager missionManager;
 
     private void OnTriggerEnter(Collider other) {
