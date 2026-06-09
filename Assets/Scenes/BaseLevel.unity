@@ -448,6 +448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &85614195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6624916341047099373, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+  m_PrefabInstance: {fileID: 1856149279292350539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &93929939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9037552242180067902, guid: 2387c0645595e304fba306ca80c18961, type: 3}
@@ -2055,6 +2060,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd47297d222480a4a9641eedf4af4cb1, type: 3}
+--- !u!1 &426234690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6625090627972296411, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+  m_PrefabInstance: {fileID: 1856149279292350539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &433950696
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,6 +7659,11 @@ Transform:
   - {fileID: 1906033861}
   m_Father: {fileID: 1067009058}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1891763936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3196844034236507260, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+  m_PrefabInstance: {fileID: 1856149279292350539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1906033860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9883,6 +9898,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6140107257834039518, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+      propertyPath: mainMenuFirst
+      value: 
+      objectReference: {fileID: 426234690}
+    - target: {fileID: 6140107257834039518, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+      propertyPath: quitMenuFirst
+      value: 
+      objectReference: {fileID: 1891763936}
+    - target: {fileID: 6140107257834039518, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+      propertyPath: settingsMenuFirst
+      value: 
+      objectReference: {fileID: 85614195}
     - target: {fileID: 6283115447549829389, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

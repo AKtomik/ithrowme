@@ -50,7 +50,7 @@ public class PauseMenuScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GoToMainCanva();
+       
         pauseManagerGO = GameObject.FindGameObjectWithTag("PauseManager");
         pauseManager = pauseManagerGO.GetComponent<PauseManager>();
 
@@ -138,7 +138,7 @@ public class PauseMenuScript : MonoBehaviour
     public void Resume()
     {
         pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
-
+       
     }
     public void StartGame()
     {
@@ -241,9 +241,10 @@ public class PauseMenuScript : MonoBehaviour
 
 
     
-    void ButtonsSound()
+    public void ButtonsSound()
     {
-        changeButtonAudio.Play();
+        Debug.Log("Button changed");
+        changeButtonAudio.PlayOneShot(changeButtonAudio.clip);
     }
 
 }
