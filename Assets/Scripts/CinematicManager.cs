@@ -11,7 +11,7 @@ public class CinematicManager : MonoBehaviour
         enabledCinematic = true;
         if (SettingsStore.doCinematicStopTimer) TimerSingleton.instance.PauseTime();
         if (SettingsStore.doCinematicFreezeBodies) MovingThing.FreezeAll();
-        canvasMana.EnableCinematicBars();
+        canvasMana.StartCinematic();
     }
     
     public void DisableCinematic()
@@ -19,7 +19,7 @@ public class CinematicManager : MonoBehaviour
         enabledCinematic = false;
         if (SettingsStore.doCinematicStopTimer) TimerSingleton.instance.PlayTime();
         if (SettingsStore.doCinematicFreezeBodies) MovingThing.UnfreezeAll();
-        canvasMana.DisableCinematicBars();
+        canvasMana.EndCinematic();
     }
 
     public bool IsCinematic()

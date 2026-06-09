@@ -14,9 +14,13 @@ public class BothCanvas : MonoBehaviour
     [SerializeField] private Sprite handSpriteGrab;
     [SerializeField] private Sprite handSpriteFinger;
     [SerializeField] private HandState defaultCinematicHandState = HandState.IDLE;
+    
+    [Header("Crosshair Settings")]
+    [SerializeField] private Image CrosshairImageUI;
 
     [Header("Cinematic Settings")]
     [SerializeField] private GameObject cinematicBars;
+    [SerializeField] private GameObject missionsContainer;
     public float cinematicBarSpeed = 0.7f;
 
     private bool startCinematic;
@@ -25,19 +29,28 @@ public class BothCanvas : MonoBehaviour
     private HandState cinematicHandState;
 
     // cinematic bars
-    public void EnableCinematicBars()
-    {// TODO: bar progressive enter with time parameter
+    public void StartCinematic()
+    {
+        // cinematic state
+        inCinematic = true;
+        missionsContainer.SetActive(false);
+        CrosshairImageUI.gameObject.SetActive(false);
+        // cinematic bars
         cinematicBars.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
         cinematicBars.SetActive(true);
         startCinematic = true;
-        inCinematic = true;
+        // cinematic hand
         cinematicHandState = defaultCinematicHandState;
     }
 
-    public void DisableCinematicBars()
+    public void EndCinematic()
     {
-        stopCinematic = true;
+        // cinematic state
         inCinematic = false;
+        missionsContainer.SetActive(true);
+        CrosshairImageUI.gameObject.SetActive(true);
+        // cinematic bars
+        stopCinematic = true;
     }
     
     // hand

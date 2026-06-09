@@ -128,7 +128,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9149318999282814641}
   - {fileID: 2048664024101023188}
   - {fileID: 8417675814683197549}
   - {fileID: 1265733148504467301}
@@ -458,7 +457,11 @@ MonoBehaviour:
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
   handSpriteGrab: {fileID: 21300000, guid: b65e309751354c84790a381bd70858e7, type: 3}
+  handSpriteFinger: {fileID: 0}
+  defaultCinematicHandState: 0
+  CrosshairImageUI: {fileID: 3386340216689319998}
   cinematicBars: {fileID: 8809201750789629424}
+  missionsContainer: {fileID: 3342558607070979603}
   cinematicBarSpeed: 0.7
 --- !u!1 &3887050190891325819
 GameObject:
@@ -509,7 +512,7 @@ GameObject:
   - component: {fileID: 3434282953168495607}
   - component: {fileID: 7040853217843334942}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HandImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1043,7 +1046,7 @@ GameObject:
   - component: {fileID: 3386340216689319998}
   - component: {fileID: 216199476728286365}
   m_Layer: 12
-  m_Name: crosshair
+  m_Name: CrosshairImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1056,12 +1059,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7334324153796363267}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3169916072889100737}
+  m_Father: {fileID: 7227375819557606730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1156,6 +1159,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9149318999282814641}
   - {fileID: 3091727523149769396}
   - {fileID: 3723821753669659430}
   m_Father: {fileID: 1828725444792942337}
