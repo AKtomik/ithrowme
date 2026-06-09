@@ -17,7 +17,8 @@ public class Step6Lever : TakableLever
     public override void PullFinish(CapsulePlayer player)
     {
         Debug.Log("Step6Lever: step 6 completed");
-        TimerScript.instance.EndTime();
+        missionManager.AddMission(7);
+        TimerScript.instance.EndTime();// !
         //missionManager.AddMission(3);
     }
     
