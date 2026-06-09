@@ -4378,6 +4378,7 @@ MonoBehaviour:
   centerControlDoor: {fileID: 1856468297}
   emergencyLifeDoor: {fileID: 818310319}
   emergencyGravityDoor: {fileID: 2112009453}
+  consoleScreen: {fileID: 1175085956738456254}
 --- !u!1001 &980768239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9452,6 +9453,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+--- !u!114 &1175085956738456254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6658876902091014060, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+  m_PrefabInstance: {fileID: 1175085956738456253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3a0a6e13abb4644a109ca781dd7ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1501652837598911050
 PrefabInstance:
   m_ObjectHideFlags: 0
