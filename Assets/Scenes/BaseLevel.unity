@@ -4097,6 +4097,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1267620104}
     m_Modifications:
+    - target: {fileID: 140635179524183891, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 843031394317638456, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_Name
       value: CapsulePlayer
@@ -4120,7 +4124,7 @@ PrefabInstance:
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: 'takingDamageAudio.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 408bbbc14d823924ba67087a282f5f41, type: 3}
+      objectReference: {fileID: 8300000, guid: e2a4673e3157d0149945a26ba3a326d4, type: 3}
     - target: {fileID: 2907000567390215359, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_CameraType
       value: 1

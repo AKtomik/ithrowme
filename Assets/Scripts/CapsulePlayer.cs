@@ -105,7 +105,7 @@ public class CapsulePlayer : MonoBehaviour
         lastPosition = transform.position;
 
         breathAudioSource.PlayOneShot(takingDamageAudio[0]);
-        Invoke("StartBreathing", 2f);
+        Invoke("StartBreathing", 3f);
     }
 
     void OnEnable()
