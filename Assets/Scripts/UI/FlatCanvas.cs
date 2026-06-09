@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class UIScript : MonoBehaviour
+public class FlatCanvas : MonoBehaviour
 {
     public CapsulePlayer player;
 
