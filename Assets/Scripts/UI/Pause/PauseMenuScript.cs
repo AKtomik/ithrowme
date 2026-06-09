@@ -140,11 +140,7 @@ public class PauseMenuScript : MonoBehaviour
         pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
        
     }
-    public void StartGame()
-    {
-        SceneManager.LoadScene("BaseLevel");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1)
-    }
+
 
     public void QuitGame()
     {
@@ -246,5 +242,7 @@ public class PauseMenuScript : MonoBehaviour
         Debug.Log("Button changed");
         changeButtonAudio.PlayOneShot(changeButtonAudio.clip);
     }
+
+
 
 }
