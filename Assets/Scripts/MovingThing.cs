@@ -1,16 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class MovingThing : MonoBehaviour
 {
-    static List<MovingThing> allMovingThings = new();
+    private Rigidbody rb;
+    private bool wasKinematic;
+    private bool frozen = false;
 
     // self add
-    protected Collider movingCollider;
+    static List<MovingThing> allMovingThings = new();
     void Awake()
     {
-        movingCollider = GetComponent<Collider>();
+        rb = GetComponent<Rigidbody>();
         allMovingThings.Add(this);
     }
 
@@ -19,6 +21,40 @@ public class MovingThing : MonoBehaviour
 		allMovingThings.Remove(this);
 	}
 
-    // self pause
-    //void Pause
+    // self freeze
+    void FreezeMove()
+    {
+        if (frozen)
+        {
+            Debug.LogWarning("freezing already frozen thing");
+            return;
+        }
+        frozen = true;
+        wasKinematic = rb.isKinematic;
+        rb.isKinematic = true;
+    }
+    
+    void UnfreezeMove()
+    {
+        if (!frozen)
+        {
+            Debug.LogWarning("unfreezing already not frozen thing");
+            return;
+        }
+        frozen = false;
+        rb.isKinematic = wasKinematic;
+    }
+
+    // all freeze
+    public static void FreezeAll()
+    {
+        foreach (var moving in allMovingThings)
+            moving.FreezeMove();
+    }
+    
+    public static void UnfreezeAll()
+    {
+        foreach (var moving in allMovingThings)
+            moving.UnfreezeMove();
+    }
 }

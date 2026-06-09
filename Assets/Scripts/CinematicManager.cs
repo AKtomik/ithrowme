@@ -7,12 +7,14 @@ public class CinematicManager : MonoBehaviour
     public void EnableCinematic()
     {
         if (SettingsStore.doCinematicStopTimer) TimerScript.instance.PauseTime();
+        MovingThing.FreezeAll();
         canvasMana.EnableCinematicBars();
     }
     
     public void DisableCinematic()
     {
         TimerScript.instance.PlayTime();
+        MovingThing.UnfreezeAll();
         canvasMana.DisableCinematicBars();
     }
 }
