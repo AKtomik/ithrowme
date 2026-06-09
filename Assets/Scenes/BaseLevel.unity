@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 228776859}
   m_Layer: 0
   m_Name: CommandArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 259564637}
   m_Layer: 0
   m_Name: TechnicalArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1876,6 +1876,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: c6b6ad7a7783e634c93935dd06de5349, type: 3}
   m_PrefabInstance: {fileID: 378202566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &396654785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396654786}
+  - component: {fileID: 396654788}
+  - component: {fileID: 396654787}
+  m_Layer: 0
+  m_Name: ParallaxSwitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396654786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396654785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.57, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2757893438589744891}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396654787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396654785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e42733234b914d841e3c1085d8061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!65 &396654788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396654785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &399981037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2665,7 +2731,7 @@ GameObject:
   - component: {fileID: 588086092}
   m_Layer: 0
   m_Name: TechnicalArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3248,7 +3314,7 @@ GameObject:
   - component: {fileID: 784466025}
   m_Layer: 0
   m_Name: CenterModule
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3723,7 +3789,7 @@ GameObject:
   - component: {fileID: 897384916}
   m_Layer: 0
   m_Name: ResearchArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4235,7 +4301,7 @@ GameObject:
   - component: {fileID: 1021789064}
   m_Layer: 0
   m_Name: CenterModule
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4409,8 +4475,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1021789064}
   - {fileID: 1954064737}
+  - {fileID: 1021789064}
   - {fileID: 1863179193}
   - {fileID: 1531062232}
   - {fileID: 588086092}
@@ -5178,8 +5244,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 784466025}
   - {fileID: 1836851436}
+  - {fileID: 784466025}
   - {fileID: 228776859}
   - {fileID: 897384916}
   - {fileID: 259564637}
@@ -5196,7 +5262,7 @@ GameObject:
   - component: {fileID: 1267620104}
   m_Layer: 0
   m_Name: Game
-  m_TagString: Untagged
+  m_TagString: PauseDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6085,7 +6151,7 @@ GameObject:
   - component: {fileID: 1531062232}
   m_Layer: 0
   m_Name: ResearchArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7500,7 +7566,7 @@ GameObject:
   - component: {fileID: 1863179193}
   m_Layer: 0
   m_Name: CommandArea
-  m_TagString: Untagged
+  m_TagString: FarawayDisable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10338,6 +10404,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4757755944966588367, guid: 8783f4a77f0ba4d4fa961350d281e579, type: 3}
       insertIndex: -1
       addedObject: {fileID: 277994079}
+    - targetCorrespondingSourceObject: {fileID: 4757755944966588367, guid: 8783f4a77f0ba4d4fa961350d281e579, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 396654786}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8783f4a77f0ba4d4fa961350d281e579, type: 3}
 --- !u!4 &2757893438589744891 stripped

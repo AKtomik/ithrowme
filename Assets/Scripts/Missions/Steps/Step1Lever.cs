@@ -6,7 +6,7 @@ public class Step1Lever : TakableLever
     public MissionManager missionManager;
     public GameObject activatedItem;
 
-    private AudioSource[] alarmsAudio;
+    private AudioSource[] alarmsAudio = new AudioSource[] {};
 
     private void Awake()
     {
@@ -23,8 +23,8 @@ public class Step1Lever : TakableLever
             foreach (AudioSource alarm in alarmsAudio)
                 alarm.Play();
         }
-
     }
+
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");
         missionManager.CompleteMission(1);
