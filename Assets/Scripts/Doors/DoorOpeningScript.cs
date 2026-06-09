@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class DoorOpeningScript : MonoBehaviour
 {
+    [Header("Pointers")]
+    [SerializeField] private Collider triggerCollider;
+    [SerializeField] private Collider solidCollider;
+    [SerializeField] private Animator animator;
+
     [Header("State")]
     // if true, the door cannot be open at all
     [SerializeField] private bool locked = false;
@@ -20,19 +25,8 @@ public class DoorOpeningScript : MonoBehaviour
 
     public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
     
-    private Animator m_Animator;
-    private Collider m_Collider;
-    void Start()
-    {
-     m_Animator = GetComponentInChildren<Animator>();
-     m_Collider = GetComponentInChildren<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Start() {}
+    void Update() {}
 
     /// maybe a single function ?? 
     /// flip flop type with isOpened
@@ -40,8 +34,9 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (opened || locked) return;
         doorSlam.PlayOneShot(audioClips[0]);
-        m_Animator.ResetTrigger("Close");
-        m_Animator.SetTrigger("Open");
+        animator.ResetTrigger("Close");
+        animator.SetTrigger("Open");
+        solidCollider.enabled = false;
         opened = true;
     }
 
@@ -49,8 +44,9 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (!opened) return;
         doorSlam.PlayOneShot(audioClips[1]);
-        m_Animator.ResetTrigger("Open");
-        m_Animator.SetTrigger("Close");
+        animator.ResetTrigger("Open");
+        animator.SetTrigger("Close");
+        solidCollider.enabled = true;
         opened = false;
     }
     public bool isOpened()
@@ -62,7 +58,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = true;
-        m_Collider.enabled = false;
+        triggerCollider.enabled = false;
         // opening
         if (opened != lockOpenState)
         {
@@ -77,7 +73,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = false;
-        m_Collider.enabled = true;
+        triggerCollider.enabled = true;
         // opening
         if (opened != lockOpenState)
         {
