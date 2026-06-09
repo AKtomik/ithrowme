@@ -22,9 +22,6 @@ abstract public class TakableLever : Takable
     [Header("Audio")]
     [SerializeField] private AudioClip leverAction;
 
-
-
-
     override public void Take(CapsulePlayer player)
     {
         
@@ -33,13 +30,14 @@ abstract public class TakableLever : Takable
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         isPulling = true;
         playerPulling = player;
-        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
 
         if (takeStopVelocity)
-        {
+        {// need to do before player is kinematic
             player.playerBody.linearVelocity = Vector3.zero;
             player.playerBody.angularVelocity = Vector3.zero;
         }
+        
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
         
         if (pulledAnimationName.Length > 0)
             pulledAnimatorReference.Play(pulledAnimationName);
