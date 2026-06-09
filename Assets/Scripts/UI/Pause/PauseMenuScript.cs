@@ -37,7 +37,11 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private AudioSource changeButtonAudio;
     
     [SerializeField] private AudioSource sfxSlidersAudio;
-    
+
+    [Header("First Selected Options")]
+    [SerializeField] private GameObject mainMenuFirst;
+    [SerializeField] private GameObject settingsMenuFirst;
+    [SerializeField] private GameObject quitMenuFirst;
 
     private InputAction navigateActions;
     private GameObject previousSelectedGameobject;
@@ -50,9 +54,6 @@ public class PauseMenuScript : MonoBehaviour
         pauseManagerGO = GameObject.FindGameObjectWithTag("PauseManager");
         pauseManager = pauseManagerGO.GetComponent<PauseManager>();
 
-        navigateActions = inputActions.FindAction("UI/Navigate");
-        navigateActions.Enable();
-        navigateActions.performed += Navigate;
     }
     private void OnEnable()
     {
@@ -63,12 +64,13 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         if (previousSelectedGameobject != EventSystem.current.currentSelectedGameObject)
         {
             ButtonsSound();
             previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
         }
+        */
     }
 
     ///////////////////////////////////////////////////////////////
@@ -82,14 +84,15 @@ public class PauseMenuScript : MonoBehaviour
         quitCanva.SetActive(false);
         gamepadCanva.SetActive(false);
         keyboardCanva.SetActive(false);
-        SelectFirstButton();
+
+        EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     }
 
     public void ClickOnQuitButton()
     {
         mainCanva.SetActive(false);
         quitCanva.SetActive(true);
-        SelectFirstButton();
+        EventSystem.current.SetSelectedGameObject(quitMenuFirst);
     }
 
 
@@ -108,7 +111,7 @@ public class PauseMenuScript : MonoBehaviour
         audioMixer.GetFloat("SFX", out float sfxVolume);
         sliderSfxVolume.value = sfxVolume;
 
-        SelectFirstButton();
+        EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
 
     public void GoToGamepad()
@@ -116,7 +119,7 @@ public class PauseMenuScript : MonoBehaviour
         settingsCanva.SetActive(false);
         gamepadCanva.SetActive(true);
 
-        SelectFirstButton();
+        //SelectFirstButton();
     }
 
     public void GoToKeyboard()
@@ -124,18 +127,13 @@ public class PauseMenuScript : MonoBehaviour
         settingsCanva.SetActive(false);
         keyboardCanva.SetActive(true);
 
-        SelectFirstButton();
+        //SelectFirstButton();
     }
 
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
 
-    public void SelectFirstButton()
-    {
-        GameObject currentCanva = GameObject.FindGameObjectWithTag("PauseCanva"); // works because it finds only ACTIVE ones
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(currentCanva.transform.GetChild(1).gameObject);
-    }
+
 
     public void Resume()
     {
@@ -241,14 +239,7 @@ public class PauseMenuScript : MonoBehaviour
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
 
-    void Navigate(InputAction.CallbackContext ctx)
-    {
-        
-        if (EventSystem.current.currentSelectedGameObject == null)
-        {
-            SelectFirstButton();
-        }
-    }
+
     
     void ButtonsSound()
     {

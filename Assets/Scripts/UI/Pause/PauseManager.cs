@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PauseManager : MonoBehaviour
     public bool IsPaused()
     {
         return pauseState;
+        
     }
 
     public void AskPause()
@@ -81,6 +83,8 @@ public class PauseManager : MonoBehaviour
             loopGameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(false);
         pauseState = false;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void SetPaused(bool paused)
