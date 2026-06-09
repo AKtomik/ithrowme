@@ -7,7 +7,7 @@ abstract public class TakableLever : Takable
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
     public bool cinematicMode = true;
-    
+        
     [Header("Trigger Move")]
     public bool takeStopVelocity = true;
     public float pulledFinishPushForce = 10f;
@@ -49,7 +49,7 @@ abstract public class TakableLever : Takable
         PullStart(player);
         
     }
-    
+        
     override public void Throw(CapsulePlayer player) {}
 
     abstract public void PullStart(CapsulePlayer player);
@@ -78,16 +78,4 @@ abstract public class TakableLever : Takable
     {
         audioSource.PlayOneShot(leverAction);
     }
-
-	void Update()
-	{
-		if (isPulling)
-        {
-            if (takeStopVelocity)
-            {
-                playerPulling.playerBody.linearVelocity = Vector3.zero;
-                playerPulling.playerBody.angularVelocity = Vector3.zero;
-            }
-        }
-	}
 }
