@@ -36,7 +36,7 @@ public class MainMenuScript : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
         inputActions.FindActionMap("UI").Enable();
         topAnimator.SetTrigger("One");
-        Invoke("StartMenu", 14f);
+        Invoke("StartMenu", 13.5f);
         
     }
 
