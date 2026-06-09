@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class FlatCanvas : MonoBehaviour
+
+public class BothCanvas : MonoBehaviour
 {
     public CapsulePlayer player;
 
@@ -9,6 +10,7 @@ public class FlatCanvas : MonoBehaviour
     [SerializeField] private Sprite handSpriteReachable;
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
+
     [Header("Cinematic Settings")]
     [SerializeField] private GameObject cinematicBars;
     public float cinematicBarSpeed = 0.7f;
@@ -26,8 +28,6 @@ public class FlatCanvas : MonoBehaviour
     public void DisableCinematicBars()
     {
         stopCinematic = true;
-        
-        
     }
 
 

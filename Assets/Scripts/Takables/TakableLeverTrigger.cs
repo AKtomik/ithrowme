@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Audio;
 
 abstract public class TakableLever : Takable
 {

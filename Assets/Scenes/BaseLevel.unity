@@ -3701,7 +3701,7 @@ PrefabInstance:
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: canvasMana
       value: 
-      objectReference: {fileID: 2119675118}
+      objectReference: {fileID: 0}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: handImageUI
       value: 
@@ -4951,6 +4951,7 @@ Transform:
   - {fileID: 1265792371}
   - {fileID: 322891384}
   - {fileID: 1067009058}
+  - {fileID: 1595449728}
   - {fileID: 850945352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6009,7 +6010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295f1940d24ccf54793512a07152c468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  canvasMana: {fileID: 2119675118}
+  canvasMana: {fileID: 1758109596}
 --- !u!4 &1595449728
 Transform:
   m_ObjectHideFlags: 0
@@ -6018,12 +6019,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595449726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1267620104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1605188822
 PrefabInstance:
@@ -6665,6 +6666,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1828725444792942337, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
   m_PrefabInstance: {fileID: 2462705687388837051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1758109596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5215935944525137943, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
+  m_PrefabInstance: {fileID: 2462705687388837051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f95d16620a6f7f4db5991bfb36c3464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandScript
 --- !u!114 &1779502559 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8438642781112370275, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
@@ -8405,17 +8417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
---- !u!114 &2119675118 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1428173701272294260, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
-  m_PrefabInstance: {fileID: 2462705687388837051}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f95d16620a6f7f4db5991bfb36c3464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HandScript
 --- !u!1001 &2123499038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9880,6 +9881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BothCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5215935944525137943, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 260315545}
     - target: {fileID: 8258847162677756354, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
       propertyPath: m_Camera
       value: 
@@ -10834,6 +10839,5 @@ SceneRoots:
   - {fileID: 1267620104}
   - {fileID: 1856149279292350539}
   - {fileID: 254801719}
-  - {fileID: 1595449728}
   - {fileID: 975354893}
   - {fileID: 811283908}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CinematicManager : MonoBehaviour
 {
-    [SerializeField] private FlatCanvas canvasMana;
+    [SerializeField] private BothCanvas canvasMana;
     
     private bool enabledCinematic = false;
 
