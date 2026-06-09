@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class ReferenceStore : MonoBehaviour
-{
+{// could be renamed to ReferenceSingleton
     public static ReferenceStore instance;
 
     [Header("Main")]
