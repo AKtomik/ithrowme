@@ -7,6 +7,8 @@ public class MovingThing : MonoBehaviour
     private Rigidbody rb;
     private bool wasKinematic;
     private bool frozen = false;
+    private Vector3 frozenLinearVelocity;
+    private Vector3 frozenAngularVelocity;
 
     // self add
     static List<MovingThing> allMovingThings = new();
@@ -30,6 +32,8 @@ public class MovingThing : MonoBehaviour
             return;
         }
         frozen = true;
+        frozenLinearVelocity = rb.linearVelocity;
+        frozenAngularVelocity = rb.angularVelocity;
         wasKinematic = rb.isKinematic;
         rb.isKinematic = true;
     }
@@ -43,6 +47,11 @@ public class MovingThing : MonoBehaviour
         }
         frozen = false;
         rb.isKinematic = wasKinematic;
+        if (!rb.isKinematic)
+        {
+            rb.linearVelocity = frozenLinearVelocity;
+            rb.angularVelocity = frozenAngularVelocity;
+        }
     }
 
     // all freeze
