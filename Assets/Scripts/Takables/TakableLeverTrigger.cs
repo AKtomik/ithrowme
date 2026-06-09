@@ -6,6 +6,7 @@ abstract public class TakableLever : Takable
     [Header("Trigger Pull")]
     public bool oneTimeTrigger = true;
     public bool lockLooking = true;
+    public bool cinematicMode = true;
     
     [Header("Trigger Move")]
     public bool takeStopVelocity = true;
@@ -32,11 +33,12 @@ abstract public class TakableLever : Takable
         playerPulling = player;
 
         if (takeStopVelocity)
-        {// need to do before player is kinematic
+        {// need to do before player is kinematic in cinematic
             player.playerBody.linearVelocity = Vector3.zero;
             player.playerBody.angularVelocity = Vector3.zero;
         }
         
+        if (cinematicMode) ReferenceStore.instance.cinematicManager.EnableCinematic();
         if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
         
         if (pulledAnimationName.Length > 0)
@@ -55,7 +57,8 @@ abstract public class TakableLever : Takable
 
     public void AnimationEnded()
     {
-        if (lockLooking) playerPulling.UnlockingLook();// need to do first bcs player is kinematic before that
+        if (cinematicMode) ReferenceStore.instance.cinematicManager.DisableCinematic();
+        if (lockLooking) playerPulling.UnlockingLook();
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
         
         PullFinish(playerPulling);

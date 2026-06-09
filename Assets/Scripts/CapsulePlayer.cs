@@ -21,7 +21,6 @@ public class CapsulePlayer : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
-    [SerializeField] private CinematicManager cinematicManager;
     [SerializeField] private float lookSensitivity = .5f;
     [SerializeField] private float smoothTime = .5f;
     [SerializeField] private float rotationMaxSpeed = 10000000000f;
@@ -275,7 +274,6 @@ public class CapsulePlayer : MonoBehaviour
 
     public void LockingLookAt()
     {
-        cinematicManager.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = Vector2.zero;
         lockLookAtSpeed = 0;
@@ -284,7 +282,6 @@ public class CapsulePlayer : MonoBehaviour
 
     public void LockingLookAt(Vector3 pos, float speed = 1)
     {
-        cinematicManager.EnableCinematic();
         lockLookAt = true;
         lockLookAtPos = pos;
         lockLookAtSpeed = speed;
@@ -293,7 +290,6 @@ public class CapsulePlayer : MonoBehaviour
     
     public void UnlockingLook()
     {
-        cinematicManager.DisableCinematic();
         lockLookAt = false;
     }
 
