@@ -7,9 +7,13 @@ public class BothCanvas : MonoBehaviour
 
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
+    // unity editor can't take dictionnary (wanted enum - sprite dictionnary)
+    // so it is the way to go for now
     [SerializeField] private Sprite handSpriteReachable;
     [SerializeField] private Sprite handSpriteIdle;
     [SerializeField] private Sprite handSpriteGrab;
+    [SerializeField] private Sprite handSpriteFinger;
+    [SerializeField] private HandState defaultCinematicHandState = HandState.IDLE;
 
     [Header("Cinematic Settings")]
     [SerializeField] private GameObject cinematicBars;
@@ -17,21 +21,49 @@ public class BothCanvas : MonoBehaviour
 
     private bool startCinematic;
     private bool stopCinematic;
+    private bool inCinematic;
+    private HandState cinematicHandState;
 
+    // cinematic bars
     public void EnableCinematicBars()
     {// TODO: bar progressive enter with time parameter
         cinematicBars.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
         cinematicBars.SetActive(true);
         startCinematic = true;
+        inCinematic = true;
+        cinematicHandState = defaultCinematicHandState;
     }
 
     public void DisableCinematicBars()
     {
         stopCinematic = true;
+        inCinematic = false;
+    }
+    
+    // hand
+    Sprite HandStateSprite(HandState state)
+    {
+        return state switch
+        {
+            HandState.IDLE => handSpriteIdle,
+            HandState.REACHABLE => handSpriteReachable,
+            HandState.GRAB => handSpriteGrab,
+            HandState.FINGER => handSpriteFinger,
+            _ => handSpriteIdle,
+        };
+    }
+    
+    public void ChangeCinematicHandState(HandState state)
+    {
+        cinematicHandState = state;
+    }
+    
+    public void ChangeCinematicHandState(int state)
+    {
+        ChangeCinematicHandState((HandState)state);
     }
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // execution
     void Start()
     {
         GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
@@ -39,11 +71,12 @@ public class BothCanvas : MonoBehaviour
         cinematicBars.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Sprite handSprite;
-        if (player.anythingInHand)
+        if (inCinematic)
+            handSprite = HandStateSprite(cinematicHandState);
+        else if (player.anythingInHand)
             handSprite = handSpriteGrab;
         else if (player.reachableObject)
             handSprite = handSpriteReachable;
@@ -75,6 +108,13 @@ public class BothCanvas : MonoBehaviour
                 stopCinematic = false;
             }
         }
-
     }
+}
+
+public enum HandState
+{
+    IDLE = 0,
+    REACHABLE = 1,
+    GRAB = 2,
+    FINGER = 3,
 }
