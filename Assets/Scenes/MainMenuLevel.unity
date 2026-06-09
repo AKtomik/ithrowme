@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &207957051 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4499965892980114481, guid: 7128d366551f9ab469de997289b46541, type: 3}
+  m_PrefabInstance: {fileID: 1315249685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &382878281
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +153,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3955123318674132900, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 26f696bca17d66147a926f239d27d75a, type: 3}
+  m_Resource: {fileID: 8300000, guid: c9b4a9cd4c596d34e9782a78bd151af1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -248,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   mainMenuTheme: {fileID: 382878282}
+  topAnimator: {fileID: 207957051}
 --- !u!4 &382878284
 Transform:
   m_ObjectHideFlags: 0
@@ -607,6 +613,14 @@ PrefabInstance:
     - target: {fileID: 4742095199706359128, guid: 7128d366551f9ab469de997289b46541, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -219.09999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840227041909059699, guid: 7128d366551f9ab469de997289b46541, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840227041909059699, guid: 7128d366551f9ab469de997289b46541, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 5858155781040700997, guid: 7128d366551f9ab469de997289b46541, type: 3}
       propertyPath: m_IsActive
@@ -1593,7 +1607,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 2
     angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1680,7 +1694,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 3.18
       mode: 0
       spread: 0
       speed:
@@ -5694,7 +5708,7 @@ Transform:
   m_GameObject: {fileID: 1962775540}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0006600455, y: -0.9626881, z: 0.002348162, w: 0.27060255}
-  m_LocalPosition: {x: 924.25, y: 563.02, z: 13.31}
+  m_LocalPosition: {x: 922.83, y: 563.02, z: 8.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
