@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class AlarmScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool isAlarmOn = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (isAlarmOn)
+        {
+            float vitesse = 180f; // degrés par seconde
+            transform.Rotate(0f, vitesse * Time.deltaTime, 0f, Space.Self);
+        }
         
     }
 }
