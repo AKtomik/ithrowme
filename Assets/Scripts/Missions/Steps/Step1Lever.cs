@@ -8,6 +8,8 @@ public class Step1Lever : TakableLever
     public GameObject activatedItem;
 
     private AudioSource[] alarmsAudio;
+    [SerializeField] private AudioSource powerOn;
+    [SerializeField] private AudioManager audioManager;
 
     private void Awake()
     {
@@ -49,12 +51,14 @@ public class Step1Lever : TakableLever
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");
         missionManager.CompleteMission(1);
-
+        
 
     }
     
     public override void PullFinish(CapsulePlayer player) {
         Debug.Log("Step1Lever: step 1 completed");
+        powerOn.Play();
+
         if (alarmsAudio != null && alarmsAudio.Length > 0)
         {
             foreach (AudioSource alarm in alarmsAudio)
@@ -64,5 +68,8 @@ public class Step1Lever : TakableLever
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
         activatedItem.SetActive(true);
+        audioManager.StartAmbiance();
     }
+
+
 }

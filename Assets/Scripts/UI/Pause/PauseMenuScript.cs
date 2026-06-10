@@ -29,6 +29,8 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderRollSensitivity;
     [SerializeField] private Slider sliderSfxVolume;
     [SerializeField] private Slider sliderMainVolume;
+    [SerializeField] private Slider sliderMusicVolume;
+
     [SerializeField] private Toggle toggleRollAxis;
     [SerializeField] private Toggle toggleRollJoystick;
 
@@ -110,6 +112,11 @@ public class PauseMenuScript : MonoBehaviour
 
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
+
+        sliderMusicVolume.value = SettingsStore.musicVolume;
+        sliderSfxVolume.value = SettingsStore.sfxVolume;
+        sliderMainVolume.value = SettingsStore.masterVolume;
+
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
         audioMixer.GetFloat("SFX", out float sfxVolume);
@@ -218,11 +225,19 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("SFX", sliderSfxVolume.value);
+        SettingsStore.sfxVolume = sliderSfxVolume.value;
     }
     public void ChangeMainVolume()
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Main", sliderMainVolume.value);
+        SettingsStore.masterVolume = sliderMainVolume.value;
+    }
+    public void ChangeMusicVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("Music", sliderMusicVolume.value);
+        SettingsStore.musicVolume = sliderMusicVolume.value;
     }
 
     public void InvertRollAxis()
