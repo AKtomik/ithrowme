@@ -12,6 +12,9 @@ public static class SettingsStore
 	// camera settings
 	public static float baseFov = 60;
 	
+	// compfort settings
+	public static bool visibleTimer = true;
+	
 	// hidden settings
 	// all const can't be edited during play
 	public const bool smartLockFinishedDoor = true;

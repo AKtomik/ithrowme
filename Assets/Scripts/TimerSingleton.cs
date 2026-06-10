@@ -22,15 +22,20 @@ public class TimerSingleton : MonoBehaviour
     {
         if (!running) return;
         timedSec += Time.deltaTime;
-
-        double displayMs = Math.Floor(timedSec*1000)%1000;
-        string textMs = displayMs.ToString();
-        textMs = new string('0', 3 - textMs.Length) + textMs;
-
-        double displaySec = Math.Floor(timedSec);
-        string textSec = displaySec.ToString();
         
-        timerTextPro.text = textSec + "." + textMs;
+        if (SettingsStore.visibleTimer)
+        {
+            double displayMs = Math.Floor(timedSec*1000)%1000;
+            string textMs = displayMs.ToString();
+            textMs = new string('0', 3 - textMs.Length) + textMs;
+
+            double displaySec = Math.Floor(timedSec);
+            string textSec = displaySec.ToString();
+            
+            timerTextPro.text = textSec + "." + textMs;
+        } else if (timerTextPro.enabled) {
+            timerTextPro.enabled = false;
+        }
     }
     
     // Utils methods
