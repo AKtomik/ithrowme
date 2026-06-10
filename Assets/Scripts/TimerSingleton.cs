@@ -9,13 +9,12 @@ public class TimerSingleton : MonoBehaviour
     private bool ended = false;
     private bool running = false;
     private double timedSec = 0;
-    private TextMeshProUGUI textPro;
+    [SerializeField] private TextMeshProUGUI timerTextPro;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
-        textPro = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -31,7 +30,7 @@ public class TimerSingleton : MonoBehaviour
         double displaySec = Math.Floor(timedSec);
         string textSec = displaySec.ToString();
         
-        textPro.text = textSec + "." + textMs;
+        timerTextPro.text = textSec + "." + textMs;
     }
     
     // Utils methods
