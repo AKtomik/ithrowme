@@ -4,7 +4,7 @@ public static class SettingsStore
 	// control settings
 	public static float lookSensivity = 1;
 	public static float rollSensivity = 1;
-	public static bool invertRoll = false;
+	public static bool invertRoll = true; // must be egal to the inspector value
 	
 	// camera settings
 	public static float baseFov = 60;
