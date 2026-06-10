@@ -19,6 +19,7 @@ public class Step2Step6Click : TakableClick
         {
             Debug.Log("Step2Step6Click: taking step 6");
             step6Script.Take(player);
+            takeCollider.enabled = false;// will never be renabled
         }
     }
     

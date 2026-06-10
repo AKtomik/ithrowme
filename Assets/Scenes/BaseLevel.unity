@@ -4563,6 +4563,7 @@ MonoBehaviour:
   - "trouver un cube d'\xE9nergie"
   - "ramener le cube au module d'\xE9jection"
   - "activer l'\xE9jection sur la console de commande"
+  - "f\xE9licitiation ! tu es arriv\xE9 au bout du playtest !"
   - "proc\xE9der \xE0 l'\xE9jection d'urgence"
   - manger un sandwich
   InitialMissions: 00000000
@@ -10408,10 +10409,6 @@ PrefabInstance:
     - target: {fileID: 5258822570643900791, guid: d0fe2deebad3d0d4492f7a5aa8130d93, type: 3}
       propertyPath: m_Name
       value: HallwayEndParth
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498707918408197633, guid: d0fe2deebad3d0d4492f7a5aa8130d93, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8620929697680516773, guid: d0fe2deebad3d0d4492f7a5aa8130d93, type: 3}
       propertyPath: m_LocalPosition.x
