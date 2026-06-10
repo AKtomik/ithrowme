@@ -19,6 +19,7 @@ public class ReferenceSingleton : MonoBehaviour
 		public DoorOpeningScript emergencyGravityDoor;
     [Header("Visuals")]
 		public ConsoleScreenManager consoleScreen;
+		public BothCanvas bothCanvas;
 		
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

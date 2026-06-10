@@ -7,7 +7,7 @@ public class Step1Lever : TakableLever
     public MissionManager missionManager;
     public GameObject activatedItem;
 
-    private AudioSource[] alarmsAudio;
+    private AudioSource[] alarmsAudio = new AudioSource[] {};
     [SerializeField] private AudioSource powerOn;
     [SerializeField] private AudioManager audioManager;
 
@@ -31,7 +31,6 @@ public class Step1Lever : TakableLever
             }
                 
         }
-
     }
 
     public void MusicStart()
@@ -47,6 +46,7 @@ public class Step1Lever : TakableLever
         }
         
     }
+
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");

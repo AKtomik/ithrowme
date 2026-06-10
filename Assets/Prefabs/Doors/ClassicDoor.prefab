@@ -293,6 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c7a559755b9b741815e6f57e92faf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
+  triggerCollider: {fileID: 2725564819157198692}
+  solidCollider: {fileID: 4911661003782264297}
+  animator: {fileID: 2647600086335102438}
   locked: 0
   opened: 0
   automaticOpening: 1
@@ -322,7 +325,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 3.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &6132878711129045287
 AudioSource:

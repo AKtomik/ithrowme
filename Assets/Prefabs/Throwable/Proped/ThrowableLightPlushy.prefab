@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 103920078271962544, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Name
-      value: ThrowableLightCuddlyToy
+      value: ThrowableLightPlushy
       objectReference: {fileID: 0}
     - target: {fileID: 461791734069738418, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 2911272114656201246, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -7477861235606530666, guid: 236cbf4faea777d4dabe4b0539f80bcb, type: 3}
     - target: {fileID: 3674262476460925308, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 4216493926582886578, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -7477861235606530666, guid: 236cbf4faea777d4dabe4b0539f80bcb, type: 3}
     - target: {fileID: 4992202231788359172, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: audioMixer
       value: 
@@ -61,9 +61,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2201791816437618169, guid: 360f0b6c986fd4e43a98c864e5e3bcd3, type: 3}
     - target: {fileID: 7140749662330777914, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140749662330777914, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8cae44c76d219c644bba6c83f79ccb5e, type: 2}
+    - target: {fileID: 7140749662330777914, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ee0e9cbfa60b39641afc2cfd9e0d7275, type: 2}
+    - target: {fileID: 7140749662330777914, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ee0e9cbfa60b39641afc2cfd9e0d7275, type: 2}
+    - target: {fileID: 7140749662330777914, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ee0e9cbfa60b39641afc2cfd9e0d7275, type: 2}
     - target: {fileID: 7293049335391933100, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: 'hitAudio.Array.data[0]'
       value: 
@@ -79,18 +95,22 @@ PrefabInstance:
     - target: {fileID: 7343397204920430591, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5495902117074765545, guid: 36d4363eeabae5b4db3a72769c989707, type: 3}
+      objectReference: {fileID: -7477861235606530666, guid: 236cbf4faea777d4dabe4b0539f80bcb, type: 3}
+    - target: {fileID: 7343397204920430591, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f6a876550dfc18b4a818d024f65d24fc, type: 2}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalPosition.x

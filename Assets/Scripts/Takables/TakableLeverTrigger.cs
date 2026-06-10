@@ -72,6 +72,10 @@ abstract public class TakableLever : Takable
         }
     }
 
+    public void AnimationHandState(HandState state)
+    {
+        ReferenceSingleton.instance.bothCanvas.ChangeCinematicHandState(state);
+    }
 
     public void PlayAudio()
     {
