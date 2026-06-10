@@ -8,6 +8,7 @@ using TMPro;
 
 public class MainMenuScript : MonoBehaviour
 {
+    [SerializeField] private bool SkipIntro;
     [SerializeField] private InputActionAsset inputActions;
     [Header("Audio")]
     [SerializeField] private AudioSource mainMenuTheme;
@@ -25,10 +26,19 @@ public class MainMenuScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        click = inputActions.FindAction("Pause");
+        if (SkipIntro)
+        {
+            isStarted = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            cinematicBlack.gameObject.SetActive(true);
+            StartCoroutine(StartGame());
+            return;
+        }
         mainMenuTheme.Play();
         cinematicBlack.gameObject.SetActive(false);
-        click = inputActions.FindAction("Pause");
+        
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -68,7 +78,7 @@ public class MainMenuScript : MonoBehaviour
     IEnumerator StartGame()
     {
         yield return null;
-
+        
         //Begin to load the Scene you specify
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("BaseLevel");
         //Don't let the Scene activate until you allow it to
@@ -77,12 +87,14 @@ public class MainMenuScript : MonoBehaviour
         //When the load is still in progress, output the Text and progress bar
         while (!asyncOperation.isDone)
         {
+            
             //Output the current progress
             m_Text.text = "Chargement: " + (asyncOperation.progress * 100) + "%";
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)
             {
+                
                 m_Text.text = "";
                 cinematicTheme.Play();
                 Debug.Log("WOAH");
