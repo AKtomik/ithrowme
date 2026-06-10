@@ -11,8 +11,9 @@ public class ParallaxSwitch : MonoBehaviour
 		farAwayObjects = GameObject.FindGameObjectsWithTag("FarawayDisable");
 	}
 
-	private void OnTriggerEnter()
+	private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
         if (!disableDisable)
             foreach (var obj in farAwayObjects)
                 obj.SetActive(false);
@@ -21,6 +22,7 @@ public class ParallaxSwitch : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
         if (!disableDisable)
             foreach (var obj in farAwayObjects)
                 obj.SetActive(true);
