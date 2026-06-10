@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 103920078271962544, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Name
-      value: ThrowableLightCuddlyToy
+      value: ThrowableLightPlushy
       objectReference: {fileID: 0}
     - target: {fileID: 461791734069738418, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_Mesh
@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -7477861235606530666, guid: 236cbf4faea777d4dabe4b0539f80bcb, type: 3}
+    - target: {fileID: 7343397204920430591, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f6a876550dfc18b4a818d024f65d24fc, type: 2}
     - target: {fileID: 7502988878343029905, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 175
