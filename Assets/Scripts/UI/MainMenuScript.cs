@@ -59,6 +59,9 @@ public class MainMenuScript : MonoBehaviour
         mainMenuTheme.Stop();
         cinematicBlack.gameObject.SetActive(true);
         mainCanva.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         StartCoroutine(StartGame());
     }
 

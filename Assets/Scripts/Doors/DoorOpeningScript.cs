@@ -96,7 +96,7 @@ public class DoorOpeningScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log(other.name + " " + other.gameObject.GetComponent<ObjectCanOpenDoor>());
+       
 
         if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
         {
