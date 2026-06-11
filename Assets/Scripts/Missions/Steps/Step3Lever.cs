@@ -17,9 +17,10 @@ public class Step3Lever : TakableLever
         if (activatedItem) activatedItem.SetActive(true);
 
         // ! will lock the player in
-        //if (SettingsStore.lockFinishedDoor)
-        //{
-        //    ReferenceStore.instance.centerTechnicalDoor.LockingDoors();
-        //}
+        // but because of backdoor this is not a problem
+        if (SettingsStore.smartLockFinishedDoor)
+        {
+            ReferenceSingleton.instance.centerTechnicalDoor.LockingDoors();
+        }
     }
 }
