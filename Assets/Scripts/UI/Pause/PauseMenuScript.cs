@@ -44,6 +44,8 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject mainMenuFirst;
     [SerializeField] private GameObject settingsMenuFirst;
     [SerializeField] private GameObject quitMenuFirst;
+    [SerializeField] private GameObject gamepadFirst;
+    [SerializeField] private GameObject keyboardFirst;
 
     private InputAction navigateActions;
     private GameObject previousSelectedGameobject;
@@ -135,7 +137,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         settingsCanva.SetActive(false);
         gamepadCanva.SetActive(true);
-
+        EventSystem.current.SetSelectedGameObject(gamepadFirst);
         //SelectFirstButton();
     }
 
@@ -143,7 +145,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         settingsCanva.SetActive(false);
         keyboardCanva.SetActive(true);
-
+        EventSystem.current.SetSelectedGameObject(keyboardFirst);
         //SelectFirstButton();
     }
 
