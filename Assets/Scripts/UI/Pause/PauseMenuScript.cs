@@ -122,6 +122,12 @@ public class PauseMenuScript : MonoBehaviour
         audioMixer.GetFloat("SFX", out float sfxVolume);
         sliderSfxVolume.value = sfxVolume;
 
+        audioMixer.GetFloat("Master", out float masterVolume);
+        sliderSfxVolume.value = masterVolume;
+
+        audioMixer.GetFloat("Music", out float musicVolume);
+        sliderSfxVolume.value = musicVolume;
+
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
 
@@ -230,7 +236,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ChangeMainVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("Main", sliderMainVolume.value);
+        audioMixer.SetFloat("Master", sliderMainVolume.value);
         SettingsStore.masterVolume = sliderMainVolume.value;
     }
     public void ChangeMusicVolume()
