@@ -67,8 +67,8 @@ public class Step1Lever : TakableLever
         musicAudio.Stop();
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
-        activatedItem.SetActive(true);
         audioManager.StartAmbiance();
+        if (activatedItem) activatedItem.SetActive(true);
     }
 
 

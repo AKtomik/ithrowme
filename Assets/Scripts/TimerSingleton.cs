@@ -9,13 +9,12 @@ public class TimerSingleton : MonoBehaviour
     private bool ended = false;
     private bool running = false;
     private double timedSec = 0;
-    private TextMeshProUGUI textPro;
+    [SerializeField] private TextMeshProUGUI timerTextPro;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
-        textPro = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -23,15 +22,20 @@ public class TimerSingleton : MonoBehaviour
     {
         if (!running) return;
         timedSec += Time.deltaTime;
-
-        double displayMs = Math.Floor(timedSec*1000)%1000;
-        string textMs = displayMs.ToString();
-        textMs = new string('0', 3 - textMs.Length) + textMs;
-
-        double displaySec = Math.Floor(timedSec);
-        string textSec = displaySec.ToString();
         
-        textPro.text = textSec + "." + textMs;
+        if (SettingsStore.visibleTimer)
+        {
+            double displayMs = Math.Floor(timedSec*1000)%1000;
+            string textMs = displayMs.ToString();
+            textMs = new string('0', 3 - textMs.Length) + textMs;
+
+            double displaySec = Math.Floor(timedSec);
+            string textSec = displaySec.ToString();
+            
+            timerTextPro.text = textSec + "." + textMs;
+        } else if (timerTextPro.enabled) {
+            timerTextPro.enabled = false;
+        }
     }
     
     // Utils methods
