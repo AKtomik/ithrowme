@@ -5613,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 1595449727}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: cheatProjectileActivated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: 'takingDamageAudio.Array.data[0]'
@@ -5625,7 +5625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8087410682420035642, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
