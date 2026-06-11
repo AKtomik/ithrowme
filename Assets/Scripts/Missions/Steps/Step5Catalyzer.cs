@@ -1,11 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Step5Catalyzer : CatalyzerTrigger
 {
     [Header("Step Pointers")]
     public MissionManager missionManager;
+    [SerializeField] private AudioSource cubeSound;
 
     public override void OnTrigger() {
+
+        if (cubeSound)
+        {
+            cubeSound.Play();
+        }
+
         Debug.Log("Step5Catalyzer: step 5 completed");
         
         // missions
