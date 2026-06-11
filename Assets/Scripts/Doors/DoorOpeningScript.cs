@@ -30,9 +30,9 @@ public class DoorOpeningScript : MonoBehaviour
 
     /// maybe a single function ?? 
     /// flip flop type with isOpened
-    public void OpeningDoors()
+    public void OpeningDoors(bool skipLocked = false)
     {
-        if (opened || locked) return;
+        if (opened || (!skipLocked && locked)) return;
         doorSlam.PlayOneShot(audioClips[0]);
         animator.ResetTrigger("Close");
         animator.SetTrigger("Open");
@@ -91,9 +91,6 @@ public class DoorOpeningScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-       
-
         if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
@@ -124,6 +121,17 @@ public class DoorOpeningScript : MonoBehaviour
         if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
         {
             OpeningDoors();
+            CancelInvoke("ClosingDoors");
+            if (!objectsInDoorRanch.Contains(other.gameObject))
+                objectsInDoorRanch.Add(other.gameObject);
+        }
+    }
+    
+    public void BackdoorTriggerEnter(Collider other)
+    {// ! the backdoor trigger collision have to be inside the normal trigger collider
+        if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
+        {
+            OpeningDoors(true);
             CancelInvoke("ClosingDoors");
             if (!objectsInDoorRanch.Contains(other.gameObject))
                 objectsInDoorRanch.Add(other.gameObject);
