@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 
 public class Step6Lever : TakableLever
