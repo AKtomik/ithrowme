@@ -8,6 +8,7 @@ public static class SettingsStore
     public static float sfxVolume = 0;
     public static float masterVolume = 0;
 	public static float breathVolume = 0;
+    public static float alarmVolume = 0;
     public static bool invertRoll = false; // must be egal to the inspector value
 	
 	// camera settings
