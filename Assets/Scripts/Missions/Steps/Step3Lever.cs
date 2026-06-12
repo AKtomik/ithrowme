@@ -15,12 +15,5 @@ public class Step3Lever : TakableLever
         Debug.Log("Step3Lever: step 3 completed");
         ReferenceSingleton.instance.consoleClick.CheckFinalMission();
         if (activatedItem) activatedItem.SetActive(true);
-
-        // ! will lock the player in
-        // but because of backdoor this is not a problem
-        if (SettingsStore.smartLockFinishedDoor)
-        {
-            ReferenceSingleton.instance.centerResearchDoor.LockingDoors();
-        }
     }
 }
