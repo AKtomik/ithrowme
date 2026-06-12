@@ -30,6 +30,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderSfxVolume;
     [SerializeField] private Slider sliderMainVolume;
     [SerializeField] private Slider sliderMusicVolume;
+    [SerializeField] private Slider sliderBreathVolume;
 
     [SerializeField] private Toggle toggleRollAxis;
     [SerializeField] private Toggle toggleRollJoystick;
@@ -79,6 +80,9 @@ public class PauseMenuScript : MonoBehaviour
             previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
         }
         */
+
+        
+
     }
 
     ///////////////////////////////////////////////////////////////
@@ -118,6 +122,7 @@ public class PauseMenuScript : MonoBehaviour
         sliderMusicVolume.value = SettingsStore.musicVolume;
         sliderSfxVolume.value = SettingsStore.sfxVolume;
         sliderMainVolume.value = SettingsStore.masterVolume;
+        sliderBreathVolume.value = SettingsStore.breathVolume;
 
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
@@ -125,10 +130,13 @@ public class PauseMenuScript : MonoBehaviour
         sliderSfxVolume.value = sfxVolume;
 
         audioMixer.GetFloat("Master", out float masterVolume);
-        sliderSfxVolume.value = masterVolume;
+        sliderMainVolume.value = masterVolume;
 
         audioMixer.GetFloat("Music", out float musicVolume);
-        sliderSfxVolume.value = musicVolume;
+        sliderMainVolume.value = musicVolume;
+
+        audioMixer.GetFloat("Breath", out float breathVolume);
+        sliderBreathVolume.value = breathVolume;
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
@@ -246,6 +254,13 @@ public class PauseMenuScript : MonoBehaviour
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Music", sliderMusicVolume.value);
         SettingsStore.musicVolume = sliderMusicVolume.value;
+    }
+
+    public void ChangeBreathVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("Breath", sliderBreathVolume.value);
+        SettingsStore.breathVolume = sliderBreathVolume.value;
     }
 
     public void InvertRollAxis()
