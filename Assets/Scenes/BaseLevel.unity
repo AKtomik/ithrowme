@@ -15113,6 +15113,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadioLever
       objectReference: {fileID: 0}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: activatedItem
+      value: 
+      objectReference: {fileID: 1670961337}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
     - target: {fileID: 7955563035779408555, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.468526
