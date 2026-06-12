@@ -76,6 +76,11 @@ abstract public class TakableLever : Takable
     {
         ReferenceSingleton.instance.bothCanvas.ChangeCinematicHandState(state);
     }
+    
+    public void AnimationLookingPoint(Transform newLookingPoint, float speed = 1)
+    {// ! does not works in animationPlayer, need to do aliases
+        if (lockLooking) playerPulling.LockingLookAt(newLookingPoint.position, speed);
+    }
 
     public void PlayAudio()
     {

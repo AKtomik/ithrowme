@@ -6,6 +6,8 @@ public class Step1Lever : TakableLever
     [Header("Step Pointers")]
     public MissionManager missionManager;
     public GameObject activatedItem;
+    public Transform lookAwayPoint;
+    public Transform lookBackPoint;
 
     private AudioSource[] alarmsAudio = new AudioSource[] {};
     [SerializeField] private AudioSource powerOn;
@@ -71,5 +73,13 @@ public class Step1Lever : TakableLever
         if (activatedItem) activatedItem.SetActive(true);
     }
 
-
+    // animation
+    public void AnimationAlias1LookAway()
+    {
+        AnimationLookingPoint(lookAwayPoint, .15f);
+    }
+    public void AnimationAlias1LookBack()
+    {
+        AnimationLookingPoint(lookBackPoint, .6f);
+    }
 }
