@@ -67,6 +67,8 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private AudioClip[] takingDamageAudio = new AudioClip[]{ null };
     [SerializeField] private AudioSource feedbackAudioSource;
     [SerializeField] private AudioSource breathAudioSource;
+    private float breathAudioPosition = 0f;
+
 
 
     private Camera cam;
@@ -119,10 +121,19 @@ public class CapsulePlayer : MonoBehaviour
         throwAction.performed += OnThrow;
         takeAction.performed += OnTake;
         resetAction.performed += OnReset;
+
+        if (breathAudioSource != null && breathAudioSource.clip != null)
+        {
+            breathAudioSource.time = breathAudioPosition;
+            breathAudioSource.Play();
+        }
     }
 
     void OnDisable()
     {
+        breathAudioPosition = breathAudioSource.time;
+        breathAudioSource.Stop();
+
         throwAction.performed -= OnThrow;
         takeAction.performed -= OnTake;
         resetAction.performed -= OnReset;
