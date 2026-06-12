@@ -20,7 +20,7 @@ public class Step3Lever : TakableLever
         // but because of backdoor this is not a problem
         if (SettingsStore.smartLockFinishedDoor)
         {
-            ReferenceSingleton.instance.centerTechnicalDoor.LockingDoors();
+            ReferenceSingleton.instance.centerResearchDoor.LockingDoors();
         }
     }
 }

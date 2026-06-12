@@ -58,7 +58,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = true;
-        triggerCollider.enabled = false;
+        //triggerCollider.enabled = false;// can't disable for an edgecase
         // opening
         if (opened != lockOpenState)
         {
@@ -73,7 +73,7 @@ public class DoorOpeningScript : MonoBehaviour
     {
         // lock
         locked = false;
-        triggerCollider.enabled = true;
+        //triggerCollider.enabled = true;// can't disable for an edgecase
         // opening
         if (opened != lockOpenState)
         {
@@ -106,7 +106,7 @@ public class DoorOpeningScript : MonoBehaviour
             if (!objectsInDoorRanch.Contains(other.gameObject))
                 objectsInDoorRanch.Add(other.gameObject);
         }
-        else if ((automaticOpening && other.gameObject.GetComponentInParent<ObjectCanOpenDoor>() != null))
+        else if (automaticOpening && other.gameObject.GetComponentInParent<ObjectCanOpenDoor>() != null)
         {
             OpeningDoors();
             CancelInvoke("ClosingDoors");
@@ -140,8 +140,8 @@ public class DoorOpeningScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (objectsInDoorRanch.Contains(other.gameObject))
-            objectsInDoorRanch.Remove(other.gameObject);
+        if (!objectsInDoorRanch.Contains(other.gameObject)) return;
+        objectsInDoorRanch.Remove(other.gameObject);
 
         if (automaticOpening && (other.gameObject.CompareTag("Player") || objectsInDoorRanch.Count == 0))
         {
