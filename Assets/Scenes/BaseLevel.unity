@@ -14744,7 +14744,7 @@ PrefabInstance:
     - target: {fileID: 2919388476615516038, guid: f9c3febf2040602469e2e81e0f7463b1, type: 3}
       propertyPath: step1Lever
       value: 
-      objectReference: {fileID: 6496711574212320041}
+      objectReference: {fileID: 6496711574212320048}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14798,6 +14798,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: powerOn
+      value: 
+      objectReference: {fileID: 6496711574212320045}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: musicAudio
+      value: 
+      objectReference: {fileID: 6496711574212320045}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 108522739}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: activatedItem
+      value: 
+      objectReference: {fileID: 1364051164}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
     - target: {fileID: 4117901592580976815, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
       propertyPath: m_Name
       value: AlarmLever
@@ -15227,17 +15247,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2757097287407841605, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
   m_PrefabInstance: {fileID: 4970280028354810969}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6496711574212320041 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9149018713188605266, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
-  m_PrefabInstance: {fileID: 4970280028354810969}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157802940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Step1Lever
 --- !u!82 &6496711574212320044
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15432,6 +15441,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6496711574212320048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+  m_PrefabInstance: {fileID: 4970280028354810969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157802940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac4805d1c756774b9184215d90dea88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Step1Lever
 --- !u!1001 &7075870732073596302
 PrefabInstance:
   m_ObjectHideFlags: 0
