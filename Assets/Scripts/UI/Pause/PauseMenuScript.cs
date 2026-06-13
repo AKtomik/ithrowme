@@ -20,6 +20,7 @@ public class PauseMenuScript : MonoBehaviour
     
     [SerializeField] private GameObject mainCanva;
     [SerializeField] private GameObject settingsCanva;
+    [SerializeField] private GameObject audioCanva;
     [SerializeField] private GameObject quitCanva;
     [SerializeField] private GameObject gamepadCanva;
     [SerializeField] private GameObject keyboardCanva;
@@ -30,6 +31,8 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderSfxVolume;
     [SerializeField] private Slider sliderMainVolume;
     [SerializeField] private Slider sliderMusicVolume;
+    [SerializeField] private Slider sliderBreathVolume;
+    [SerializeField] private Slider sliderAlarmVolume;
 
     [SerializeField] private Toggle toggleRollAxis;
     [SerializeField] private Toggle toggleRollJoystick;
@@ -46,6 +49,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject quitMenuFirst;
     [SerializeField] private GameObject gamepadFirst;
     [SerializeField] private GameObject keyboardFirst;
+    [SerializeField] private GameObject audioFirst;
 
     private InputAction navigateActions;
     private GameObject previousSelectedGameobject;
@@ -79,6 +83,9 @@ public class PauseMenuScript : MonoBehaviour
             previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
         }
         */
+
+        
+
     }
 
     ///////////////////////////////////////////////////////////////
@@ -92,6 +99,7 @@ public class PauseMenuScript : MonoBehaviour
         quitCanva.SetActive(false);
         gamepadCanva.SetActive(false);
         keyboardCanva.SetActive(false);
+        audioCanva.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     }
@@ -109,28 +117,45 @@ public class PauseMenuScript : MonoBehaviour
         mainCanva.SetActive(false);
         gamepadCanva.SetActive(false);
         keyboardCanva.SetActive(false);
+        audioCanva.SetActive(false);
 
         settingsCanva.SetActive(true);
 
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
 
+        toggleRollAxis.isOn = SettingsStore.invertRoll;
+
+        EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
+    }
+
+    public void GoToAudio()
+    {
+        settingsCanva.SetActive(false);
+        audioCanva.SetActive(true);
+
         sliderMusicVolume.value = SettingsStore.musicVolume;
         sliderSfxVolume.value = SettingsStore.sfxVolume;
         sliderMainVolume.value = SettingsStore.masterVolume;
-
-        toggleRollAxis.isOn = SettingsStore.invertRoll;
+        sliderBreathVolume.value = SettingsStore.breathVolume;
+        sliderAlarmVolume.value = SettingsStore.alarmVolume;
 
         audioMixer.GetFloat("SFX", out float sfxVolume);
         sliderSfxVolume.value = sfxVolume;
 
         audioMixer.GetFloat("Master", out float masterVolume);
-        sliderSfxVolume.value = masterVolume;
+        sliderMainVolume.value = masterVolume;
 
         audioMixer.GetFloat("Music", out float musicVolume);
-        sliderSfxVolume.value = musicVolume;
+        sliderMainVolume.value = musicVolume;
 
-        EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
+        audioMixer.GetFloat("Breath", out float breathVolume);
+        sliderBreathVolume.value = breathVolume;
+
+        audioMixer.GetFloat("Alarm", out float alarmVolume);
+        sliderAlarmVolume.value = alarmVolume;
+
+        EventSystem.current.SetSelectedGameObject(audioFirst);
     }
 
     public void GoToGamepad()
@@ -246,6 +271,20 @@ public class PauseMenuScript : MonoBehaviour
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Music", sliderMusicVolume.value);
         SettingsStore.musicVolume = sliderMusicVolume.value;
+    }
+
+    public void ChangeBreathVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("Breath", sliderBreathVolume.value);
+        SettingsStore.breathVolume = sliderBreathVolume.value;
+    }
+
+    public void ChangeAlarmVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("Alarm", sliderAlarmVolume.value);
+        SettingsStore.alarmVolume = sliderAlarmVolume.value;
     }
 
     public void InvertRollAxis()

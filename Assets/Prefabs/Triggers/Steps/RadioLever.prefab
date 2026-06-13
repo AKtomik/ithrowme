@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7955563035779408555}
   - component: {fileID: 3148165372292051230}
-  - component: {fileID: 2313075156402111439}
+  - component: {fileID: 6057731501885180665}
   m_Layer: 7
   m_Name: RadioLever
   m_TagString: Untagged
@@ -84,7 +84,7 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &2313075156402111439
+--- !u!114 &6057731501885180665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5356263249081730508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac4805d1c756774b9184215d90dea88, type: 3}
+  m_Script: {fileID: 11500000, guid: 2537bfc30d69d3443803a461987ac0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step3Lever
   takeCollider: {fileID: 3224707472545782873}
@@ -108,6 +108,7 @@ MonoBehaviour:
   pulledAnimationName: 
   leverAction: {fileID: 8300000, guid: ca44e64b699c7224fa7e52f97d571bac, type: 3}
   missionManager: {fileID: 0}
+  activatedItem: {fileID: 0}
 --- !u!1 &6769384736150205685
 GameObject:
   m_ObjectHideFlags: 0

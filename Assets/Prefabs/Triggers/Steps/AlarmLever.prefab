@@ -178,7 +178,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9149018713188605266}
+      addedObject: {fileID: 3877568372158139557}
   m_SourcePrefab: {fileID: 100100000, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
 --- !u!65 &2463386115453743956 stripped
 BoxCollider:
@@ -195,7 +195,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
   m_PrefabInstance: {fileID: 4478609340574894495}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9149018713188605266
+--- !u!114 &3877568372158139557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4117901592580976815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd5f1bd8e98abc4ea7ad238edcaf239, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ac4805d1c756774b9184215d90dea88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step1Lever
   takeCollider: {fileID: 2463386115453743956}
@@ -217,7 +217,7 @@ MonoBehaviour:
   lookingPoint: {fileID: 7477986311932573256}
   pulledAnimatorReference: {fileID: 7294786223794809604}
   pulledAnimationName: 
-  leverAction: {fileID: 0}
+  leverAction: {fileID: 8300000, guid: 58092d0d95da55f4198f7e2a33411b8a, type: 3}
   musicAudio: {fileID: 0}
   missionManager: {fileID: 0}
   activatedItem: {fileID: 0}

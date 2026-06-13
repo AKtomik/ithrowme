@@ -133,7 +133,6 @@ MonoBehaviour:
   takeThrowSomethingDebug: 0
   takeThrowActionDebug: 0
   playerPivot: {fileID: 8190383844440651382}
-  cinematicManager: {fileID: 0}
   lookSensitivity: 0.5
   smoothTime: 0.1
   rotationMaxSpeed: 2500000
@@ -324,7 +323,7 @@ AudioSource:
   m_GameObject: {fileID: 843031394317638456}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2678721713024096273, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0ec4fdc88c3f79c49b2ace9bac912289, type: 3}
   m_PlayOnAwake: 1
