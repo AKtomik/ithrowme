@@ -363,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2172733554064589166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -372,7 +372,7 @@ Transform:
   - {fileID: 6974029852709187765}
   - {fileID: 7233474057507817894}
   - {fileID: 8093997574411913616}
-  m_Father: {fileID: 6934025377311899657}
+  m_Father: {fileID: 2815046283794914905}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2224098499570681979
 GameObject:
@@ -487,6 +487,40 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &4842870965676847602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2815046283794914905}
+  m_Layer: 0
+  m_Name: Self
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2815046283794914905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842870965676847602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 241151028194907213}
+  - {fileID: 1253386838006402405}
+  - {fileID: 8487960333120043842}
+  m_Father: {fileID: 6934025377311899657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5266738312523886953
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,9 +663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 241151028194907213}
-  - {fileID: 1253386838006402405}
-  - {fileID: 8487960333120043842}
+  - {fileID: 2815046283794914905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7467790442145246748
@@ -757,7 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8487960333120043842}
   m_Layer: 0
-  m_Name: Corners
+  m_Name: Corniche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7681627050504991534}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -780,7 +812,7 @@ Transform:
   - {fileID: 8671637191593582133}
   - {fileID: 3054163840316778373}
   - {fileID: 3289785886195057132}
-  m_Father: {fileID: 6934025377311899657}
+  m_Father: {fileID: 2815046283794914905}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &7721180908246410479
 GameObject:
@@ -1014,7 +1046,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6934025377311899657}
+    m_TransformParent: {fileID: 2815046283794914905}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,11 +1070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
