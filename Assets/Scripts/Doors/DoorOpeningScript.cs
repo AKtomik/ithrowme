@@ -6,7 +6,7 @@ public class DoorOpeningScript : MonoBehaviour
     [Header("Pointers")]
     [SerializeField] private Collider triggerCollider;
     [SerializeField] private Collider solidCollider;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator[] animators;
 
     [Header("State")]
     // if true, the door cannot be open at all
@@ -34,8 +34,11 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (opened || (!skipLocked && locked)) return;
         doorSlam.PlayOneShot(audioClips[0]);
-        animator.ResetTrigger("Close");
-        animator.SetTrigger("Open");
+        foreach (var animator in animators)
+        {
+            animator.ResetTrigger("Close");
+            animator.SetTrigger("Open");
+        }
         solidCollider.enabled = false;
         opened = true;
     }
@@ -44,8 +47,11 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (!opened) return;
         doorSlam.PlayOneShot(audioClips[1]);
-        animator.ResetTrigger("Open");
-        animator.SetTrigger("Close");
+        foreach (var animator in animators)
+        {
+            animator.ResetTrigger("Open");
+            animator.SetTrigger("Close");
+        }
         solidCollider.enabled = true;
         opened = false;
     }
