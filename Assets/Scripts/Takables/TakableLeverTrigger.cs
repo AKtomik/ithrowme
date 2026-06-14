@@ -17,19 +17,16 @@ abstract public class TakableLever : Takable
     [SerializeField] private string pulledAnimationName;
     [SerializeField] private GameObject[] activatedObjects;
 
-    private bool isPulling;
+    private bool pulling;
     private CapsulePlayer playerPulling;
 
-    [Header("Audio")]
-    [SerializeField] private AudioClip leverAction;
-
-    override public void Take(CapsulePlayer player)
+	override public void Take(CapsulePlayer player)
     {
         
         if (!this.enabled) return;
         
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
-        isPulling = true;
+        pulling = true;
         playerPulling = player;
 
         if (takeStopVelocity)
@@ -55,6 +52,8 @@ abstract public class TakableLever : Takable
     abstract public void PullStart(CapsulePlayer player);
     abstract public void PullFinish(CapsulePlayer player);
 
+    public bool IsPulling() => pulling;
+
     public void AnimationEnded()
     {
         if (cinematicMode) ReferenceSingleton.instance.cinematicManager.DisableCinematic();
@@ -64,7 +63,7 @@ abstract public class TakableLever : Takable
             item.SetActive(true);
         
         PullFinish(playerPulling);
-        isPulling = false;
+        pulling = false;
         playerPulling = null;
         
         if (oneTimeTrigger)
@@ -87,6 +86,6 @@ abstract public class TakableLever : Takable
 
     public void PlayAudio()
     {
-        audioSource.PlayOneShot(leverAction);
+        audioSource.Play();
     }
 }
