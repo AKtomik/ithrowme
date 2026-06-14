@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8074025815997562697}
   - component: {fileID: 181289194902104651}
+  - component: {fileID: 3855544628241969730}
   m_Layer: 0
   m_Name: RunMusic
   m_TagString: Untagged
@@ -129,6 +130,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3855544628241969730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260103481759522232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bb16da47c85ac41a1e958836f403a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioEnability
 --- !u!1 &4269722656640434927
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8440647854135174761}
   - component: {fileID: 4267232056155934022}
+  - component: {fileID: 2471680666320543487}
   m_Layer: 0
   m_Name: AmbianceMusic
   m_TagString: Untagged
@@ -306,3 +320,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2471680666320543487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8705179410006523294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bb16da47c85ac41a1e958836f403a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioEnability
