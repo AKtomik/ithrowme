@@ -28,6 +28,9 @@ public class PauseMenuScript : MonoBehaviour
     [Header("Settings parameters")]
     [SerializeField] private Slider sliderLookSensitivity;
     [SerializeField] private Slider sliderRollSensitivity;
+
+    [SerializeField] private Slider sliderFOV;
+
     [SerializeField] private Slider sliderSfxVolume;
     [SerializeField] private Slider sliderMainVolume;
     [SerializeField] private Slider sliderMusicVolume;
@@ -123,6 +126,8 @@ public class PauseMenuScript : MonoBehaviour
 
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
+        sliderFOV.value = SettingsStore.baseFov;
+        sliderFOV.value = SettingsStore.baseFov;
 
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
@@ -298,11 +303,17 @@ public class PauseMenuScript : MonoBehaviour
         ToggleRollInput(toggleRollJoystick.isOn);
     }
 
+    public void ChangeFOV()
+    {
+        sfxSlidersAudio.Play();
+        SettingsStore.baseFov = sliderFOV.value;
+    }
+
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
 
 
-    
+
     public void ButtonsSound()
     {
         Debug.Log("Button changed");
