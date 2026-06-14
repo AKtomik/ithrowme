@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f232e4a39cb1254482081d4f8efcf41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  canPauseInCinematic: 0
+  blockPauseInCinematic: 1
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pauseCanvas: {fileID: 1021047621}
   screenImage: {fileID: 1856149279292350540}
@@ -14521,6 +14521,18 @@ PrefabInstance:
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 850945353}
+    - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
+      propertyPath: rotationMinSpeed
+      value: 470
+      objectReference: {fileID: 0}
+    - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
+      propertyPath: rotationSlowSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
+      propertyPath: rotationStartSpeed
+      value: 1470
+      objectReference: {fileID: 0}
     - target: {fileID: 2662591882415124998, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
       propertyPath: m_Name
       value: EnergyCatalyser
