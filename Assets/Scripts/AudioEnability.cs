@@ -5,22 +5,38 @@ public class AudioEnability : MonoBehaviour
 {
     private AudioSource source;
     private bool wasPlaying;
-    private float cachedTime;
+    private float pausedTime;
 
-    void Awake() => source = GetComponent<AudioSource>();
+	void Start() => source = GetComponent<AudioSource>();
 
-    void Update()
+	void Awake()
     {
-        wasPlaying = source.isPlaying;
-        if (wasPlaying) cachedTime = source.time;
+        PauseSignal.OnPause += HandlePause;
+        PauseSignal.OnResume += HandleResume;
     }
 
-    void OnEnable()
+    void OnDestroy()
+    {
+        PauseSignal.OnPause -= HandlePause;
+        PauseSignal.OnResume -= HandleResume;
+    }
+
+    private void HandlePause()
+    {
+        wasPlaying = source.isPlaying;
+        if (wasPlaying)
+        {
+            pausedTime = source.time;
+            source.Pause();
+        }
+    }
+
+    private void HandleResume()
     {
         if (wasPlaying)
         {
             source.Play();
-            source.time = cachedTime;
+            source.time = pausedTime;
         }
     }
 }

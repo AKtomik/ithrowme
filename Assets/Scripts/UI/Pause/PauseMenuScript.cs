@@ -181,7 +181,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Resume()
     {
-        pauseManager.Unpause(); // If failed : PauseManager must have the tag "PauseManager"
+        pauseManager.Resume(); // If failed : PauseManager must have the tag "PauseManager"
        
     }
 

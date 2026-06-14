@@ -11,10 +11,22 @@ public class AudioManager : MonoBehaviour
     {
         alarmsScripts = FindObjectsByType<AlarmScript>(FindObjectsSortMode.None);
     }
+    
+    void Awake()
+    {
+        PauseSignal.OnPause += AudioPause;
+        PauseSignal.OnResume += AudioResume;
+    }
+
+    void OnDestroy()
+    {
+        PauseSignal.OnPause -= AudioPause;
+        PauseSignal.OnResume -= AudioResume;
+    }
 
     // pause
-    public void GamePauseOn() {}
-    public void GamePauseOff() {}
+    public void AudioPause() {}
+    public void AudioResume() {}
 
     // run music
     public void PlayRunMusic()
