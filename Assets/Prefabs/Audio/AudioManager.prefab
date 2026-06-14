@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8074025815997562697}
-  - component: {fileID: 4686649469678547160}
+  - component: {fileID: 181289194902104651}
   m_Layer: 0
-  m_Name: SprintMusic
+  m_Name: RunMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3039219547900619443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &4686649469678547160
+--- !u!82 &181289194902104651
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,11 +43,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3955123318674132900, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 19fa4809fc530e84cbd9bf20288026f4, type: 3}
+  m_Resource: {fileID: 8300000, guid: d66f287303e99134f8f7ecee1cd9d32b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.27
+  m_Volume: 0.224
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -119,7 +119,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.487
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8caabce7a727c44871881797ed3c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ambianceSound: {fileID: 4267232056155934022}
-  alarmsScripts: []
+  ambianceMusic: {fileID: 4267232056155934022}
+  runMusic: {fileID: 181289194902104651}
 --- !u!1 &8705179410006523294
 GameObject:
   m_ObjectHideFlags: 0

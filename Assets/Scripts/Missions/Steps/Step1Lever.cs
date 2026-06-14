@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Step1Lever : TakableLever
 {
-    [SerializeField] private AudioSource musicAudio;
     [Header("Step Pointers")]
     [SerializeField] private MissionManager missionManager;
     [SerializeField] private AudioManager audioManager;
@@ -10,13 +9,6 @@ public class Step1Lever : TakableLever
     [SerializeField] private Transform lookBackPoint;
 
     [SerializeField] private AudioSource powerOn;
-    public void MusicStart()
-    {
-        Debug.Log("musicAudio start");
-        musicAudio.volume = 0.22f;
-        musicAudio.Play();
-        audioManager.SetAlarmsFilter(false);
-    }
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");
@@ -27,10 +19,10 @@ public class Step1Lever : TakableLever
         Debug.Log("Step1Lever: step 1 completed");
         powerOn.Play();
 
-        musicAudio.Stop();
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
-        audioManager.StartAmbiance();
+        audioManager.StopRunMusic();
+        audioManager.StartAmbianceMusic();
         audioManager.KillAlarms();
     }
 

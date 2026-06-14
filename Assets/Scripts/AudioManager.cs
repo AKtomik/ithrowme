@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource ambianceSound;
+    [SerializeField] private AudioSource ambianceMusic;
+    [SerializeField] private AudioSource runMusic;
     private AlarmScript[] alarmsScripts;
 
     // setup
@@ -11,21 +12,34 @@ public class AudioManager : MonoBehaviour
         alarmsScripts = FindObjectsByType<AlarmScript>(FindObjectsSortMode.None);
     }
 
-    // ambiance music
-    public void StartAmbiance()
+    // run music
+    public void PlayRunMusic()
     {
-        Invoke("PlayAmbiance", 8f);
+        runMusic.volume = 0.22f;
+        runMusic.Play();
+    }
+    
+    public void StopRunMusic()
+    {
+        runMusic.Stop();
     }
 
-    private void PlayAmbiance()
+    // ambiance music
+    public void StartAmbianceMusic()
     {
-        ambianceSound.Play();
-        Invoke("PlayAmbiance", Random.Range(30f, 60f));
+        Invoke(nameof(PlayAmbianceNote), 8f);
+    }
+
+    private void PlayAmbianceNote()
+    {
+        ambianceMusic.Play();
+        Invoke(nameof(PlayAmbianceNote), Random.Range(30f, 60f));
     }
         
-    public void StopAmbiance()
+    public void StopAmbianceMusic()
     {
-        CancelInvoke();
+        ambianceMusic.Stop();
+        CancelInvoke(nameof(PlayAmbianceNote));
     }
     	
     // alarms management
