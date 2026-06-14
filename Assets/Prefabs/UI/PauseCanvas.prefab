@@ -11374,11 +11374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5122568490840231768, guid: b1730e4924950f045a7a9c6c6e9e63f1, type: 3}
       propertyPath: m_MaxValue
-      value: 80
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5122568490840231768, guid: b1730e4924950f045a7a9c6c6e9e63f1, type: 3}
       propertyPath: m_MinValue
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5122568490840231768, guid: b1730e4924950f045a7a9c6c6e9e63f1, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11386,7 +11386,7 @@ PrefabInstance:
       objectReference: {fileID: 6140107257834039518}
     - target: {fileID: 5122568490840231768, guid: b1730e4924950f045a7a9c6c6e9e63f1, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeLookSensitivity
+      value: ChangeFOV
       objectReference: {fileID: 0}
     - target: {fileID: 5502564517843791148, guid: b1730e4924950f045a7a9c6c6e9e63f1, type: 3}
       propertyPath: m_AnchorMax.x
