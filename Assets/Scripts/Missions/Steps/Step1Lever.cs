@@ -4,18 +4,18 @@ public class Step1Lever : TakableLever
 {
     [SerializeField] private AudioSource musicAudio;
     [Header("Step Pointers")]
-    public MissionManager missionManager;
-    public Transform lookAwayPoint;
-    public Transform lookBackPoint;
+    [SerializeField] private MissionManager missionManager;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Transform lookAwayPoint;
+    [SerializeField] private Transform lookBackPoint;
 
     [SerializeField] private AudioSource powerOn;
-    [SerializeField] private AudioManager audioManager;
     public void MusicStart()
     {
         Debug.Log("musicAudio start");
         musicAudio.volume = 0.22f;
         musicAudio.Play();
-        ReferenceSingleton.instance.soundManager.SetAlarmFilter(false);
+        audioManager.SetAlarmsFilter(false);
     }
 
     public override void PullStart(CapsulePlayer player) {
@@ -27,11 +27,11 @@ public class Step1Lever : TakableLever
         Debug.Log("Step1Lever: step 1 completed");
         powerOn.Play();
 
-        ReferenceSingleton.instance.soundManager.StopAlarm();
         musicAudio.Stop();
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
         audioManager.StartAmbiance();
+        audioManager.KillAlarms();
     }
 
     // animation

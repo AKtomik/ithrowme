@@ -48,6 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlarmScript
   isAlarmOn: 1
+  isFilterOn: 1
+  rotationSpeed: 180
+  cutoffFrequency: 381
+  alarmAudio: {fileID: 70481145055284105}
+  alarmLowpassFilter: {fileID: 1532363268479991244}
 --- !u!108 &2207871133298411469
 Light:
   m_ObjectHideFlags: 0
@@ -199,6 +204,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 370a8a6265470234abe6b62639868602, type: 3}
+--- !u!82 &70481145055284105 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8995219356787691935, guid: 370a8a6265470234abe6b62639868602, type: 3}
+  m_PrefabInstance: {fileID: 8948395598939052566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!169 &1532363268479991244 stripped
+AudioLowPassFilter:
+  m_CorrespondingSourceObject: {fileID: 7596193942252906458, guid: 370a8a6265470234abe6b62639868602, type: 3}
+  m_PrefabInstance: {fileID: 8948395598939052566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7529634480236495611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1464150127029115117, guid: 370a8a6265470234abe6b62639868602, type: 3}
