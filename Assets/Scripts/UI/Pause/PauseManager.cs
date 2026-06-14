@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -10,11 +8,13 @@ public class PauseManager : MonoBehaviour
 {
     // /!\ PauseManager's GameObject MUST have the tag "PauseManager" so that PauseMenuScript works /!\
 
+    [SerializeField] private bool blockPauseInCinematic = true;
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;
     [SerializeField] private GameObject[] gameParents;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private CinematicManager cinematicManager;
     private InputAction pauseAction;
 
     private bool pauseState;
@@ -48,6 +48,7 @@ public class PauseManager : MonoBehaviour
 
     public void AskPause()
     {
+        if (blockPauseInCinematic && cinematicManager.IsCinematic()) return;
         Debug.Log("pausing...");
         StartCoroutine(PauseRoutine());
     }
