@@ -72,8 +72,15 @@ public class PauseMenuScript : MonoBehaviour
     }
     private void OnEnable()
     {
+        SettingsStore.LoadSettings();
         GoToMainCanva();
         previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
+    }
+
+
+    private void OnDisable()
+    {
+        SettingsStore.SaveSettings();
     }
 
     // Update is called once per frame
