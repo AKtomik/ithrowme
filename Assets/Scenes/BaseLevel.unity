@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pauseCanvas: {fileID: 1021047621}
-  screenImage: {fileID: 0}
+  screenImage: {fileID: 1856149279292350540}
   gameParents:
   - {fileID: 1267620103}
 --- !u!4 &254801719
@@ -15345,6 +15345,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+--- !u!114 &1856149279292350540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 432239396083938556, guid: f3b1d37c6e02ecf4287c7b1c500e1a7d, type: 3}
+  m_PrefabInstance: {fileID: 1856149279292350539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
 --- !u!1001 &1975738393896320038
 PrefabInstance:
   m_ObjectHideFlags: 0
