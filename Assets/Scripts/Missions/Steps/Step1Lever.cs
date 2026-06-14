@@ -5,7 +5,6 @@ public class Step1Lever : TakableLever
     [SerializeField] private AudioSource musicAudio;
     [Header("Step Pointers")]
     public MissionManager missionManager;
-    public GameObject activatedItem;
     public Transform lookAwayPoint;
     public Transform lookBackPoint;
 
@@ -33,7 +32,6 @@ public class Step1Lever : TakableLever
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
         missionManager.AddMission(2);
         audioManager.StartAmbiance();
-        if (activatedItem) activatedItem.SetActive(true);
     }
 
     // animation

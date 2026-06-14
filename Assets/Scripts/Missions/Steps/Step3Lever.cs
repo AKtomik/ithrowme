@@ -4,7 +4,6 @@ public class Step3Lever : TakableLever
 {
     [Header("Step Pointers")]
     public MissionManager missionManager;
-    public GameObject activatedItem;
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step3Lever: pulling...");
@@ -14,6 +13,5 @@ public class Step3Lever : TakableLever
     {
         Debug.Log("Step3Lever: step 3 completed");
         ReferenceSingleton.instance.consoleClick.CheckFinalMission();
-        if (activatedItem) activatedItem.SetActive(true);
     }
 }

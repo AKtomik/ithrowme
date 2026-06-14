@@ -15,6 +15,7 @@ abstract public class TakableLever : Takable
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
     [SerializeField] private string pulledAnimationName;
+    [SerializeField] private GameObject[] activatedObjects;
 
     private bool isPulling;
     private CapsulePlayer playerPulling;
@@ -59,6 +60,8 @@ abstract public class TakableLever : Takable
         if (cinematicMode) ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         if (lockLooking) playerPulling.UnlockingLook();
         if (pulledFinishPushForce != 0) playerPulling.playerBody.AddForce(-transform.forward * pulledFinishPushForce);
+        foreach (var item in activatedObjects)
+            item.SetActive(true);
         
         PullFinish(playerPulling);
         isPulling = false;
