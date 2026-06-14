@@ -147,7 +147,7 @@ public class PauseMenuScript : MonoBehaviour
         sliderMainVolume.value = masterVolume;
 
         audioMixer.GetFloat("Music", out float musicVolume);
-        sliderMainVolume.value = musicVolume;
+        sliderMusicVolume.value = musicVolume;
 
         audioMixer.GetFloat("Breath", out float breathVolume);
         sliderBreathVolume.value = breathVolume;
