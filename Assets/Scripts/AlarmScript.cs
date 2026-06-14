@@ -28,30 +28,17 @@ public class AlarmScript : MonoBehaviour
         }
     }
 
-    // refresh
-    public void Refresh()
-    {// own refresh function
-        alarmAudio.playOnAwake = isAlarmOn;
-    }
-
-    public void OnEnable()
-    {
-        Refresh();
-    }
-
     // call
     public void PlayAlarm()
     {
         isAlarmOn = true;
         alarmAudio.Play();
-        Refresh();
     }
 
     public void PauseAlarm()
     {
         isAlarmOn = false;
         alarmAudio.Pause();
-        Refresh();
     }
         
     public void EnableFilter(bool enabled = false)
