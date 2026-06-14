@@ -12,6 +12,10 @@ public class AudioManager : MonoBehaviour
         alarmsScripts = FindObjectsByType<AlarmScript>(FindObjectsSortMode.None);
     }
 
+    // pause
+    public void GamePauseOn() {}
+    public void GamePauseOff() {}
+
     // run music
     public void PlayRunMusic()
     {

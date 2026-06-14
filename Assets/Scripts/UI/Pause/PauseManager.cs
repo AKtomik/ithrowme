@@ -14,6 +14,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;
     [SerializeField] private GameObject[] gameParents;
+    [SerializeField] private AudioManager audioManager;
     private InputAction pauseAction;
 
     private bool pauseState;
@@ -62,29 +63,38 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
 
+        audioManager.GamePauseOn();
+
         foreach (var loopGameObject in gameParents)
             loopGameObject.SetActive(false);
+        
         pauseCanvas.gameObject.SetActive(true);
         pauseState = true;
         inputActions.FindActionMap("Player").Disable();
         inputActions.FindActionMap("UI").Enable();
+        
         Debug.Log("paused!");
     }
 
     public void Unpause()
     {
         Debug.Log("unpause");
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+
         inputActions.FindActionMap("Player").Enable();
         inputActions.FindActionMap("UI").Disable();
+
         foreach (var loopGameObject in gameParents)
             loopGameObject.SetActive(true);
+
         pauseCanvas.gameObject.SetActive(false);
         pauseState = false;
 
         EventSystem.current.SetSelectedGameObject(null);
+        audioManager.GamePauseOff();
     }
 
     public void SetPaused(bool paused)
