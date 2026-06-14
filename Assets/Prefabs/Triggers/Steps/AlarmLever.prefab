@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7257038288210012439}
   - component: {fileID: 887782347571047552}
+  - component: {fileID: 5949459922278708725}
   m_Layer: 0
   m_Name: PowerOnAudio
   m_TagString: Untagged
@@ -160,6 +161,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5949459922278708725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062900668502083466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bb16da47c85ac41a1e958836f403a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioEnability
 --- !u!1 &6189480760567461902
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +327,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7598325609491786260}
+    - targetCorrespondingSourceObject: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6504741654141654599}
+    - targetCorrespondingSourceObject: {fileID: 505123171909466416, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 843974856140546730}
   m_SourcePrefab: {fileID: 100100000, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}
 --- !u!65 &2463386115453743956 stripped
 BoxCollider:
@@ -455,6 +474,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6504741654141654599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117901592580976815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41e6078bcca6464a9460b48c07c9c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEnability
+--- !u!114 &843974856140546730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117901592580976815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bb16da47c85ac41a1e958836f403a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioEnability
 --- !u!111 &7294786223794809604 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 6564979543718060699, guid: 3abd233b61cf3274eafb37eeae6e2ebc, type: 3}

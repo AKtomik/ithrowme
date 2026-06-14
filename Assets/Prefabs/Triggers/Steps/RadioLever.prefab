@@ -42,10 +42,9 @@ GameObject:
   - component: {fileID: 7955563035779408555}
   - component: {fileID: 3148165372292051230}
   - component: {fileID: 6057731501885180665}
-  - component: {fileID: 618833883218297329}
   - component: {fileID: 77819203746737411}
   - component: {fileID: 8105477889837111941}
-  - component: {fileID: 1509138201777521050}
+  - component: {fileID: 9192797097716506554}
   m_Layer: 7
   m_Name: RadioLever
   m_TagString: Untagged
@@ -112,28 +111,6 @@ MonoBehaviour:
   pulledAnimationName: 
   activatedObjects: []
   missionManager: {fileID: 0}
---- !u!95 &618833883218297329
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5356263249081730508}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &77819203746737411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bb16da47c85ac41a1e958836f403a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioEnability
---- !u!114 &1509138201777521050
+--- !u!114 &9192797097716506554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,9 +229,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5356263249081730508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9cdd93520d62f24ba4cf6e1b94904e8, type: 3}
+  m_Script: {fileID: 11500000, guid: f41e6078bcca6464a9460b48c07c9c4f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimatorEnability
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEnability
 --- !u!1 &6769384736150205685
 GameObject:
   m_ObjectHideFlags: 0

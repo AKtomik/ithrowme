@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2106841951488794758}
   - component: {fileID: 4051182125557143187}
   - component: {fileID: 6658876902091014060}
+  - component: {fileID: 5735978354334145544}
   m_Layer: 7
   m_Name: EjectionConsole
   m_TagString: Untagged
@@ -72,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Click
   takeCollider: {fileID: 6019249366748207542}
-  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
+  audioSource: {fileID: 0}
   missionManager: {fileID: 0}
   step2Script: {fileID: 2106841951488794758}
   step6Script: {fileID: 4051182125557143187}
@@ -89,15 +90,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step2Lever
   takeCollider: {fileID: 5607750589212618516}
-  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
+  audioSource: {fileID: 0}
   oneTimeTrigger: 1
   lockLooking: 1
+  cinematicMode: 1
   takeStopVelocity: 1
   pulledFinishPushForce: 10
   lookingPoint: {fileID: 8714498866884629532}
   pulledAnimatorReference: {fileID: 6942279629992520211}
   pulledAnimationName: PullConsole2
-  leverAction: {fileID: 0}
+  activatedObjects: []
   missionManager: {fileID: 0}
   consoleScreen: {fileID: 6658876902091014060}
   animClearConsole: 1
@@ -115,15 +117,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step6Lever
   takeCollider: {fileID: 5607750589212618516}
-  audioMixer: {fileID: 24100000, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
+  audioSource: {fileID: 0}
   oneTimeTrigger: 1
   lockLooking: 1
+  cinematicMode: 1
   takeStopVelocity: 1
   pulledFinishPushForce: 10
   lookingPoint: {fileID: 8714498866884629532}
   pulledAnimatorReference: {fileID: 6942279629992520211}
   pulledAnimationName: PullConsole6
-  leverAction: {fileID: 0}
+  activatedObjects: []
   missionManager: {fileID: 0}
   consoleScreen: {fileID: 6658876902091014060}
   animClearConsole: 0
@@ -148,7 +151,18 @@ MonoBehaviour:
   screenMesh: {fileID: 2802700930302703358}
   doInitScreenColor: 1
   initScreenColor: {r: 0, g: 0, b: 0, a: 0}
-  bipSound: {fileID: 0}
+--- !u!114 &5735978354334145544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371459371622699592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41e6078bcca6464a9460b48c07c9c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEnability
 --- !u!1 &3532572091947178097
 GameObject:
   m_ObjectHideFlags: 0

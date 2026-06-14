@@ -12,11 +12,11 @@ public abstract class CatalyzerTrigger : MonoBehaviour
     public float rotationSlowSpeed = 200f;
     
     private float speed = 0;
-    private Collider collid;
+    private new Collider collider;
 
 	public void Start()
 	{
-        collid = GetComponent<Collider>();
+        collider = GetComponent<Collider>();
         speed = 0;
 	}
 
@@ -41,7 +41,7 @@ public abstract class CatalyzerTrigger : MonoBehaviour
 
         // trigger
         OnTrigger();
-        if (oneTimeTrigger) collid.enabled = false;
+        if (oneTimeTrigger) collider.enabled = false;
     }
 
     public abstract void OnTrigger();
