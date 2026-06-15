@@ -33,7 +33,7 @@ Transform:
   - {fileID: 148801998273678326}
   - {fileID: 7112743326142401305}
   - {fileID: 2631895349361440526}
-  m_Father: {fileID: 8620929697680516773}
+  m_Father: {fileID: 7294994437337463932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74620404203814132
 GameObject:
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2901733970878035232}
   m_Layer: 0
-  m_Name: EndCornicheH
+  m_Name: EndSlopesH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ Transform:
   m_Children:
   - {fileID: 2105669924240938577}
   - {fileID: 6276618457617153153}
-  m_Father: {fileID: 8620929697680516773}
+  m_Father: {fileID: 7294994437337463932}
   m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
 --- !u!1 &3897103846495120017
 GameObject:
@@ -774,7 +774,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4470561528844268787}
+  - {fileID: 1028088752503187606}
+  - {fileID: 3724521994036399911}
+  - {fileID: 1863589689496486343}
+  - {fileID: 2901733970878035232}
+  - {fileID: 7453944729947305016}
   m_Father: {fileID: 8620929697680516773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5128535628227497185
@@ -919,12 +925,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4470561528844268787}
-  - {fileID: 1028088752503187606}
-  - {fileID: 1863589689496486343}
-  - {fileID: 3724521994036399911}
-  - {fileID: 2901733970878035232}
-  - {fileID: 7453944729947305016}
   - {fileID: 7294994437337463932}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3724521994036399911}
   m_Layer: 0
-  m_Name: Corniche
+  m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1187,7 @@ Transform:
   - {fileID: 1485024283559651503}
   - {fileID: 1642773836856952554}
   - {fileID: 5102681898323933754}
-  m_Father: {fileID: 8620929697680516773}
+  m_Father: {fileID: 7294994437337463932}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &6155998397025700236
 GameObject:
@@ -1221,7 +1221,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 1, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 8620929697680516773}
+  m_Father: {fileID: 7294994437337463932}
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
 --- !u!33 &5743032965631222110
 MeshFilter:
@@ -1425,7 +1425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7453944729947305016}
   m_Layer: 0
-  m_Name: EndCornicheV
+  m_Name: EndSlopesV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1446,7 +1446,7 @@ Transform:
   m_Children:
   - {fileID: 6292250134471538766}
   - {fileID: 5031637114618154819}
-  m_Father: {fileID: 8620929697680516773}
+  m_Father: {fileID: 7294994437337463932}
   m_LocalEulerAnglesHint: {x: 0, y: -135, z: -90}
 --- !u!1 &8487070457990005247
 GameObject:
@@ -1680,7 +1680,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8620929697680516773}
+    m_TransformParent: {fileID: 7294994437337463932}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6ed722c805291764ba29fa33678c61f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1700,7 +1700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ed722c805291764ba29fa33678c61f4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ed722c805291764ba29fa33678c61f4, type: 3}
       propertyPath: m_LocalRotation.y
