@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandScript
   player: {fileID: 0}
+  speedText: {fileID: 2189124067433620249}
   handImageUI: {fileID: 7040853217843334942}
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
@@ -666,8 +667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1500, y: -900}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -1257.6807, y: -900}
+  m_SizeDelta: {x: 442.3193, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8798986753074147134
 CanvasRenderer:
@@ -732,7 +733,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
