@@ -72,8 +72,15 @@ public class PauseMenuScript : MonoBehaviour
     }
     private void OnEnable()
     {
+        SettingsStore.LoadSettings();
         GoToMainCanva();
         previousSelectedGameobject = EventSystem.current.currentSelectedGameObject;
+    }
+
+
+    private void OnDisable()
+    {
+        SettingsStore.SaveSettings();
     }
 
     // Update is called once per frame
@@ -90,6 +97,13 @@ public class PauseMenuScript : MonoBehaviour
         
 
     }
+
+    private void OnApplicationQuit()
+    {
+        SettingsStore.SaveSettings();
+    }
+
+
 
     ///////////////////////////////////////////////////////////////
     /////////////////////* Change Canva FUNCTIONS*/////////////////
@@ -307,6 +321,19 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         SettingsStore.baseFov = sliderFOV.value;
+    }
+
+    public void ResetSettings()
+    {
+        SettingsStore.ResetToDefaults();
+
+        audioMixer.SetFloat("Master", SettingsStore.masterVolume);
+        audioMixer.SetFloat("Music", SettingsStore.musicVolume);
+        audioMixer.SetFloat("SFX", SettingsStore.sfxVolume);
+        audioMixer.SetFloat("Breath", SettingsStore.breathVolume);
+        audioMixer.SetFloat("Alarm", SettingsStore.alarmVolume);
+
+        GoToSettings();
     }
 
     ///////////////////////////////////////////////////////////////
