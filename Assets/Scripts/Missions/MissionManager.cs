@@ -8,7 +8,6 @@ public class MissionManager : MonoBehaviour
 {
     public GameObject MissionActiveTextPrefab;// prefab with a TextMeshProUGUI
     public Transform MissionUiContainer;// vertical layout group
-    [Obsolete] public List<string> MissionsDefinition = new() { "mission 0 lore", "mission 1 lore" };
     public List<string> MissionsIndication = new() { "mission 0 indication", "mission 1 lore" };
     public List<string> MissionsLocation = new() { "mission 0 lore", "mission 1 lore" };
     public List<int> InitialMissions = new() { 0 };

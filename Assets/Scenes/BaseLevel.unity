@@ -5683,39 +5683,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MissionManager
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
-  MissionsDefinition:
-  - sortir de la chambre cellulaire
-  - "d\xE9sactiver le code rouge au module de s\xE9curit\xE9"
-  - "activer l'\xE9jection sur la console de commande"
-  - contacter Central au module radio
-  - "trouver un cube d'\xE9nergie"
-  - "ramener le cube au module d'\xE9jection"
-  - "activer l'\xE9jection sur la console de commande"
-  - "f\xE9licitiation ! tu es arriv\xE9 au bout du playtest !"
-  - "proc\xE9der \xE0 l'\xE9jection d'urgence"
-  - manger un sandwich
   MissionsIndication:
   - sortir de la chambre cellulaire
   - "d\xE9sactiver le code rouge"
-  - "activer l'\xE9jection sur la console de commande"
-  - contacter Central au module radio
+  - "activer l'\xE9jection sur la console"
+  - contacter Central
   - "trouver un cube d'\xE9nergie"
   - "ramener le cube au module d'\xE9jection"
-  - "activer l'\xE9jection sur la console de commande"
+  - "activer l'\xE9jection sur la console"
   - "f\xE9licitiation ! tu es arriv\xE9 au bout du playtest !"
   - "proc\xE9der \xE0 l'\xE9jection d'urgence"
   - manger un sandwich
   MissionsLocation:
-  - room
+  - 
   - security module
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
-  - mission 1 lore
+  - control room
+  - radio module
+  - 
+  - control room
+  - control room
+  - gg
+  - ejection capsule
+  - cooking
   InitialMissions: 00000000
 --- !u!1001 &866931458
 PrefabInstance:

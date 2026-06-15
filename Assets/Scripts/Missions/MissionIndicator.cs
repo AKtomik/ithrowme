@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +10,12 @@ public class MissionIndicator : MonoBehaviour
 
     private MissionData data;
 
-    public void PutData(MissionData missionData)
+    public async void PutData(MissionData missionData)
     {
         this.data = missionData;
         PutIndication();
-        StartCoroutine(nameof(PutLocation), 2.5f);
+        await Task.Delay((int)(2.5 * 1000));
+        PutLocation();
     }
 
     public void Kill()
@@ -27,6 +30,6 @@ public class MissionIndicator : MonoBehaviour
     
     private void PutLocation()
     {
-        textIndicationWriter.Typing(data.indicationText, 1.5f);
+        textLocationWriter.Typing(data.locationText, 1.5f);
     }
 }
