@@ -6,14 +6,27 @@ public class MissionIndicator : MonoBehaviour
     [SerializeField] private TypeWriter textIndicationWriter;
     [SerializeField] private TypeWriter textLocationWriter;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private MissionData data;
+
+    public void PutData(MissionData missionData)
     {
+        this.data = missionData;
+        PutIndication();
+        StartCoroutine(nameof(PutLocation), 2.5f);
     }
 
-    // Update is called once per frame
-    void PutData(MissionData data)
+    public void Kill()
     {
-        //textIndicationWriter.Typing(2.5f);
+        Destroy(gameObject);
+    }
+
+    private void PutIndication()
+    {
+        textIndicationWriter.Typing(data.indicationText, 2.5f);
+    }
+    
+    private void PutLocation()
+    {
+        textIndicationWriter.Typing(data.indicationText, 1.5f);
     }
 }
