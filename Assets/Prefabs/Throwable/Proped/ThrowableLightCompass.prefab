@@ -144,8 +144,30 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 776571596053260860, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5154003196100928776}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 103920078271962544, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 7213058609378311517}
   m_SourcePrefab: {fileID: 100100000, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+--- !u!1 &1490531807656487331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103920078271962544, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+  m_PrefabInstance: {fileID: 1575798120324232211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7213058609378311517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490531807656487331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3600438991eb678458e22c64a4d7b735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  compassNeedle: {fileID: 406159007469819591}
+  compassObjective: {fileID: 0}
 --- !u!4 &2240738495097134639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 776571596053260860, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
@@ -264,6 +286,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f2d19c3e041c454a81c585efba0e3e9, type: 3}
+--- !u!4 &406159007469819591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5021228346462164004, guid: 3f2d19c3e041c454a81c585efba0e3e9, type: 3}
+  m_PrefabInstance: {fileID: 4615076796129313507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5154003196100928776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f2d19c3e041c454a81c585efba0e3e9, type: 3}
