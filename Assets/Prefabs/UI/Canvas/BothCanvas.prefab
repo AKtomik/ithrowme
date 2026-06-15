@@ -292,7 +292,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1625,6 +1625,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
       propertyPath: m_Name
       value: MissionTextPlaceholder1
@@ -1703,8 +1751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUIVertexEffect
   DoNotTesselate: 0
-  savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 0, z: 0}
+  savedPos: {x: -1114.02, y: -113.446594, z: 0}
+  savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 0, y: 0}
   savedColor: {r: 0, g: 0, b: 0, a: 0}
   savedTextUV0: {x: 0, y: 0, z: 0, w: 0}
@@ -1810,6 +1858,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821529318422594449, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345896435695654636, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
       propertyPath: m_Name
       value: MissionTextPlaceholder2
@@ -1879,8 +1975,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurvedUI.CurvedUIVertexEffect
   DoNotTesselate: 0
-  savedPos: {x: 0, y: 0, z: 0}
-  savedUp: {x: 0, y: 0, z: 0}
+  savedPos: {x: -1114.02, y: -113.446594, z: 0}
+  savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 0, y: 0}
   savedColor: {r: 0, g: 0, b: 0, a: 0}
   savedTextUV0: {x: 0, y: 0, z: 0, w: 0}

@@ -56,8 +56,8 @@ public class MissionManager : MonoBehaviour
     private void SpawnMissionText(int id)
     {
         GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
-        TypeWriter typeWriter = instance.GetComponent<TypeWriter>();
-        typeWriter.Typing(missionsDictionnary[id], 2.5f);
+        MissionIndicator indicator = instance.GetComponent<MissionIndicator>();
+        //indicator.Put(missionsDictionnary[id], 2.5f);
         spawnedTextMissions[id] = instance; // add to spawnedMissions
     }
     
