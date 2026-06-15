@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
     // run music
     public void PlayRunMusic()
     {
-        runMusic.volume = 0.22f;
+        runMusic.volume = 0.42f;
         runMusic.Play();
     }
     

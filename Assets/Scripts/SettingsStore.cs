@@ -58,4 +58,19 @@ public static class SettingsStore
 
     }
 
+    public static void ResetToDefaults()
+    {
+        lookSensivity = 1f;
+        rollSensivity = 1f;
+        musicVolume = 0f;
+        sfxVolume = 0f;
+        masterVolume = 0f;
+        breathVolume = 0f;
+        alarmVolume = 0f;
+        invertRoll = false;
+        baseFov = 60f;
+        visibleTimer = true;
+        SaveSettings();
+    }
+
 }

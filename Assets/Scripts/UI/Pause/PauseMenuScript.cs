@@ -323,6 +323,19 @@ public class PauseMenuScript : MonoBehaviour
         SettingsStore.baseFov = sliderFOV.value;
     }
 
+    public void ResetSettings()
+    {
+        SettingsStore.ResetToDefaults();
+
+        audioMixer.SetFloat("Master", SettingsStore.masterVolume);
+        audioMixer.SetFloat("Music", SettingsStore.musicVolume);
+        audioMixer.SetFloat("SFX", SettingsStore.sfxVolume);
+        audioMixer.SetFloat("Breath", SettingsStore.breathVolume);
+        audioMixer.SetFloat("Alarm", SettingsStore.alarmVolume);
+
+        GoToSettings();
+    }
+
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
 
