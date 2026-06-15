@@ -104,6 +104,7 @@ public class BothCanvas : MonoBehaviour
             }
             else
             {
+                speedText.gameObject.SetActive(false);
                 startCinematic = false;
             }
         }
@@ -118,6 +119,7 @@ public class BothCanvas : MonoBehaviour
             {
                 cinematicBars.SetActive(false);
                 stopCinematic = false;
+                speedText.gameObject.SetActive(true);
             }
         }
 
