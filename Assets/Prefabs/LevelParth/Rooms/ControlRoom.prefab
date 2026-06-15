@@ -200,13 +200,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: CapsulesDoor2
       objectReference: {fileID: 0}
+    - target: {fileID: -5543386329540074723, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5529549979350236864, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
       propertyPath: m_Name
       value: CapsulesDoor1
       objectReference: {fileID: 0}
+    - target: {fileID: -5529549979350236864, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2972840558619369291, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -57341709119932715, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
       propertyPath: m_Name
       value: Control_room
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827536840719377781, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

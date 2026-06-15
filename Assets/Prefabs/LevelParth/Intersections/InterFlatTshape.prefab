@@ -142,13 +142,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5711145550225309838}
   - {fileID: 6808361196144206396}
   - {fileID: 2342621390298525296}
   - {fileID: 5703168891178776233}
   - {fileID: 4611792958731708428}
   - {fileID: 4540528188951616127}
   - {fileID: 6447426503885410995}
-  - {fileID: 5711145550225309838}
   - {fileID: 1080364148085364905}
   - {fileID: 6713003937480181376}
   - {fileID: 8536470717585369584}
@@ -423,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2342621390298525296}
   m_Layer: 0
-  m_Name: Corniche
+  m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1991,9 +1991,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2761649959176199081, guid: a091976ae477b1044afab1652dca5e58, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a091976ae477b1044afab1652dca5e58, type: 3}
       propertyPath: m_Name
       value: Corridor_Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a091976ae477b1044afab1652dca5e58, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
