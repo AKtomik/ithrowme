@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -3750198802094655586, guid: f7aa5056fbb46734b923a217d6ce4e3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44c374ad3a926194ea2bd1cde444a936, type: 2}
     - target: {fileID: 919132149155446097, guid: f7aa5056fbb46734b923a217d6ce4e3f, type: 3}
       propertyPath: m_Name
       value: "90\xB0Corridor-Down"

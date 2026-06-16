@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
       objectReference: {fileID: 2100000, guid: 96144c070336f4a48bbc7e18d3f15811, type: 2}
+    - target: {fileID: -7461143171058783850, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f5df75bd271b2d746b0b877a21417619, type: 2}
     - target: {fileID: -5543386329540074723, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
       propertyPath: m_Name
       value: CapsulesDoor2
@@ -216,6 +220,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1346603267137706370, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f5df75bd271b2d746b0b877a21417619, type: 2}
     - target: {fileID: -57341709119932715, guid: 5c6bffa87669f7e46b2fd00b151fee76, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
