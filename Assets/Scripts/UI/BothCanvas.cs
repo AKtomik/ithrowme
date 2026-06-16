@@ -1,10 +1,14 @@
+using TMPro;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class BothCanvas : MonoBehaviour
 {
     public CapsulePlayer player;
 
+    [SerializeField] private TextMeshProUGUI speedText;
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
     // unity editor can't take dictionnary (wanted enum - sprite dictionnary)
@@ -100,6 +104,7 @@ public class BothCanvas : MonoBehaviour
             }
             else
             {
+                speedText.gameObject.SetActive(false);
                 startCinematic = false;
             }
         }
@@ -114,8 +119,11 @@ public class BothCanvas : MonoBehaviour
             {
                 cinematicBars.SetActive(false);
                 stopCinematic = false;
+                speedText.gameObject.SetActive(true);
             }
         }
+
+        speedText.text = Math.Round(player.playerBody.linearVelocity.magnitude, 2) + " m/s";
     }
 }
 
