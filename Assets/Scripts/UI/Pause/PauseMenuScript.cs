@@ -39,6 +39,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private Slider sliderBreathVolume;
     [SerializeField] private Slider sliderAlarmVolume;
 
+
     [SerializeField] private Toggle toggleRollAxis;
     [SerializeField] private Toggle toggleRollJoystick;
 
@@ -164,18 +165,23 @@ public class PauseMenuScript : MonoBehaviour
 
         audioMixer.GetFloat("SFX", out float sfxVolume);
         sliderSfxVolume.value = sfxVolume;
+        ToPercent(sliderSfxVolume);
 
         audioMixer.GetFloat("Master", out float masterVolume);
         sliderMainVolume.value = masterVolume;
+        ToPercent(sliderMainVolume);
 
         audioMixer.GetFloat("Music", out float musicVolume);
         sliderMusicVolume.value = musicVolume;
+        ToPercent(sliderMusicVolume);
 
         audioMixer.GetFloat("Breath", out float breathVolume);
         sliderBreathVolume.value = breathVolume;
+        ToPercent(sliderBreathVolume);
 
         audioMixer.GetFloat("Alarm", out float alarmVolume);
         sliderAlarmVolume.value = alarmVolume;
+        ToPercent(sliderAlarmVolume);
 
         EventSystem.current.SetSelectedGameObject(audioFirst);
     }
@@ -276,22 +282,30 @@ public class PauseMenuScript : MonoBehaviour
         SettingsStore.rollSensivity = sliderRollSensitivity.value;
     }
 
+    public void ToPercent(Slider slider)
+    {
+        slider.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.RoundToInt((slider.value - slider.minValue) / (slider.maxValue - slider.minValue) * 100) + "%";
+    }
+
     public void ChangeSFXVolume()
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("SFX", sliderSfxVolume.value);
+        ToPercent(sliderSfxVolume);
         SettingsStore.sfxVolume = sliderSfxVolume.value;
     }
     public void ChangeMainVolume()
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Master", sliderMainVolume.value);
+        ToPercent(sliderMainVolume);
         SettingsStore.masterVolume = sliderMainVolume.value;
     }
     public void ChangeMusicVolume()
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Music", sliderMusicVolume.value);
+        ToPercent(sliderMusicVolume);
         SettingsStore.musicVolume = sliderMusicVolume.value;
     }
 
@@ -299,6 +313,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Breath", sliderBreathVolume.value);
+        ToPercent(sliderBreathVolume);
         SettingsStore.breathVolume = sliderBreathVolume.value;
     }
 
@@ -306,6 +321,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Alarm", sliderAlarmVolume.value);
+        ToPercent(sliderAlarmVolume);
         SettingsStore.alarmVolume = sliderAlarmVolume.value;
     }
 
