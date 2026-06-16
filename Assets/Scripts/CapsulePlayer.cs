@@ -122,7 +122,7 @@ public class CapsulePlayer : MonoBehaviour
         takeAction.performed += OnTake;
         resetAction.performed += OnReset;
 
-        if (breathAudioSource != null && breathAudioSource.clip != null)
+        if (breathAudioSource != null && breathAudioSource.clip != null && breathAudioSource.isPlaying == false)
         {
             breathAudioSource.time = breathAudioPosition;
             breathAudioSource.Play();
