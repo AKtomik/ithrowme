@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Timeline.DirectorControlPlayable;
+using TMPro;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject keyboardCanva;
 
     [Header("Settings parameters")]
+    [SerializeField] private TextMeshProUGUI FOVText;
     [SerializeField] private Slider sliderLookSensitivity;
     [SerializeField] private Slider sliderRollSensitivity;
 
@@ -138,11 +140,12 @@ public class PauseMenuScript : MonoBehaviour
 
         settingsCanva.SetActive(true);
 
+        
         sliderLookSensitivity.value = SettingsStore.lookSensivity;
         sliderRollSensitivity.value = SettingsStore.rollSensivity;
         sliderFOV.value = SettingsStore.baseFov;
         sliderFOV.value = SettingsStore.baseFov;
-
+        FOVText.text = Mathf.Round(sliderFOV.value) + "";
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
@@ -320,6 +323,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ChangeFOV()
     {
         sfxSlidersAudio.Play();
+        FOVText.text = Mathf.Round(sliderFOV.value) + "";
         SettingsStore.baseFov = sliderFOV.value;
     }
 
