@@ -8404,10 +8404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalVFXs
       objectReference: {fileID: 0}
-    - target: {fileID: 1827608871983772684, guid: 846331e320a83a44aa26e10b9308ac95, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3523263942037332085, guid: 846331e320a83a44aa26e10b9308ac95, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 2.3
