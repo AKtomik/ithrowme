@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnvironementArea : MonoBehaviour
 {
   [SerializeField] private GameObject environementParent;
+  [SerializeField] private GameObject potentialParallaxParent;
   [SerializeField] private bool defaultHide = false;
   [SerializeField] private bool triggerIsHidding = false;
 
@@ -17,14 +18,12 @@ public class EnvironementArea : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		if (!other.gameObject.CompareTag("Player")) return;
-		Debug.Log("true ^ triggerIsHidding = "+true+triggerIsHidding+(true ^ triggerIsHidding));
 		SetShow(true ^ triggerIsHidding);
 	}
 	
 	void OnTriggerExit(Collider other)
 	{
 		if (!other.gameObject.CompareTag("Player")) return;
-		Debug.Log("false ^ triggerIsHidding = "+false+triggerIsHidding+(false ^ triggerIsHidding));
 		SetShow(false ^ triggerIsHidding);
 	}
 
@@ -32,5 +31,7 @@ public class EnvironementArea : MonoBehaviour
 	{
 		showning = doShow;
 		environementParent.SetActive(doShow);
+		if (potentialParallaxParent) 
+			potentialParallaxParent.SetActive(!doShow);
 	}
 }
