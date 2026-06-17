@@ -7,6 +7,7 @@ public class MissionIndicator : MonoBehaviour
 {
     [SerializeField] private TypeWriter textIndicationWriter;
     [SerializeField] private TypeWriter textLocationWriter;
+    public AudioSource bipNotifSound;
 
     private MissionData data;
 
@@ -25,6 +26,11 @@ public class MissionIndicator : MonoBehaviour
 
     private void PutIndication()
     {
+        if (bipNotifSound == null)
+        {
+            Debug.LogException(new Exception(" AddMissionAudio doesnt have a sound, put it in Editor in MissionManager "));
+        }
+        textIndicationWriter.bipSound = bipNotifSound;
         textIndicationWriter.Typing(data.indicationText, 2.5f);
     }
     
