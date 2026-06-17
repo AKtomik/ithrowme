@@ -1656,11 +1656,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
   m_PrefabInstance: {fileID: 200038938}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &206877657 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7837429560235588697, guid: 2387c0645595e304fba306ca80c18961, type: 3}
-  m_PrefabInstance: {fileID: 447212334538123622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &218523456 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2349849374894749355, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
@@ -13352,6 +13347,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: 56a6348fa9206d04f9223538815c8c0d, type: 3}
   m_PrefabInstance: {fileID: 1969810792}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1977674452 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7837429560235588697, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+  m_PrefabInstance: {fileID: 447212334538123622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979231363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15182,7 +15182,7 @@ PrefabInstance:
     - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
       propertyPath: powerNeonMesh
       value: 
-      objectReference: {fileID: 206877657}
+      objectReference: {fileID: 1977674452}
     - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
       propertyPath: missionManager
       value: 
