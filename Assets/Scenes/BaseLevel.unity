@@ -3278,6 +3278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e42733234b914d841e3c1085d8061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disabledTag: FarawayDisable
   parallaxParent: {fileID: 35807361}
   disableDisable: 0
   logMsg: 0
@@ -15117,6 +15118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 286947728}
     m_Modifications:
+    - target: {fileID: 1794573081748710676, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_TagString
+      value: FarawayDisable
+      objectReference: {fileID: 0}
     - target: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -15198,10 +15203,6 @@ PrefabInstance:
       propertyPath: powerLights.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
-      propertyPath: powerNeonEnergyMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 024f6ce196123e042afe59789124a887, type: 2}
     - target: {fileID: 48061459246280510, guid: 70a39f0cb719321459b08519169fbb5f, type: 3}
       propertyPath: 'powerLights.Array.data[0]'
       value: 

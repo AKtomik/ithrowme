@@ -36,6 +36,7 @@ public class Step5Catalyzer : CatalyzerTrigger
 
         // environement
         powerNeonMesh.material = powerNeonEnergyMaterial;
+        DynamicGI.SetEmissive(powerNeonMesh, powerNeonEnergyMaterial.GetColor("_EmissionColor"));
         foreach (var obj in powerLights) obj.SetActive(true);
     }
 }
