@@ -9,13 +9,13 @@ public class AudioEnability : MonoBehaviour
 
 	void Start() => source = GetComponent<AudioSource>();
 
-	void Awake()
+	void OnEnable()
     {
         PauseSignal.OnPause += HandlePause;
         PauseSignal.OnResume += HandleResume;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         PauseSignal.OnPause -= HandlePause;
         PauseSignal.OnResume -= HandleResume;

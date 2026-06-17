@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator)), Obsolete]
+// does not works correctly!
+// is not planeded to be patched, don't rely on it
 public class AnimatorEnability : MonoBehaviour
 {
     private Animator animator;
@@ -13,15 +16,15 @@ public class AnimatorEnability : MonoBehaviour
     }
     private LayerState[] layerStates;
 
-		void Start() => animator = GetComponent<Animator>();
+	void Start() => animator = GetComponent<Animator>();
     
-		void Awake()
+	void OnEnable()
     {
         PauseSignal.OnPause += HandlePause;
         PauseSignal.OnResume += HandleResume;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         PauseSignal.OnPause -= HandlePause;
         PauseSignal.OnResume -= HandleResume;

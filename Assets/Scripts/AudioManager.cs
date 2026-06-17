@@ -12,13 +12,13 @@ public class AudioManager : MonoBehaviour
         alarmsScripts = FindObjectsByType<AlarmScript>(FindObjectsSortMode.None);
     }
     
-    void Awake()
+    void OnEnable()
     {
         PauseSignal.OnPause += AudioPause;
         PauseSignal.OnResume += AudioResume;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         PauseSignal.OnPause -= AudioPause;
         PauseSignal.OnResume -= AudioResume;
