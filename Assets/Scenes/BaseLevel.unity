@@ -2080,6 +2080,8 @@ GameObject:
   m_Component:
   - component: {fileID: 259564637}
   - component: {fileID: 259564638}
+  - component: {fileID: 259564640}
+  - component: {fileID: 259564639}
   m_Layer: 13
   m_Name: TechnicalArea
   m_TagString: FarawayDisable
@@ -2117,6 +2119,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   environementParent: {fileID: 1834085575}
   defaultHide: 1
+--- !u!65 &259564639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259564636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 6, z: 6}
+  m_Center: {x: -3, y: 0, z: 0}
+--- !u!65 &259564640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259564636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 7, z: 27}
+  m_Center: {x: 15, y: 0, z: 7}
 --- !u!114 &260315545 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
