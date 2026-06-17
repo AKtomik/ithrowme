@@ -150,6 +150,7 @@ MonoBehaviour:
   initText: waiting for user...
   screenMesh: {fileID: 2802700930302703358}
   doInitScreenColor: 1
+  emissiveIntensity: 1
   initScreenColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5735978354334145544
 MonoBehaviour:
@@ -946,6 +947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -2224084492546327654, guid: 21b09296de47eb249a1235cd49a3dcbd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fcd4857f85223684ea60289992881210, type: 2}
     - target: {fileID: -1553799399794740277, guid: 21b09296de47eb249a1235cd49a3dcbd, type: 3}
       propertyPath: m_Layer
       value: 7
