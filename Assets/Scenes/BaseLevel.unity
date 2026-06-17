@@ -5798,6 +5798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionManager
   AddMissionAudio: {fileID: 850945354}
+  bipSoundVolume: 0
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsIndication:
@@ -8149,6 +8150,10 @@ PrefabInstance:
     - target: {fileID: 1827608871983772684, guid: 846331e320a83a44aa26e10b9308ac95, type: 3}
       propertyPath: m_Name
       value: GlobalVFXs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827608871983772684, guid: 846331e320a83a44aa26e10b9308ac95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3523263942037332085, guid: 846331e320a83a44aa26e10b9308ac95, type: 3}
       propertyPath: InitialModule.startSize.scalar
