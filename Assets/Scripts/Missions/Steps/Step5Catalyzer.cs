@@ -6,6 +6,9 @@ public class Step5Catalyzer : CatalyzerTrigger
     [Header("Step Pointers")]
     public MissionManager missionManager;
     [SerializeField] private AudioSource cubeSound;
+    [SerializeField] private MeshRenderer powerNeonMesh;
+    [SerializeField] private Material powerNeonEnergyMaterial;
+    [SerializeField] private GameObject[] powerLights;
 
     public override void OnTrigger() {
 
@@ -30,5 +33,9 @@ public class Step5Catalyzer : CatalyzerTrigger
         {
             ReferenceSingleton.instance.centerTechnicalDoor.LockingDoors();
         }
+
+        // environement
+        powerNeonMesh.material = powerNeonEnergyMaterial;
+        foreach (var obj in powerLights) obj.SetActive(true);
     }
 }

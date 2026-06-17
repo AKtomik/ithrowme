@@ -16,6 +16,7 @@ public class ConsoleScreenManager : MonoBehaviour
     [Header("Conole screen")]
     [SerializeField] private MeshRenderer screenMesh;
     [SerializeField] private bool doInitScreenColor;
+    [SerializeField] private float emissiveIntensity;
     [SerializeField, DrawIf("doInitScreenColor")] private Color initScreenColor;
 
 
@@ -95,5 +96,6 @@ public class ConsoleScreenManager : MonoBehaviour
     public void SetScreenColor(Color color)
     {
         screenMesh.material.color = color;
+        if (emissiveIntensity > 0) screenMesh.material.SetColor("_EmissionColor", color * emissiveIntensity);
     }
 }
