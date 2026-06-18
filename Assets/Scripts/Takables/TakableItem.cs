@@ -38,6 +38,8 @@ public class TakableItem : Takable
             takeCollider.gameObject.transform.position = parent.position;
         // play take sound
         PlaySound(takeAudio);
+
+        gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("CullingLayer");
     }
     
     public void Unput(Transform point)
@@ -51,6 +53,8 @@ public class TakableItem : Takable
         transform.SetPositionAndRotation(point.position, point.rotation);
         // play throw sound
         PlaySound(throwAudio);
+
+        gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("ThrowableItem");
     }
 
     override public void Take(CapsulePlayer player)
