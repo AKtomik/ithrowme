@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class CapsulePlayer : MonoBehaviour
 {
     [Header("Input")]
-    [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] public InputActionAsset inputActions;
     private InputAction lookAction;
     private InputAction rollAction;
     private InputAction middleAction;
@@ -18,6 +18,7 @@ public class CapsulePlayer : MonoBehaviour
     private InputAction resetAction;
     public bool takeThrowSomethingDebug = false;
     public bool takeThrowActionDebug = false;
+    public bool isKeyboard;
 
     [Header("Look Settings")]
     [SerializeField] private Transform playerPivot;
@@ -183,6 +184,17 @@ public class CapsulePlayer : MonoBehaviour
             }
         }
 
+    }
+
+    public void OnInputChange(object obj, InputActionChange change)
+    {
+
+        if (!typeof(InputAction).IsAssignableFrom(obj.GetType())) return;
+        InputAction receivedInputAction = (InputAction)obj;
+        if (receivedInputAction.activeControl == null) return;
+        InputDevice lastDevice = receivedInputAction.activeControl.device;
+
+        isKeyboard = lastDevice.name.Equals("Keyboard") || lastDevice.name.Equals("Mouse");
     }
 
     public void StartBreathing()
