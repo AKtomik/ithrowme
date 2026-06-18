@@ -663,7 +663,7 @@ MonoBehaviour:
   m_RebindText: {fileID: 130035290309807013}
   m_RebindInfo: {fileID: 0}
   m_OverRideActionLabel: 1
-  m_ActionLabelString: Pause
+  m_ActionLabelString: Recommencer
   m_RebindCancelButton: {fileID: 0}
   m_RebindTimeout: 0
   m_UpdateBindingUIEvent:
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pause
+  m_text: Recommencer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1675,10 +1675,10 @@ RectTransform:
   - {fileID: 7715611061245945546}
   m_Father: {fileID: 5023404490780808241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -156.5}
-  m_SizeDelta: {x: 200, y: 62.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1018606356608046633
 CanvasRenderer:
@@ -2423,7 +2423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -363, y: 5}
+  m_AnchoredPosition: {x: -447.18, y: 5}
   m_SizeDelta: {x: 228.6644, y: 76.9273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8576073565067061312
@@ -4174,10 +4174,10 @@ RectTransform:
   - {fileID: 4760741745249737857}
   m_Father: {fileID: 5023404490780808241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -31.3}
-  m_SizeDelta: {x: 200, y: 62.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2819261135823023202
 CanvasRenderer:
@@ -5386,10 +5386,10 @@ RectTransform:
   - {fileID: 6078070651074740936}
   m_Father: {fileID: 5023404490780808241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -93.899994}
-  m_SizeDelta: {x: 200, y: 62.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3560147706137145899
 CanvasRenderer:
@@ -6008,10 +6008,10 @@ RectTransform:
   - {fileID: 2665783540920440249}
   m_Father: {fileID: 5023404490780808241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -219.09999}
-  m_SizeDelta: {x: 200, y: 62.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4742095199706359130
 CanvasRenderer:
@@ -6955,7 +6955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7633556716062062035
 Transform:
   m_ObjectHideFlags: 0
@@ -8618,7 +8618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pause
+  m_text: Recommencer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8726,10 +8726,10 @@ RectTransform:
   - {fileID: 4251024513054071761}
   m_Father: {fileID: 5023404490780808241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -281.69998}
-  m_SizeDelta: {x: 200, y: 62.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6903778748380785458
 CanvasRenderer:
@@ -8790,7 +8790,7 @@ MonoBehaviour:
   m_RebindText: {fileID: 8518739963431483984}
   m_RebindInfo: {fileID: 0}
   m_OverRideActionLabel: 1
-  m_ActionLabelString: Pause
+  m_ActionLabelString: Recommencer
   m_RebindCancelButton: {fileID: 0}
   m_RebindTimeout: 0
   m_UpdateBindingUIEvent:
