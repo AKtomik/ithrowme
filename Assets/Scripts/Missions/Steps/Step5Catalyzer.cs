@@ -7,8 +7,17 @@ public class Step5Catalyzer : CatalyzerTrigger
     public MissionManager missionManager;
     [SerializeField] private AudioSource cubeSound;
     [SerializeField] private MeshRenderer powerNeonMesh;
+    [SerializeField] private Material powerNeonEmptyMaterial;
     [SerializeField] private Material powerNeonEnergyMaterial;
     [SerializeField] private GameObject[] powerLights;
+
+    new public void Start()
+    {
+        base.Start();
+        if (!powerNeonEmptyMaterial) return;
+        powerNeonMesh.material = powerNeonEmptyMaterial;
+        DynamicGI.SetEmissive(powerNeonMesh, powerNeonMesh.material.GetColor("_EmissionColor"));
+    }
 
     public override void OnTrigger() {
 
@@ -36,6 +45,7 @@ public class Step5Catalyzer : CatalyzerTrigger
 
         // environement
         powerNeonMesh.material = powerNeonEnergyMaterial;
+        DynamicGI.SetEmissive(powerNeonMesh, powerNeonMesh.material.GetColor("_EmissionColor"));
         foreach (var obj in powerLights) obj.SetActive(true);
     }
 }

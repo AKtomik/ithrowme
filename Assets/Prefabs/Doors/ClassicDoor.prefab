@@ -218,7 +218,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2654717707423453489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9cdd93520d62f24ba4cf6e1b94904e8, type: 3}
   m_Name: 
@@ -364,11 +364,15 @@ MonoBehaviour:
   automaticOpening: 1
   detectPlayer: 1
   detectItems: 0
+  lightRenderers:
+  - {fileID: 6581164207875613868}
+  - {fileID: 1371247523305441896}
+  lockedMaterial: {fileID: 2100000, guid: 710852956a9b0f243981eac9b65dcfe7, type: 2}
+  unlockedMaterial: {fileID: 2100000, guid: 948e707e93a9a4b48a0cd679e2537d49, type: 2}
   doorSlam: {fileID: 6132878711129045287}
   audioClips:
   - {fileID: 8300000, guid: e5e96282867b0fc4dae419cf1bfcb6cf, type: 3}
   - {fileID: 8300000, guid: 6604ded7feacbc74f846410bebb99c4f, type: 3}
-  objectsInDoorRanch: []
 --- !u!135 &2725564819157198692
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -552,7 +556,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6048564699612810877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9cdd93520d62f24ba4cf6e1b94904e8, type: 3}
   m_Name: 
@@ -906,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorridorDoorMeshUp
       objectReference: {fileID: 0}
+    - target: {fileID: 1607877008915022977, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -914,6 +922,11 @@ PrefabInstance:
 --- !u!4 &4284283087716652066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
+  m_PrefabInstance: {fileID: 4395070930216154057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6581164207875613868 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1753430487120144539, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
   m_PrefabInstance: {fileID: 4395070930216154057}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7623224755079842278
@@ -1103,6 +1116,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
+--- !u!23 &1371247523305441896 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1980127570578136080, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
+  m_PrefabInstance: {fileID: 8611597360352127384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8072758755898920563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}

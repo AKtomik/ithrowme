@@ -3,13 +3,14 @@ using UnityEngine;
 public class ParallaxSwitch : MonoBehaviour
 {
     private GameObject[] farAwayObjects = new GameObject[] {};
+    [SerializeField] private string disabledTag = "FarawayDisable";
     [SerializeField] private GameObject parallaxParent;
     [SerializeField] private bool disableDisable = false;
     [SerializeField] private bool logMsg = false;
 
 	void Awake()
 	{
-		farAwayObjects = GameObject.FindGameObjectsWithTag("FarawayDisable");
+		farAwayObjects = GameObject.FindGameObjectsWithTag(disabledTag);
 	}
 
 	private void OnTriggerEnter(Collider other)

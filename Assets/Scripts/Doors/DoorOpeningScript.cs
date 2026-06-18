@@ -18,16 +18,26 @@ public class DoorOpeningScript : MonoBehaviour
     [SerializeField] public bool detectPlayer = true;
     [SerializeField] public bool detectItems = true;
 
+    [Header("Material")]
+    [SerializeField] private Renderer[] lightRenderers;
+    [SerializeField] private Material lockedMaterial;
+    [SerializeField] private Material unlockedMaterial;
+
     [Header("Sounds")]
     [SerializeField] private AudioSource doorSlam; // audio both for opening and closing
     [SerializeField] private AudioClip[] audioClips; // 0 = open , 1 = close
 
-
-    public List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
+    private List<GameObject> objectsInDoorRanch = new List<GameObject>(); // the list of the objects currently in the door trigger box
     
-    void Start() {}
+    // LOOP
+    void Start()
+    {
+        RefreshLockMaterial();
+    }
+
     void Update() {}
 
+    // OPEN
     /// maybe a single function ?? 
     /// flip flop type with isOpened
     public void OpeningDoors(bool skipLocked = false)
@@ -55,16 +65,19 @@ public class DoorOpeningScript : MonoBehaviour
         solidCollider.enabled = true;
         opened = false;
     }
+
     public bool isOpened()
     {
         return opened;
     }
-    
+
+    // LOCK    
     public void LockingDoors(bool lockOpenState = false)
     {
         // lock
         locked = true;
-        //triggerCollider.enabled = false;// can't disable for an edgecase
+        //triggerCollider.enabled = false;// can't disable for an edgecase (backdoor)
+        
         // opening
         if (opened != lockOpenState)
         {
@@ -73,13 +86,16 @@ public class DoorOpeningScript : MonoBehaviour
             else
                 ClosingDoors();
         }
-        // model modif
+
+        // material
+        RefreshLockMaterial();
     }
+    
     public void UnlockingDoors(bool lockOpenState = false)
     {
         // lock
         locked = false;
-        //triggerCollider.enabled = true;// can't disable for an edgecase
+        //triggerCollider.enabled = true;// can't disable for an edgecase (backdoor)
         // opening
         if (opened != lockOpenState)
         {
@@ -88,13 +104,27 @@ public class DoorOpeningScript : MonoBehaviour
             else
                 ClosingDoors();
         }
-        // model modif
+        
+        // material
+        RefreshLockMaterial();
     }
+
     public bool IsLocked()
     {
         return locked;
     }
 
+    public void RefreshLockMaterial()
+    {
+        Material material = locked ? lockedMaterial : unlockedMaterial;
+        foreach (var renderer in lightRenderers)
+        {
+            renderer.material = material;
+            DynamicGI.SetEmissive(renderer, renderer.material.GetColor("_EmissionColor"));
+        }
+    }
+
+    // TRIGGERS
     private void OnTriggerEnter(Collider other)
     {
         if (automaticOpening && detectPlayer && other.gameObject.CompareTag("Player"))
