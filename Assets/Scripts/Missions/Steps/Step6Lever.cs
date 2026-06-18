@@ -49,8 +49,8 @@ public class Step6Lever : TakableLever
     public void AnimationAlias6Success()
     {
         consoleScreen.SetScreenColor(Color.green);
-        //consoleScreen.AddText("ejection READY", Color.white, 1f);
-        consoleScreen.AddText("You succeeded", Color.white, 1f);
+        consoleScreen.AddText("ejection READY", Color.white, 1f);
+        //consoleScreen.AddText("You succeeded", Color.white, 1f);
         //consoleScreen.AddText("get in the godot capsule to proceed ejection", Color.black, 2f);
     }
 

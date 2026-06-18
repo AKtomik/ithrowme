@@ -6200,8 +6200,8 @@ MonoBehaviour:
   - "trouver un cube d'\xE9nergie"
   - "ramener le cube au module d'\xE9jection"
   - "activer l'\xE9jection sur la console"
-  - "f\xE9licitiation ! tu es arriv\xE9 au bout du playtest !"
   - "proc\xE9der \xE0 l'\xE9jection d'urgence"
+  - 
   - manger un sandwich
   MissionsLocation:
   - 
@@ -6211,9 +6211,9 @@ MonoBehaviour:
   - 
   - control room
   - control room
-  - gg
-  - ejection capsule
-  - cooking
+  - capsule number 2
+  - 
+  - cooking module
   InitialMissions: 00000000
 --- !u!82 &850945354
 AudioSource:
@@ -12776,8 +12776,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 12, y: 5, z: 20}
-  m_Center: {x: -3, y: 0, z: -16}
+  m_Size: {x: 20, y: 30, z: 20}
+  m_Center: {x: 0, y: -12, z: -16}
 --- !u!65 &1836851439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15450,6 +15450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30791732}
     m_Modifications:
+    - target: {fileID: 4582960830518639487, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7887667197042790974, guid: 2387c0645595e304fba306ca80c18961, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
@@ -16258,7 +16262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984245288789366877, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_text
-      value: Pause
+      value: Recommencer
       objectReference: {fileID: 0}
     - target: {fileID: 5743595616632296206, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_IsActive
@@ -18622,6 +18626,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30791732}
     m_Modifications:
+    - target: {fileID: 1063105007766252943, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
+      propertyPath: missionManager
+      value: 
+      objectReference: {fileID: 850945353}
+    - target: {fileID: 3392335451137457938, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3892839050624409617, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
