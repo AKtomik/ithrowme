@@ -13707,6 +13707,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 588086092}
     m_Modifications:
+    - target: {fileID: 544386565047251600, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 244996d718dca7a43a21e3271abc19a6, type: 2}
+    - target: {fileID: 1267943061444326094, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645910900496597103, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645910900496597103, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645910900496597103, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645910900496597103, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.41e-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645910900496597103, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000045413
+      objectReference: {fileID: 0}
     - target: {fileID: 1749267088313812649, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.204
@@ -13747,12 +13775,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1864402118659059051, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4864056309639282896, guid: 742fe3bc27e6937499b9a86e4a4ca3eb, type: 3}
+    - target: {fileID: 1864402118659059051, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_Mesh1
+      value: 
+      objectReference: {fileID: 4864056309639282896, guid: ab0687af5a9042c4d9789420762da976, type: 3}
+    - target: {fileID: 3267506691840690368, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: ShapeModule.m_MeshRenderer
+      value: 
+      objectReference: {fileID: 1962163321}
+    - target: {fileID: 4522618553394194361, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4876806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522618553394194361, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4876806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522618553394194361, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4876806
+      objectReference: {fileID: 0}
     - target: {fileID: 8153889469393772424, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
       propertyPath: m_Name
       value: ThrowableEnergyCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1267943061444326094, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
@@ -13764,6 +13817,11 @@ Transform:
 --- !u!23 &1962163320 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1387201575882765058, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
+  m_PrefabInstance: {fileID: 1962163318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1962163321 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2067484391263998344, guid: 321ce5c6f8d04894088a49005d30cd7f, type: 3}
   m_PrefabInstance: {fileID: 1962163318}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1965575165
@@ -17212,7 +17270,7 @@ PrefabInstance:
       objectReference: {fileID: 618177163}
     - target: {fileID: 8417675814683197549, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 55.320007
+      value: 55.319946
       objectReference: {fileID: 0}
     - target: {fileID: 8934041157425627126, guid: de13fa962c3ca87428c0b9d8a7aba3a2, type: 3}
       propertyPath: m_AnchorMax.y
