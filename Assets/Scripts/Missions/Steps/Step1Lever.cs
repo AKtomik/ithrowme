@@ -20,6 +20,7 @@ public class Step1Lever : TakableLever
         powerOn.Play();
 
         ReferenceSingleton.instance.emergencyLifeDoor.OpeningDoors();
+        ReferenceSingleton.instance.centerLifeDoor.UnlockingDoors();
         missionManager.AddMission(2);
         audioManager.StopRunMusic();
         audioManager.StartAmbianceMusic();

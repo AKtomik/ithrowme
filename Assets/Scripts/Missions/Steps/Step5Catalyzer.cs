@@ -16,7 +16,7 @@ public class Step5Catalyzer : CatalyzerTrigger
         base.Start();
         if (!powerNeonEmptyMaterial) return;
         powerNeonMesh.material = powerNeonEmptyMaterial;
-        DynamicGI.SetEmissive(powerNeonMesh, powerNeonEmptyMaterial.GetColor("_EmissionColor"));
+        DynamicGI.SetEmissive(powerNeonMesh, powerNeonMesh.material.GetColor("_EmissionColor"));
     }
 
     public override void OnTrigger() {
@@ -45,7 +45,7 @@ public class Step5Catalyzer : CatalyzerTrigger
 
         // environement
         powerNeonMesh.material = powerNeonEnergyMaterial;
-        DynamicGI.SetEmissive(powerNeonMesh, powerNeonEnergyMaterial.GetColor("_EmissionColor"));
+        DynamicGI.SetEmissive(powerNeonMesh, powerNeonMesh.material.GetColor("_EmissionColor"));
         foreach (var obj in powerLights) obj.SetActive(true);
     }
 }
