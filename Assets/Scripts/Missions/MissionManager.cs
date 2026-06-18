@@ -7,7 +7,7 @@ using System;
 public class MissionManager : MonoBehaviour
 {
     [SerializeField] private AudioSource AddMissionAudio;
-    [SerializeField, Range(0,1)] private float bipSoundVolume;
+    [SerializeField, Range(0,1)] private float bipSoundVolume = 0.1f;
 
     public GameObject MissionActiveTextPrefab;// prefab with a TextMeshProUGUI
     public Transform MissionUiContainer;// vertical layout group
