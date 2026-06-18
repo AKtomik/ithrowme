@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TypeWriter : MonoBehaviour
 {
-    [SerializeField] AudioSource bipSound;
+    public AudioSource bipSound;
 
     private TextMeshProUGUI textMesh;
     

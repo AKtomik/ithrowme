@@ -8,14 +8,14 @@ public class AnimationEnability : MonoBehaviour
     private float pausedTime;
     private string playingClipName;
 
-    void Awake()
+    void OnEnable()
     {
         animation = GetComponent<Animation>();
         PauseSignal.OnPause += HandlePause;
         PauseSignal.OnResume += HandleResume;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         PauseSignal.OnPause -= HandlePause;
         PauseSignal.OnResume -= HandleResume;

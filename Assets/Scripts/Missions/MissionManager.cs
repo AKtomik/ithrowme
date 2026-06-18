@@ -6,6 +6,9 @@ using System;
 
 public class MissionManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource AddMissionAudio;
+    [SerializeField, Range(0,1)] private float bipSoundVolume;
+
     public GameObject MissionActiveTextPrefab;// prefab with a TextMeshProUGUI
     public Transform MissionUiContainer;// vertical layout group
     public List<string> MissionsIndication = new() { "mission 0 indication", "mission 1 lore" };
@@ -20,6 +23,8 @@ public class MissionManager : MonoBehaviour
 
     public void AddMission(int id)
     {
+        
+        
         if (!activeMissions.Contains(id)) // verify if the mission is already displayed
         {
             activeMissions.Add(id);
@@ -59,6 +64,11 @@ public class MissionManager : MonoBehaviour
     {
         GameObject instance = Instantiate(MissionActiveTextPrefab, MissionUiContainer); // for every active mission : instantiate
         MissionIndicator indicator = instance.GetComponent<MissionIndicator>();
+        if (AddMissionAudio == null)
+        {
+            Debug.LogException(new Exception(" AddMissionAudio doesnt have a sound, put it in Editor in MissionManager "));
+        }
+        indicator.bipNotifSound = AddMissionAudio;
         indicator.PutData(missionsDictionnary[id]);
         spawnedTextMissions[id] = indicator; // add to spawnedMissions
     }
@@ -71,6 +81,7 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
+        AddMissionAudio.volume = bipSoundVolume;
         for (int i = 0; i < MissionsIndication.Count; i++)
         {
 			missionsDictionnary.Add(i, 

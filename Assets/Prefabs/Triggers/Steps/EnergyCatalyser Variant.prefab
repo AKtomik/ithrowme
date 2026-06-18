@@ -87,8 +87,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Step5Catalyzer
   oneTimeTrigger: 1
   putTransform: {fileID: 1389213522825286558}
+  rotationMinSpeed: 470
+  rotationStartSpeed: 1470
+  rotationSlowSpeed: 200
   missionManager: {fileID: 0}
   cubeSound: {fileID: 4300896124893816759}
+  powerNeonMesh: {fileID: 0}
+  powerNeonEmptyMaterial: {fileID: 2100000, guid: 710852956a9b0f243981eac9b65dcfe7, type: 2}
+  powerNeonEnergyMaterial: {fileID: 2100000, guid: 024f6ce196123e042afe59789124a887, type: 2}
+  powerLights: []
 --- !u!82 &4300896124893816759
 AudioSource:
   m_ObjectHideFlags: 0
