@@ -5625,6 +5625,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5048641519435632686, guid: ebffa6fb29dd4074cb7138bbbbdec6a6, type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5983416382251224715, guid: ebffa6fb29dd4074cb7138bbbbdec6a6, type: 3}
       propertyPath: m_Name
       value: SecretDoor
@@ -15274,6 +15278,10 @@ PrefabInstance:
     - target: {fileID: 7948459828411776677, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
       value: ControlCenterDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438642781112370275, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8784644136783455944, guid: 9ac6c0f0c5bb6844d9aa0b5be6a02b02, type: 3}
       propertyPath: m_Name
