@@ -6,10 +6,10 @@ public class Step5Catalyzer : CatalyzerTrigger
     [Header("Step Pointers")]
     public MissionManager missionManager;
     [SerializeField] private AudioSource cubeSound;
+    [SerializeField] private GameObject[] powerLights;
     [SerializeField] private MeshRenderer powerNeonMesh;
     [SerializeField] private Material powerNeonEmptyMaterial;
     [SerializeField] private Material powerNeonEnergyMaterial;
-    [SerializeField] private GameObject[] powerLights;
 
     new public void Start()
     {
