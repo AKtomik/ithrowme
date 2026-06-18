@@ -27,7 +27,7 @@ public class Step7Trigger : MonoBehaviour
         player.transform.SetParent(placingPoint);
         player.transform.localPosition = Vector3.zero;
         
-        player.LockingLookAt(lookingPoint.position);
+        player.LockingLookAt(lookingPoint);
 
         // animation
         pulledAnimatorReference.Play();

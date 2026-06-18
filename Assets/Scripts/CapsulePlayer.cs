@@ -56,7 +56,7 @@ public class CapsulePlayer : MonoBehaviour
     public bool disableHand = false;
     public bool disableLook = false;
     private bool lockLookAt = false;
-    private Vector3 lockLookAtPos = Vector3.zero;
+    private Transform lockLookAtTransform;
     private float lockLookAtSpeed = 1;
     private float lockLookAtProgress = 0;
     
@@ -231,10 +231,10 @@ public class CapsulePlayer : MonoBehaviour
     {
         if (lockLookAt)
         {
-            if (lockLookAtPos != Vector3.zero)
+            if (lockLookAtTransform != null)
             {
                 // toward from here to point
-                Vector3 towardLook = lockLookAtPos - playerPivot.position;
+                Vector3 towardLook = lockLookAtTransform.position - playerPivot.position;
                 towardLook = towardLook.normalized;
 
                 // t compute
@@ -298,15 +298,15 @@ public class CapsulePlayer : MonoBehaviour
     public void LockingLookAt()
     {
         lockLookAt = true;
-        lockLookAtPos = Vector2.zero;
+        lockLookAtTransform = null;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
     }
 
-    public void LockingLookAt(Vector3 pos, float speed = 1)
+    public void LockingLookAt(Transform trans, float speed = 1)
     {
         lockLookAt = true;
-        lockLookAtPos = pos;
+        lockLookAtTransform = trans;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
     }

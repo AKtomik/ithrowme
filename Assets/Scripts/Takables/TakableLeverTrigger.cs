@@ -36,7 +36,7 @@ abstract public class TakableLever : Takable
         }
         
         if (cinematicMode) ReferenceSingleton.instance.cinematicManager.EnableCinematic();
-        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint);
         
         if (pulledAnimationName.Length > 0)
             pulledAnimatorReference.Play(pulledAnimationName);
@@ -81,7 +81,7 @@ abstract public class TakableLever : Takable
     
     public void AnimationLookingPoint(Transform newLookingPoint, float speed = 1)
     {// ! does not works in animationPlayer, need to do aliases
-        if (lockLooking) playerPulling.LockingLookAt(newLookingPoint.position, speed);
+        if (lockLooking) playerPulling.LockingLookAt(newLookingPoint, speed);
     }
 
     public void PlayAudio()
