@@ -15450,10 +15450,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30791732}
     m_Modifications:
-    - target: {fileID: 4582960830518639487, guid: 2387c0645595e304fba306ca80c18961, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7887667197042790974, guid: 2387c0645595e304fba306ca80c18961, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
@@ -15511,6 +15507,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+--- !u!111 &447212334538123623 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 6258611937523701273, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+  m_PrefabInstance: {fileID: 447212334538123622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486781568572651988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15701,6 +15702,10 @@ PrefabInstance:
       propertyPath: 'unlockedDoors.Array.data[1]'
       value: 
       objectReference: {fileID: 1923641943}
+    - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: hubloAnimation
+      value: 
+      objectReference: {fileID: 447212334538123623}
     - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: missionManager
       value: 
@@ -18630,10 +18635,6 @@ PrefabInstance:
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 850945353}
-    - target: {fileID: 3392335451137457938, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
-      propertyPath: m_PlayAutomatically
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3892839050624409617, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10

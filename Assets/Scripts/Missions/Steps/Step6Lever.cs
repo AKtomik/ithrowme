@@ -5,6 +5,7 @@ public class Step6Lever : TakableLever
     [Header("Step Pointers")]
     public MissionManager missionManager;
     public ConsoleScreenManager consoleScreen;
+    public Animation hubloAnimation;
     
     [Header("Step Settings")]
     public bool animClearConsole = true;
@@ -50,13 +51,14 @@ public class Step6Lever : TakableLever
     {
         consoleScreen.SetScreenColor(Color.green);
         consoleScreen.AddText("ejection READY", Color.white, 1f);
+        hubloAnimation.Play();
         //consoleScreen.AddText("You succeeded", Color.white, 1f);
         //consoleScreen.AddText("get in the godot capsule to proceed ejection", Color.black, 2f);
     }
 
     public void AnimationAlias6Ended()
     {
-        consoleScreen.AddText("Thanks for playing!", Color.white, 1f);
+        //consoleScreen.AddText("Thanks for playing!", Color.white, 1f);
         AnimationEnded();
     }
 }
