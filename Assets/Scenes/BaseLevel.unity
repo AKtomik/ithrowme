@@ -6183,7 +6183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionManager
   AddMissionAudio: {fileID: 850945354}
-  bipSoundVolume: 0
+  bipSoundVolume: 0.1
   MissionActiveTextPrefab: {fileID: 5726101579217873286, guid: 8726e59b6eb93ca4d9712b10d95e1ad4, type: 3}
   MissionUiContainer: {fileID: 1985226593}
   MissionsIndication:
