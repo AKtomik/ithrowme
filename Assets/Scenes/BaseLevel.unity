@@ -9457,6 +9457,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step3Trigger
   missionManager: {fileID: 850945353}
+--- !u!23 &1387925452 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5822882459929709978, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+  m_PrefabInstance: {fileID: 447212334538123622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392122355
 GameObject:
   m_ObjectHideFlags: 0
@@ -10008,6 +10013,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 528193302631890553, guid: 22dd6d6af5bd604438e1122c339e2a0c, type: 3}
   m_PrefabInstance: {fileID: 1455314019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1468977173 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7908898197571745586, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+  m_PrefabInstance: {fileID: 1175085956738456253}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1483483562
 PrefabInstance:
@@ -18113,9 +18123,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1670961337}
     - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: capsuleLedMesh
+      value: 
+      objectReference: {fileID: 1387925452}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: consoleLedMesh
+      value: 
+      objectReference: {fileID: 1468977173}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 850945353}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: capsuleLedDoneMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 948e707e93a9a4b48a0cd679e2537d49, type: 2}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: consoleLedDoneMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 948e707e93a9a4b48a0cd679e2537d49, type: 2}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: capsuleLedFirstMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 710852956a9b0f243981eac9b65dcfe7, type: 2}
+    - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
+      propertyPath: consoleLedFirstMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 710852956a9b0f243981eac9b65dcfe7, type: 2}
     - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
       propertyPath: activatedObjects.Array.size
       value: 1
