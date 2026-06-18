@@ -72,9 +72,9 @@ public class ConsoleScreenManager : MonoBehaviour
             Debug.LogWarning("console screen didn't detect TypeWriter in textPrefab");
 			typewriter = textObject.AddComponent<TypeWriter>();
 		}
+        activeTexts.Add(textObject);
 		typewriter.Typing(text, typingTime);
         typewriter.SetColor(color);
-        activeTexts.Add(textObject);
         LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());
     }
     

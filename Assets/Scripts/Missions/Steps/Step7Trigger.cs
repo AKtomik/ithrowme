@@ -10,20 +10,23 @@ public class Step7Trigger : MonoBehaviour
     [SerializeField] private Animation pulledAnimatorReference;
 
     private bool entered = false;
+    private CapsulePlayer finishPlayer;
 
     private void OnTriggerEnter(Collider other) {
         if (entered || !other.gameObject.CompareTag("Player")) return;
         if (!other.gameObject.TryGetComponent<CapsulePlayer>(out var player)) return;
         Debug.Log("Step0Trigger: step 7 completed");
         entered = true;
+        finishPlayer = player;
         
         // mission
         missionManager.CompleteMission(7);
         missionManager.AddMission(8);
         
         // player
-        //ReferenceSingleton.instance.cinematicManager.EnableCinematic();
         player.playerBody.isKinematic = true;
+        ReferenceSingleton.instance.cinematicManager.EnableCinematic();
+        
         player.transform.SetParent(placingPoint);
         player.transform.localPosition = Vector3.zero;
         
@@ -31,5 +34,10 @@ public class Step7Trigger : MonoBehaviour
 
         // animation
         pulledAnimatorReference.Play();
+    }
+
+    public void AnimationEnded() {
+        ReferenceSingleton.instance.cinematicManager.DisableCinematic();
+        finishPlayer.UnlockingLook();
     }
 }

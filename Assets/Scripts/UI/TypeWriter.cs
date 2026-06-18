@@ -49,6 +49,7 @@ public class TypeWriter : MonoBehaviour
 
     public void Typing(string text, float timeSecond)
     {
+        if (!textMesh) Debug.LogError("but not yet awake! wake up before Typing (aka add me to the tree)");
         isTyping = true;
         typingText = text;
         typingCharacterProgress = 0f;
@@ -56,7 +57,7 @@ public class TypeWriter : MonoBehaviour
         typingTotalTime = timeSecond;
         typingCharacterTime = timeSecond / text.Length;
         // clear the current text
-        textMesh.text = "";
+        if (textMesh) textMesh.text = "";
     }
     
     public void StopTyping()
