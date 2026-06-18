@@ -2,10 +2,21 @@ using UnityEngine;
 
 public class AlarmScript : MonoBehaviour
 {
+    [Header("Init")]
     [SerializeField] private bool isAlarmOn = true;
     [SerializeField] private bool isFilterOn = true;
+    
+    [Header("Settings")]
+    [SerializeField] private Transform rotationTransform;
     [SerializeField] private float rotationSpeed = 180f;
     [SerializeField] private float cutoffFrequency = 381f;
+    
+    //[Header("Material")]
+    //[SerializeField] private Renderer alarmRenderer;
+    //[SerializeField] private Material ringingMaterial;
+    //[SerializeField] private Material silentMaterial;
+    
+    [Header("Audio")]
     [SerializeField] private AudioSource alarmAudio;
     [SerializeField] private AudioLowPassFilter alarmLowpassFilter;
 
@@ -24,7 +35,7 @@ public class AlarmScript : MonoBehaviour
     {
         if (isAlarmOn)
         {
-            transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f, Space.Self);
+            rotationTransform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f, Space.Self);
         }
     }
 
