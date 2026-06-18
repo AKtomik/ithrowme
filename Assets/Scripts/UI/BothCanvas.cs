@@ -1,7 +1,10 @@
-using TMPro;
 using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static System.Collections.Specialized.BitVector32;
 
 
 public class BothCanvas : MonoBehaviour
@@ -9,6 +12,9 @@ public class BothCanvas : MonoBehaviour
     public CapsulePlayer player;
 
     [SerializeField] private TextMeshProUGUI speedText;
+    [SerializeField] private TextMeshProUGUI restartText;
+    [SerializeField] private InputActionReference KeyboardReset;
+    [SerializeField] private InputActionReference GamepadReset;
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
     // unity editor can't take dictionnary (wanted enum - sprite dictionnary)
@@ -31,6 +37,9 @@ public class BothCanvas : MonoBehaviour
     private bool stopCinematic;
     private bool inCinematic;
     private HandState cinematicHandState;
+
+
+    
 
     // cinematic bars
     public void StartCinematic()
@@ -122,6 +131,22 @@ public class BothCanvas : MonoBehaviour
                 speedText.gameObject.SetActive(true);
             }
         }
+
+
+        InputSystem.onActionChange += player.OnInputChange;
+
+        
+        if (player.isKeyboard)
+        {
+            restartText.text = player.inputActions.FindAction("Player/Reset").GetBindingDisplayString(0) + " pour recommencer";
+            
+        }
+        else
+        {
+            restartText.text = player.inputActions.FindAction("Player/Reset").GetBindingDisplayString(1) + " pour recommencer";
+            
+        }
+        
 
         speedText.text = Math.Round(player.playerBody.linearVelocity.magnitude, 2) + " m/s";
     }

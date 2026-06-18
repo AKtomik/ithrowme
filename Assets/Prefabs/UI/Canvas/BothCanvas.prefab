@@ -360,6 +360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandScript
   player: {fileID: 0}
   speedText: {fileID: 2189124067433620249}
+  restartText: {fileID: 8994835143784786482}
+  KeyboardReset: {fileID: 0}
+  GamepadReset: {fileID: 0}
   handImageUI: {fileID: 7040853217843334942}
   handSpriteReachable: {fileID: 21300000, guid: a748bb79a18080f4a89e327c6dc71d13, type: 3}
   handSpriteIdle: {fileID: 21300000, guid: 75b45c11de588754a95fa37f704d0003, type: 3}
