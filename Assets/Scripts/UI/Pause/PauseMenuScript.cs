@@ -220,6 +220,12 @@ public class PauseMenuScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
     private bool IsRightStickComposite(InputAction action, int compositeIndex)
     {
         for (int j = compositeIndex + 1; j < action.bindings.Count; j++)
