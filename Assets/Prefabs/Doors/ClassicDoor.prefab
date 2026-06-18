@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorridorDoorMeshUp
       objectReference: {fileID: 0}
+    - target: {fileID: 1607877008915022977, guid: e8a6d2eea454a7341ab9d628ca176ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
