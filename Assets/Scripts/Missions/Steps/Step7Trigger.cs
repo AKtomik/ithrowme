@@ -21,7 +21,8 @@ public class Step7Trigger : MonoBehaviour
         
         // mission
         missionManager.CompleteMission(7);
-        missionManager.AddMission(8);
+        //missionManager.AddMission(8);
+        TimerSingleton.instance.EndTime();// ! this is the end, gg
         
         // player
         player.playerBody.isKinematic = true;

@@ -19,7 +19,6 @@ public class Step6Lever : TakableLever
     {
         Debug.Log("Step6Lever: step 6 completed");
         missionManager.AddMission(7);
-        TimerSingleton.instance.EndTime();// !
         ReferenceSingleton.instance.centerControlDoor.detectPlayer = false;
         //missionManager.AddMission(3);
     }
