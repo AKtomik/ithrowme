@@ -59,6 +59,10 @@ public class CapsulePlayer : MonoBehaviour
     private Transform lockLookAtTransform;
     private float lockLookAtSpeed = 1;
     private float lockLookAtProgress = 0;
+    private bool lockPosAt = false;
+    private Transform lockPosAtTransform;
+    private float lockPosAtSpeed = 1;
+    private float lockPosAtProgress = 0;
     
     [Header("Sound")]
     [SerializeField] public bool disableAudio = false;
@@ -229,6 +233,18 @@ public class CapsulePlayer : MonoBehaviour
 
     void HandleLook()
     {
+        // lock posing
+        if (lockPosAt)
+        {
+            // t compute
+            lockPosAtProgress += lockPosAtSpeed * Time.deltaTime;
+            if (lockPosAtProgress > 1) lockPosAtProgress = 1;
+
+            // progressive move
+            transform.position = Vector3.Slerp(transform.position, lockPosAtTransform.position, lockPosAtProgress);
+        }
+
+        // lock looking
         if (lockLookAt)
         {
             if (lockLookAtTransform != null)
@@ -295,7 +311,7 @@ public class CapsulePlayer : MonoBehaviour
         playerPivot.rotation = rotation;
     }
 
-    public void LockingLookAt()
+    public void LockingLook()
     {
         lockLookAt = true;
         lockLookAtTransform = null;
@@ -315,6 +331,31 @@ public class CapsulePlayer : MonoBehaviour
     {
         lockLookAt = false;
     }
+
+
+    public void LockingPos()
+    {
+        playerBody.isKinematic = true;
+        lockPosAt = true;
+        lockPosAtTransform = null;
+        lockPosAtSpeed = 0;
+        lockPosAtProgress = 0;
+    }
+
+    public void LockingPosAt(Transform trans, float speed = 1)
+    {
+        playerBody.isKinematic = true;
+        lockPosAt = true;
+        lockPosAtTransform = trans;
+        lockPosAtSpeed = speed;
+        lockPosAtProgress = 0;
+    }
+    
+    public void UnlockingPos()
+    {
+        lockPosAt = false;
+    }
+
 
     void CheckReachable()
     {

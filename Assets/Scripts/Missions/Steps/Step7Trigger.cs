@@ -15,6 +15,7 @@ public class Step7Trigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (entered || !other.gameObject.CompareTag("Player")) return;
         if (!other.gameObject.TryGetComponent<CapsulePlayer>(out var player)) return;
+        //if (!missionManager.IsActive(7)) return;
         Debug.Log("Step0Trigger: step 7 completed");
         entered = true;
         finishPlayer = player;
@@ -25,13 +26,10 @@ public class Step7Trigger : MonoBehaviour
         TimerSingleton.instance.EndTime();// ! this is the end, gg
         
         // player
-        player.playerBody.isKinematic = true;
-        ReferenceSingleton.instance.cinematicManager.EnableCinematic();
-        
+        ReferenceSingleton.instance.cinematicManager.EnableCinematic(false, false, true);
         player.transform.SetParent(placingPoint);
-        player.transform.localPosition = Vector3.zero;
-        
         player.LockingLookAt(lookingPoint);
+        player.LockingPosAt(placingPoint);
 
         // animation
         pulledAnimatorReference.Play();
@@ -40,5 +38,6 @@ public class Step7Trigger : MonoBehaviour
     public void AnimationEnded() {
         ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         finishPlayer.UnlockingLook();
+        finishPlayer.UnlockingPos();
     }
 }
