@@ -27,7 +27,8 @@ public class ScrollParallax : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UpdateDirection();
+        UpdateDirection();// at first
+
         progress = initialProgress;
 
         canvasDown = canvasChild.gameObject;
@@ -35,6 +36,8 @@ public class ScrollParallax : MonoBehaviour
 
         canvasUp = Instantiate(canvasChild.gameObject, canvasChild.parent);// [transform] should be equal to [canvasChild.parent]
         canvasUp.transform.position = transform.position + dir * dist;
+        
+        UpdatePosition();// at last
     }
 
     void UpdateDirection()
@@ -78,6 +81,11 @@ public class ScrollParallax : MonoBehaviour
             progress = 1;
         }
 
+        UpdatePosition();
+    }
+    
+    void UpdatePosition()
+    {
         canvasDown.transform.position = transform.position - ((1 - progress) * dist * dir);
         canvasUp.transform.position = transform.position + (progress * dist * dir);
     }
