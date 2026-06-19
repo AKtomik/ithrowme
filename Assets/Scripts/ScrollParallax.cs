@@ -12,12 +12,15 @@ public class ScrollParallax : MonoBehaviour
     public bool scrolling = true;
     public ScrollParallaxDirection scrollDirection = ScrollParallaxDirection.DOWN;
     private ScrollParallaxDirection cachedDirection;
-    public float scrollSpeed = 1;
+    public float scrollSpeed = 1f;
+    public float scrollSpeed2 = 1f;
+    public float initialProgress = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateDirection();
+        progress = initialProgress;
 
         canvasDown = canvasChild.gameObject;
         canvasDown.transform.position = transform.position;
@@ -57,7 +60,7 @@ public class ScrollParallax : MonoBehaviour
 
         if (cachedDirection != scrollDirection) UpdateDirection();
         
-        progress += Time.deltaTime / 10 * scrollSpeed;
+        progress += Time.deltaTime / 10 * scrollSpeed * scrollSpeed2;
         if (progress > 1)
         {
             progress = 0;
