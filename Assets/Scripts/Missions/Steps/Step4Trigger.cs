@@ -7,6 +7,7 @@ public class Step4Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (!this.enabled || !other.gameObject.CompareTag("Player")) return;
+        if (!missionManager.IsActive(4)) return;
         Debug.Log("Step4Trigger: step 4 completed");
         missionManager.CompleteMission(4);
         missionManager.AddMission(5);

@@ -19,6 +19,10 @@ public class Step3Lever : TakableLever
         capsuleLedMesh.material = capsuleLedFirstMaterial;
     }
 
+    public override bool PullCheck(CapsulePlayer player) {
+        return missionManager.IsActive(3);
+    }
+
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step3Lever: pulling...");
         missionManager.CompleteMission(3);

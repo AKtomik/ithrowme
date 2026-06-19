@@ -11,6 +11,10 @@ public class Step1Lever : TakableLever
 
     [SerializeField] private AudioSource powerOn;
 
+    public override bool PullCheck(CapsulePlayer player) {
+        return missionManager.IsActive(1);
+    }
+
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");
         missionManager.CompleteMission(1);

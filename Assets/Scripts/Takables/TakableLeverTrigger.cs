@@ -24,6 +24,7 @@ abstract public class TakableLever : Takable
     {
         
         if (!this.enabled) return;
+        if (!PullCheck(player)) return;
         
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         pulling = true;
@@ -49,6 +50,7 @@ abstract public class TakableLever : Takable
         
     override public void Throw(CapsulePlayer player) {}
 
+    virtual public bool PullCheck(CapsulePlayer player) => true;
     abstract public void PullStart(CapsulePlayer player);
     abstract public void PullFinish(CapsulePlayer player);
 

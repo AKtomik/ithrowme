@@ -10,6 +10,10 @@ public class Step6Lever : TakableLever
     [Header("Step Settings")]
     public bool animClearConsole = true;
     public bool animShowExe = true;
+    
+    public override bool PullCheck(CapsulePlayer player) {
+        return missionManager.IsActive(6);
+    }
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step6Lever: pulling...");
@@ -20,6 +24,7 @@ public class Step6Lever : TakableLever
         Debug.Log("Step6Lever: step 6 completed");
         missionManager.AddMission(7);
         ReferenceSingleton.instance.centerControlDoor.detectPlayer = false;
+        ReferenceSingleton.instance.centerControlDoor.LockingDoors();
         //missionManager.AddMission(3);
     }
     
