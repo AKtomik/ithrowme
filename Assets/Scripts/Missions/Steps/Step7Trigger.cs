@@ -10,7 +10,6 @@ public class Step7Trigger : MonoBehaviour
     [SerializeField] private Animation pulledAnimatorReference;
 
     private bool entered = false;
-    private CapsulePlayer finishPlayer;
 
     private void OnTriggerEnter(Collider other) {
         if (entered || !other.gameObject.CompareTag("Player")) return;
@@ -18,7 +17,6 @@ public class Step7Trigger : MonoBehaviour
         //if (!missionManager.IsActive(7)) return;
         Debug.Log("Step0Trigger: step 7 completed");
         entered = true;
-        finishPlayer = player;
         
         // mission
         missionManager.CompleteMission(7);
