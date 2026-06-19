@@ -48,9 +48,8 @@ MonoBehaviour:
   canvasChild: {fileID: 5261384055487286774}
   scrolling: 1
   scrollDirection: 0
-  scrollSpeed: 2
-  scrollSpeed2: 1
   initialProgress: 1
+  scrollSpeed: 4
 --- !u!1 &68377019122291503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037536515136871857}
+  - component: {fileID: 8716657080510495810}
   m_Layer: 0
   m_Name: EjectionParallax
   m_TagString: Untagged
@@ -1717,6 +1717,21 @@ Transform:
   - {fileID: 5556837411107862803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8716657080510495810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791283334807543921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef5138d0a128df4b9dfa7b455a146f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollParallaxGroup
+  scrollParallaxes:
+  - {fileID: 7337462726830245404}
+  - {fileID: 8828055425735938634}
 --- !u!1 &1882277909209943046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,9 +2080,8 @@ MonoBehaviour:
   canvasChild: {fileID: 1818248572676364062}
   scrolling: 1
   scrollDirection: 0
-  scrollSpeed: 1.234
-  scrollSpeed2: 1
   initialProgress: 0.5
+  scrollSpeed: 2.234
 --- !u!1 &2207532879696870555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,7 +5766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2429142139194245629
 Transform:
   m_ObjectHideFlags: 0
@@ -5784,9 +5798,8 @@ MonoBehaviour:
   canvasChild: {fileID: 2038021873747932565}
   scrolling: 1
   scrollDirection: 0
-  scrollSpeed: 0.567
-  scrollSpeed2: 1
   initialProgress: 0.33
+  scrollSpeed: 0.567
 --- !u!1 &4573620134932305891
 GameObject:
   m_ObjectHideFlags: 0
