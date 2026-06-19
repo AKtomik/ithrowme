@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   canvasChild: {fileID: 5261384055487286774}
   scrolling: 1
-  scrollSpeed: -2
+  scrollDirection: 1
+  scrollSpeed: 2
 --- !u!1 &177422423424614478
 GameObject:
   m_ObjectHideFlags: 0
