@@ -16,8 +16,17 @@ public class TypeWriter : MonoBehaviour
     private float typingTotalTime;
     private float typingCharacterTime;
 
+    private bool inited = false;
+
     void Awake()
     {
+        CheckInit();
+    }
+
+    public void CheckInit()
+    {
+        if (inited) return;
+        inited = true;
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.text = "";
     }
@@ -72,6 +81,10 @@ public class TypeWriter : MonoBehaviour
     
     public void SetColor(Color color)
     {
+        if (!textMesh) {
+            Debug.LogError("SetColor but not yet awake! wake up before SetColor (aka add me to the tree)");
+            return;
+        }
         textMesh.color = color;
     }
 }

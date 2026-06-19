@@ -30,12 +30,14 @@ public class MissionIndicator : MonoBehaviour
         {
             Debug.LogException(new Exception(" AddMissionAudio doesnt have a sound, put it in Editor in MissionManager "));
         }
+        textIndicationWriter.CheckInit();// in case it does not itself
         textIndicationWriter.bipSound = bipNotifSound;
         textIndicationWriter.Typing(data.indicationText, 2.5f);
     }
     
     private void PutLocation()
     {
+        textLocationWriter.CheckInit();// in case it does not itself
         textLocationWriter.Typing(data.locationText, 1.5f);
     }
 }

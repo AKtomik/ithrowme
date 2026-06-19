@@ -73,6 +73,7 @@ public class ConsoleScreenManager : MonoBehaviour
 			typewriter = textObject.AddComponent<TypeWriter>();
 		}
         activeTexts.Add(textObject);
+        typewriter.CheckInit();// in case it does not itself
 		typewriter.Typing(text, typingTime);
         typewriter.SetColor(color);
         LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());
