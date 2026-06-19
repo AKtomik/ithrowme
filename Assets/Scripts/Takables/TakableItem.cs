@@ -22,7 +22,7 @@ public class TakableItem : Takable
         base.Start();
     }
 
-    public void Put(Transform parent)
+    virtual public void Put(Transform parent)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -40,7 +40,7 @@ public class TakableItem : Takable
         PlaySound(takeAudio);
     }
     
-    public void Unput(Transform point)
+    virtual public void Unput(Transform point)
     {
         // enable
         takeCollider.enabled = true;
