@@ -7,6 +7,7 @@ public class Step1Lever : TakableLever
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private Transform lookAwayPoint;
     [SerializeField] private Transform lookBackPoint;
+    [SerializeField] private Animation parallaxEjectionAnimation;
 
     [SerializeField] private AudioSource powerOn;
 
@@ -32,6 +33,12 @@ public class Step1Lever : TakableLever
     {
         AnimationLookingPoint(lookAwayPoint, .15f);
     }
+    
+    public void AnimationAlias1Eject()
+    {
+        parallaxEjectionAnimation.Play();
+    }
+
     public void AnimationAlias1LookBack()
     {
         AnimationLookingPoint(lookBackPoint, .6f);

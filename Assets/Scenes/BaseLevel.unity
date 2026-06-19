@@ -17949,6 +17949,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 850945353}
     - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
+      propertyPath: parallaxEjectionAnimation
+      value: 
+      objectReference: {fileID: 6305624788808327029}
+    - target: {fileID: 3877568372158139557, guid: f9e6783ebc7fcc44bb6185676685e1da, type: 3}
       propertyPath: activatedObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18287,6 +18291,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 883a820f09d8f634ca0b69cb3ff49a59, type: 3}
+--- !u!111 &6305624788808327029 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 9199438528878691833, guid: 883a820f09d8f634ca0b69cb3ff49a59, type: 3}
+  m_PrefabInstance: {fileID: 6305624788808327028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6431349572062363164
 PrefabInstance:
   m_ObjectHideFlags: 0
