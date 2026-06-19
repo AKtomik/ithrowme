@@ -285,6 +285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30791732}
+  - component: {fileID: 30791733}
+  - component: {fileID: 30791734}
   m_Layer: 0
   m_Name: CommandRoom
   m_TagString: Untagged
@@ -314,6 +316,39 @@ Transform:
   - {fileID: 1943171867}
   m_Father: {fileID: 598567745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &30791733
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30791731}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: ce0ac5a8907a2f04f92e27b1bd03d70c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ce0ac5a8907a2f04f92e27b1bd03d70c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!114 &30791734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30791731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bbc74dce6fc974393dc0169d16f186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Step7Trigger
+  missionManager: {fileID: 0}
+  placingPoint: {fileID: 0}
+  lookingPoint: {fileID: 0}
+  pulledAnimatorReference: {fileID: 0}
 --- !u!1001 &34640238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6857,15 +6892,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.112
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.46
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8596,6 +8631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1482549914}
   - {fileID: 260315546}
   - {fileID: 1758109595}
   - {fileID: 1275444337}
@@ -10145,6 +10181,37 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7908898197571745586, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
   m_PrefabInstance: {fileID: 1175085956738456253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1482549913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482549914}
+  m_Layer: 3
+  m_Name: PlayerPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482549914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482549913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.0076141944, z: -0, w: 0.9999711}
+  m_LocalPosition: {x: 13.112, y: -0.38, z: 4.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267620104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1483483562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19001,6 +19068,10 @@ PrefabInstance:
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 850945353}
+    - target: {fileID: 1063105007766252943, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
+      propertyPath: pulledAnimatorReference
+      value: 
+      objectReference: {fileID: 30791733}
     - target: {fileID: 3892839050624409617, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10

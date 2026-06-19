@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3892839050624409617}
   - component: {fileID: 1063105007766252943}
-  - component: {fileID: 3392335451137457938}
   - component: {fileID: 5966880224174975264}
   m_Layer: 0
   m_Name: EjectionTrigger
@@ -83,24 +82,7 @@ MonoBehaviour:
   missionManager: {fileID: 0}
   placingPoint: {fileID: 1799749469524364510}
   lookingPoint: {fileID: 383270574106222214}
-  pulledAnimatorReference: {fileID: 3392335451137457938}
---- !u!111 &3392335451137457938
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826834371559966722}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: ce0ac5a8907a2f04f92e27b1bd03d70c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: ce0ac5a8907a2f04f92e27b1bd03d70c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
+  pulledAnimatorReference: {fileID: 0}
 --- !u!65 &5966880224174975264
 BoxCollider:
   m_ObjectHideFlags: 0

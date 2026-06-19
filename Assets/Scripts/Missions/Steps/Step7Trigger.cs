@@ -35,9 +35,10 @@ public class Step7Trigger : MonoBehaviour
         pulledAnimatorReference.Play();
     }
 
+    // ! is not executed by the same Step7Trigger than the trigger
     public void AnimationEnded() {
         ReferenceSingleton.instance.cinematicManager.DisableCinematic();
-        finishPlayer.UnlockingLook();
-        finishPlayer.UnlockingPos();
+        ReferenceSingleton.instance.player.UnlockingLook();
+        ReferenceSingleton.instance.player.UnlockingPos();
     }
 }
