@@ -4,14 +4,21 @@ public class ScrollParallaxGroup : MonoBehaviour
 {
 	[SerializeField] public ScrollParallax[] scrollParallaxes;
 	
-  public void EnableGroupScrolling()
+  public void EnableScrolling()
   {
 		foreach (var parallax in scrollParallaxes) {
 			parallax.scrolling = true;
 		}
   }
 
-  public float groupSpeed;
+  public void DisableScrolling()
+  {
+		foreach (var parallax in scrollParallaxes) {
+			parallax.scrolling = false;
+		}
+  }
+
+  public float groupSpeed = 1f;
   private float cachedSpeed;
 
 	void Update()

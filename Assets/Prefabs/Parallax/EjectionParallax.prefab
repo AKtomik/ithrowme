@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canvasChild: {fileID: 5261384055487286774}
-  scrolling: 1
+  scrolling: 0
   scrollDirection: 0
   initialProgress: 1
   scrollSpeed: 4
@@ -1687,7 +1687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037536515136871857}
-  - component: {fileID: 8716657080510495810}
+  - component: {fileID: 1629844307624308547}
   m_Layer: 0
   m_Name: EjectionParallax
   m_TagString: Untagged
@@ -1717,7 +1717,7 @@ Transform:
   - {fileID: 5556837411107862803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8716657080510495810
+--- !u!114 &1629844307624308547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1732,6 +1732,7 @@ MonoBehaviour:
   scrollParallaxes:
   - {fileID: 7337462726830245404}
   - {fileID: 8828055425735938634}
+  groupSpeed: 1
 --- !u!1 &1882277909209943046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canvasChild: {fileID: 1818248572676364062}
-  scrolling: 1
+  scrolling: 0
   scrollDirection: 0
   initialProgress: 0.5
   scrollSpeed: 2.234
@@ -5796,7 +5797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canvasChild: {fileID: 2038021873747932565}
-  scrolling: 1
+  scrolling: 0
   scrollDirection: 0
   initialProgress: 0.33
   scrollSpeed: 0.567

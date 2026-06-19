@@ -8,6 +8,8 @@ public class Step7Trigger : MonoBehaviour
     [SerializeField] private Transform placingPoint;
     [SerializeField] private Transform lookingPoint;
     [SerializeField] private Animation pulledAnimatorReference;
+    
+    [SerializeField] private ScrollParallaxGroup parallaxGroup;
 
     private bool entered = false;
 
@@ -33,10 +35,14 @@ public class Step7Trigger : MonoBehaviour
         pulledAnimatorReference.Play();
     }
 
-    // ! is not executed by the same Step7Trigger than the trigger
     public void AnimationEnded() {
         ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         ReferenceSingleton.instance.player.UnlockingLook();
         ReferenceSingleton.instance.player.UnlockingPos();
+    }
+
+    public void AnimationEnableScroll()
+    {
+        parallaxGroup.EnableScrolling();
     }
 }
