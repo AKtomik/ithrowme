@@ -27,6 +27,7 @@ public class Step7Trigger : MonoBehaviour
         
         // player
         ReferenceSingleton.instance.cinematicManager.EnableCinematic(false, false, true);
+        ReferenceSingleton.instance.bothCanvas.ChangeCinematicHandState(HandState.GRAB);
         player.transform.SetParent(placingPoint);
         player.LockingLookAt(lookingPoint);
         player.LockingPosAt(placingPoint);

@@ -6154,6 +6154,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1595449727}
     - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+      propertyPath: takeThrowSomethingDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786189650715054160, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: cheatProjectileActivated
       value: 0
       objectReference: {fileID: 0}
@@ -9721,7 +9725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.684467
+      value: 0.571
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9729,7 +9733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4221009
+      value: -10.382
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11957,8 +11961,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20, y: 30, z: 20}
-  m_Center: {x: 0, y: -12, z: -16}
+  m_Size: {x: 20, y: 100, z: 20}
+  m_Center: {x: 0, y: -47, z: -16}
 --- !u!65 &1836851439
 BoxCollider:
   m_ObjectHideFlags: 0

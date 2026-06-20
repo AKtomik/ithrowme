@@ -353,6 +353,7 @@ public class CapsulePlayer : MonoBehaviour
     
     public void UnlockingPos()
     {
+        playerBody.isKinematic = false;
         lockPosAt = false;
     }
 
