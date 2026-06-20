@@ -3,6 +3,8 @@ using UnityEngine;
 // credit trigger
 public class Step7Trigger : MonoBehaviour
 {
+    [SerializeField] private AudioSource ejectionAudio;
+    [SerializeField] private EndCreditScript creditScript;
     [Header("Step Pointers")]
     [SerializeField] private MissionManager missionManager;
     [SerializeField] private Transform placingPoint;
@@ -34,12 +36,14 @@ public class Step7Trigger : MonoBehaviour
 
         // animation
         pulledAnimatorReference.Play();
+        ejectionAudio.Play();
     }
 
     public void AnimationEnded() {
         ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         ReferenceSingleton.instance.player.UnlockingLook();
         ReferenceSingleton.instance.player.UnlockingPos();
+        creditScript.StartEnding();
     }
 
     public void AnimationEnableScroll()
