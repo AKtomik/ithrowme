@@ -3,12 +3,13 @@ using UnityEngine;
 public class ClampedVelocity : MonoBehaviour
 {
     public bool clampMin = true;
-    public float speedMin = 5f;
+    [DrawIf("clampMin")] public float speedMin = 5f;
+    
     public bool clampMax = false;
-    public float speedMax = 10f;
+    [DrawIf("clampMax")] public float speedMax = 10f;
 
     public bool stopBellowNoConsideration = true;
-    public float noConsiderationSpeed = .000001f;
+    [DrawIf("stopBellowNoConsideration")] public float noConsiderationSpeed = .000001f;
 
     private Rigidbody rb;
 

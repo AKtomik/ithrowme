@@ -186,10 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClampedVelocity
   clampMin: 1
-  speedMin: 0.4
+  speedMin: 0.5
   clampMax: 0
   speedMax: 10
-  stopBellowNoConsideration: 1
+  stopBellowNoConsideration: 0
   noConsiderationSpeed: 0.0001
 --- !u!114 &8087410682420035642
 MonoBehaviour:
