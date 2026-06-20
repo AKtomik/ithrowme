@@ -14,7 +14,7 @@ public class EndCreditScript : MonoBehaviour
 
     private void Update()
     {
-        if (isEndind)
+        if (isEndind && creditTransform.anchoredPosition.y < 3055.17f)
         {
             creditTransform.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
         }
