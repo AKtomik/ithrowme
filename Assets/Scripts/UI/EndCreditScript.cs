@@ -18,6 +18,8 @@ public class EndCreditScript : MonoBehaviour
         Color color = endBlackScreen.color;
         color.a = 0f;
         endBlackScreen.color = color;
+
+        endBlackScreen.transform.parent.gameObject.SetActive(false);
     }
 
 
@@ -40,11 +42,13 @@ public class EndCreditScript : MonoBehaviour
 
     public void EndingT()
     {
+        endBlackScreen.transform.parent.gameObject.SetActive(true);
         StartCoroutine(FadeToBlack());
     }
 
     private IEnumerator FadeToBlack()
     {
+
         float timer = 0f;
 
         while (timer < fadeDuration)
