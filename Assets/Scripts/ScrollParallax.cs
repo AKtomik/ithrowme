@@ -14,6 +14,7 @@ public class ScrollParallax : MonoBehaviour
     private ScrollParallaxDirection cachedDirection;
     public float initialProgress = 1f;
     public float scrollSpeed = 1f;
+    public bool loop = true;
 
     private float scrollComputedSpeed = 1f; 
     public float ScrollParentSpeed
@@ -74,11 +75,13 @@ public class ScrollParallax : MonoBehaviour
         progress += Time.deltaTime / 10 * scrollComputedSpeed;
         if (progress > 1)
         {
-            progress = 0;
+            if (loop) progress = 0;
+            else scrolling = false;
         }
         if (progress < 0)
         {
-            progress = 1;
+            if (loop) progress = 1;
+            else scrolling = false;
         }
 
         UpdatePosition();

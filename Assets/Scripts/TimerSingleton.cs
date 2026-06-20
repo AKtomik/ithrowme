@@ -5,6 +5,9 @@ using UnityEngine;
 public class TimerSingleton : MonoBehaviour
 {
     public static TimerSingleton instance;
+    
+    private string stringTime;
+    public string StringTime {  get => stringTime; }
 
     private bool ended = false;
     private bool running = false;
@@ -32,7 +35,8 @@ public class TimerSingleton : MonoBehaviour
             double displaySec = Math.Floor(timedSec);
             string textSec = displaySec.ToString();
             
-            timerTextPro.text = textSec + "." + textMs;
+            stringTime = textSec + "." + textMs;
+            timerTextPro.text = stringTime;
         } else if (timerTextPro.enabled) {
             timerTextPro.enabled = false;
         }
