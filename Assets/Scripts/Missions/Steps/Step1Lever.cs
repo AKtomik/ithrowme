@@ -7,8 +7,13 @@ public class Step1Lever : TakableLever
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private Transform lookAwayPoint;
     [SerializeField] private Transform lookBackPoint;
+    [SerializeField] private Animation parallaxEjectionAnimation;
 
     [SerializeField] private AudioSource powerOn;
+
+    public override bool PullCheck(CapsulePlayer player) {
+        return missionManager.IsActive(1);
+    }
 
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step1Lever: pulling...");
@@ -32,6 +37,12 @@ public class Step1Lever : TakableLever
     {
         AnimationLookingPoint(lookAwayPoint, .15f);
     }
+    
+    public void AnimationAlias1Eject()
+    {
+        parallaxEjectionAnimation.Play();
+    }
+
     public void AnimationAlias1LookBack()
     {
         AnimationLookingPoint(lookBackPoint, .6f);

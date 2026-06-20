@@ -24,6 +24,7 @@ abstract public class TakableLever : Takable
     {
         
         if (!this.enabled) return;
+        if (!PullCheck(player)) return;
         
         if (takeCollider) takeCollider.enabled = false;// disable collision during the animation
         pulling = true;
@@ -36,7 +37,7 @@ abstract public class TakableLever : Takable
         }
         
         if (cinematicMode) ReferenceSingleton.instance.cinematicManager.EnableCinematic();
-        if (lockLooking) playerPulling.LockingLookAt(lookingPoint.position);
+        if (lockLooking) playerPulling.LockingLookAt(lookingPoint);
         
         if (pulledAnimationName.Length > 0)
             pulledAnimatorReference.Play(pulledAnimationName);
@@ -49,6 +50,7 @@ abstract public class TakableLever : Takable
         
     override public void Throw(CapsulePlayer player) {}
 
+    virtual public bool PullCheck(CapsulePlayer player) => true;
     abstract public void PullStart(CapsulePlayer player);
     abstract public void PullFinish(CapsulePlayer player);
 
@@ -81,7 +83,7 @@ abstract public class TakableLever : Takable
     
     public void AnimationLookingPoint(Transform newLookingPoint, float speed = 1)
     {// ! does not works in animationPlayer, need to do aliases
-        if (lockLooking) playerPulling.LockingLookAt(newLookingPoint.position, speed);
+        if (lockLooking) playerPulling.LockingLookAt(newLookingPoint, speed);
     }
 
     public void PlayAudio()

@@ -66,11 +66,16 @@ public class ConsoleScreenManager : MonoBehaviour
         {
             Destroy(textObject.GetComponent<AudioSource>());
         }
-        
-        TypeWriter typewriter = textObject.GetComponent<TypeWriter>();
-        typewriter.Typing(text, typingTime);
-        typewriter.SetColor(color);
+
+		if (!textObject.TryGetComponent(out TypeWriter typewriter))
+		{
+            Debug.LogWarning("console screen didn't detect TypeWriter in textPrefab");
+			typewriter = textObject.AddComponent<TypeWriter>();
+		}
         activeTexts.Add(textObject);
+        typewriter.CheckInit();// in case it does not itself
+		typewriter.Typing(text, typingTime);
+        typewriter.SetColor(color);
         LayoutRebuilder.ForceRebuildLayoutImmediate(textContainer.GetComponent<RectTransform>());
     }
     

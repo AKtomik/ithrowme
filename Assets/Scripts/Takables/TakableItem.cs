@@ -22,7 +22,7 @@ public class TakableItem : Takable
         base.Start();
     }
 
-    public void Put(Transform parent)
+    virtual public void Put(Transform pointParent)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -31,18 +31,18 @@ public class TakableItem : Takable
         takeCollider.enabled = false;
         rigidBody.isKinematic = true;
         // reparent
-        transform.SetParent(parent);
-        transform.position = parent.position;
+        transform.SetParent(pointParent);
+        transform.position = pointParent.position;
         // reset pos
         if (takeCollider.gameObject != gameObject)
-            takeCollider.gameObject.transform.position = parent.position;
+            takeCollider.gameObject.transform.position = pointParent.position;
         // play take sound
         PlaySound(takeAudio);
 
         gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("CullingLayer");
     }
     
-    public void Unput(Transform point)
+    virtual public void Unput(Transform point)
     {
         // enable
         takeCollider.enabled = true;

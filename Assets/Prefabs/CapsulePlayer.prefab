@@ -132,6 +132,7 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   takeThrowSomethingDebug: 0
   takeThrowActionDebug: 0
+  isKeyboard: 0
   playerPivot: {fileID: 8190383844440651382}
   lookSensitivity: 0.5
   smoothTime: 0.1
@@ -185,10 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClampedVelocity
   clampMin: 1
-  speedMin: 0.4
+  speedMin: 0.5
   clampMax: 0
   speedMax: 10
-  stopBellowNoConsideration: 1
+  stopBellowNoConsideration: 0
   noConsiderationSpeed: 0.0001
 --- !u!114 &8087410682420035642
 MonoBehaviour:
@@ -575,7 +576,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 200
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5

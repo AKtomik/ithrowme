@@ -56,9 +56,13 @@ public class CapsulePlayer : MonoBehaviour
     public bool disableHand = false;
     public bool disableLook = false;
     private bool lockLookAt = false;
-    private Vector3 lockLookAtPos = Vector3.zero;
+    private Transform lockLookAtTransform;
     private float lockLookAtSpeed = 1;
     private float lockLookAtProgress = 0;
+    private bool lockPosAt = false;
+    private Transform lockPosAtTransform;
+    private float lockPosAtSpeed = 1;
+    private float lockPosAtProgress = 0;
     
     [Header("Sound")]
     [SerializeField] public bool disableAudio = false;
@@ -229,12 +233,24 @@ public class CapsulePlayer : MonoBehaviour
 
     void HandleLook()
     {
+        // lock posing
+        if (lockPosAt)
+        {
+            // t compute
+            lockPosAtProgress += lockPosAtSpeed * Time.deltaTime;
+            if (lockPosAtProgress > 1) lockPosAtProgress = 1;
+
+            // progressive move
+            transform.position = Vector3.Slerp(transform.position, lockPosAtTransform.position, lockPosAtProgress);
+        }
+
+        // lock looking
         if (lockLookAt)
         {
-            if (lockLookAtPos != Vector3.zero)
+            if (lockLookAtTransform != null)
             {
                 // toward from here to point
-                Vector3 towardLook = lockLookAtPos - playerPivot.position;
+                Vector3 towardLook = lockLookAtTransform.position - playerPivot.position;
                 towardLook = towardLook.normalized;
 
                 // t compute
@@ -295,18 +311,18 @@ public class CapsulePlayer : MonoBehaviour
         playerPivot.rotation = rotation;
     }
 
-    public void LockingLookAt()
+    public void LockingLook()
     {
         lockLookAt = true;
-        lockLookAtPos = Vector2.zero;
+        lockLookAtTransform = null;
         lockLookAtSpeed = 0;
         lockLookAtProgress = 0;
     }
 
-    public void LockingLookAt(Vector3 pos, float speed = 1)
+    public void LockingLookAt(Transform trans, float speed = 1)
     {
         lockLookAt = true;
-        lockLookAtPos = pos;
+        lockLookAtTransform = trans;
         lockLookAtSpeed = speed;
         lockLookAtProgress = 0;
     }
@@ -315,6 +331,32 @@ public class CapsulePlayer : MonoBehaviour
     {
         lockLookAt = false;
     }
+
+
+    public void LockingPos()
+    {
+        playerBody.isKinematic = true;
+        lockPosAt = true;
+        lockPosAtTransform = null;
+        lockPosAtSpeed = 0;
+        lockPosAtProgress = 0;
+    }
+
+    public void LockingPosAt(Transform trans, float speed = 1)
+    {
+        playerBody.isKinematic = true;
+        lockPosAt = true;
+        lockPosAtTransform = trans;
+        lockPosAtSpeed = speed;
+        lockPosAtProgress = 0;
+    }
+    
+    public void UnlockingPos()
+    {
+        playerBody.isKinematic = false;
+        lockPosAt = false;
+    }
+
 
     void CheckReachable()
     {

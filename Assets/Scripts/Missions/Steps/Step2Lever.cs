@@ -10,6 +10,10 @@ public class Step2Lever : TakableLever
     public bool animClearConsole = true;
     public bool animShowExe = true;
 
+    public override bool PullCheck(CapsulePlayer player) {
+        return missionManager.IsActive(2);
+    }
+
     public override void PullStart(CapsulePlayer player) {
         Debug.Log("Step2Lever: pulling...");
         missionManager.CompleteMission(2);
