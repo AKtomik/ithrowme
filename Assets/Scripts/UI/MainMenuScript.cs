@@ -54,6 +54,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void StartMenu()
     {
+        SettingsStore.LoadSettings();
         double time = SettingsStore.personalBest;
 
         if (time == -1 || time == 0.0)

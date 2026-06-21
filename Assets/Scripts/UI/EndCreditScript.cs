@@ -36,7 +36,24 @@ public class EndCreditScript : MonoBehaviour
 
     public void StartEnding()
     {
-        SettingsStore.personalBest = TimerSingleton.instance.GetFinalTime();
+        SettingsStore.LoadSettings();
+
+        double oldTime = SettingsStore.personalBest;
+
+        if (oldTime == -1 || oldTime == 0.0)
+        {
+            SettingsStore.personalBest = TimerSingleton.instance.GetFinalTime();
+        }
+        else
+        {
+            if (TimerSingleton.instance.GetFinalTime() < oldTime)
+            {
+                SettingsStore.personalBest = TimerSingleton.instance.GetFinalTime();
+            }
+        }
+
+        
+        SettingsStore.SaveSettings();
 
         pauseManager.isEnding = true;
         creditTransform.gameObject.SetActive(true);
