@@ -8,7 +8,7 @@ public class PauseManager : MonoBehaviour
 {
     // /!\ PauseManager's GameObject MUST have the tag "PauseManager" so that PauseMenuScript works /!\
 
-    [SerializeField] private bool blockPauseInCinematic = true;
+    public bool blockPauseInCinematic = true;
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private RawImage screenImage;

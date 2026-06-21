@@ -16,6 +16,7 @@ public class Step7Trigger : MonoBehaviour
     [SerializeField] private ScrollParallaxGroup parallaxGroup;
     [SerializeField] private TextMeshProUGUI screenTextMesh;
     [SerializeField] private TextMeshProUGUI timeTextMesh;
+    [SerializeField] private PauseManager pauseManager;
 
     private bool entered = false;
     private CapsulePlayer pullPlayer;
@@ -42,6 +43,8 @@ public class Step7Trigger : MonoBehaviour
         player.transform.SetParent(placingPoint);
         player.LockingLookAt(lookingWindowPoint, .5f);
         player.LockingPosAt(placingPoint, .5f);
+
+        pauseManager.blockPauseInCinematic = true;
 
         // animation
         pulledAnimatorReference.Play();

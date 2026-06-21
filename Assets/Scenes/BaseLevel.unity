@@ -1850,6 +1850,7 @@ MonoBehaviour:
   gameParents:
   - {fileID: 1267620103}
   cinematicManager: {fileID: 1595449727}
+  isEnding: 0
 --- !u!4 &254801719
 Transform:
   m_ObjectHideFlags: 0
@@ -2831,6 +2832,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5909062833139109060, guid: 0d8472d34b6b811479e071f30539a27f, type: 3}
+      propertyPath: pauseManager
+      value: 
+      objectReference: {fileID: 254801718}
     - target: {fileID: 5909062833139109060, guid: 0d8472d34b6b811479e071f30539a27f, type: 3}
       propertyPath: endBlackScreen
       value: 
@@ -5369,6 +5374,7 @@ GameObject:
   - component: {fileID: 811283907}
   - component: {fileID: 811283906}
   - component: {fileID: 811283909}
+  - component: {fileID: 811283910}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5463,6 +5469,18 @@ MonoBehaviour:
   worldSpaceMouseSensitivity: 1
   usedHand: 1
   pointerTransformOverride: {fileID: 0}
+--- !u!114 &811283910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811283905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458217cc11cc7834c828b04d4cfd94b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnableInputModule
 --- !u!4 &818310318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1811175237003841134, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
@@ -18317,6 +18335,10 @@ PrefabInstance:
       propertyPath: creditScript
       value: 
       objectReference: {fileID: 203696186}
+    - target: {fileID: 1063105007766252943, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
+      propertyPath: pauseManager
+      value: 
+      objectReference: {fileID: 254801718}
     - target: {fileID: 1063105007766252943, guid: 4324d9abe31e3d44e829ee723e09a902, type: 3}
       propertyPath: missionManager
       value: 

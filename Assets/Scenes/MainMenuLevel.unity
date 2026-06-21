@@ -966,7 +966,8 @@ PrefabInstance:
       propertyPath: m_text
       value: LMB
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3881439160486075839, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7353076739736890275, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
     - {fileID: 7716850177637371971, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
