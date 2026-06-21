@@ -45,8 +45,6 @@ public class TutorialText : MonoBehaviour
 
     private void Update()
     {
-        //InputSystem.onActionChange += player.OnInputChange;
-
 
         if (canvas.player.isKeyboard)
         {
@@ -90,7 +88,7 @@ public class TutorialText : MonoBehaviour
 
     private void DeleteGameobject(InputAction.CallbackContext ctx)
     {
-        Debug.Log("AAAAA");
+        
         if (gameObject != null)
         {
             Destroy(gameObject);
