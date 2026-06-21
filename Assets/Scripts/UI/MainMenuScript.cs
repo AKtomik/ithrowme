@@ -105,7 +105,7 @@ public class MainMenuScript : MonoBehaviour
         {
             
             //Output the current progress
-            m_Text.text = "Chargement: " + (asyncOperation.progress * 100) + "%";
+            m_Text.text = "Chargement: " + ((Mathf.Round((float)asyncOperation.progress * 100 * 100)) / 100.0) + "%";
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)
