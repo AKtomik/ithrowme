@@ -69,4 +69,6 @@ public class TimerSingleton : MonoBehaviour
         if (ended) return timedSec;
         else return -1;
     }
+
+    
 }

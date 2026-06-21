@@ -1141,7 +1141,7 @@ MonoBehaviour:
   menuScript: {fileID: 232710710}
   cinematicBlack: {fileID: 1046116070}
   m_Text: {fileID: 643884213}
-  PBText: {fileID: 0}
+  PBText: {fileID: 1812598644}
   mainCanva: {fileID: 232710709}
 --- !u!4 &382878284
 Transform:
@@ -1851,7 +1851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236430694691280730, guid: c297db91e5737274496f57b00c3c8b72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 1812598645}
   - component: {fileID: 1812598644}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PBText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

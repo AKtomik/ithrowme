@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class SettingsStore
 {
+    public static double personalBest = 0.0;
     // control settings
     public static float lookSensivity = 1;
     public static float rollSensivity = 1;
@@ -28,6 +29,8 @@ public static class SettingsStore
     public const bool doCinematicStopTimer = true;
     public const bool doCinematicFreezeBodies = true;
 
+    
+
     public static void SaveSettings()
     {
         PlayerPrefs.SetFloat("lookSensivity", SettingsStore.lookSensivity);
@@ -40,6 +43,7 @@ public static class SettingsStore
         PlayerPrefs.SetInt("invertRoll", SettingsStore.invertRoll ? 1 : 0);
         PlayerPrefs.SetFloat("baseFov", SettingsStore.baseFov);
         PlayerPrefs.SetInt("visibleTimer", SettingsStore.visibleTimer ? 1 : 0);
+        PlayerPrefs.SetString("personalBest", System.Convert.ToString(SettingsStore.personalBest));
         PlayerPrefs.Save();
     }
 
@@ -55,6 +59,7 @@ public static class SettingsStore
         SettingsStore.invertRoll = PlayerPrefs.GetInt("invertRoll", 0) == 1;
         SettingsStore.baseFov = PlayerPrefs.GetFloat("baseFov", 60);
         SettingsStore.visibleTimer = PlayerPrefs.GetInt("visibleTimer", 1) == 1;
+        SettingsStore.personalBest = System.Convert.ToDouble(PlayerPrefs.GetString("personalBest", "0.0"));
 
     }
 

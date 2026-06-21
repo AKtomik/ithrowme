@@ -54,6 +54,18 @@ public class MainMenuScript : MonoBehaviour
 
     private void StartMenu()
     {
+        double time = SettingsStore.personalBest;
+
+        if (time == -1 || time == 0.0)
+        {
+            PBText.gameObject.SetActive(false);
+        }
+        else
+        {
+            PBText.gameObject.SetActive(true);
+            PBText.text = "Record : " + time;
+        }
+
         isStarted = true;
         topAnimator.SetTrigger("FadeOut");
         Invoke("DeleteAll", 1f);
@@ -61,7 +73,9 @@ public class MainMenuScript : MonoBehaviour
     private void DeleteAll()
     {
         menuScript.GoToMainCanva();
+
         Destroy(topAnimator.gameObject);
+
     }
 
 
