@@ -10,7 +10,8 @@ public class EndCreditScript : MonoBehaviour
     [SerializeField] private RectTransform creditTransform;
     [SerializeField] private AudioSource creditAudio;
     [SerializeField] private RawImage endBlackScreen;
-    private bool isEndind = false;
+    
+    public bool isEnding = false;
     private void Start()
     {
         creditTransform.gameObject.SetActive(false);
@@ -25,7 +26,7 @@ public class EndCreditScript : MonoBehaviour
 
     private void Update()
     {
-        if (isEndind && creditTransform.anchoredPosition.y < 3055.17f)
+        if (isEnding && creditTransform.anchoredPosition.y < 3055.17f)
         {
             creditTransform.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
         }
@@ -35,7 +36,7 @@ public class EndCreditScript : MonoBehaviour
     public void StartEnding()
     {
         creditTransform.gameObject.SetActive(true);
-        isEndind = true;
+        isEnding = true;
         creditAudio.Play();
         Invoke("EndingT", 32);
     }
