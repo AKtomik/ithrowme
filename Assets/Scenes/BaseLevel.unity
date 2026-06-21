@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   environementParent: {fileID: 1834085575}
   potentialParallaxParent: {fileID: 0}
-  defaultHide: 1
+  defaultHide: 0
   triggerIsHidding: 1
 --- !u!65 &259564640
 BoxCollider:
@@ -6244,7 +6244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   environementParent: {fileID: 1093311689}
   potentialParallaxParent: {fileID: 1343268713}
-  defaultHide: 1
+  defaultHide: 0
   triggerIsHidding: 1
 --- !u!65 &897384918
 BoxCollider:
