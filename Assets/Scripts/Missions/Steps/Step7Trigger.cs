@@ -15,7 +15,7 @@ public class Step7Trigger : MonoBehaviour
     
     [SerializeField] private ScrollParallaxGroup parallaxGroup;
     [SerializeField] private TextMeshProUGUI screenTextMesh;
-    [SerializeField] private TextMeshProUGUI timeTextMesh;
+    //[SerializeField] private TextMeshProUGUI timeTextMesh;
     [SerializeField] private PauseManager pauseManager;
 
     private bool entered = false;
@@ -24,7 +24,7 @@ public class Step7Trigger : MonoBehaviour
 	void Start()
 	{
 		screenTextMesh.enabled = false;
-        timeTextMesh.enabled = false;
+        //timeTextMesh.enabled = false;
 	}
 
 	private void OnTriggerEnter(Collider other) {
@@ -80,8 +80,8 @@ public class Step7Trigger : MonoBehaviour
         
         TimerSingleton.instance.EndTime();// ! this is the end, gg
         
-        timeTextMesh.enabled = true;
-        timeTextMesh.text = TimerSingleton.instance.StringTime;
+        //timeTextMesh.enabled = true;
+        //timeTextMesh.text = TimerSingleton.instance.StringTime;
     }
     
     public void AnimationLookWindow() {

@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5732655711674363427
 Transform:
   m_ObjectHideFlags: 0
@@ -894,7 +894,6 @@ MonoBehaviour:
   pulledAnimatorReference: {fileID: 3047545836535028631}
   parallaxGroup: {fileID: 4815719908042408528}
   screenTextMesh: {fileID: 6423742312893583018}
-  timeTextMesh: {fileID: 5985333681098359031}
   pauseManager: {fileID: 0}
 --- !u!65 &5966880224174975264
 BoxCollider:

@@ -498,9 +498,9 @@ GameObject:
   - component: {fileID: 1971588632799003154}
   - component: {fileID: 3168322796051111938}
   - component: {fileID: 1200674709851920668}
-  - component: {fileID: 7579676762021241039}
+  - component: {fileID: 8718217303574571580}
   m_Layer: 0
-  m_Name: DoorWallPlane
+  m_Name: DoorWallPlaneOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 3029940198717660282}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 1, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -578,14 +578,14 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7579676762021241039
-MeshCollider:
+--- !u!65 &8718217303574571580
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3029940198717660282}
-  m_Material: {fileID: 13400000, guid: 66c95607f941670429eb084b905d50ec, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -596,10 +596,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 3
+  m_Size: {x: 10.000001, y: 0.4, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3223044996731030464
 GameObject:
   m_ObjectHideFlags: 0
