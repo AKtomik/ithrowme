@@ -63,4 +63,10 @@ public class TimerSingleton : MonoBehaviour
         ended = true;
         running = false;
     }
+
+    public double GetFinalTime()
+    {
+        if (ended) return timedSec;
+        else return -1;
+    }
 }

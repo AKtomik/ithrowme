@@ -551,7 +551,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -886,6 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Step7Trigger
   ejectionAudio: {fileID: 2806597177300386319}
+  creditScript: {fileID: 0}
   missionManager: {fileID: 0}
   placingPoint: {fileID: 1799749469524364510}
   lookingWindowPoint: {fileID: 383270574106222214}
@@ -894,6 +895,7 @@ MonoBehaviour:
   parallaxGroup: {fileID: 4815719908042408528}
   screenTextMesh: {fileID: 6423742312893583018}
   timeTextMesh: {fileID: 5985333681098359031}
+  pauseManager: {fileID: 0}
 --- !u!65 &5966880224174975264
 BoxCollider:
   m_ObjectHideFlags: 0

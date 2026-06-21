@@ -39,7 +39,7 @@ public class TakableItem : Takable
         // play take sound
         PlaySound(takeAudio);
 
-        gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("CullingLayer");
+        takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
     }
     
     virtual public void Unput(Transform point)
@@ -54,7 +54,7 @@ public class TakableItem : Takable
         // play throw sound
         PlaySound(throwAudio);
 
-        gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("ThrowableItem");
+        takeCollider.gameObject.layer = LayerMask.NameToLayer("ThrowableItem");
     }
 
     override public void Take(CapsulePlayer player)

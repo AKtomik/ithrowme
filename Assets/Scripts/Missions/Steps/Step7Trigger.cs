@@ -30,7 +30,7 @@ public class Step7Trigger : MonoBehaviour
 	private void OnTriggerEnter(Collider other) {
         if (entered || !other.gameObject.CompareTag("Player")) return;
         if (!other.gameObject.TryGetComponent<CapsulePlayer>(out var player)) return;
-        //if (!missionManager.IsActive(7)) return;
+        if (!missionManager.IsActive(7)) return;
         Debug.Log("Step0Trigger: step 7 completed");
         entered = true;
         pullPlayer = player;
