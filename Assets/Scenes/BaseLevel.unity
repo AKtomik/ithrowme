@@ -4586,6 +4586,7 @@ MonoBehaviour:
   insideParent: {fileID: 1985402788}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+  playerLogDebug: 0
 --- !u!65 &588086095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4603,7 +4604,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 24, y: 5, z: 10}
   m_Center: {x: 20, y: 0, z: 10}
@@ -4624,7 +4625,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 10, y: 5, z: 8}
   m_Center: {x: 8, y: 0, z: 2}
@@ -7438,6 +7439,7 @@ MonoBehaviour:
   insideParent: {fileID: 2053036288}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+  playerLogDebug: 0
 --- !u!1001 &1023284470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10507,6 +10509,7 @@ MonoBehaviour:
   insideParent: {fileID: 1732857560}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+  playerLogDebug: 0
 --- !u!65 &1531062235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10524,7 +10527,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 25, z: 40}
   m_Center: {x: -15, y: -10, z: 2}
@@ -10545,7 +10548,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 5, z: 14}
   m_Center: {x: -14, y: 0, z: 4}
@@ -13791,6 +13794,7 @@ MonoBehaviour:
   insideParent: {fileID: 515542475}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+  playerLogDebug: 0
 --- !u!65 &1863179196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13808,7 +13812,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 5, z: 12}
   m_Center: {x: 14, y: 0, z: 0}
@@ -14470,6 +14474,7 @@ MonoBehaviour:
   insideParent: {fileID: 989197273}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+  playerLogDebug: 0
 --- !u!65 &1954064740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14487,7 +14492,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 5, z: 15}
   m_Center: {x: 25, y: 0, z: -5}
@@ -14508,7 +14513,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 5, z: 10}
   m_Center: {x: 14, y: 0, z: 2}
