@@ -30,7 +30,7 @@ public class TutorialText : MonoBehaviour
 
     private void Update()
     {
-        texte.text = canvas.player.inputActions.FindAction(input).GetBindingDisplayString(canvas.player.isKeyboard ? 1 : 0) + " pour " + action;
+        texte.text = canvas.player.inputActions.FindAction(input).GetBindingDisplayString(!canvas.player.isKeyboard ? 1 : 0) + " pour " + action;
     }
 
     private void DeleteGameobject(InputAction.CallbackContext ctx)
