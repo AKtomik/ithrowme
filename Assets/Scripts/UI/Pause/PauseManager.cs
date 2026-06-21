@@ -14,6 +14,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private RawImage screenImage;
     [SerializeField] private GameObject[] gameParents;
     [SerializeField] private CinematicManager cinematicManager;
+    public bool isEnding = false;
     private InputAction pauseAction;
 
     private bool pauseState;
@@ -47,7 +48,7 @@ public class PauseManager : MonoBehaviour
 
     public void AskPause()
     {
-        if (blockPauseInCinematic && cinematicManager.IsCinematic()) return;
+        if (blockPauseInCinematic && cinematicManager.IsCinematic() || isEnding) return;
         Debug.Log("pausing...");
         StartCoroutine(PauseRoutine());
     }

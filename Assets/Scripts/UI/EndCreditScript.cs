@@ -10,6 +10,7 @@ public class EndCreditScript : MonoBehaviour
     [SerializeField] private RectTransform creditTransform;
     [SerializeField] private AudioSource creditAudio;
     [SerializeField] private RawImage endBlackScreen;
+    [SerializeField] private PauseManager pauseManager;
     
     public bool isEnding = false;
     private void Start()
@@ -35,6 +36,7 @@ public class EndCreditScript : MonoBehaviour
 
     public void StartEnding()
     {
+        pauseManager.isEnding = true;
         creditTransform.gameObject.SetActive(true);
         isEnding = true;
         creditAudio.Play();
