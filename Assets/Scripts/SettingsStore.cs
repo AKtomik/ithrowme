@@ -1,3 +1,4 @@
+using System.Globalization;
 using UnityEngine;
 
 
@@ -43,7 +44,7 @@ public static class SettingsStore
         PlayerPrefs.SetInt("invertRoll", SettingsStore.invertRoll ? 1 : 0);
         PlayerPrefs.SetFloat("baseFov", SettingsStore.baseFov);
         PlayerPrefs.SetInt("visibleTimer", SettingsStore.visibleTimer ? 1 : 0);
-        PlayerPrefs.SetString("personalBest", System.Convert.ToString(SettingsStore.personalBest));
+        PlayerPrefs.SetString("personalBest", SettingsStore.personalBest.ToString(CultureInfo.InvariantCulture));
         PlayerPrefs.Save();
     }
 
@@ -59,7 +60,9 @@ public static class SettingsStore
         SettingsStore.invertRoll = PlayerPrefs.GetInt("invertRoll", 0) == 1;
         SettingsStore.baseFov = PlayerPrefs.GetFloat("baseFov", 60);
         SettingsStore.visibleTimer = PlayerPrefs.GetInt("visibleTimer", 1) == 1;
-        SettingsStore.personalBest = System.Convert.ToDouble(PlayerPrefs.GetString("personalBest", "0.0"));
+        string raw = PlayerPrefs.GetString("personalBest", "0.0");
+        if (!double.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out SettingsStore.personalBest))
+            SettingsStore.personalBest = 0.0;
 
     }
 
