@@ -39,10 +39,14 @@ public class Step1Lever : TakableLever
         AnimationLookingPoint(lookAwayPoint, .15f);
     }
     
+    public void AnimationAlias1Noise()
+    {
+        ejectionAudio.Play();
+    }
+
     public void AnimationAlias1Eject()
     {
         parallaxEjectionAnimation.Play();
-        ejectionAudio.Play();
     }
 
     public void AnimationAlias1LookBack()
