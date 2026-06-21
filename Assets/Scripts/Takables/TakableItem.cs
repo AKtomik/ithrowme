@@ -5,15 +5,20 @@ public class TakableItem : Takable
 {
     [Header("Item Pointers")]
     [SerializeField] protected Rigidbody rigidBody;
+    [SerializeField] protected GameObject affiliated;
+    
+    private int originalLayer;
     private Transform originalParentTransform;
     private Transform putParentTransform;
-    private int originalLayer;
 
     [Header("Item Sounds")]
     public bool disableAudio = false;
     public AudioClip[] hitAudio = new AudioClip[] { null };
     public AudioClip[] takeAudio = new AudioClip[] { null };
     public AudioClip[] throwAudio = new AudioClip[] { null };
+    
+    private bool isPut;
+    public bool IsPut { get => isPut; }
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,37 +34,52 @@ public class TakableItem : Takable
         rigidBody.linearVelocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
         // disable
-        takeCollider.enabled = false;
+        isPut = true;
         rigidBody.isKinematic = true;
+        takeCollider.enabled = false;
         // reparent
         originalParentTransform = transform.parent;
         putParentTransform = pointParent;
         transform.SetParent(pointParent);
         transform.position = pointParent.position;
+        // relayer
+        originalLayer = takeCollider.gameObject.layer;
+        takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
+        if (affiliated) affiliated.layer = LayerMask.NameToLayer("CullingLayer");
+        gameObject.layer = LayerMask.NameToLayer("CullingLayer");
         // reset pos
         if (takeCollider.gameObject != gameObject)
             takeCollider.gameObject.transform.position = pointParent.position;
         // play take sound
         PlaySound(takeAudio);
 
-        originalLayer = takeCollider.gameObject.layer;
-        takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
     }
     
     virtual public void Unput(Transform point)
     {
         // enable
+        isPut = false;
         takeCollider.enabled = true;
         rigidBody.isKinematic = false;
         // reparent
-        if (transform.parent == putParentTransform)
-            transform.SetParent(originalParentTransform);
+        if (transform.parent != putParentTransform) Debug.LogError("item was reparented while puted");
+        transform.SetParent(originalParentTransform);
+        // relayer
+        takeCollider.gameObject.layer = originalLayer;
+        if (affiliated) affiliated.layer = originalLayer;
+        gameObject.layer = originalLayer;
         // move the projectile
         transform.SetPositionAndRotation(point.position, point.rotation);
         // play throw sound
         PlaySound(throwAudio);
 
-        takeCollider.gameObject.layer = originalLayer;
+    }
+
+    public void Reparent(Transform parnt)
+    {
+        if (transform.parent == parnt) return;
+        if (isPut) originalParentTransform = parnt;
+        else transform.SetParent(parnt);
     }
 
     override public void Take(CapsulePlayer player)

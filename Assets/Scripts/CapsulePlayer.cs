@@ -95,6 +95,12 @@ public class CapsulePlayer : MonoBehaviour
     private Takable handyTakable = null;
     private GameObject handyObject = null;
     private int throwCount = 0;
+    public Takable Hand {
+        get
+        {
+            return handyTakable;
+        }
+    }
 
     void Awake()
     {

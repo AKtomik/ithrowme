@@ -51,6 +51,7 @@ MonoBehaviour:
   takeCollider: {fileID: 7343397204920430591}
   audioSource: {fileID: 2658173575091502491}
   rigidBody: {fileID: 5534270252997462852}
+  affiliated: {fileID: 8259539306359611100}
   disableAudio: 0
   hitAudio:
   - {fileID: 0}
@@ -283,6 +284,8 @@ MonoBehaviour:
   randomRotationVelocity: 1
   randomRotationVelocityMin: 0
   randomRotationVelocityMax: 0.02
+  initalPush: 0
+  initalPushForce: {x: 0.2, y: 0, z: 0}
 --- !u!114 &9190265446691790769
 MonoBehaviour:
   m_ObjectHideFlags: 0
