@@ -45,14 +45,13 @@ public class TakableItem : Takable
         // relayer
         originalLayer = takeCollider.gameObject.layer;
         takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
-        if (affiliated) affiliated.layer = LayerMask.NameToLayer("CullingLayer");
+        if (affiliated) SetLayerRecursively(affiliated, LayerMask.NameToLayer("CullingLayer"));
         gameObject.layer = LayerMask.NameToLayer("CullingLayer");
         // reset pos
         if (takeCollider.gameObject != gameObject)
             takeCollider.gameObject.transform.position = pointParent.position;
         // play take sound
         PlaySound(takeAudio);
-
     }
     
     virtual public void Unput(Transform point)
@@ -66,13 +65,19 @@ public class TakableItem : Takable
         transform.SetParent(originalParentTransform);
         // relayer
         takeCollider.gameObject.layer = originalLayer;
-        if (affiliated) affiliated.layer = originalLayer;
+        if (affiliated) SetLayerRecursively(affiliated, originalLayer);
         gameObject.layer = originalLayer;
         // move the projectile
         transform.SetPositionAndRotation(point.position, point.rotation);
         // play throw sound
         PlaySound(throwAudio);
-
+    }
+    
+    void SetLayerRecursively(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+            SetLayerRecursively(child.gameObject, layer);
     }
 
     public void Reparent(Transform parnt)
