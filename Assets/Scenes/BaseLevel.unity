@@ -4521,6 +4521,8 @@ GameObject:
   - component: {fileID: 588086092}
   - component: {fileID: 588086094}
   - component: {fileID: 588086093}
+  - component: {fileID: 588086096}
+  - component: {fileID: 588086095}
   m_Layer: 0
   m_Name: TechnicalArea
   m_TagString: FarawayDisable
@@ -4564,7 +4566,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 5}
-  m_Center: {x: 2, y: 0, z: 0}
+  m_Center: {x: 2.5, y: 0, z: 0}
 --- !u!114 &588086094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,6 +4582,48 @@ MonoBehaviour:
   insideParent: {fileID: 1985402788}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+--- !u!65 &588086095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588086091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24, y: 5, z: 10}
+  m_Center: {x: 20, y: 0, z: 10}
+--- !u!65 &588086096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588086091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 5, z: 8}
+  m_Center: {x: 8, y: 0, z: 2}
 --- !u!1001 &597547561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10394,6 +10438,8 @@ GameObject:
   - component: {fileID: 1531062232}
   - component: {fileID: 1531062234}
   - component: {fileID: 1531062233}
+  - component: {fileID: 1531062236}
+  - component: {fileID: 1531062235}
   m_Layer: 0
   m_Name: ResearchArea
   m_TagString: FarawayDisable
@@ -10437,7 +10483,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 5}
-  m_Center: {x: -2, y: 0, z: 0}
+  m_Center: {x: -2.5, y: 0, z: 0}
 --- !u!114 &1531062234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10453,6 +10499,48 @@ MonoBehaviour:
   insideParent: {fileID: 1732857560}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+--- !u!65 &1531062235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531062231}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 25, z: 40}
+  m_Center: {x: -15, y: -10, z: 2}
+--- !u!65 &1531062236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531062231}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 5, z: 14}
+  m_Center: {x: -14, y: 0, z: 4}
 --- !u!4 &1541877838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7689026280281498653, guid: 247ae45b65aca4148aaa265d4b15be94, type: 3}
@@ -13633,6 +13721,7 @@ GameObject:
   - component: {fileID: 1863179193}
   - component: {fileID: 1863179195}
   - component: {fileID: 1863179194}
+  - component: {fileID: 1863179196}
   m_Layer: 0
   m_Name: CommandArea
   m_TagString: FarawayDisable
@@ -13676,7 +13765,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 5}
-  m_Center: {x: 2, y: 0, z: 0}
+  m_Center: {x: 2.5, y: 0, z: 0}
 --- !u!114 &1863179195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13692,6 +13781,27 @@ MonoBehaviour:
   insideParent: {fileID: 515542475}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+--- !u!65 &1863179196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863179192}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 5, z: 12}
+  m_Center: {x: 14, y: 0, z: 0}
 --- !u!1001 &1864153394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14289,6 +14399,8 @@ GameObject:
   - component: {fileID: 1954064737}
   - component: {fileID: 1954064739}
   - component: {fileID: 1954064738}
+  - component: {fileID: 1954064741}
+  - component: {fileID: 1954064740}
   m_Layer: 0
   m_Name: LifeArea
   m_TagString: Untagged
@@ -14332,7 +14444,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4, y: 5, z: 5}
-  m_Center: {x: 2, y: 0, z: 0}
+  m_Center: {x: 2.5, y: 0, z: 0}
 --- !u!114 &1954064739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14348,6 +14460,48 @@ MonoBehaviour:
   insideParent: {fileID: 989197273}
   outsideParent: {fileID: 0}
   itemLogDebug: 0
+--- !u!65 &1954064740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954064736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 5, z: 15}
+  m_Center: {x: 25, y: 0, z: -5}
+--- !u!65 &1954064741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954064736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 5, z: 10}
+  m_Center: {x: 14, y: 0, z: 2}
 --- !u!1001 &1957323016
 PrefabInstance:
   m_ObjectHideFlags: 0
