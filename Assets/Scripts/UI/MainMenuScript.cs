@@ -18,6 +18,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private PauseMenuScript menuScript;
     [SerializeField] private RawImage cinematicBlack;
     [SerializeField] private TextMeshProUGUI m_Text;
+    [SerializeField] private TextMeshProUGUI PBText;
     [SerializeField] private GameObject mainCanva;
     private InputAction click;
     private bool isStarted = false;
