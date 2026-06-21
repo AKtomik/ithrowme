@@ -6,6 +6,7 @@ public class TakableItem : Takable
     [Header("Item Pointers")]
     [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
+    private Transform putParentTransform;
     private int originalLayer;
 
     [Header("Item Sounds")]
@@ -18,7 +19,6 @@ public class TakableItem : Takable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
-        originalParentTransform = transform.parent;
         if (disableAudio) Debug.LogWarning("item with disabled audio: "+this);
         base.Start();
     }
@@ -32,6 +32,8 @@ public class TakableItem : Takable
         takeCollider.enabled = false;
         rigidBody.isKinematic = true;
         // reparent
+        originalParentTransform = transform.parent;
+        putParentTransform = pointParent;
         transform.SetParent(pointParent);
         transform.position = pointParent.position;
         // reset pos
@@ -50,7 +52,8 @@ public class TakableItem : Takable
         takeCollider.enabled = true;
         rigidBody.isKinematic = false;
         // reparent
-        transform.SetParent(originalParentTransform);
+        if (transform.parent == putParentTransform)
+            transform.SetParent(originalParentTransform);
         // move the projectile
         transform.SetPositionAndRotation(point.position, point.rotation);
         // play throw sound
