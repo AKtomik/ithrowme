@@ -1,9 +1,11 @@
+using System.Net;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource ambianceMusic;
     [SerializeField] private AudioSource runMusic;
+    [SerializeField] private EndCreditScript creditScript;
     private AlarmScript[] alarmsScripts;
 
     // setup
@@ -48,8 +50,12 @@ public class AudioManager : MonoBehaviour
 
     private void PlayAmbianceNote()
     {
-        ambianceMusic.Play();
-        Invoke(nameof(PlayAmbianceNote), Random.Range(30f, 60f));
+        if (!creditScript.isEnding)
+        {
+            ambianceMusic.Play();
+            Invoke(nameof(PlayAmbianceNote), Random.Range(30f, 60f));
+        }
+
     }
         
     public void StopAmbianceMusic()
