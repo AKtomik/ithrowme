@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150d1dc6dc9bf2d4e9947c7e014da5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakableItemHologram
-  takeCollider: {fileID: 0}
+  takeCollider: {fileID: 8085827010368609260}
   audioSource: {fileID: 3548245806380206472}
   rigidBody: {fileID: 6418739373231816535}
   disableAudio: 0
@@ -248,6 +248,11 @@ AudioSource:
 --- !u!54 &6418739373231816535 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 5534270252997462852, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
+  m_PrefabInstance: {fileID: 1575798120324232211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8085827010368609260 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 7343397204920430591, guid: 81a7bf5f114ba51448a5a54c1d6f83d6, type: 3}
   m_PrefabInstance: {fileID: 1575798120324232211}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &9061704980682027138 stripped
