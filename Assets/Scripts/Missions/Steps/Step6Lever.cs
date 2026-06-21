@@ -10,6 +10,8 @@ public class Step6Lever : TakableLever
     [Header("Step Settings")]
     public bool animClearConsole = true;
     public bool animShowExe = true;
+
+    [SerializeField] private AudioSource openAudio;
     
     public override bool PullCheck(CapsulePlayer player) {
         return missionManager.IsActive(6);
@@ -56,6 +58,7 @@ public class Step6Lever : TakableLever
         consoleScreen.SetScreenColor(Color.green);
         consoleScreen.AddText("ejection READY", Color.white, 1f);
         hubloAnimation.Play();
+        openAudio.Play();
         //consoleScreen.AddText("You succeeded", Color.white, 1f);
         //consoleScreen.AddText("get in the godot capsule to proceed ejection", Color.black, 2f);
     }
