@@ -1858,7 +1858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027eeaec7a4032a48b3ae9cf7ca0409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disableOnlyRenders: 0
   environementParent: {fileID: 598567744}
+  throwableParent: {fileID: 515542474}
   potentialParallaxParent: {fileID: 0}
   defaultHide: 0
   triggerIsHidding: 1
@@ -2043,7 +2045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027eeaec7a4032a48b3ae9cf7ca0409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disableOnlyRenders: 0
   environementParent: {fileID: 1834085575}
+  throwableParent: {fileID: 1985402787}
   potentialParallaxParent: {fileID: 0}
   defaultHide: 0
   triggerIsHidding: 1
@@ -5618,7 +5622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027eeaec7a4032a48b3ae9cf7ca0409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disableOnlyRenders: 0
   environementParent: {fileID: 634556904}
+  throwableParent: {fileID: 2053036287}
   potentialParallaxParent: {fileID: 0}
   defaultHide: 0
   triggerIsHidding: 1
@@ -6463,7 +6469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027eeaec7a4032a48b3ae9cf7ca0409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disableOnlyRenders: 0
   environementParent: {fileID: 1093311689}
+  throwableParent: {fileID: 1732857559}
   potentialParallaxParent: {fileID: 1343268713}
   defaultHide: 0
   triggerIsHidding: 1
@@ -13501,7 +13509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027eeaec7a4032a48b3ae9cf7ca0409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  disableOnlyRenders: 0
   environementParent: {fileID: 806063439}
+  throwableParent: {fileID: 1954064736}
   potentialParallaxParent: {fileID: 1671221021}
   defaultHide: 0
   triggerIsHidding: 1

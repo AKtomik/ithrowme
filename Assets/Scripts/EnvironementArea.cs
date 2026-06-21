@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnvironementArea : MonoBehaviour
 {
+  [SerializeField] private bool disableOnlyRenders = false;
   [SerializeField] private GameObject environementParent;
+  [SerializeField] private GameObject throwableParent;
   [SerializeField] private GameObject potentialParallaxParent;
   [SerializeField] private bool defaultHide = false;
   [SerializeField] private bool triggerIsHidding = false;
@@ -16,12 +18,18 @@ public class EnvironementArea : MonoBehaviour
 	{
 	  //renderers = environementParent.GetComponentsInChildren<Behaviour>(true);
 	  //renderers = new Behaviour[] {};
-		foreach (var render in environementParent.GetComponentsInChildren<Renderer>(true))
-		{
-			renderers[render] = render.enabled;
-		}
 		//renderers.AddRange(environementParent.GetComponentsInChildren<Canvas>(true));
 		//Debug.Log("renderers:"+renderers.Count);
+		if (disableOnlyRenders)
+		{
+			foreach (var render in environementParent.GetComponentsInChildren<Renderer>(true))
+				renderers[render] = render.enabled;
+			if (throwableParent)
+			{
+				foreach (var render in throwableParent.GetComponentsInChildren<Renderer>(true))
+					renderers[render] = render.enabled;
+			}
+		}
 		SetShow(!defaultHide);
 	}
 
@@ -43,31 +51,39 @@ public class EnvironementArea : MonoBehaviour
 		if (showning == doShow) return;
 		showning = doShow;
 
-		foreach(var key in renderers.Keys.ToArrayPooled())
+		if (disableOnlyRenders)
 		{
-			if(key == null)
-			{
-				renderers.Remove(key);
-			}
-		}
 
-		if (doShow)
-			foreach (var render in renderers.Keys.ToArrayPooled())
+			foreach(var key in renderers.Keys.ToArrayPooled())
 			{
-				if (render)
+				if(key == null)
 				{
-					render.enabled = renderers[render];
+					renderers.Remove(key);
 				}
 			}
-		else
-			foreach (var render in renderers.Keys.ToArrayPooled())
-			{
-				if (render)
+
+			if (doShow)
+				foreach (var render in renderers.Keys.ToArrayPooled())
 				{
-					renderers[render] = render.enabled;
-					render.enabled = false;
+					if (render)
+					{
+						render.enabled = renderers[render];
+					}
 				}
-			}
+			else
+				foreach (var render in renderers.Keys.ToArrayPooled())
+				{
+					if (render)
+					{
+						renderers[render] = render.enabled;
+						render.enabled = false;
+					}
+				}
+
+		} else {
+			environementParent.SetActive(doShow);
+			if (throwableParent) throwableParent.SetActive(doShow);
+		}
 
 		if (potentialParallaxParent) 
 			potentialParallaxParent.SetActive(!doShow);
