@@ -64,7 +64,7 @@ public class MainMenuScript : MonoBehaviour
         else
         {
             PBText.gameObject.SetActive(true);
-            PBText.text = "Record : " + time;
+            PBText.text = "Record : " + (Mathf.Round((float)time * 1000)) / 1000.0;
         }
 
         isStarted = true;
