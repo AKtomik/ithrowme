@@ -97,5 +97,6 @@ public class Step7Trigger : MonoBehaviour
         ReferenceSingleton.instance.cinematicManager.DisableCinematic();
         ReferenceSingleton.instance.player.UnlockingLook();
         ReferenceSingleton.instance.player.UnlockingPos();
+        creditScript.StartEnding();
     }
 }
