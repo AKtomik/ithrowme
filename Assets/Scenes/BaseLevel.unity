@@ -10000,6 +10000,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
+--- !u!1 &1569338602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4656940455473221513, guid: c16e5360bb5d3194eb34f1e7e42ca7c5, type: 3}
+  m_PrefabInstance: {fileID: 1864153394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1571267136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12786,7 +12791,7 @@ PrefabInstance:
     - target: {fileID: 3482278921025923658, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: hologramContent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1569338602}
     - target: {fileID: 9061704980682027138, guid: 76397707fb41a1643bc648a1bfeef273, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.705
