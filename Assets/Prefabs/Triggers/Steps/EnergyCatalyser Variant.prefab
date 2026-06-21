@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218644149826684792, guid: 6c811854b92664f49aae77e147dee6eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1082641503694831468, guid: 6c811854b92664f49aae77e147dee6eb, type: 3}
       propertyPath: m_Name
       value: EnergyCatalyser Variant
@@ -92,10 +96,10 @@ MonoBehaviour:
   rotationSlowSpeed: 200
   missionManager: {fileID: 0}
   cubeSound: {fileID: 4300896124893816759}
+  powerLights: []
   powerNeonMesh: {fileID: 0}
   powerNeonEmptyMaterial: {fileID: 2100000, guid: 710852956a9b0f243981eac9b65dcfe7, type: 2}
   powerNeonEnergyMaterial: {fileID: 2100000, guid: 024f6ce196123e042afe59789124a887, type: 2}
-  powerLights: []
 --- !u!82 &4300896124893816759
 AudioSource:
   m_ObjectHideFlags: 0
