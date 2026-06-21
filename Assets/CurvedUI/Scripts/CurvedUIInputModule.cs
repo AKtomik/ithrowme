@@ -68,7 +68,7 @@ public class CurvedUIInputModule : StandaloneInputModule {
     #endif
 
     //Other settings
-    static bool disableOtherInputModulesOnStart = true; //default true
+    static bool disableOtherInputModulesOnStart = false; //default true
 
     #endregion // end of SETTINGS --------------------------------------------------------------//
 
