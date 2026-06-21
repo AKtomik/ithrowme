@@ -3,7 +3,7 @@ using UnityEngine;
 public class ClampedVelocity : MonoBehaviour
 {
     public bool clampMin = true;
-    [DrawIf("clampMin")] public float speedMin = 5f;
+    [DrawIf("clampMin")] public float speedMin = 1f;
     
     public bool clampMax = false;
     [DrawIf("clampMax")] public float speedMax = 10f;

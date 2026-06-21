@@ -6,6 +6,7 @@ public class TakableItem : Takable
     [Header("Item Pointers")]
     [SerializeField] protected Rigidbody rigidBody;
     private Transform originalParentTransform;
+    private int originalLayer;
 
     [Header("Item Sounds")]
     public bool disableAudio = false;
@@ -39,6 +40,7 @@ public class TakableItem : Takable
         // play take sound
         PlaySound(takeAudio);
 
+        originalLayer = takeCollider.gameObject.layer;
         takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
     }
     
@@ -54,7 +56,7 @@ public class TakableItem : Takable
         // play throw sound
         PlaySound(throwAudio);
 
-        takeCollider.gameObject.layer = LayerMask.NameToLayer("ThrowableItem");
+        takeCollider.gameObject.layer = originalLayer;
     }
 
     override public void Take(CapsulePlayer player)

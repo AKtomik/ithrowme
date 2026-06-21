@@ -4,8 +4,11 @@ public class RandomInitVelocity : MonoBehaviour
 {
     [SerializeField] bool randomRotationPos = true;
     [SerializeField] bool randomRotationVelocity = true;
-    [SerializeField] float randomRotationVelocityMin = 0;
-    [SerializeField] float randomRotationVelocityMax = .5f;
+    [SerializeField, DrawIf("randomRotationVelocity")] float randomRotationVelocityMin = 0;
+    [SerializeField, DrawIf("randomRotationVelocity")] float randomRotationVelocityMax = .5f;
+
+    [SerializeField] bool initalPush = false;
+    [SerializeField, DrawIf("initalPush")] Vector3 initalPushForce = new Vector3(.2f, 0f, 0f);
 
     private Rigidbody rb;
 
@@ -22,6 +25,7 @@ public class RandomInitVelocity : MonoBehaviour
             transform.rotation = Quaternion.Euler(GetRandomRotation());
         if (randomRotationVelocity)
             rb.AddTorque(GetRandomRotation() * Random.Range(randomRotationVelocityMin, randomRotationVelocityMax));
-
+        if (initalPush)
+            rb.AddForce(initalPushForce);
     }
 }
