@@ -15,6 +15,8 @@ public static class SettingsStore
     public static float breathVolume = 0;
     public static float alarmVolume = 0;
     public static bool invertRoll = false; // must be egal to the inspector value
+    public static bool useVSync = true;
+    public static bool disableOutline = false;
 
     // camera settings
     public static float baseFov = 60;
@@ -30,7 +32,7 @@ public static class SettingsStore
     public const bool doCinematicStopTimer = true;
     public const bool doCinematicFreezeBodies = true;
 
-    
+
 
     public static void SaveSettings()
     {
@@ -45,6 +47,8 @@ public static class SettingsStore
         PlayerPrefs.SetFloat("baseFov", SettingsStore.baseFov);
         PlayerPrefs.SetInt("visibleTimer", SettingsStore.visibleTimer ? 1 : 0);
         PlayerPrefs.SetString("personalBest", SettingsStore.personalBest.ToString(CultureInfo.InvariantCulture));
+        PlayerPrefs.SetInt("useVSync", SettingsStore.useVSync ? 1 : 0);
+        PlayerPrefs.SetInt("disableOutline", SettingsStore.disableOutline ? 1 : 0); 
         PlayerPrefs.Save();
     }
 
@@ -63,7 +67,8 @@ public static class SettingsStore
         string raw = PlayerPrefs.GetString("personalBest", "0.0");
         if (!double.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out SettingsStore.personalBest))
             SettingsStore.personalBest = 0.0;
-
+        SettingsStore.useVSync = PlayerPrefs.GetInt("useVSync", 1) == 1;            
+        SettingsStore.disableOutline = PlayerPrefs.GetInt("disableOutline", 0) == 1; 
     }
 
     public static void ResetToDefaults()
@@ -78,6 +83,8 @@ public static class SettingsStore
         invertRoll = false;
         baseFov = 60f;
         visibleTimer = true;
+        useVSync = true;
+        disableOutline = false;
         SaveSettings();
     }
 

@@ -42,7 +42,8 @@ public class PauseMenuScript : MonoBehaviour
 
 
     [SerializeField] private Toggle toggleRollAxis;
-
+    [SerializeField] private Toggle toggleUseVsync;
+    [SerializeField] private Toggle toggleDisableOutline;
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource changeButtonAudio;
@@ -149,6 +150,9 @@ public class PauseMenuScript : MonoBehaviour
         sliderFOV.value = SettingsStore.baseFov;
         FOVText.text = Mathf.Round(sliderFOV.value) + "";
         toggleRollAxis.isOn = SettingsStore.invertRoll;
+
+        toggleUseVsync.isOn = SettingsStore.useVSync;
+        ChangeVsync();
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
@@ -332,6 +336,22 @@ public class PauseMenuScript : MonoBehaviour
         audioMixer.SetFloat("Alarm", SettingsStore.alarmVolume);
 
         GoToSettings();
+    }
+
+    public void ChangeVsync()
+    {
+
+        int vsync;
+        if (toggleUseVsync.isOn)
+        {
+            vsync = 1;
+        }
+        else
+        {
+            vsync = 0;
+        }
+
+        QualitySettings.vSyncCount = vsync;
     }
 
     ///////////////////////////////////////////////////////////////
