@@ -385,7 +385,31 @@ public class CapsulePlayer : MonoBehaviour
             if (!(loopDistance < nearestDistance)) continue;
             nearestObject = loopCollider.gameObject;
             nearestDistance = loopDistance;
+
+
+            
         }
+
+        if (nearestObject)
+        {
+            if (!nearestObject.transform.parent.gameObject.GetComponent<Outline>())
+            {
+                Outline objectOut = nearestObject.transform.parent.gameObject.AddComponent<Outline>();
+                objectOut.OutlineColor = Color.green;
+                objectOut.OutlineWidth = 20f;
+            }
+
+        }
+        if (reachableObject)
+        {
+            if (nearestObject != reachableObject)
+            {
+                if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
+                    Destroy(transform.parent.gameObject.GetComponent<Outline>());
+            }
+        }
+        
+        
         takeNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
         anythingReachable = nearestObject != null;
@@ -398,6 +422,9 @@ public class CapsulePlayer : MonoBehaviour
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
         if (takeThrowSomethingDebug) Debug.Log("player take something");
+        if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
+            Destroy(transform.parent.gameObject.GetComponent<Outline>());
+        
         TookSomething(reachableObject);
     }
 
