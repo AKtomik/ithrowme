@@ -70,9 +70,10 @@ public class BothCanvas : MonoBehaviour
     }
 
     // cheat
-    public void ShowCheat()
+    public void ShowCheat(bool enable)
     {
         cheatText.gameObject.SetActive(true);
+        cheatText.text = enable ? "CHEAT MODE" : "CHEATED";
     }
     
     // hand
