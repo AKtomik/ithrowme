@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
@@ -5,9 +6,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Timeline.DirectorControlPlayable;
-using TMPro;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -29,21 +30,21 @@ public class PauseMenuScript : MonoBehaviour
 
     [Header("Settings parameters")]
     [SerializeField] private TextMeshProUGUI FOVText;
-    [SerializeField] private Slider sliderLookSensitivity;
-    [SerializeField] private Slider sliderRollSensitivity;
+    [SerializeField] private UnityEngine.UI.Slider sliderLookSensitivity;
+    [SerializeField] private UnityEngine.UI.Slider sliderRollSensitivity;
 
-    [SerializeField] private Slider sliderFOV;
+    [SerializeField] private UnityEngine.UI.Slider sliderFOV;
 
-    [SerializeField] private Slider sliderSfxVolume;
-    [SerializeField] private Slider sliderMainVolume;
-    [SerializeField] private Slider sliderMusicVolume;
-    [SerializeField] private Slider sliderBreathVolume;
-    [SerializeField] private Slider sliderAlarmVolume;
+    [SerializeField] private UnityEngine.UI.Slider sliderSfxVolume;
+    [SerializeField] private UnityEngine.UI.Slider sliderMainVolume;
+    [SerializeField] private UnityEngine.UI.Slider sliderMusicVolume;
+    [SerializeField] private UnityEngine.UI.Slider sliderBreathVolume;
+    [SerializeField] private UnityEngine.UI.Slider sliderAlarmVolume;
 
 
-    [SerializeField] private Toggle toggleRollAxis;
-    [SerializeField] private Toggle toggleUseVsync;
-    [SerializeField] private Toggle toggleDisableOutline;
+    [SerializeField] private UnityEngine.UI.Toggle toggleRollAxis;
+    [SerializeField] private UnityEngine.UI.Toggle toggleUseVsync;
+    [SerializeField] private UnityEngine.UI.Toggle toggleDisableOutline;
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource changeButtonAudio;
@@ -152,7 +153,7 @@ public class PauseMenuScript : MonoBehaviour
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
         toggleUseVsync.isOn = SettingsStore.useVSync;
-        ChangeVsync();
+        toggleDisableOutline.isOn = SettingsStore.disableOutline;
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
@@ -269,7 +270,7 @@ public class PauseMenuScript : MonoBehaviour
         SettingsStore.rollSensivity = sliderRollSensitivity.value;
     }
 
-    public void ToPercent(Slider slider)
+    public void ToPercent(UnityEngine.UI.Slider slider)
     {
         slider.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.RoundToInt((slider.value - slider.minValue) / (slider.maxValue - slider.minValue) * 100) + "%";
     }
@@ -277,21 +278,23 @@ public class PauseMenuScript : MonoBehaviour
     public void ChangeSFXVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("SFX", sliderSfxVolume.value);
+        audioMixer.SetFloat("SFX", SliderToDecibel(sliderSfxVolume));
         ToPercent(sliderSfxVolume);
         SettingsStore.sfxVolume = sliderSfxVolume.value;
     }
+
     public void ChangeMainVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("Master", sliderMainVolume.value);
+        audioMixer.SetFloat("Master", SliderToDecibel(sliderMainVolume));
         ToPercent(sliderMainVolume);
         SettingsStore.masterVolume = sliderMainVolume.value;
     }
+
     public void ChangeMusicVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("Music", sliderMusicVolume.value);
+        audioMixer.SetFloat("Music", SliderToDecibel(sliderMusicVolume));
         ToPercent(sliderMusicVolume);
         SettingsStore.musicVolume = sliderMusicVolume.value;
     }
@@ -299,7 +302,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ChangeBreathVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("Breath", sliderBreathVolume.value);
+        audioMixer.SetFloat("Breath", SliderToDecibel(sliderBreathVolume));
         ToPercent(sliderBreathVolume);
         SettingsStore.breathVolume = sliderBreathVolume.value;
     }
@@ -307,7 +310,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ChangeAlarmVolume()
     {
         sfxSlidersAudio.Play();
-        audioMixer.SetFloat("Alarm", sliderAlarmVolume.value);
+        audioMixer.SetFloat("Alarm", SliderToDecibel(sliderAlarmVolume));
         ToPercent(sliderAlarmVolume);
         SettingsStore.alarmVolume = sliderAlarmVolume.value;
     }
@@ -352,6 +355,12 @@ public class PauseMenuScript : MonoBehaviour
         }
 
         QualitySettings.vSyncCount = vsync;
+        SettingsStore.useVSync = toggleUseVsync.isOn;
+    }
+
+    public void ChangeOutline()
+    {
+        SettingsStore.disableOutline = toggleDisableOutline.isOn;
     }
 
     ///////////////////////////////////////////////////////////////
@@ -365,6 +374,9 @@ public class PauseMenuScript : MonoBehaviour
         changeButtonAudio.PlayOneShot(changeButtonAudio.clip);
     }
 
-
+    private float SliderToDecibel(UnityEngine.UI.Slider slider)
+    {
+        return slider.value <= slider.minValue ? -80f : slider.value;
+    }
 
 }
