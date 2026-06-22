@@ -103,12 +103,17 @@ public class Outline : MonoBehaviour {
     foreach (var renderer in renderers) {
 
       // Append outline shaders
-      var materials = renderer.sharedMaterials.ToList();
+      
 
-      materials.Add(outlineMaskMaterial);
-      materials.Add(outlineFillMaterial);
+            if (!renderer.gameObject.GetComponent<ParticleSystem>())
+            {
+                var materials = renderer.sharedMaterials.ToList();
+                materials.Add(outlineMaskMaterial);
+                materials.Add(outlineFillMaterial);
 
-      renderer.materials = materials.ToArray();
+                renderer.materials = materials.ToArray();
+            }
+
     }
   }
 
