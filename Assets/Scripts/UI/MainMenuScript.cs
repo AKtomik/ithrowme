@@ -37,7 +37,7 @@ public class MainMenuScript : MonoBehaviour
             StartCoroutine(StartGame());
             return;
         }
-        mainMenuTheme.Play();
+        
         cinematicBlack.gameObject.SetActive(false);
         
 
@@ -47,7 +47,8 @@ public class MainMenuScript : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
         inputActions.FindActionMap("UI").Enable();
         topAnimator.SetTrigger("One");
-        Invoke("StartMenu", 14f);
+        mainMenuTheme.Play();
+        Invoke("StartMenu", 14.6f);
         
     }
 
