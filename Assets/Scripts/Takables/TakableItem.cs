@@ -10,7 +10,7 @@ public class TakableItem : Takable
     private int originalLayer = -1;
     private Transform originalParentTransform;
     private Transform putParentTransform;
-    private MovingThing movingThing;
+    private MovingThing bodyMovingThing;
 
     [Header("Item Sounds")]
     public bool disableAudio = false;
@@ -26,6 +26,7 @@ public class TakableItem : Takable
     public override void Start()
     {
         if (disableAudio) Debug.LogWarning("item with disabled audio: "+this);
+        if (rigidBody.TryGetComponent<MovingThing>(out var moving)) bodyMovingThing = moving;
         base.Start();
     }
 
@@ -37,8 +38,8 @@ public class TakableItem : Takable
         // disable
         isPut = true;
         takeCollider.enabled = false;
-        if (movingThing)
-            movingThing.SetKinematic(true);
+        if (bodyMovingThing)
+            bodyMovingThing.SetKinematic(true);
         else
             rigidBody.isKinematic = true;
         // reparent
