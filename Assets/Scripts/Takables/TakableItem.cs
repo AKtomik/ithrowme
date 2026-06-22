@@ -10,6 +10,7 @@ public class TakableItem : Takable
     private int originalLayer = -1;
     private Transform originalParentTransform;
     private Transform putParentTransform;
+    private MovingThing movingThing;
 
     [Header("Item Sounds")]
     public bool disableAudio = false;
@@ -35,8 +36,11 @@ public class TakableItem : Takable
         rigidBody.angularVelocity = Vector3.zero;
         // disable
         isPut = true;
-        rigidBody.isKinematic = true;
         takeCollider.enabled = false;
+        if (movingThing)
+            movingThing.SetKinematic(true);
+        else
+            rigidBody.isKinematic = true;
         // reparent
         originalParentTransform = transform.parent;
         putParentTransform = pointParent;

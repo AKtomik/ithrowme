@@ -54,6 +54,14 @@ public class MovingThing : MonoBehaviour
         }
     }
 
+    public void SetKinematic(bool state)
+    {
+        if (frozen)
+            wasKinematic = state;
+        else
+            rb.isKinematic = state;
+    }
+
     // all freeze
     public static void FreezeAll()
     {
