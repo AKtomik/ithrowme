@@ -42,7 +42,6 @@ public class PauseMenuScript : MonoBehaviour
 
 
     [SerializeField] private Toggle toggleRollAxis;
-    [SerializeField] private Toggle toggleRollJoystick;
 
 
     [SerializeField] private AudioMixer audioMixer;
@@ -249,40 +248,6 @@ public class PauseMenuScript : MonoBehaviour
         }
         return false;
     }
-
-    public void ToggleRollInput(bool useR1L1)
-    {
-        var action = inputActions.FindActionMap("Player")?.FindAction("Roll");
-        if (action == null) return;
-
-        bool insideTargetComposite = false;
-
-        for (int i = 0; i < action.bindings.Count; i++)
-        {
-            var binding = action.bindings[i];
-
-            if (binding.isComposite)
-            {
-                insideTargetComposite = IsRightStickComposite(action, i);
-                continue;
-            }
-
-            if (!insideTargetComposite || !binding.isPartOfComposite) continue;
-
-            if (useR1L1)
-            {
-                if (binding.name == "negative")
-                    action.ApplyBindingOverride(i, "<Gamepad>/leftShoulder");   // R1
-                else if (binding.name == "positive")
-                    action.ApplyBindingOverride(i, "<Gamepad>/rightShoulder"); // R1
-            }
-            else
-            {
-                action.RemoveBindingOverride(i); // Restore rightStick
-            }
-        }
-    }
-
     ///////////////////////////////////////////////////////////////
     /////////////////////* SETTINGS FUNCTIONS*/////////////////////
     ///////////////////////////////////////////////////////////////
@@ -347,11 +312,6 @@ public class PauseMenuScript : MonoBehaviour
     {
         sfxSlidersAudio.Play();
         SettingsStore.invertRoll = toggleRollAxis.isOn;
-    }
-
-    public void UseR1L1()
-    {
-        ToggleRollInput(toggleRollJoystick.isOn);
     }
 
     public void ChangeFOV()
