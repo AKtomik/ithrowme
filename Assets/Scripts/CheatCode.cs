@@ -8,10 +8,15 @@ public class CheatCode : MonoBehaviour
     private InputAction throwAction;
     
     private CapsuleCheat capsuleCheat;
+    private Rigidbody capsuleBody;
 
     private int cheatHoldTakeCount = 0;
     private int cheatHoldThrowCount = 0;
     private bool cheatInputing = false;
+    
+    private bool cheated = false;
+    private bool cheating = false;
+    private bool moveCheating = false;
 
     // setup
     void Awake()
@@ -20,6 +25,7 @@ public class CheatCode : MonoBehaviour
         throwAction = inputActions.FindAction("Player/Throw");
 
         capsuleCheat = GetComponent<CapsuleCheat>();
+        capsuleBody = GetComponent<Rigidbody>();
     }
 
     void OnEnable()
@@ -29,6 +35,9 @@ public class CheatCode : MonoBehaviour
 
         throwAction.performed += OnThrowPress;
         takeAction.performed += OnTakePress;
+        
+        throwAction.canceled += OnThrowRelease;
+        takeAction.canceled += OnTakeRelease;
     }
     
     void OnDisable()
@@ -38,6 +47,9 @@ public class CheatCode : MonoBehaviour
 
         throwAction.performed -= OnThrowPress;
         takeAction.performed -= OnTakePress;
+        
+        throwAction.canceled -= OnThrowRelease;
+        takeAction.canceled -= OnTakeRelease;
     }
 
     // perform
@@ -67,16 +79,35 @@ public class CheatCode : MonoBehaviour
             //    ResetSteak();
             //    return;
             //}
-            //cheatInputing = true;
-            ToggleMoveCheat(true);
-            ResetSteak();
+            Debug.Log("cheat code inputing...");
+            cheatInputing = true;
+            //ToggleMoveCheat(true);
+            //ResetSteak();
         } 
         else if (cheatHoldTakeCount > 5)
         {
             ResetSteak();
+            Debug.Log("cheat code canceled");
         }
     }
 
+    void OnThrowRelease(InputAction.CallbackContext ctx)
+    {
+        if (takeAction.IsPressed()) return;
+
+        int cheatIndex = cheatHoldTakeCount;
+        cheatHoldTakeCount = 0;
+
+        if (!cheating) return;
+        Debug.Log("cancel cheat action "+cheatIndex);
+        
+        switch (cheatIndex)
+        {
+            case 3: {
+                ToggleMoveCheat(false);
+            } break;
+        }
+    }
     
     void OnThrowPress(InputAction.CallbackContext ctx)
     {
@@ -88,27 +119,53 @@ public class CheatCode : MonoBehaviour
 
         cheatHoldThrowCount += 1;
         cheatHoldTakeCount = 0;
-        cheatInputing = false;
+        //cheatInputing = false;
+    }
+    
+    void OnTakeRelease(InputAction.CallbackContext ctx)
+    {
+        if (throwAction.IsPressed()) return;
 
-        if (cheatHoldThrowCount == 3)
+        int cheatIndex = cheatHoldThrowCount;
+        cheatHoldThrowCount = 0;
+
+        if (!cheatInputing) return;
+        Debug.Log("perform cheat action "+cheatIndex);
+
+        switch (cheatIndex)
         {
-            // disable all of them
-            ToggleMoveCheat(false);
-            CheatMode(false);
-            ResetSteak();
+            case 1: {
+                PushCheat(10f);
+            } break;
+            case 2: {
+                PushCheat(100f);
+            } break;
+            case 3: {
+                ToggleMoveCheat(true);
+            } break;
         }
     }
 
     // cheats
-    void CheatMode(bool enable)
+    void CheatMode()
     {// visual
-        Debug.Log("cheat mode "+enable+"!");
-        ReferenceSingleton.instance.bothCanvas.ShowCheat(enable);
+        cheated = true;
+        cheating = moveCheating;
+        Debug.Log("cheat mode "+cheating+"!");
+        ReferenceSingleton.instance.bothCanvas.ShowCheat(cheating);
+    }
+    
+    void PushCheat(float force)
+    {
+        CheatMode();
+        Debug.Log("push cheat:once force of "+force);
+        capsuleBody.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 
     void ToggleMoveCheat(bool enable)
     {
-        if (enable) CheatMode(true);
+        moveCheating = enable;
+        CheatMode();
         Debug.Log("move cheat:"+enable);
         capsuleCheat.enabled = enable;
     }
