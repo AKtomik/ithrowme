@@ -55,7 +55,6 @@ public class Step7Trigger : MonoBehaviour
         screenTextMesh.enabled = true;
         
         ReferenceSingleton.instance.cinematicManager.EnableCinematic(false, false, true);
-        ReferenceSingleton.instance.bothCanvas.ChangeCinematicHandState(HandState.GRAB);
     }
 
     public void AnimationLookScreen()
@@ -73,6 +72,7 @@ public class Step7Trigger : MonoBehaviour
     
     public void AnimationCountDown1() {
         screenTextMesh.text = "1";
+        ReferenceSingleton.instance.bothCanvas.ChangeCinematicHandState(HandState.GRAB);
     }
     
     public void AnimationCountDown0() {

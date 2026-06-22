@@ -24,6 +24,7 @@ public class BothCanvas : MonoBehaviour
     [SerializeField] private Sprite handSpriteGrab;
     [SerializeField] private Sprite handSpriteFinger;
     [SerializeField] private HandState defaultCinematicHandState = HandState.IDLE;
+    [SerializeField] private bool cinematicHandDoVisualItemGrab = true;
     
     [Header("Crosshair Settings")]
     [SerializeField] private Image CrosshairImageUI;
@@ -96,7 +97,10 @@ public class BothCanvas : MonoBehaviour
     {
         Sprite handSprite;
         if (inCinematic)
-            handSprite = HandStateSprite(cinematicHandState);
+            if (cinematicHandDoVisualItemGrab && player.anythingInHand)
+                handSprite = handSpriteGrab;
+            else
+                handSprite = HandStateSprite(cinematicHandState);
         else if (player.anythingInHand)
             handSprite = handSpriteGrab;
         else if (player.reachableObject)
