@@ -165,6 +165,7 @@ public class CapsulePlayer : MonoBehaviour
         CheckTimer();
         CheckReachable();
         lastPosition = transform.position;
+        Debug.Log(QualitySettings.vSyncCount);
     }
 
     void CheckTimer()
