@@ -11973,6 +11973,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2720466083708004949, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720466083708004949, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
@@ -12089,6 +12093,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8443563727233074313, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443563727233074313, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
@@ -12101,6 +12109,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8517860362001766495, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517860362001766495, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
@@ -12113,6 +12125,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8583893075660825531, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583893075660825531, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
@@ -12123,6 +12139,10 @@ PrefabInstance:
     - target: {fileID: 8719744380529043376, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_MaxValue
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719744380529043376, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
+      propertyPath: m_MinValue
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 8719744380529043376, guid: 8e1d5b1be1d8c07488dcbb2a98cb779e, type: 3}
       propertyPath: m_Navigation.m_Mode
