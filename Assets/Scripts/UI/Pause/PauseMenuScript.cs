@@ -25,6 +25,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject quitCanva;
     [SerializeField] private GameObject gamepadCanva;
     [SerializeField] private GameObject keyboardCanva;
+    [SerializeField] private GameObject menuCanva;
 
     [Header("Settings parameters")]
     [SerializeField] private TextMeshProUGUI FOVText;
@@ -56,6 +57,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject gamepadFirst;
     [SerializeField] private GameObject keyboardFirst;
     [SerializeField] private GameObject audioFirst;
+    [SerializeField] private GameObject menuFirst;
 
     private InputAction navigateActions;
     private GameObject previousSelectedGameobject;
@@ -219,6 +221,16 @@ public class PauseMenuScript : MonoBehaviour
         Debug.Log("Game is quitting...");
         Application.Quit();
     }
+
+    public void ClickOnMainButton()
+    {
+
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenuLevel");
+    } 
 
     public void Restart()
     {
