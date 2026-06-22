@@ -165,7 +165,6 @@ public class CapsulePlayer : MonoBehaviour
         CheckTimer();
         CheckReachable();
         lastPosition = transform.position;
-        Debug.Log(QualitySettings.vSyncCount);
     }
 
     void CheckTimer()
@@ -391,7 +390,7 @@ public class CapsulePlayer : MonoBehaviour
             
         }
 
-        if (!SettingsStore.disableOutline)
+        if (!SettingsStore.disableOutline && !ReferenceSingleton.instance.cinematicManager.IsCinematic())
         {
             if (nearestObject)
             {

@@ -56,7 +56,6 @@ public class MovingThing : MonoBehaviour
 
     public void SetKinematic(bool state)
     {
-        Debug.Log("SetKinematic:"+state+" frozen:"+frozen);
         if (frozen)
             wasKinematic = state;
         else
