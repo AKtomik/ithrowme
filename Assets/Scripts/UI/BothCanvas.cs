@@ -39,6 +39,8 @@ public class BothCanvas : MonoBehaviour
     private bool inCinematic;
     private HandState cinematicHandState;
 
+    [Header("Info Settings")]
+    [SerializeField] private TextMeshProUGUI cheatText;
 
     
 
@@ -65,6 +67,12 @@ public class BothCanvas : MonoBehaviour
         CrosshairImageUI.gameObject.SetActive(true);
         // cinematic bars
         stopCinematic = true;
+    }
+
+    // cheat
+    public void ShowCheat()
+    {
+        cheatText.gameObject.SetActive(true);
     }
     
     // hand
