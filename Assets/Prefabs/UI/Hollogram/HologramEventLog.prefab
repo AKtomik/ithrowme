@@ -10,14 +10,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5429731693026877733, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
       propertyPath: m_text
-      value: "0:03:18 - rapports gravitationel meterologiques recus\n1:17:32 - entree
-        du membre 1 acredite dans la salle confidentielle\n1:27:46 - debrits spatiaux
-        detectes\n2:02:00 - abscence du membre 2 au module de gravite\n         
-        experience gravitationelle 371 (duree de 2h) annulee \n3:05:57 - requete
+      value: "0:03:18 - rapports gravitationnels meterologiques recus\n1:17:32 -
+        entree du membre 1 accredite dans la salle confidentielle\n1:27:46 - debris
+        spatiaux detectes\n2:02:00 - absence du membre 2 au module de gravite\n         
+        experience gravitationnelle 371 (duree de 2h) annulee \n3:05:57 - requete
         [SI3] envoyee\n3:06:23 - dysfonctionnement du regulateur gravitationnel detecte\n3:06:28
-        - force de gravite augmentee de 20\n3:06:42 - impolsion interne detecte\n         
+        - force de gravite augmentee de 20\n3:06:42 - impolsion interne detectee\n         
         activation des sas d'isolation\n3:06:43 - SUIVRE PROTOCOLE D'EJECTION D'URGENCE\n3:08:12
-        - ejection de la capsule numero 1\n          un membres d'equipage manquant\n|"
+        - ejection de la capsule numero 1\n          un membre d'equipage manquant\n|"
       objectReference: {fileID: 0}
     - target: {fileID: 5541084375417184061, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +58,14 @@ PrefabInstance:
     - target: {fileID: 5541084375417184061, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932106337291147003, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 986.105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932106337291147003, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13.6023
       objectReference: {fileID: 0}
     - target: {fileID: 8005719514643879299, guid: 2b96f1eecf969214080b16fae163925c, type: 3}
       propertyPath: m_text
