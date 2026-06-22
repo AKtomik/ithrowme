@@ -392,20 +392,46 @@ public class CapsulePlayer : MonoBehaviour
 
         if (nearestObject)
         {
-            if (!nearestObject.transform.parent.gameObject.GetComponent<Outline>())
+            if (nearestObject.transform.parent.gameObject.GetComponent<Takable>())
             {
-                Outline objectOut = nearestObject.transform.parent.gameObject.AddComponent<Outline>();
-                objectOut.OutlineColor = Color.green;
-                objectOut.OutlineWidth = 20f;
+                if (!nearestObject.transform.parent.gameObject.GetComponent<Outline>())
+                {
+                    Outline objectOut = nearestObject.transform.parent.gameObject.AddComponent<Outline>();
+                    objectOut.OutlineColor = Color.green;
+                    objectOut.OutlineWidth = 10;
+                }
             }
+            else if (nearestObject.GetComponent<Takable>())
+            {
+                if (!nearestObject.GetComponent<Outline>())
+                {
+                    Outline objectOut = nearestObject.gameObject.AddComponent<Outline>();
+                    objectOut.OutlineColor = Color.green;
+                    objectOut.OutlineWidth = 10f;
+                }
+            }
+
 
         }
         if (reachableObject)
         {
-            if (nearestObject != reachableObject)
+            if (nearestObject == null || reachableObject != nearestObject)
             {
-                if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
-                    Destroy(transform.parent.gameObject.GetComponent<Outline>());
+                if (reachableObject.transform.parent.gameObject.GetComponent<Takable>())
+                {
+                    if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
+                    {
+                        Destroy(reachableObject.transform.parent.gameObject.GetComponent<Outline>());
+                    }
+                }
+                else if (reachableObject.GetComponent<Takable>())
+                {
+                    if (reachableObject.GetComponent<Outline>())
+                    {
+                        Destroy(reachableObject.GetComponent<Outline>());
+                    }
+                }
+
             }
         }
         
@@ -422,9 +448,22 @@ public class CapsulePlayer : MonoBehaviour
         CheckReachable();// recheck reachability to avoid null exception
         if (anythingInHand || !anythingReachable) return;
         if (takeThrowSomethingDebug) Debug.Log("player take something");
-        if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
-            Destroy(transform.parent.gameObject.GetComponent<Outline>());
-        
+
+        if (reachableObject.transform.parent.gameObject.GetComponent<Takable>())
+        {
+            if (reachableObject.transform.parent.gameObject.GetComponent<Outline>())
+            {
+                Destroy(reachableObject.transform.parent.gameObject.GetComponent<Outline>());
+            }
+        }
+        else if (reachableObject.GetComponent<Takable>())
+        {
+            if (reachableObject.GetComponent<Outline>())
+            {
+                Destroy(reachableObject.GetComponent<Outline>());
+            }
+        }
+
         TookSomething(reachableObject);
     }
 

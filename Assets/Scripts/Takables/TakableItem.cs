@@ -25,6 +25,7 @@ public class TakableItem : Takable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
+        
         if (disableAudio) Debug.LogWarning("item with disabled audio: "+this);
         base.Start();
     }
