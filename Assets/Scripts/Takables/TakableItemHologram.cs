@@ -12,7 +12,7 @@ public class TakableItemHologram : TakableItem
         hologramContent.SetActive(false);
 	}
 
-    override public void Put(Transform point)
+    override public void Put(Transform point, bool doCulling = true)
     {
         base.Put(point);
         hologramContent.transform.SetPositionAndRotation(point.transform.position, point.transform.rotation);

@@ -7,7 +7,7 @@ public class TakableItem : Takable
     [SerializeField] protected Rigidbody rigidBody;
     [SerializeField] protected GameObject affiliated;
     
-    private int originalLayer;
+    private int originalLayer = -1;
     private Transform originalParentTransform;
     private Transform putParentTransform;
 
@@ -28,7 +28,7 @@ public class TakableItem : Takable
         base.Start();
     }
 
-    virtual public void Put(Transform pointParent)
+    virtual public void Put(Transform pointParent, bool doCulling = true)
     {
         // stop
         rigidBody.linearVelocity = Vector3.zero;
@@ -43,10 +43,13 @@ public class TakableItem : Takable
         transform.SetParent(pointParent);
         transform.position = pointParent.position;
         // relayer
-        originalLayer = takeCollider.gameObject.layer;
-        takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
-        if (affiliated) SetLayerRecursively(affiliated, LayerMask.NameToLayer("CullingLayer"));
-        gameObject.layer = LayerMask.NameToLayer("CullingLayer");
+        if (doCulling)
+        {
+            originalLayer = takeCollider.gameObject.layer;
+            takeCollider.gameObject.layer = LayerMask.NameToLayer("CullingLayer");
+            if (affiliated) SetLayerRecursively(affiliated, LayerMask.NameToLayer("CullingLayer"));
+            gameObject.layer = LayerMask.NameToLayer("CullingLayer");
+        }
         // reset pos
         if (takeCollider.gameObject != gameObject)
             takeCollider.gameObject.transform.position = pointParent.position;
@@ -64,9 +67,13 @@ public class TakableItem : Takable
         if (transform.parent != putParentTransform) Debug.LogError("item was reparented while puted");
         transform.SetParent(originalParentTransform);
         // relayer
-        takeCollider.gameObject.layer = originalLayer;
-        if (affiliated) SetLayerRecursively(affiliated, originalLayer);
-        gameObject.layer = originalLayer;
+        if (originalLayer != -1)
+        {
+            takeCollider.gameObject.layer = originalLayer;
+            if (affiliated) SetLayerRecursively(affiliated, originalLayer);
+            gameObject.layer = originalLayer;
+            originalLayer = -1;
+        }
         // move the projectile
         transform.SetPositionAndRotation(point.position, point.rotation);
         // play throw sound

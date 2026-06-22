@@ -36,7 +36,7 @@ public abstract class CatalyzerTrigger : MonoBehaviour
         var takableItem = takableReference.takable as TakableItem;
         
         // put
-        takableItem.Put(putTransform);
+        takableItem.Put(putTransform, false);
         speed = rotationStartSpeed;
 
         // trigger
