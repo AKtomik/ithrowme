@@ -152,7 +152,7 @@ public class PauseMenuScript : MonoBehaviour
         toggleRollAxis.isOn = SettingsStore.invertRoll;
 
         toggleUseVsync.isOn = SettingsStore.useVSync;
-        ChangeVsync();
+        toggleDisableOutline.isOn = SettingsStore.disableOutline;
 
         EventSystem.current.SetSelectedGameObject(settingsMenuFirst);
     }
@@ -352,6 +352,12 @@ public class PauseMenuScript : MonoBehaviour
         }
 
         QualitySettings.vSyncCount = vsync;
+        SettingsStore.useVSync = toggleUseVsync.isOn;
+    }
+
+    public void ChangeOutline()
+    {
+        SettingsStore.disableOutline = toggleDisableOutline.isOn;
     }
 
     ///////////////////////////////////////////////////////////////
