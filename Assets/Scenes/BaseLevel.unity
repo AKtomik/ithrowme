@@ -1457,6 +1457,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6934025377311899657, guid: 30943036a9252ba42ac9d1532c7da76b, type: 3}
   m_PrefabInstance: {fileID: 173991273}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &174392970 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 799953712491927918, guid: 2387c0645595e304fba306ca80c18961, type: 3}
+  m_PrefabInstance: {fileID: 447212334538123622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &182879541
 GameObject:
   m_ObjectHideFlags: 0
@@ -11396,135 +11401,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9061704980682027138, guid: 093f62d087edc104797abf8256831b60, type: 3}
   m_PrefabInstance: {fileID: 1584306407}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1587376500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1587376501}
-  - component: {fileID: 1587376502}
-  m_Layer: 0
-  m_Name: CapsuleOpen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1587376501
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587376500}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 93929939}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1587376502
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587376500}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2287208232526951791, guid: 93354d5f7b8efa149ad98fc0fae5503b, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 13de9d3a670166c4e85d1e210ca87d68, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.829
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1595449726
 GameObject:
   m_ObjectHideFlags: 0
@@ -16548,10 +16424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9037552242180067902, guid: 2387c0645595e304fba306ca80c18961, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1587376501}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2387c0645595e304fba306ca80c18961, type: 3}
 --- !u!111 &447212334538123623 stripped
@@ -16749,6 +16622,10 @@ PrefabInstance:
       propertyPath: 'unlockedDoors.Array.data[1]'
       value: 
       objectReference: {fileID: 1923641943}
+    - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
+      propertyPath: openAudio
+      value: 
+      objectReference: {fileID: 174392970}
     - target: {fileID: 4051182125557143187, guid: 4cea656b0ab395c48b684eec0c6454ee, type: 3}
       propertyPath: hubloAnimation
       value: 
