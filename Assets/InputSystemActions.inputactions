@@ -206,7 +206,7 @@
                 {
                     "name": "",
                     "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "ScaleVector2(x=35,y=35)",
                     "groups": ";Gamepad",
@@ -393,7 +393,7 @@
                 {
                     "name": "negative",
                     "id": "a0230940-fa98-468e-a061-2eb1b472e435",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -404,7 +404,7 @@
                 {
                     "name": "positive",
                     "id": "e0b8ae22-5d0d-4312-8e94-2e9f782bb96a",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
