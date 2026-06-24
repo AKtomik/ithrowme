@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 ////TODO: localization support
@@ -273,6 +274,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             if (!ResolveActionAndBinding(out var action, out var bindingIndex))
                 return;
 
+            EventSystem.current.SetSelectedGameObject(null);
+
             // If the binding is a composite, we need to rebind each part in turn.
             if (action.bindings[bindingIndex].isComposite)
             {
@@ -349,6 +352,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                         UpdateBindingDisplay();
                         CleanUp();
 
+                        EventSystem.current.SetSelectedGameObject(gameObject.GetComponentsInChildren<Button>()[0].gameObject);
+
                         // If there's more composite parts we should bind, initiate a rebind
                         // for the next part.
                         if (allCompositeParts)
@@ -396,6 +401,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindStartEvent?.Invoke(this, m_RebindOperation);
 
             m_RebindOperation.Start();
+            
         }
 
         private void UpdateRebindInfo(double now)
@@ -413,6 +419,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 : string.Empty;
             m_RebindInfo.text = text;
             m_LastRemainingTimeoutSeconds = remainingTimeoutWholeSeconds;
+
         }
 
         private void CancelRebind()
