@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 314074580703956032}
   - component: {fileID: 3526831123715498361}
   - component: {fileID: 5571762158873051407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1304637924319779543}
   - component: {fileID: 2814193109209339079}
   - component: {fileID: 3575123362949878983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 7220371093909084516}
   - component: {fileID: 6625521507737528530}
   - component: {fileID: 5432878812888268367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253386838006402405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3441177155416601079}
   - component: {fileID: 1561133449093906081}
   - component: {fileID: 7780427293736169959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 8396100319835232702}
   - component: {fileID: 342430636506055929}
   - component: {fileID: 5942058687666029181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WindowLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 5302679945864798578}
   - component: {fileID: 315460037497144963}
   - component: {fileID: 7857549689789752173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6934025377311899657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HallwayBrokenParth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 3701977018957653762}
   - component: {fileID: 2554589182014382647}
   - component: {fileID: 3915282957700041124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8487960333120043842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 602477879005448904}
   - component: {fileID: 2159316320579906237}
   - component: {fileID: 3358193940821253193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 4171777491065131649}
   - component: {fileID: 5286219961562733130}
   - component: {fileID: 3854912424845854233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,14 +1184,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2580743679491932515, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -757262607170878759, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
       propertyPath: m_Name
       value: Broken_Corridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439579764481069671, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2089513564418550459, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: -1389311766233091029, guid: 0880d03efe31e16488afa3694960db12, type: 3}
+    - target: {fileID: 2099539418235798062, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5467521134287022858, guid: 597a2c46139fe7443980a4d715c9cdce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

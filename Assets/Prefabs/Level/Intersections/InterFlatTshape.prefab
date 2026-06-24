@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 843961415586236577}
   - component: {fileID: 7783184384657958716}
   - component: {fileID: 5565322062366496171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986620473166266097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5254363831352709678}
   - component: {fileID: 2479880221160665126}
   - component: {fileID: 87074240054860453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 5194347185361716784}
   - component: {fileID: 6258142718432803898}
   - component: {fileID: 5599560174084986191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4446165619653991709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2342621390298525296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8760765000101509026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 3293966329431167139}
   - component: {fileID: 5552442549060608893}
   - component: {fileID: 1553117233121861503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 3763282950533959167}
   - component: {fileID: 581140269683504330}
   - component: {fileID: 8179881269749534423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6447426503885410995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornersDL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 6737615007039093378}
   - component: {fileID: 5896547287290861624}
   - component: {fileID: 7462807042296312557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540528188951616127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornersUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 7123123556382166628}
   - component: {fileID: 4815855029592261065}
   - component: {fileID: 8724299878139069100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 5646641482721056408}
   - component: {fileID: 3186596022577643757}
   - component: {fileID: 3001753145031228207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6808361196144206396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 7388446223932177080}
   - component: {fileID: 3686764986136137525}
   - component: {fileID: 1593240843404338202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6934025377311899657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InterFlatTshape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,7 +1295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4611792958731708428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornersDR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 4949926914666140266}
   - component: {fileID: 5525029070777157314}
   - component: {fileID: 647121311805348688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 5872365883815087438}
   - component: {fileID: 3520083988269557612}
   - component: {fileID: 1417710132632787292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1556,7 +1556,7 @@ GameObject:
   - component: {fileID: 8539074846797308393}
   - component: {fileID: 4461099891621901799}
   - component: {fileID: 6540327843699345373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1665,7 +1665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5703168891178776233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornersUR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 6403616967306195380}
   - component: {fileID: 5384479948400799058}
   - component: {fileID: 679583282785723245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 7740847032595890406}
   - component: {fileID: 8994642582791244130}
   - component: {fileID: 9199528370876391852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 833044344447251514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,12 +2012,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 44c374ad3a926194ea2bd1cde444a936, type: 2}
     - target: {fileID: -2761649959176199081, guid: a091976ae477b1044afab1652dca5e58, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2761649959176199081, guid: a091976ae477b1044afab1652dca5e58, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a091976ae477b1044afab1652dca5e58, type: 3}
       propertyPath: m_Name
       value: Corridor_Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a091976ae477b1044afab1652dca5e58, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a091976ae477b1044afab1652dca5e58, type: 3}
       propertyPath: m_StaticEditorFlags

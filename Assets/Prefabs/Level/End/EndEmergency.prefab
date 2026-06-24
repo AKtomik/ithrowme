@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8211754546203565291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndSlopesV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7673688742520033193}
   - component: {fileID: 2231493131900452564}
   - component: {fileID: 3178203515314684463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 2410759708586326339}
   - component: {fileID: 4140213333049453099}
   - component: {fileID: 3938112688142458281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1012961994428429139}
   - component: {fileID: 4921357556270531546}
   - component: {fileID: 169682433393656949}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1036587297849646257}
   - component: {fileID: 2354400699125845189}
   - component: {fileID: 3008324986790166832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 6260688265740574037}
   - component: {fileID: 1420478342966239479}
   - component: {fileID: 2770547558818648381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4759412115818002869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5242509041756034719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndSlopesH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 8811388576042707707}
   - component: {fileID: 1964083807952633300}
   - component: {fileID: 780694148129490082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 749488190775980033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 3316378395938214977}
   - component: {fileID: 6339529299603843842}
   - component: {fileID: 6173525038056050168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndWallPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1195,7 @@ GameObject:
   - component: {fileID: 6762355444980598795}
   - component: {fileID: 5459990818681002302}
   - component: {fileID: 3500213242075605103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 4365435238298751295}
   - component: {fileID: 7891351561239763750}
   - component: {fileID: 6362111105425374344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 3758574372878871718}
   - component: {fileID: 800763362175164145}
   - component: {fileID: 8851507908558798251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 7961966386737010515}
   - component: {fileID: 8481785978037449989}
   - component: {fileID: 259536854637245835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1647,7 @@ GameObject:
   - component: {fileID: 4189300717469720754}
   - component: {fileID: 557729747479769462}
   - component: {fileID: 3902109919446431178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1757,7 +1757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7490031849536688322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndEmergency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 1649883826864924763}
   - component: {fileID: 8626607456690034472}
   - component: {fileID: 749278686172723481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

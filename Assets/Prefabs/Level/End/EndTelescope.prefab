@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028088752503187606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2162369429664165730}
   - component: {fileID: 7195600548106156718}
   - component: {fileID: 1966685300545871144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 590532213339467323}
   - component: {fileID: 4783116466177613008}
   - component: {fileID: 8795503839124776616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 1540389417166022612}
   - component: {fileID: 4401960370069987856}
   - component: {fileID: 6642531481028055654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 90567469971247263}
   - component: {fileID: 6699780651168911915}
   - component: {fileID: 6210146562041118295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 3506687128282042947}
   - component: {fileID: 8138529384258057547}
   - component: {fileID: 866275970773878574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2901733970878035232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndSlopesH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 6067920742274768689}
   - component: {fileID: 6502932824421803659}
   - component: {fileID: 6701510479236459072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7294994437337463932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 7172808873381379966}
   - component: {fileID: 397226266209361861}
   - component: {fileID: 621022082050908009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8620929697680516773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndTelescope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 2000562762711527721}
   - component: {fileID: 1622921000001338193}
   - component: {fileID: 519009263635144666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 5979261993829397228}
   - component: {fileID: 2203222040594937306}
   - component: {fileID: 6114910642415380529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3724521994036399911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 5743032965631222110}
   - component: {fileID: 1624211538121271846}
   - component: {fileID: 898855293610488992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndWallPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 7370207316259959672}
   - component: {fileID: 1448756611995567905}
   - component: {fileID: 5833588047241743166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959125834214279016}
   - component: {fileID: 6717272626225716117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TelescopeCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,7 +1480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7453944729947305016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndSlopesV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 624471124399330046}
   - component: {fileID: 7905249002614461786}
   - component: {fileID: 6460236873667575453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 7094320063061709984}
   - component: {fileID: 7309478570733939482}
   - component: {fileID: 2877766231457381418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,6 +1738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7294994437337463932}
     m_Modifications:
+    - target: {fileID: -8961359253771211100, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1778,13 +1782,45 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[4]'
       value: 
       objectReference: {fileID: 2100000, guid: 96144c070336f4a48bbc7e18d3f15811, type: 2}
+    - target: {fileID: -6109930477398999616, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1789919598144240677, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
       propertyPath: m_Name
       value: Observ_Module
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875759543669705805, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893019060481058493, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767400413853537203, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843638033852082976, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7945070554093315937, guid: f42b5c3efc66631449f70e06fcae0957, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

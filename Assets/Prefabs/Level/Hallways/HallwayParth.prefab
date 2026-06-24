@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5231492999284314685}
   - component: {fileID: 8407628349287102707}
   - component: {fileID: 3253061481695134861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5352200108891343602}
   - component: {fileID: 672317300662565261}
   - component: {fileID: 2792368755940025254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2589814155316843713}
   - component: {fileID: 5039620965370973350}
   - component: {fileID: 480640827535040001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 6726105581317555493}
   - component: {fileID: 8544666083539464869}
   - component: {fileID: 7776724818583209968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 6056567366553245229}
   - component: {fileID: 1095982320526908358}
   - component: {fileID: 2473291504286932893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6372345594849090538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad+1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 314074580703956032}
   - component: {fileID: 3526831123715498361}
   - component: {fileID: 5571762158873051407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 1304637924319779543}
   - component: {fileID: 2814193109209339079}
   - component: {fileID: 3575123362949878983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 7532659304208570765}
   - component: {fileID: 709849016187179729}
   - component: {fileID: 8527686176795867858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   - component: {fileID: 7220371093909084516}
   - component: {fileID: 6625521507737528530}
   - component: {fileID: 5432878812888268367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1499,7 +1499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253386838006402405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1537,7 @@ GameObject:
   - component: {fileID: 3441177155416601079}
   - component: {fileID: 1561133449093906081}
   - component: {fileID: 7780427293736169959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 1939868164776392263}
   - component: {fileID: 7672793557596631291}
   - component: {fileID: 7458543754696386430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1837,7 @@ GameObject:
   - component: {fileID: 176649584603209448}
   - component: {fileID: 8158076376846531714}
   - component: {fileID: 5923022572218486997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2023,7 +2023,7 @@ GameObject:
   - component: {fileID: 8499554102579056769}
   - component: {fileID: 6523360071447342453}
   - component: {fileID: 7993007601491345172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2209,7 +2209,7 @@ GameObject:
   - component: {fileID: 8384123366431658488}
   - component: {fileID: 6629031964550986866}
   - component: {fileID: 4370286687604838187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2395,7 +2395,7 @@ GameObject:
   - component: {fileID: 6158723483311472696}
   - component: {fileID: 6165019249125297749}
   - component: {fileID: 9047791206773181280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2581,7 +2581,7 @@ GameObject:
   - component: {fileID: 1254168802715253635}
   - component: {fileID: 5481126068166714504}
   - component: {fileID: 2619016056201308652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftNeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2767,7 @@ GameObject:
   - component: {fileID: 994044402603339396}
   - component: {fileID: 5702151645954305762}
   - component: {fileID: 2407514379876792373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,7 +2949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5060087888866133640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad+3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2988,7 +2988,7 @@ GameObject:
   - component: {fileID: 6596338415800378765}
   - component: {fileID: 2192011889186921143}
   - component: {fileID: 169933867593728824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3174,7 +3174,7 @@ GameObject:
   - component: {fileID: 8481263031639858441}
   - component: {fileID: 8980241281977090171}
   - component: {fileID: 4010589262011603398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3360,7 +3360,7 @@ GameObject:
   - component: {fileID: 8473135053496800274}
   - component: {fileID: 24509228304031254}
   - component: {fileID: 2840540604690744986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3546,7 +3546,7 @@ GameObject:
   - component: {fileID: 7704917102635611166}
   - component: {fileID: 5678936709555534474}
   - component: {fileID: 6520274931057752405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,7 +3728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2815046283794914905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3763,7 +3763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2317463097175395076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,7 +3801,7 @@ GameObject:
   - component: {fileID: 5302679945864798578}
   - component: {fileID: 315460037497144963}
   - component: {fileID: 7857549689789752173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3911,7 +3911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8415270204242594359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +3950,7 @@ GameObject:
   - component: {fileID: 1020622783647096495}
   - component: {fileID: 3353879964322022935}
   - component: {fileID: 1551154038044044184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4136,7 +4136,7 @@ GameObject:
   - component: {fileID: 5358929668997663586}
   - component: {fileID: 6286359479547289593}
   - component: {fileID: 7188719005099790744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightNeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4322,7 +4322,7 @@ GameObject:
   - component: {fileID: 944100914440245734}
   - component: {fileID: 7633590457915592032}
   - component: {fileID: 7633338698192971744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4508,7 +4508,7 @@ GameObject:
   - component: {fileID: 4099322917233280510}
   - component: {fileID: 7394859791073156521}
   - component: {fileID: 5168252172658482635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4690,7 +4690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973088893515977142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4732,7 +4732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942840303248905093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4767,7 +4767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6934025377311899657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HallwayParth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4803,7 @@ GameObject:
   - component: {fileID: 3612569778897447193}
   - component: {fileID: 3511007297948547613}
   - component: {fileID: 3417471469900652135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4988,7 +4988,7 @@ GameObject:
   - component: {fileID: 3701977018957653762}
   - component: {fileID: 2554589182014382647}
   - component: {fileID: 3915282957700041124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5102,7 +5102,7 @@ GameObject:
   - component: {fileID: 1184312467226936657}
   - component: {fileID: 8726475120780572714}
   - component: {fileID: 6864729896522885004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5284,7 +5284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8487960333120043842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slopes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5322,7 +5322,7 @@ GameObject:
   - component: {fileID: 602477879005448904}
   - component: {fileID: 2159316320579906237}
   - component: {fileID: 3358193940821253193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5436,7 +5436,7 @@ GameObject:
   - component: {fileID: 489582116800945214}
   - component: {fileID: 3637215359790269411}
   - component: {fileID: 1130720337635549644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5621,7 +5621,7 @@ GameObject:
   - component: {fileID: 4171777491065131649}
   - component: {fileID: 5286219961562733130}
   - component: {fileID: 3854912424845854233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5731,7 +5731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3089060915704197927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad+2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5770,7 +5770,7 @@ GameObject:
   - component: {fileID: 4927651424439461847}
   - component: {fileID: 1760791045513075411}
   - component: {fileID: 2813228630183564385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5956,7 +5956,7 @@ GameObject:
   - component: {fileID: 8832313729523010609}
   - component: {fileID: 1559932248340166090}
   - component: {fileID: 32897669956912058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6142,7 +6142,7 @@ GameObject:
   - component: {fileID: 7718841140126879044}
   - component: {fileID: 7974768864243246601}
   - component: {fileID: 4232224558996545262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6324,7 +6324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904315205366529148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quad-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6363,7 +6363,7 @@ GameObject:
   - component: {fileID: 9122550658573430151}
   - component: {fileID: 7761592286205982911}
   - component: {fileID: 8568913247643243581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6549,7 +6549,7 @@ GameObject:
   - component: {fileID: 8923156768739828956}
   - component: {fileID: 6558316227969377058}
   - component: {fileID: 8399494185008812031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6735,7 +6735,7 @@ GameObject:
   - component: {fileID: 7428252462307722953}
   - component: {fileID: 797813614255306389}
   - component: {fileID: 452801867157655912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6921,7 +6921,7 @@ GameObject:
   - component: {fileID: 8887910137509379736}
   - component: {fileID: 3594196554352920628}
   - component: {fileID: 1285794451154801056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorRightSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7107,7 +7107,7 @@ GameObject:
   - component: {fileID: 4024828460411499377}
   - component: {fileID: 7928028582568751330}
   - component: {fileID: 2779402355963689519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7337,8 +7337,16 @@ PrefabInstance:
       value: Corridor_Base
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467790129290955717, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2467790129290955717, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_StaticEditorFlags

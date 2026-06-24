@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986620473166266097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7328116100687508690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8760765000101509026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1689463413108443316}
   - component: {fileID: 5075088837264918501}
   - component: {fileID: 1314436950547916586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814331805536721465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 5646641482721056408}
   - component: {fileID: 3186596022577643757}
   - component: {fileID: 3001753145031228207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473904818165500845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FRONT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7229048892766442152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DOWN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6934025377311899657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InterBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 8539074846797308393}
   - component: {fileID: 4461099891621901799}
   - component: {fileID: 6540327843699345373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 6403616967306195380}
   - component: {fileID: 5384479948400799058}
   - component: {fileID: 679583282785723245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 7740847032595890406}
   - component: {fileID: 8994642582791244130}
   - component: {fileID: 9199528370876391852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 833044344447251514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,8 +874,16 @@ PrefabInstance:
       value: Corridor_Base
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467790129290955717, guid: 1686a6ac14febea42bf3968975325a5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

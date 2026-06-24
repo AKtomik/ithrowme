@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3423690813285646607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Corners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2799375907624447405}
   - component: {fileID: 4187277766728626097}
   - component: {fileID: 8716991505469907873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 6376986418427469656}
   - component: {fileID: 713055830497829764}
   - component: {fileID: 6726656662574203060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 618784654604761452}
   - component: {fileID: 7593084844978261821}
   - component: {fileID: 8940241332970028648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 8709481221049717938}
   - component: {fileID: 6570892772242044578}
   - component: {fileID: 47246608472662312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 6566840559021618787}
   - component: {fileID: 4547937141117258644}
   - component: {fileID: 1631971090094374614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671817908995249621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCornice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 528193302631890553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HallwayDoorLeftParth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 6934640041371039454}
   - component: {fileID: 652616780466041308}
   - component: {fileID: 633483290019506803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 3916489491539787715}
   - component: {fileID: 3403737019377164330}
   - component: {fileID: 7955532907040985609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CorniceTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 2072163854027012270}
   - component: {fileID: 1993580872015544262}
   - component: {fileID: 674637470875052281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799610520817291484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 1250171855094423147}
   - component: {fileID: 5660329735009566162}
   - component: {fileID: 2581343571798552346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CorniceBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 6889184712704552144}
   - component: {fileID: 6678146609736718363}
   - component: {fileID: 769915094747061466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 5939027351334808673}
   - component: {fileID: 8222649210791276351}
   - component: {fileID: 4876371869676297463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CorniceLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 3394153466773669290}
   - component: {fileID: 1236389557161080593}
   - component: {fileID: 2274036937271932259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CorniceRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,8 +1549,16 @@ PrefabInstance:
       value: Corridor_Room
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9244e293ce2efdf46a84f0d6d5bc05ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9244e293ce2efdf46a84f0d6d5bc05ad, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207124553337824038, guid: 9244e293ce2efdf46a84f0d6d5bc05ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

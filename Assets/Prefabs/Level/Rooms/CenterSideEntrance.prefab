@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2228045180916382439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 197451706117902770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpSlope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6588452155981766186}
   - component: {fileID: 8741011310984665555}
   - component: {fileID: 1457390398951128635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightCornice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6194172401357011211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornerDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2385721481043516533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CenterSideEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 7989576166740797592}
   - component: {fileID: 7533485497101261960}
   - component: {fileID: 6099482979742487184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCornice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 618142182268072459}
   - component: {fileID: 8308321342951903502}
   - component: {fileID: 6838072336067150578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DownCornice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 193901961438670779}
   - component: {fileID: 5897305413822180254}
   - component: {fileID: 6334532347757140650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpCornice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2546351721988111977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DownSlope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6057525460007646156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftSlope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8339203004283104493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CornerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 2839108806728497806}
   - component: {fileID: 2987124531913854584}
   - component: {fileID: 7183927339278156136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 709407859927688252}
   - component: {fileID: 5395707054377272505}
   - component: {fileID: 4268451321004403523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 7548161458638965384}
   - component: {fileID: 1567063732850643596}
   - component: {fileID: 8932893077430287121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 4799034659793351195}
   - component: {fileID: 6610657458633533198}
   - component: {fileID: 2265417241435426021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 4679593271488678361}
   - component: {fileID: 2441169408614519595}
   - component: {fileID: 7436908407083225909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,9 +1254,93 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2385721481043516533}
     m_Modifications:
+    - target: {fileID: 202207903249334678, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649175274577521219, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925907090635559588, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701082449759591874, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822214794609105479, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977944715257003070, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724965359176390977, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3744316079056678674, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
       propertyPath: m_Name
       value: AutomaticDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167962776521546758, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409694047574888022, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448359236190069655, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892632313495947509, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806182363034067826, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930710595104586811, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357439753561541621, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422994257570327126, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806535799688658966, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926559337665873811, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038497378583151994, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558907189643246022, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605133763791224765, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704714637780648720, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8781369002677743607, guid: d8437ce0d9cb90043a2520c0d87ebc08, type: 3}
       propertyPath: m_LocalScale.x
