@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorOpeningScript
   triggerCollider: {fileID: 2725564819157198692}
-  solidCollider: {fileID: 4911661003782264297}
+  solidCollidObject: {fileID: 1451035042875029695}
   animators:
   - {fileID: 2052325671658988618}
   - {fileID: 3226611780198444101}

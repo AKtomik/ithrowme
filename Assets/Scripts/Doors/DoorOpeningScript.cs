@@ -5,7 +5,7 @@ public class DoorOpeningScript : MonoBehaviour
 {
     [Header("Pointers")]
     [SerializeField] private Collider triggerCollider;
-    [SerializeField] private Collider solidCollider;
+    [SerializeField] private GameObject solidCollidObject;
     [SerializeField] private Animator[] animators;
 
     [Header("State")]
@@ -49,7 +49,7 @@ public class DoorOpeningScript : MonoBehaviour
             animator.ResetTrigger("Close");
             animator.SetTrigger("Open");
         }
-        solidCollider.enabled = false;
+        solidCollidObject.SetActive(false);
         opened = true;
     }
 
@@ -62,7 +62,7 @@ public class DoorOpeningScript : MonoBehaviour
             animator.ResetTrigger("Open");
             animator.SetTrigger("Close");
         }
-        solidCollider.enabled = true;
+        solidCollidObject.SetActive(true);
         opened = false;
     }
 
