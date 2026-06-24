@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CheatCode : MonoBehaviour
 {
@@ -155,11 +156,14 @@ public class CheatCode : MonoBehaviour
                 ToggleNoclipCheat(true);
             } break;
 
-            case 5: {
-            } break;
-            
             case 6: {
                 ToggleNoUI(true);
+            } break;
+            case 7: {
+                ResetShortcut();
+            } break;
+            case 8: {
+                PauseShortcut();
             } break;
         }
     }
@@ -203,5 +207,17 @@ public class CheatCode : MonoBehaviour
         //CheatMode();// is not really a cheat
         Debug.Log("ui psedo cheat:"+enable);
         ReferenceSingleton.instance.bothCanvas.DiableUI(enable);
+    }
+
+    public void ResetShortcut()
+    {
+        if (Time.timeScale == 0) return;
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void PauseShortcut()
+    {
+        ReferenceSingleton.instance.pauseManager.AskPause();
     }
 }

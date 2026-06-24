@@ -8,6 +8,7 @@ public class ReferenceSingleton : MonoBehaviour
 		public CapsulePlayer player;
 		public MissionManager missionManager;
 		public CinematicManager cinematicManager;
+		public PauseManager pauseManager;
 		public Step2Step6Click consoleClick;
     [Header("Center Doors")]
 		public DoorOpeningScript centerLifeDoor;
