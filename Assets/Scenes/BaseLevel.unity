@@ -6980,10 +6980,6 @@ PrefabInstance:
       propertyPath: m_CameraType
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8087410682420035642, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8190383844440651382, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.112
@@ -8511,11 +8507,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
   m_PrefabInstance: {fileID: 1246733032}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1248517586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4216342260923081873, guid: 093f62d087edc104797abf8256831b60, type: 3}
-  m_PrefabInstance: {fileID: 1797068300}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1249385796 stripped
 Transform:
@@ -12208,7 +12199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 093f62d087edc104797abf8256831b60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.17
+      value: -5.733
       objectReference: {fileID: 0}
     - target: {fileID: 9061704980682027138, guid: 093f62d087edc104797abf8256831b60, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16773,6 +16764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 286947728}
     m_Modifications:
+    - target: {fileID: 575584647318916047, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_TagString
+      value: FarawayDisable
+      objectReference: {fileID: 0}
     - target: {fileID: 1794573081748710676, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_TagString
       value: FarawayDisable
@@ -16820,6 +16815,10 @@ PrefabInstance:
     - target: {fileID: 5983416382251224715, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_Name
       value: LifeEmergencyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759137240841564111, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_TagString
+      value: FarawayDisable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17431,7 +17430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574965628935982568, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_text
-      value: D-Pad Down
+      value: D-Pad/Down
       objectReference: {fileID: 0}
     - target: {fileID: 8602576171349125884, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19368,7 +19367,7 @@ PrefabInstance:
     - target: {fileID: 6057731501885180665, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
       propertyPath: 'activatedObjects.Array.data[0]'
       value: 
-      objectReference: {fileID: 1248517586}
+      objectReference: {fileID: 1670961337}
     - target: {fileID: 7955563035779408555, guid: 56b8d73773ac9964196fbfb2a87a8415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.468526

@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class CapsulePlayer : MonoBehaviour
 {
     [Header("Input")]
@@ -74,9 +73,8 @@ public class CapsulePlayer : MonoBehaviour
     [SerializeField] private AudioSource breathAudioSource;
     private float breathAudioPosition = 0f;
 
-
-
     private Camera cam;
+    private Collider playerCollider;
     
     private Vector3 lastPosition;
     private float rotateEnterCooldown = 1f;
@@ -105,6 +103,7 @@ public class CapsulePlayer : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
+        playerCollider = GetComponent<Collider>();
 
         lookAction = inputActions.FindAction("Player/Look");
         rollAction = inputActions.FindAction("Player/Roll");
@@ -173,12 +172,12 @@ public class CapsulePlayer : MonoBehaviour
         if (transform.position != lastPosition && !playerBody.isKinematic) TimerSingleton.instance.PlayTime();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
         
 
-        if (!(collision.gameObject.CompareTag("Items")) 
-            && collision.GetContact(0).thisCollider is SphereCollider
+        if (!(other.gameObject.CompareTag("Items")) 
+            && other.GetContact(0).thisCollider is SphereCollider
             && rotaVelocity.z < 0.3)
         {
             
@@ -363,6 +362,10 @@ public class CapsulePlayer : MonoBehaviour
         lockPosAt = false;
     }
 
+    public void SetNoClip(bool isGohst)
+    {
+        playerCollider.enabled = !isGohst;
+    }
 
     void CheckReachable()
     {
@@ -437,9 +440,6 @@ public class CapsulePlayer : MonoBehaviour
                 }
             }
         }
-
-
-        
         
         takeNoRepeatList = newNoRepeatList;
         reachableObject = nearestObject;
@@ -471,8 +471,6 @@ public class CapsulePlayer : MonoBehaviour
                 }
             }
         }
-
-
 
         TookSomething(reachableObject);
     }
