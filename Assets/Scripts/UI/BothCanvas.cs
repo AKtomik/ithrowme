@@ -11,10 +11,12 @@ public class BothCanvas : MonoBehaviour
 {
     public CapsulePlayer player;
 
+    [SerializeField] private GameObject textsParent;
     [SerializeField] private TextMeshProUGUI speedText;
     [SerializeField] private TextMeshProUGUI restartText;
     [SerializeField] private InputActionReference KeyboardReset;
     [SerializeField] private InputActionReference GamepadReset;
+    
     [Header("Hand Settings")]
     [SerializeField] private Image handImageUI;
     // unity editor can't take dictionnary (wanted enum - sprite dictionnary)
@@ -74,6 +76,12 @@ public class BothCanvas : MonoBehaviour
     {
         cheatText.gameObject.SetActive(true);
         cheatText.text = enable ? "CHEAT MODE" : "CHEATED";
+    }
+    
+    public void DiableUI(bool enable)
+    {
+        textsParent.SetActive(!enable);
+        CrosshairImageUI.enabled = !enable;
     }
     
     // hand

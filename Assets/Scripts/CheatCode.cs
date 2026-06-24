@@ -17,6 +17,7 @@ public class CheatCode : MonoBehaviour
     private bool cheated = false;
     private bool cheating = false;
     private bool moveCheating = false;
+    private bool noclipCheating = false;
 
     // setup
     void Awake()
@@ -74,37 +75,43 @@ public class CheatCode : MonoBehaviour
 
         if (cheatHoldTakeCount == 5)
         {
-            //if (cheatHoldTakeCount != 0)
-            //{
-            //    ResetSteak();
-            //    return;
-            //}
             Debug.Log("cheat code inputing...");
-            cheatInputing = true;
-            //ToggleMoveCheat(true);
-            //ResetSteak();
-        } 
+        }
         else if (cheatHoldTakeCount > 5)
         {
-            ResetSteak();
             Debug.Log("cheat code canceled");
         }
     }
 
     void OnThrowRelease(InputAction.CallbackContext ctx)
     {
-        if (takeAction.IsPressed()) return;
+        //if (takeAction.IsPressed()) return;
 
         int cheatIndex = cheatHoldTakeCount;
         cheatHoldTakeCount = 0;
 
-        if (!cheating) return;
+        if (cheatIndex < 3) return;
         Debug.Log("cancel cheat action "+cheatIndex);
         
         switch (cheatIndex)
         {
+            //case 2: {
+            //    ToggleMoveCheat(false);
+            //    ToggleNoclipCheat(false);
+            //} break;
             case 3: {
                 ToggleMoveCheat(false);
+            } break;
+            case 4: {
+                ToggleNoclipCheat(false);
+            } break;
+
+            case 5: {
+                cheatInputing = true;
+            } break;
+
+            case 6: {
+                ToggleNoUI(false);
             } break;
         }
     }
@@ -143,30 +150,58 @@ public class CheatCode : MonoBehaviour
             case 3: {
                 ToggleMoveCheat(true);
             } break;
+            case 4: {
+                ToggleNoclipCheat(true);
+            } break;
+
+            case 5: {
+                Debug.Log("take cheat 5");
+            } break;
+            
+            case 6: {
+                ToggleNoUI(true);
+            } break;
         }
     }
 
     // cheats
-    void CheatMode()
+    public void CheatMode()
     {// visual
         cheated = true;
-        cheating = moveCheating;
+        cheating = moveCheating | noclipCheating;
         Debug.Log("cheat mode "+cheating+"!");
         ReferenceSingleton.instance.bothCanvas.ShowCheat(cheating);
     }
     
-    void PushCheat(float force)
+    public void PushCheat(float force)
     {
         CheatMode();
         Debug.Log("push cheat:once force of "+force);
         capsuleBody.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 
-    void ToggleMoveCheat(bool enable)
+    public void ToggleMoveCheat(bool enable)
     {
+        if (moveCheating == enable) return;
         moveCheating = enable;
         CheatMode();
         Debug.Log("move cheat:"+enable);
         capsuleCheat.enabled = enable;
+    }
+    
+    public void ToggleNoclipCheat(bool enable)
+    {
+        if (noclipCheating == enable) return;
+        noclipCheating = enable;
+        CheatMode();
+        Debug.Log("noclip cheat:"+enable);
+        ReferenceSingleton.instance.player.SetNoClip(enable);
+    }
+    
+    public void ToggleNoUI(bool enable)
+    {
+        //CheatMode();// is not really a cheat
+        Debug.Log("ui psedo cheat:"+enable);
+        ReferenceSingleton.instance.bothCanvas.DiableUI(enable);
     }
 }
