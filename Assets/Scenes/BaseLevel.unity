@@ -16773,6 +16773,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 286947728}
     m_Modifications:
+    - target: {fileID: 575584647318916047, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_TagString
+      value: FarawayDisable
+      objectReference: {fileID: 0}
     - target: {fileID: 1794573081748710676, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_TagString
       value: FarawayDisable
@@ -16820,6 +16824,10 @@ PrefabInstance:
     - target: {fileID: 5983416382251224715, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
       propertyPath: m_Name
       value: LifeEmergencyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759137240841564111, guid: cfd1dad887c442e4c9a0c46f4d792dac, type: 3}
+      propertyPath: m_TagString
+      value: FarawayDisable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17431,7 +17439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574965628935982568, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_text
-      value: D-Pad Down
+      value: D-Pad/Down
       objectReference: {fileID: 0}
     - target: {fileID: 8602576171349125884, guid: 6cefe4911ba55df4f865d573be3f0d4c, type: 3}
       propertyPath: m_AnchorMax.x
