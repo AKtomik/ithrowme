@@ -75,7 +75,7 @@ public class CheatCode : MonoBehaviour
 
         if (cheatHoldTakeCount == 5)
         {
-            Debug.Log("cheat code inputing...");
+            Debug.Log("cheat code ready");
         }
         else if (cheatHoldTakeCount > 5)
         {
@@ -91,7 +91,7 @@ public class CheatCode : MonoBehaviour
         cheatHoldTakeCount = 0;
 
         if (cheatIndex < 3) return;
-        Debug.Log("cancel cheat action "+cheatIndex);
+        Debug.Log("release cheat action "+cheatIndex);
         
         switch (cheatIndex)
         {
@@ -107,6 +107,7 @@ public class CheatCode : MonoBehaviour
             } break;
 
             case 5: {
+                Debug.Log("cheat code inputing...");
                 cheatInputing = true;
             } break;
 
@@ -155,7 +156,6 @@ public class CheatCode : MonoBehaviour
             } break;
 
             case 5: {
-                Debug.Log("take cheat 5");
             } break;
             
             case 6: {

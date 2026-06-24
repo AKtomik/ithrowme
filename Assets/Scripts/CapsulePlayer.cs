@@ -361,10 +361,13 @@ public class CapsulePlayer : MonoBehaviour
         playerBody.isKinematic = false;
         lockPosAt = false;
     }
-
-    public void SetNoClip(bool isGohst)
+    public void SetNoClip(bool isGhost)
     {
-        playerCollider.enabled = !isGohst;
+        int wallsLayer = 1 << LayerMask.NameToLayer("Walls");
+        if (isGhost)
+            playerCollider.excludeLayers |= wallsLayer;
+        else
+            playerCollider.excludeLayers &= ~wallsLayer;
     }
 
     void CheckReachable()
