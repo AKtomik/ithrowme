@@ -45,6 +45,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Toggle toggleRollAxis;
     [SerializeField] private UnityEngine.UI.Toggle toggleUseVsync;
     [SerializeField] private UnityEngine.UI.Toggle toggleDisableOutline;
+    [SerializeField] private UnityEngine.UI.Toggle toggleInvertTounch;
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource changeButtonAudio;
@@ -356,6 +357,11 @@ public class PauseMenuScript : MonoBehaviour
 
         QualitySettings.vSyncCount = vsync;
         SettingsStore.useVSync = toggleUseVsync.isOn;
+    }
+
+    public void InvertJoy()
+    {
+
     }
 
     public void ChangeOutline()
