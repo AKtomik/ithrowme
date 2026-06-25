@@ -17,6 +17,7 @@ public static class SettingsStore
     public static bool invertRoll = false; // must be egal to the inspector value
     public static bool useVSync = true;
     public static bool disableOutline = false;
+    public static bool invertJoy = false;
 
     // camera settings
     public static float baseFov = 60;
@@ -48,7 +49,8 @@ public static class SettingsStore
         PlayerPrefs.SetInt("visibleTimer", SettingsStore.visibleTimer ? 1 : 0);
         PlayerPrefs.SetString("personalBest", SettingsStore.personalBest.ToString(CultureInfo.InvariantCulture));
         PlayerPrefs.SetInt("useVSync", SettingsStore.useVSync ? 1 : 0);
-        PlayerPrefs.SetInt("disableOutline", SettingsStore.disableOutline ? 1 : 0); 
+        PlayerPrefs.SetInt("disableOutline", SettingsStore.disableOutline ? 1 : 0);
+        PlayerPrefs.SetInt("invertJoy", SettingsStore.invertJoy ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -68,7 +70,8 @@ public static class SettingsStore
         if (!double.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out SettingsStore.personalBest))
             SettingsStore.personalBest = 0.0;
         SettingsStore.useVSync = PlayerPrefs.GetInt("useVSync", 1) == 1;            
-        SettingsStore.disableOutline = PlayerPrefs.GetInt("disableOutline", 0) == 1; 
+        SettingsStore.disableOutline = PlayerPrefs.GetInt("disableOutline", 0) == 1;
+        SettingsStore.invertJoy = PlayerPrefs.GetInt("invertJoy", 0) == 1;
     }
 
     public static void ResetToDefaults()
@@ -85,6 +88,7 @@ public static class SettingsStore
         visibleTimer = true;
         useVSync = true;
         disableOutline = false;
+        invertJoy = false;  
         SaveSettings();
     }
 
