@@ -359,21 +359,39 @@ public class PauseMenuScript : MonoBehaviour
         SettingsStore.useVSync = toggleUseVsync.isOn;
     }
 
-    public void InvertJoy()
+    private void SetBindingEnabled(InputAction action, int bindingIndex, bool enabled)
+    {
+        //Debug.Log("action:"+action.name+" index:"+bindingIndex+" path:"+action.bindings[bindingIndex].path+" to "+enabled);
+        if (enabled)
+            action.RemoveBindingOverride(bindingIndex);
+        else
+            //action.ApplyBindingOverride(bindingIndex, new InputBinding { path = "" });
+            //action.ApplyBindingOverride(bindingIndex, "");
+            action.ApplyBindingOverride(bindingIndex, "<Keyboard>/f10");
+    }
+
+    public void SetJoySide(bool lookLeft)
     {
         var lookAction = inputActions.FindAction("Player/Look");
         var rollAction = inputActions.FindAction("Player/Roll");
 
         if (lookAction == null || rollAction == null) return;
+        Debug.Log("lookLeft:"+lookLeft);
 
-        
-        string lookPath = lookAction.bindings[0].effectivePath;
-        string rollPath = rollAction.bindings[0].effectivePath;
+        // look
+        SetBindingEnabled(lookAction, 1, lookLeft); // Left
+        SetBindingEnabled(lookAction, 2,!lookLeft); // Right
 
-        
-        lookAction.ApplyBindingOverride(0, rollPath);
-        rollAction.ApplyBindingOverride(0, lookPath);
+        // roll
+        SetBindingEnabled(rollAction, 4,!lookLeft); // Left+
+        SetBindingEnabled(rollAction, 5,!lookLeft); // Left-
+        SetBindingEnabled(rollAction, 7, lookLeft); // Right-
+        SetBindingEnabled(rollAction, 8, lookLeft); // Right+
+    }
 
+    public void InvertJoy()
+    {
+        SetJoySide(!toggleInvertTouch.isOn);
         SettingsStore.invertJoy = toggleInvertTouch.isOn;
     }
 
