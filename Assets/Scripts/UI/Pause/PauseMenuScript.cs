@@ -45,7 +45,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Toggle toggleRollAxis;
     [SerializeField] private UnityEngine.UI.Toggle toggleUseVsync;
     [SerializeField] private UnityEngine.UI.Toggle toggleDisableOutline;
-    [SerializeField] private UnityEngine.UI.Toggle toggleInvertTounch;
+    [SerializeField] private UnityEngine.UI.Toggle toggleInvertTouch;
 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource changeButtonAudio;
@@ -361,7 +361,20 @@ public class PauseMenuScript : MonoBehaviour
 
     public void InvertJoy()
     {
+        var lookAction = inputActions.FindAction("Player/Look");
+        var rollAction = inputActions.FindAction("Player/Roll");
 
+        if (lookAction == null || rollAction == null) return;
+
+        
+        string lookPath = lookAction.bindings[0].effectivePath;
+        string rollPath = rollAction.bindings[0].effectivePath;
+
+        
+        lookAction.ApplyBindingOverride(0, rollPath);
+        rollAction.ApplyBindingOverride(0, lookPath);
+
+        SettingsStore.invertJoy = toggleInvertTouch.isOn;
     }
 
     public void ChangeOutline()
