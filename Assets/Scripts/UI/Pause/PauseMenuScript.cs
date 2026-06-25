@@ -16,7 +16,6 @@ public class PauseMenuScript : MonoBehaviour
     private PauseManager pauseManager;
     private GameObject pauseManagerGO;
 
-    [SerializeField] private InputActionAsset inputActions;
     
     [Header("Canvas")]
     
@@ -74,10 +73,9 @@ public class PauseMenuScript : MonoBehaviour
         {
             pauseManager = pauseManagerGO.GetComponent<PauseManager>();
         }
-        
-
     }
-    private void OnEnable()
+
+	private void OnEnable()
     {
         SettingsStore.LoadSettings();
         GoToMainCanva();
@@ -358,41 +356,11 @@ public class PauseMenuScript : MonoBehaviour
         QualitySettings.vSyncCount = vsync;
         SettingsStore.useVSync = toggleUseVsync.isOn;
     }
-
-    private void SetBindingEnabled(InputAction action, int bindingIndex, bool enabled)
-    {
-        //Debug.Log("action:"+action.name+" index:"+bindingIndex+" path:"+action.bindings[bindingIndex].path+" to "+enabled);
-        if (enabled)
-            action.RemoveBindingOverride(bindingIndex);
-        else
-            //action.ApplyBindingOverride(bindingIndex, new InputBinding { path = "" });
-            //action.ApplyBindingOverride(bindingIndex, "");
-            action.ApplyBindingOverride(bindingIndex, "<Keyboard>/f10");
-    }
-
-    public void SetJoySide(bool lookLeft)
-    {
-        var lookAction = inputActions.FindAction("Player/Look");
-        var rollAction = inputActions.FindAction("Player/Roll");
-
-        if (lookAction == null || rollAction == null) return;
-        Debug.Log("lookLeft:"+lookLeft);
-
-        // look
-        SetBindingEnabled(lookAction, 1, lookLeft); // Left
-        SetBindingEnabled(lookAction, 2,!lookLeft); // Right
-
-        // roll
-        SetBindingEnabled(rollAction, 4,!lookLeft); // Left+
-        SetBindingEnabled(rollAction, 5,!lookLeft); // Left-
-        SetBindingEnabled(rollAction, 7, lookLeft); // Right-
-        SetBindingEnabled(rollAction, 8, lookLeft); // Right+
-    }
-
+    
     public void InvertJoy()
     {
-        SetJoySide(!toggleInvertTouch.isOn);
         SettingsStore.invertJoy = toggleInvertTouch.isOn;
+        // will be refreshed by SettingsApply when unpaused
     }
 
     public void ChangeOutline()
