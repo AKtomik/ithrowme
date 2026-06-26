@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class SettingsApply : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private AudioMixer audioMixer;
 
     // called when starting or when unpaused
     public void OnEnable()
     {
         SetJoySide(SettingsStore.invertJoy);
+        ApplyVolumes();
     }
 
 
@@ -41,5 +44,15 @@ public class SettingsApply : MonoBehaviour
         SetBindingEnabled(rollAction, 5, invert); // Left-
         SetBindingEnabled(rollAction, 7,!invert); // Right-
         SetBindingEnabled(rollAction, 8,!invert); // Right+
+    }
+
+    // audio apply
+    public void ApplyVolumes()
+    {
+        audioMixer.SetFloat("Master", SettingsStore.masterVolume);
+        audioMixer.SetFloat("SFX", SettingsStore.sfxVolume);
+        audioMixer.SetFloat("Music", SettingsStore.musicVolume);
+        audioMixer.SetFloat("Breath", SettingsStore.breathVolume);
+        audioMixer.SetFloat("Alarm", SettingsStore.alarmVolume);
     }
 }

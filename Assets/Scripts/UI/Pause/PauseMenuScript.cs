@@ -274,20 +274,20 @@ public class PauseMenuScript : MonoBehaviour
         slider.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.RoundToInt((slider.value - slider.minValue) / (slider.maxValue - slider.minValue) * 100) + "%";
     }
 
-    public void ChangeSFXVolume()
-    {
-        sfxSlidersAudio.Play();
-        audioMixer.SetFloat("SFX", SliderToDecibel(sliderSfxVolume));
-        ToPercent(sliderSfxVolume);
-        SettingsStore.sfxVolume = sliderSfxVolume.value;
-    }
-
     public void ChangeMainVolume()
     {
         sfxSlidersAudio.Play();
         audioMixer.SetFloat("Master", SliderToDecibel(sliderMainVolume));
         ToPercent(sliderMainVolume);
         SettingsStore.masterVolume = sliderMainVolume.value;
+    }
+
+    public void ChangeSFXVolume()
+    {
+        sfxSlidersAudio.Play();
+        audioMixer.SetFloat("SFX", SliderToDecibel(sliderSfxVolume));
+        ToPercent(sliderSfxVolume);
+        SettingsStore.sfxVolume = sliderSfxVolume.value;
     }
 
     public void ChangeMusicVolume()
