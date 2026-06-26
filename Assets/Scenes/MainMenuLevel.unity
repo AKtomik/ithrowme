@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c42253a867f85c74f9fae642cde4c6dd, type: 3}
     - target: {fileID: 2723115493026431516, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
       propertyPath: m_text
-      value: A
+      value: X
       objectReference: {fileID: 0}
     - target: {fileID: 2819261135823023200, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -675,10 +675,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1143302607}
     - target: {fileID: 6140107257834039518, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
-      propertyPath: toggleInvertTouch
-      value: 
-      objectReference: {fileID: 232710712}
-    - target: {fileID: 6140107257834039518, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
       propertyPath: toggleDisableOutline
       value: 
       objectReference: {fileID: 1708748662}
@@ -800,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183023260419438048, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
       propertyPath: m_text
-      value: B
+      value: A
       objectReference: {fileID: 0}
     - target: {fileID: 8574965628935982568, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
       propertyPath: m_text
@@ -1176,17 +1172,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 559909323045372912, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
   m_PrefabInstance: {fileID: 232710707}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &232710712 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6802489071258099959, guid: c5ec1fdcbce89774492e9ed2e0f6d5c7, type: 3}
-  m_PrefabInstance: {fileID: 232710707}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1 &382878281
 GameObject:
   m_ObjectHideFlags: 0
