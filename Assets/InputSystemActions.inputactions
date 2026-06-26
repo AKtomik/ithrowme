@@ -261,7 +261,7 @@
                 {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -349,10 +349,32 @@
                 {
                     "name": "",
                     "id": "70132e03-c526-41c6-b4ec-a3da12869926",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5737eaf-a3f8-4d19-9616-5b0ccd4c4674",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f0582e45-6510-4aab-9d10-1dfa1db5f4a3",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false

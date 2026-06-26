@@ -20,6 +20,9 @@ public class CheatCode : MonoBehaviour
     private bool moveCheating = false;
     private bool noclipCheating = false;
 
+    public bool IsCheating() => cheating;
+    public bool IsCheated() => cheated;
+
     // setup
     void Awake()
     {

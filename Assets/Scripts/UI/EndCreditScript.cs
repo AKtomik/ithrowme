@@ -46,7 +46,7 @@ public class EndCreditScript : MonoBehaviour
         }
         else
         {
-            if (TimerSingleton.instance.GetFinalTime() < oldTime)
+            if (!ReferenceSingleton.instance.cheatCode.IsCheated() && TimerSingleton.instance.GetFinalTime() < oldTime)
             {
                 SettingsStore.personalBest = TimerSingleton.instance.GetFinalTime();
             }
