@@ -32,7 +32,7 @@ public class TimerSingleton : MonoBehaviour
             string textMs = displayMs.ToString();
             textMs = new string('0', 3 - textMs.Length) + textMs;
 
-            double displaySec = Math.Floor(timedSec);
+            double displaySec = Math.Round(timedSec);
             string textSec = displaySec.ToString();
             
             stringTime = textSec + "." + textMs;

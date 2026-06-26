@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 156681f340d3bdf40ae1c5c5135afd95, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: ae645c3a46623a845a84edb8b0b1a536, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: c261537c75baa864cb85d05862edf9d3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1778,22 +1778,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.681
       objectReference: {fileID: 0}
-    - target: {fileID: 8376380579509345302, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
-      propertyPath: m_Name
-      value: ThrowableAverageBottle
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.438
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.681
-      objectReference: {fileID: 0}
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1821,6 +1805,10 @@ PrefabInstance:
     - target: {fileID: 2112236203110237495, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376380579509345302, guid: 69afe9e89b535df40bedb94485a32ca7, type: 3}
+      propertyPath: m_Name
+      value: ThrowableAverageBottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7405,6 +7393,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+--- !u!114 &942557607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7090288166119502337, guid: 703daeba5ddfa534998adf938366f73b, type: 3}
+  m_PrefabInstance: {fileID: 942557606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedecfa3048784a41a35aa017a56a17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &946503091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 608806723693862949, guid: 6fbe709eac63d794b9c23590a222cc58, type: 3}
@@ -7512,6 +7511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceStore
   player: {fileID: 260315545}
+  cheatCode: {fileID: 942557607}
   missionManager: {fileID: 850945353}
   cinematicManager: {fileID: 1595449727}
   pauseManager: {fileID: 254801718}

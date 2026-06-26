@@ -6,6 +6,7 @@ public class ReferenceSingleton : MonoBehaviour
 
     [Header("Main")]
 		public CapsulePlayer player;
+		public CheatCode cheatCode;
 		public MissionManager missionManager;
 		public CinematicManager cinematicManager;
 		public PauseManager pauseManager;
