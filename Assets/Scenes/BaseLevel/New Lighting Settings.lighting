@@ -12,8 +12,8 @@ LightingSettings:
   m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 0
   m_BounceScale: 1
-  m_AlbedoBoost: 2.7
-  m_IndirectOutputScale: 5
+  m_AlbedoBoost: 2.26
+  m_IndirectOutputScale: 4.86
   m_UsingShadowmask: 0
   m_BakeBackend: 1
   m_LightmapMaxSize: 1024
@@ -21,7 +21,7 @@ LightingSettings:
   m_UseMipmapLimits: 1
   m_BakeResolution: 40
   m_Padding: 2
-  m_LightmapCompression: 3
+  m_LightmapCompression: 2
   m_LightmapPackingMode: 0
   m_LightmapPackingMethod: 1
   m_XAtlasPackingAttempts: 16384
