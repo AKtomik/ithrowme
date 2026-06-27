@@ -78,10 +78,29 @@ public class BothCanvas : MonoBehaviour
         cheatText.text = enable ? "CHEAT MODE" : "CHEATED";
     }
     
-    public void DiableUI(bool enable)
+    public void DiableUI(int state)
     {
-        textsParent.SetActive(!enable);
-        CrosshairImageUI.enabled = !enable;
+        switch (state)
+        {
+            case 0:
+                {
+                    textsParent.SetActive(true);
+                    CrosshairImageUI.enabled = true;
+                    handImageUI.enabled = true;
+                } break;
+            case 1:
+                {
+                    textsParent.SetActive(false);
+                    CrosshairImageUI.enabled = false;
+                    handImageUI.enabled = true;
+                } break;
+            case 2:
+                {
+                    textsParent.SetActive(false);
+                    CrosshairImageUI.enabled = false;
+                    handImageUI.enabled = false;
+                } break;
+        }
     }
     
     // hand

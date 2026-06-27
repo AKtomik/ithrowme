@@ -19,6 +19,7 @@ public class CheatCode : MonoBehaviour
     private bool cheating = false;
     private bool moveCheating = false;
     private bool noclipCheating = false;
+    private int noUiState = 0;
 
     public bool IsCheating() => cheating;
     public bool IsCheated() => cheated;
@@ -208,8 +209,14 @@ public class CheatCode : MonoBehaviour
     public void ToggleNoUI(bool enable)
     {
         //CheatMode();// is not really a cheat
-        Debug.Log("ui psedo cheat:"+enable);
-        ReferenceSingleton.instance.bothCanvas.DiableUI(enable);
+        int state = 0;
+        if (enable)
+            if (state == 1)
+                state = 2;
+            else 
+                state = 1;
+        Debug.Log("ui psedo cheat:"+state);
+        ReferenceSingleton.instance.bothCanvas.DiableUI(state);
     }
 
     public void ResetShortcut()
