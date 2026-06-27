@@ -14,13 +14,13 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.53588676, g: 0.53588676, b: 0.53588676, a: 1}
+  m_AmbientSkyColor: {r: 0.066985846, g: 0.066985846, b: 0.066985846, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 8
@@ -10762,7 +10762,7 @@ PrefabInstance:
       addedObject: {fileID: 2112009452}
     - targetCorrespondingSourceObject: {fileID: 833044344447251514, guid: 7783713d69a529c4daf286dd7443a9e6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1795759258}
+      addedObject: {fileID: 6934025377965759632}
     - targetCorrespondingSourceObject: {fileID: 833044344447251514, guid: 7783713d69a529c4daf286dd7443a9e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1541877838}
@@ -13966,11 +13966,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ee70048e22b7343951e1c476d4f9eb, type: 3}
---- !u!4 &1795759258 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6934025377311899657, guid: 87ee70048e22b7343951e1c476d4f9eb, type: 3}
-  m_PrefabInstance: {fileID: 1795759257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1797068300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20445,6 +20440,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dfa9da9bc2b14e49970e8d19ad1ad4e, type: 3}
+--- !u!4 &6934025377965759632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6934025377311899657, guid: 87ee70048e22b7343951e1c476d4f9eb, type: 3}
+  m_PrefabInstance: {fileID: 1795759257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7075870732073596302
 PrefabInstance:
   m_ObjectHideFlags: 0
