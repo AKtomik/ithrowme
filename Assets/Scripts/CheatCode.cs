@@ -211,10 +211,11 @@ public class CheatCode : MonoBehaviour
         //CheatMode();// is not really a cheat
         int state = 0;
         if (enable)
-            if (state == 1)
+            if (noUiState == 1)
                 state = 2;
             else 
                 state = 1;
+        noUiState = state;
         Debug.Log("ui psedo cheat:"+state);
         ReferenceSingleton.instance.bothCanvas.DiableUI(state);
     }
